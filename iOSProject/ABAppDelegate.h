@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ABAppDelegate.h
 //  iOSProject
 //
 //  Created by Andrew Boychuk on 7/5/17.
@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ABAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
+
+
 
 
 @end

@@ -1,22 +1,27 @@
 //
-//  AppDelegate.m
+//  ABAppDelegate.m
 //  iOSProject
 //
 //  Created by Andrew Boychuk on 7/5/17.
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "ABAppDelegate.h"
 
-@interface AppDelegate ()
+@interface ABAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation ABAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.window = window;
+    window.backgroundColor = [UIColor greenColor];
+    [window makeKeyAndVisible];
+    
     return YES;
 }
 
