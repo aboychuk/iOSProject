@@ -8,7 +8,8 @@
 
 #import "ABAppDelegate.h"
 
-#import "ABViewController.h"
+#import "ABUserViewController.h"
+#import "ABUser.h"
 
 @interface ABAppDelegate ()
 
@@ -19,12 +20,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    ABViewController *controller = [ABViewController new];
-    
-    window.rootViewController = controller;
-    controller.data = @"MAMAPAPA";
     self.window = window;
+
+    ABUserViewController *controller = [ABUserViewController new];
+    controller.user = [ABUser new];
+
+    window.rootViewController = controller;
     window.backgroundColor = [UIColor blueColor];
+    
     [window makeKeyAndVisible];
     
 //    controller.data = @"MAMAPAPA";

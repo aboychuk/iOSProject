@@ -1,36 +1,36 @@
 //
-//  ABViewController.m
+//  ABUserViewController.m
 //  iOSProject
 //
 //  Created by Andrew Boychuk on 7/7/17.
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import "ABViewController.h"
+#import "ABUserViewController.h"
 
-#import "ABLabelView.h"
+#import "ABUserView.h"
 
-@interface ABViewController ()
-@property (nonatomic, readonly) ABLabelView *labelView;
+@interface ABUserViewController ()
+@property (nonatomic, readonly) ABUserView  *userView;
 
 @end
 
-@implementation ABViewController
+@implementation ABUserViewController
 
 #pragma mark
 #pragma mark Accessors
 
-- (void)setData:(NSString *)data {
-    if (_data != data) {
-        _data = data;
+- (void)setUser:(ABUser *)user {
+    if (_user != user) {
+        _user = user;
     }
     
-    self.labelView.label.text = data;
+    self.userView.user = user;
 }
 
-- (ABLabelView *)labelView {
-    if ([self isViewLoaded] && [self.view isKindOfClass:[ABLabelView class]]) {
-        return (ABLabelView *)self.view;
+- (ABUserView *)userView {
+    if ([self isViewLoaded] && [self.view isKindOfClass:[ABUserView class]]) {
+        return (ABUserView *)self.view;
     }
     
     return nil;
@@ -42,9 +42,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.data = self.data;
+    self.userView.user = self.user;
     
-//    [[(ABLabelView *) [self view] label] setText:@"PAPA"];
+//    [[(ABUserView *) [self view] label] setText:@"PAPA"];
     
 //    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
 //    
@@ -61,5 +61,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark
+#pragma mark Interface Handling
+
+- (IBAction)onRotateButton:(id)sender {
+    [self.userView rotateLabel];
+}
+
 
 @end

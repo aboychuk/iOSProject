@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4935E37D1F0FB0560037660C /* ABLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4935E37C1F0FB0560037660C /* ABLabelView.m */; };
+		4935E37D1F0FB0560037660C /* ABUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4935E37C1F0FB0560037660C /* ABUserView.m */; };
+		4935E3801F0FC6410037660C /* ABUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4935E37F1F0FC6410037660C /* ABUser.m */; };
 		494DB09D1F0F7E6E003D34A9 /* ABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 494DB09C1F0F7E6E003D34A9 /* ABAppDelegate.m */; };
-		494DB0A11F0F7EE9003D34A9 /* ABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494DB09F1F0F7EE9003D34A9 /* ABViewController.m */; };
-		494DB0A21F0F7EE9003D34A9 /* ABViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494DB0A01F0F7EE9003D34A9 /* ABViewController.xib */; };
+		494DB0A11F0F7EE9003D34A9 /* ABUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494DB09F1F0F7EE9003D34A9 /* ABUserViewController.m */; };
+		494DB0A21F0F7EE9003D34A9 /* ABUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494DB0A01F0F7EE9003D34A9 /* ABUserViewController.xib */; };
 		494DB0A51F0F8019003D34A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494DB0A31F0F8019003D34A9 /* Main.storyboard */; };
 		49E0A4E41F0D00CB00ACD9D1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49E0A4E21F0D00CB00ACD9D1 /* Info.plist */; };
 		49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0A4E31F0D00CB00ACD9D1 /* main.m */; };
@@ -40,13 +41,15 @@
 
 /* Begin PBXFileReference section */
 		2A87253A4A367DC6F1E3F4C2 /* Pods-iOSProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectTests/Pods-iOSProjectTests.release.xcconfig"; sourceTree = "<group>"; };
-		4935E37B1F0FB0560037660C /* ABLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLabelView.h; sourceTree = "<group>"; };
-		4935E37C1F0FB0560037660C /* ABLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLabelView.m; sourceTree = "<group>"; };
+		4935E37B1F0FB0560037660C /* ABUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserView.h; sourceTree = "<group>"; };
+		4935E37C1F0FB0560037660C /* ABUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserView.m; sourceTree = "<group>"; };
+		4935E37E1F0FC6410037660C /* ABUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUser.h; sourceTree = "<group>"; };
+		4935E37F1F0FC6410037660C /* ABUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUser.m; sourceTree = "<group>"; };
 		494DB09B1F0F7E6E003D34A9 /* ABAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABAppDelegate.h; sourceTree = "<group>"; };
 		494DB09C1F0F7E6E003D34A9 /* ABAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABAppDelegate.m; sourceTree = "<group>"; };
-		494DB09E1F0F7EE9003D34A9 /* ABViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABViewController.h; sourceTree = "<group>"; };
-		494DB09F1F0F7EE9003D34A9 /* ABViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABViewController.m; sourceTree = "<group>"; };
-		494DB0A01F0F7EE9003D34A9 /* ABViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABViewController.xib; sourceTree = "<group>"; };
+		494DB09E1F0F7EE9003D34A9 /* ABUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserViewController.h; sourceTree = "<group>"; };
+		494DB09F1F0F7EE9003D34A9 /* ABUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserViewController.m; sourceTree = "<group>"; };
+		494DB0A01F0F7EE9003D34A9 /* ABUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserViewController.xib; sourceTree = "<group>"; };
 		494DB0A41F0F8019003D34A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49E0A4E21F0D00CB00ACD9D1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E0A4E31F0D00CB00ACD9D1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,11 +96,13 @@
 		494DB09A1F0F7E5D003D34A9 /* ABViewController */ = {
 			isa = PBXGroup;
 			children = (
-				494DB09E1F0F7EE9003D34A9 /* ABViewController.h */,
-				494DB09F1F0F7EE9003D34A9 /* ABViewController.m */,
-				494DB0A01F0F7EE9003D34A9 /* ABViewController.xib */,
-				4935E37B1F0FB0560037660C /* ABLabelView.h */,
-				4935E37C1F0FB0560037660C /* ABLabelView.m */,
+				494DB09E1F0F7EE9003D34A9 /* ABUserViewController.h */,
+				494DB09F1F0F7EE9003D34A9 /* ABUserViewController.m */,
+				494DB0A01F0F7EE9003D34A9 /* ABUserViewController.xib */,
+				4935E37B1F0FB0560037660C /* ABUserView.h */,
+				4935E37C1F0FB0560037660C /* ABUserView.m */,
+				4935E37E1F0FC6410037660C /* ABUser.h */,
+				4935E37F1F0FC6410037660C /* ABUser.m */,
 			);
 			path = ABViewController;
 			sourceTree = "<group>";
@@ -329,7 +334,7 @@
 				494DB0A51F0F8019003D34A9 /* Main.storyboard in Resources */,
 				49E0A4F11F0D00D600ACD9D1 /* Assets.xcassets in Resources */,
 				49E0A4E41F0D00CB00ACD9D1 /* Info.plist in Resources */,
-				494DB0A21F0F7EE9003D34A9 /* ABViewController.xib in Resources */,
+				494DB0A21F0F7EE9003D34A9 /* ABUserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,9 +408,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */,
-				494DB0A11F0F7EE9003D34A9 /* ABViewController.m in Sources */,
-				4935E37D1F0FB0560037660C /* ABLabelView.m in Sources */,
+				494DB0A11F0F7EE9003D34A9 /* ABUserViewController.m in Sources */,
+				4935E37D1F0FB0560037660C /* ABUserView.m in Sources */,
 				494DB09D1F0F7E6E003D34A9 /* ABAppDelegate.m in Sources */,
+				4935E3801F0FC6410037660C /* ABUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
