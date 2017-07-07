@@ -26,7 +26,7 @@
     controller.user = [ABUser new];
 
     window.rootViewController = controller;
-    window.backgroundColor = [UIColor blueColor];
+    window.backgroundColor = [UIColor greenColor];
     
     [window makeKeyAndVisible];
     
