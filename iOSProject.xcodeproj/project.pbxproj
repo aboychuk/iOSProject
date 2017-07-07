@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4935E37D1F0FB0560037660C /* ABLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4935E37C1F0FB0560037660C /* ABLabelView.m */; };
 		494DB09D1F0F7E6E003D34A9 /* ABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 494DB09C1F0F7E6E003D34A9 /* ABAppDelegate.m */; };
 		494DB0A11F0F7EE9003D34A9 /* ABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494DB09F1F0F7EE9003D34A9 /* ABViewController.m */; };
 		494DB0A21F0F7EE9003D34A9 /* ABViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494DB0A01F0F7EE9003D34A9 /* ABViewController.xib */; };
@@ -39,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		2A87253A4A367DC6F1E3F4C2 /* Pods-iOSProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectTests/Pods-iOSProjectTests.release.xcconfig"; sourceTree = "<group>"; };
+		4935E37B1F0FB0560037660C /* ABLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLabelView.h; sourceTree = "<group>"; };
+		4935E37C1F0FB0560037660C /* ABLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLabelView.m; sourceTree = "<group>"; };
 		494DB09B1F0F7E6E003D34A9 /* ABAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABAppDelegate.h; sourceTree = "<group>"; };
 		494DB09C1F0F7E6E003D34A9 /* ABAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABAppDelegate.m; sourceTree = "<group>"; };
 		494DB09E1F0F7EE9003D34A9 /* ABViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABViewController.h; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				494DB09E1F0F7EE9003D34A9 /* ABViewController.h */,
 				494DB09F1F0F7EE9003D34A9 /* ABViewController.m */,
 				494DB0A01F0F7EE9003D34A9 /* ABViewController.xib */,
+				4935E37B1F0FB0560037660C /* ABLabelView.h */,
+				4935E37C1F0FB0560037660C /* ABLabelView.m */,
 			);
 			path = ABViewController;
 			sourceTree = "<group>";
@@ -154,14 +159,14 @@
 		49FB26061F0CFB0D00801FD7 = {
 			isa = PBXGroup;
 			children = (
-				7E7EA6F84734EB9BF3ED9ABB /* Frameworks */,
 				49E0A4E11F0D00CB00ACD9D1 /* iOSProject */,
+				49E0A4EC1F0D00D600ACD9D1 /* Source */,
+				49E0A4E61F0D00D600ACD9D1 /* Resource */,
+				7E7EA6F84734EB9BF3ED9ABB /* Frameworks */,
 				49FB262B1F0CFB0D00801FD7 /* iOSProjectTests */,
 				49FB26361F0CFB0D00801FD7 /* iOSProjectUITests */,
 				A37FCB006A85B592D804657F /* Pods */,
 				49FB26101F0CFB0D00801FD7 /* Products */,
-				49E0A4E61F0D00D600ACD9D1 /* Resource */,
-				49E0A4EC1F0D00D600ACD9D1 /* Source */,
 			);
 			sourceTree = "<group>";
 		};
@@ -399,6 +404,7 @@
 			files = (
 				49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */,
 				494DB0A11F0F7EE9003D34A9 /* ABViewController.m in Sources */,
+				4935E37D1F0FB0560037660C /* ABLabelView.m in Sources */,
 				494DB09D1F0F7E6E003D34A9 /* ABAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,9 +555,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOSProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AB.iOSProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -560,9 +568,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOSProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AB.iOSProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

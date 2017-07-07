@@ -1,5 +1,5 @@
 //
-//  ABViewController.h
+//  ABLabelView.h
 //  iOSProject
 //
 //  Created by Andrew Boychuk on 7/7/17.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ABViewController : UIViewController
-@property (nonatomic, strong)   NSString    *data;
+@interface ABLabelView : UIView
+@property (nonatomic, strong)   IBOutlet UILabel   *label;
 
 @end
