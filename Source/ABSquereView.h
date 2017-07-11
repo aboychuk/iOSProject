@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ABSquereView : UIView
+@property (nonatomic, strong)   IBOutlet UIView *squere;
 
 @end
