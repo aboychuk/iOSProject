@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, ABSquerePosition) {
+    ABSquerePositionTopLeft,
+    ABSquerePositionTopRight,
+    ABSquerePositionBottomRight,
+    ABSquerePositionBottomLeft
+};
+
 @interface ABSquereView : UIView
 @property (nonatomic, strong)   IBOutlet UIView *squere;
 
