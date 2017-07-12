@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class ABUser;
+@class ABDraggableView;
 
 @interface ABUserView : UIView
-@property (nonatomic, strong)   IBOutlet UILabel        *label;
-@property (nonatomic, strong)   IBOutlet UIButton       *button;
-@property (nonatomic, strong)   ABUser                  *user;
+@property (nonatomic, strong)   IBOutlet UILabel            *label;
+@property (nonatomic, strong)   IBOutlet UIButton           *button;
+@property (nonatomic, strong)   ABUser                      *user;
+@property (nonatomic, strong)   IBOutlet ABDraggableView    *draggableView;
 
 - (void)rotateLabel;
 

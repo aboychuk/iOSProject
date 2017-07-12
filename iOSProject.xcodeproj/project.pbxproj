@@ -13,6 +13,7 @@
 		494DB0A11F0F7EE9003D34A9 /* ABUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494DB09F1F0F7EE9003D34A9 /* ABUserViewController.m */; };
 		494DB0A21F0F7EE9003D34A9 /* ABUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494DB0A01F0F7EE9003D34A9 /* ABUserViewController.xib */; };
 		494DB0A51F0F8019003D34A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494DB0A31F0F8019003D34A9 /* Main.storyboard */; };
+		49D0CCA11F16334B00D73194 /* ABDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D0CCA01F16334B00D73194 /* ABDraggableView.m */; };
 		49E0A4E41F0D00CB00ACD9D1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49E0A4E21F0D00CB00ACD9D1 /* Info.plist */; };
 		49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0A4E31F0D00CB00ACD9D1 /* main.m */; };
 		49E0A4F11F0D00D600ACD9D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E0A4E71F0D00D600ACD9D1 /* Assets.xcassets */; };
@@ -51,6 +52,8 @@
 		494DB09F1F0F7EE9003D34A9 /* ABUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserViewController.m; sourceTree = "<group>"; };
 		494DB0A01F0F7EE9003D34A9 /* ABUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserViewController.xib; sourceTree = "<group>"; };
 		494DB0A41F0F8019003D34A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49D0CC9F1F16334B00D73194 /* ABDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABDraggableView.h; sourceTree = "<group>"; };
+		49D0CCA01F16334B00D73194 /* ABDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABDraggableView.m; sourceTree = "<group>"; };
 		49E0A4E21F0D00CB00ACD9D1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E0A4E31F0D00CB00ACD9D1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49E0A4E71F0D00D600ACD9D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 				494DB0A01F0F7EE9003D34A9 /* ABUserViewController.xib */,
 				4935E37B1F0FB0560037660C /* ABUserView.h */,
 				4935E37C1F0FB0560037660C /* ABUserView.m */,
+				49D0CC9F1F16334B00D73194 /* ABDraggableView.h */,
+				49D0CCA01F16334B00D73194 /* ABDraggableView.m */,
 				4935E37E1F0FC6410037660C /* ABUser.h */,
 				4935E37F1F0FC6410037660C /* ABUser.m */,
 			);
@@ -412,6 +417,7 @@
 				4935E37D1F0FB0560037660C /* ABUserView.m in Sources */,
 				494DB09D1F0F7E6E003D34A9 /* ABAppDelegate.m in Sources */,
 				4935E3801F0FC6410037660C /* ABUser.m in Sources */,
+				49D0CCA11F16334B00D73194 /* ABDraggableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
