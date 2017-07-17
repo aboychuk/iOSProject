@@ -8,8 +8,11 @@
 
 #import "ABSquereView.h"
 
+#import "ABRandomNumber.h"
+
 static BOOL ABSquereAnimation               = YES;
 static NSTimeInterval ABAnimationDuration   = 1;
+static NSUInteger positionCount             = 4;
 
 @implementation ABSquereView
 
@@ -30,6 +33,16 @@ static NSTimeInterval ABAnimationDuration   = 1;
                  animated:(BOOL)animated
         completionHandler:(ABVoidBlock)handler
 {
+    [UIView animateWithDuration:ABAnimationDuration
+                     animations:^{
+        [self squereOriginPosition:squerePosition];
+    }
+                     completion:^(BOOL finished) {
+                         _squerePosition = squerePosition;
+                         if (handler) {
+                             handler();
+                         }
+                     }];
     
 }
 
@@ -37,11 +50,11 @@ static NSTimeInterval ABAnimationDuration   = 1;
 #pragma mark - Public Methods
 
 - (void)startClockwiseMoving {
-    
+    [self setSquerePosition:[self moveToNextPosition] animated:YES];
 }
 
 - (void)startRandomMoving {
-    
+    [self setSquerePosition:[self moveToRandomPosition] animated:YES];
 }
 
 #pragma mark
@@ -78,6 +91,13 @@ static NSTimeInterval ABAnimationDuration   = 1;
     return squerePoint;
 }
 
+- (ABSquerePosition)moveToNextPosition {
+    return (self.squerePosition + 1) % positionCount;
+}
+
+- (ABSquerePosition)moveToRandomPosition {
+    return ABRandomWithMaxValue(positionCount);
+}
 
 @end
 
