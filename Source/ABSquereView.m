@@ -14,6 +14,13 @@ static BOOL ABSquereAnimation               = YES;
 static NSTimeInterval ABAnimationDuration   = 1;
 static NSUInteger positionCount             = 4;
 
+@interface ABSquereView ()
+- (ABSquerePosition)moveToNextPosition;
+
+- (ABSquerePosition)moveToRandomPosition;
+
+@end
+
 @implementation ABSquereView
 
 #pragma mark
@@ -35,7 +42,8 @@ static NSUInteger positionCount             = 4;
 {
     [UIView animateWithDuration:ABAnimationDuration
                      animations:^{
-        [self squereOriginPosition:squerePosition];
+                        CGPoint squereOrigin = self.squere.frame.origin;
+                         squereOrigin = [self squereOriginPosition:squerePosition];
     }
                      completion:^(BOOL finished) {
                          _squerePosition = squerePosition;

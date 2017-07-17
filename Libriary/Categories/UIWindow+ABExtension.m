@@ -11,7 +11,7 @@
 @implementation UIWindow (ABExtension)
 
 + (instancetype)window {
-    return [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    return [[self alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 }
 
 @end

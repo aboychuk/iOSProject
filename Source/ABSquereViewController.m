@@ -29,5 +29,13 @@
     return nil;
 }
 
+#pragma mark - Public
+- (IBAction)clockwiseButton:(UIButton *)sender {
+    [(ABSquereView *)self.view startClockwiseMoving];
+}
+
+- (IBAction)randomButton:(UIButton *)sender {
+    [self.squereView startRandomMoving];
+}
 
 @end

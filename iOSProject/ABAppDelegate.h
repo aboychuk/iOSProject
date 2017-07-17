@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ABAppDelegate : UIResponder <UIApplicationDelegate>
-
 @property (nonatomic, strong)   UIWindow    *window;
-
 
 @end
 

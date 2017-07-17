@@ -20,14 +20,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UIWindow *window = [UIWindow window];
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
-    
-    window.rootViewController = [ABSquereViewController new];
-    
+    ABSquereViewController *controller = [ABSquereViewController new];
+    window.rootViewController = controller;
+
     [window makeKeyAndVisible];
     
     return YES;
+    
 }
 
 
