@@ -34,6 +34,17 @@ static NSTimeInterval ABAnimationDuration   = 1;
 }
 
 #pragma mark
+#pragma mark - Public Methods
+
+- (void)startClockwiseMoving {
+    
+}
+
+- (void)startRandomMoving {
+    
+}
+
+#pragma mark
 #pragma mark - Private Methods
 
 - (CGPoint)squereOriginPosition:(ABSquerePosition)position {

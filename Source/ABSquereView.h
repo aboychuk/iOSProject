@@ -27,6 +27,7 @@ typedef NS_ENUM(NSUInteger, ABSquerePosition) {
                  animated:(BOOL)animated
         completionHandler:(ABVoidBlock)handler;
 
-
+- (void)startClockwiseMoving;
+- (void)startRandomMoving;
 
 @end
