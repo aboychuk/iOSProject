@@ -10,6 +10,8 @@
 
 #import "ABSquereViewController.h"
 
+#import "UIWindow+ABExtension.h"
+
 @interface ABAppDelegate ()
 
 @end
@@ -18,7 +20,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIWindow *window = [UIWindow window];
     self.window = window;
     
     window.rootViewController = [ABSquereViewController new];

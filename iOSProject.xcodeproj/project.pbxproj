@@ -11,6 +11,8 @@
 		4934DAA91F10BD2E00F2BF52 /* ABSquereViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4934DAA71F10BD2E00F2BF52 /* ABSquereViewController.xib */; };
 		4934DAAC1F10BD6400F2BF52 /* ABSquereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4934DAAB1F10BD6400F2BF52 /* ABSquereView.m */; };
 		4935E3831F1001470037660C /* ABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4935E3821F1001470037660C /* ABAppDelegate.m */; };
+		4987BFEF1F1D0987001FC1F4 /* ABRandomNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 4987BFED1F1D0987001FC1F4 /* ABRandomNumber.m */; };
+		4987BFF21F1D0BDF001FC1F4 /* UIWindow+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4987BFF11F1D0BDF001FC1F4 /* UIWindow+ABExtension.m */; };
 		49E0A4E41F0D00CB00ACD9D1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49E0A4E21F0D00CB00ACD9D1 /* Info.plist */; };
 		49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0A4E31F0D00CB00ACD9D1 /* main.m */; };
 		49E0A4F11F0D00D600ACD9D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E0A4E71F0D00D600ACD9D1 /* Assets.xcassets */; };
@@ -47,6 +49,10 @@
 		4934DAAB1F10BD6400F2BF52 /* ABSquereView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABSquereView.m; sourceTree = "<group>"; };
 		4935E3811F1001470037660C /* ABAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABAppDelegate.h; sourceTree = "<group>"; };
 		4935E3821F1001470037660C /* ABAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABAppDelegate.m; sourceTree = "<group>"; };
+		4987BFEC1F1D0987001FC1F4 /* ABRandomNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABRandomNumber.h; sourceTree = "<group>"; };
+		4987BFED1F1D0987001FC1F4 /* ABRandomNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABRandomNumber.m; sourceTree = "<group>"; };
+		4987BFF01F1D0BDF001FC1F4 /* UIWindow+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+ABExtension.h"; sourceTree = "<group>"; };
+		4987BFF11F1D0BDF001FC1F4 /* UIWindow+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+ABExtension.m"; sourceTree = "<group>"; };
 		49E0A4E21F0D00CB00ACD9D1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E0A4E31F0D00CB00ACD9D1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49E0A4E71F0D00D600ACD9D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +95,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4987BFEB1F1D0987001FC1F4 /* Libriary */ = {
+			isa = PBXGroup;
+			children = (
+				4987BFEC1F1D0987001FC1F4 /* ABRandomNumber.h */,
+				4987BFED1F1D0987001FC1F4 /* ABRandomNumber.m */,
+				4987BFEE1F1D0987001FC1F4 /* Categories */,
+			);
+			path = Libriary;
+			sourceTree = "<group>";
+		};
+		4987BFEE1F1D0987001FC1F4 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4987BFF01F1D0BDF001FC1F4 /* UIWindow+ABExtension.h */,
+				4987BFF11F1D0BDF001FC1F4 /* UIWindow+ABExtension.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		49E0A4E11F0D00CB00ACD9D1 /* iOSProject */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +152,7 @@
 			children = (
 				49E0A4E11F0D00CB00ACD9D1 /* iOSProject */,
 				49E0A4EC1F0D00D600ACD9D1 /* Source */,
+				4987BFEB1F1D0987001FC1F4 /* Libriary */,
 				7E7EA6F84734EB9BF3ED9ABB /* Frameworks */,
 				49FB262B1F0CFB0D00801FD7 /* iOSProjectTests */,
 				49FB26361F0CFB0D00801FD7 /* iOSProjectUITests */,
@@ -369,8 +395,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4934DAAC1F10BD6400F2BF52 /* ABSquereView.m in Sources */,
+				4987BFEF1F1D0987001FC1F4 /* ABRandomNumber.m in Sources */,
 				4935E3831F1001470037660C /* ABAppDelegate.m in Sources */,
 				4934DAA81F10BD2E00F2BF52 /* ABSquereViewController.m in Sources */,
+				4987BFF21F1D0BDF001FC1F4 /* UIWindow+ABExtension.m in Sources */,
 				49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
