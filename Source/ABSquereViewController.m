@@ -8,20 +8,26 @@
 
 #import "ABSquereViewController.h"
 
+#import "ABSquereView.h"
+
 @interface ABSquereViewController ()
+@property (nonatomic, readonly) ABSquereView    *squereView;
 
 @end
 
 @implementation ABSquereViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+@dynamic squereView;
 
+#pragma mark - Accessors
+
+- (ABSquereView *)squareView {
+    if ([self isViewLoaded] && [self.view isKindOfClass:[ABSquereView class]]) {
+        return (ABSquereView *)self.view;
+    }
+    
+    return nil;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-
-}
 
 @end
