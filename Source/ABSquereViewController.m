@@ -35,7 +35,7 @@
 }
 
 - (IBAction)randomButton:(UIButton *)sender {
-    [self.squereView startRandomMoving];
+    [(ABSquereView *)self.view startRandomMoving];
 }
 
 @end
