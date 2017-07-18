@@ -46,6 +46,7 @@
 		4934DAAB1F10BD6400F2BF52 /* ABSquereView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABSquereView.m; sourceTree = "<group>"; };
 		4935E3811F1001470037660C /* ABAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABAppDelegate.h; sourceTree = "<group>"; };
 		4935E3821F1001470037660C /* ABAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABAppDelegate.m; sourceTree = "<group>"; };
+		49370E0D1F1E485E00265EC5 /* ABMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMacro.h; sourceTree = "<group>"; };
 		4987BFEC1F1D0987001FC1F4 /* ABRandomNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABRandomNumber.h; sourceTree = "<group>"; };
 		4987BFED1F1D0987001FC1F4 /* ABRandomNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABRandomNumber.m; sourceTree = "<group>"; };
 		4987BFF01F1D0BDF001FC1F4 /* UIWindow+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+ABExtension.h"; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 		4987BFEB1F1D0987001FC1F4 /* Libriary */ = {
 			isa = PBXGroup;
 			children = (
+				49370E0D1F1E485E00265EC5 /* ABMacro.h */,
 				4987BFEC1F1D0987001FC1F4 /* ABRandomNumber.h */,
 				4987BFED1F1D0987001FC1F4 /* ABRandomNumber.m */,
 				4987BFEE1F1D0987001FC1F4 /* Categories */,

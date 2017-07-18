@@ -9,6 +9,7 @@
 #import "ABSquereView.h"
 
 #import "ABRandomNumber.h"
+#import "ABMacro.h"
 
 static BOOL ABSquereAnimation               = YES;
 static NSTimeInterval ABAnimationDuration   = 2;
@@ -60,24 +61,25 @@ static NSUInteger positionCount             = 4;
 #pragma mark - Public Methods
 
 - (void)startClockwiseMoving {
-    __weak typeof(self) weakSelf = self;
-    [weakSelf setSquerePosition:[self moveToNextPosition]
+    ABWeakify(self);
+    [self setSquerePosition:[self moveToNextPosition]
                    animated:ABSquereAnimation
           completionHandler:^{
-              __strong typeof(self) strongSelf = self;
-              [strongSelf startClockwiseMoving];
+              ABStrongify(self);
+              [self startClockwiseMoving];
           }];
 }
 
 - (void)startRandomMoving {
-    __weak typeof(self) weakSelf = self;
-    [weakSelf setSquerePosition:[self moveToRandomPosition]
+    ABWeakify(self);
+    [self setSquerePosition:[self moveToRandomPosition]
                        animated:ABSquereAnimation
               completionHandler:^{
-                  __strong typeof(self) strongSelf = self;
-                  [strongSelf startClockwiseMoving];
+                  ABStrongify(self);
+                  [self startClockwiseMoving];
               }];
 }
+
 
 #pragma mark
 #pragma mark - Private Methods
