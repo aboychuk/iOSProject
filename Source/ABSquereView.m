@@ -16,7 +16,6 @@ static NSUInteger positionCount             = 4;
 
 @interface ABSquereView ()
 - (ABSquerePosition)moveToNextPosition;
-
 - (ABSquerePosition)moveToRandomPosition;
 
 @end
@@ -48,8 +47,9 @@ static NSUInteger positionCount             = 4;
 
     }
                      completion:^(BOOL finished) {
+                         _squerePosition = squerePosition;
+
                          if (handler) {
-                             _squerePosition = squerePosition;
                              handler();
                          }
                      }];
@@ -60,12 +60,25 @@ static NSUInteger positionCount             = 4;
 #pragma mark - Public Methods
 
 - (void)startClockwiseMoving {
-    [self setSquerePosition:[self moveToNextPosition] animated:YES];
+    __weak typeof(self) weakSelf = self;
+    [weakSelf setSquerePosition:[self moveToNextPosition]
+                   animated:ABSquereAnimation
+          completionHandler:^{
+              __strong typeof(self) strongSelf = self;
+              [strongSelf startClockwiseMoving];
+          }];
 }
 
 - (void)startRandomMoving {
-    [self setSquerePosition:[self moveToRandomPosition] animated:YES];
+    __weak typeof(self) weakSelf = self;
+    [weakSelf setSquerePosition:[self moveToRandomPosition]
+                       animated:ABSquereAnimation
+              completionHandler:^{
+                  __strong typeof(self) strongSelf = self;
+                  [strongSelf startClockwiseMoving];
+              }];
 }
+
 
 #pragma mark
 #pragma mark - Private Methods
