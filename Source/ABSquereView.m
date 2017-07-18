@@ -42,12 +42,14 @@ static NSUInteger positionCount             = 4;
 {
     [UIView animateWithDuration:ABAnimationDuration
                      animations:^{
-                        CGPoint squereOrigin = self.squere.frame.origin;
-                         squereOrigin = [self squereOriginPosition:squerePosition];
+                        CGRect squereOrigin = self.squere.frame;
+                         squereOrigin.origin = [self squereOriginPosition:squerePosition];
+                         self.squere.frame = squereOrigin;
+
     }
                      completion:^(BOOL finished) {
-                         _squerePosition = squerePosition;
                          if (handler) {
+                             _squerePosition = squerePosition;
                              handler();
                          }
                      }];
@@ -70,11 +72,17 @@ static NSUInteger positionCount             = 4;
 
 - (CGPoint)squereOriginPosition:(ABSquerePosition)position {
     CGPoint squerePoint = self.squere.frame.origin;
+    NSLog(@"%@", NSStringFromCGPoint(squerePoint));
+
     CGPoint squerePointTopRight = CGPointMake(self.frame.size.width - self.squere.frame.size.width, 0);
+    NSLog(@"%@", NSStringFromCGPoint(squerePointTopRight));
+
     CGPoint squerePointBottomRight = CGPointMake(self.frame.size.width - self.squere.frame.size.width,
                                                  self.frame.size.height - self.squere.frame.size.height);
+    NSLog(@"%@", NSStringFromCGPoint(squerePointBottomRight));
     CGPoint squerePointBottomLeft = CGPointMake(0, self.frame.size.height - self.squere.frame.size.height);
-
+    NSLog(@"%@", NSStringFromCGPoint(squerePointBottomLeft));
+    
     switch (position) {
         case ABSquerePositionTopLeft:
             return squerePoint;
