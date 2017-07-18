@@ -27,21 +27,23 @@
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PNB-G2-P48">
                     <rect key="frame" x="146" y="356" width="83" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <state key="normal" title="Random"/>
                     <connections>
                         <action selector="randomButton:" destination="-1" eventType="touchUpInside" id="7ir-t4-WqT"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6N2-oS-jl0">
-                    <rect key="frame" x="85" y="317" width="204" height="32"/>
+                    <rect key="frame" x="124" y="316" width="127" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <state key="normal" title="Start clockwise"/>
                     <connections>
                         <action selector="clockwiseButton:" destination="-1" eventType="touchUpInside" id="FV0-hL-XVN"/>
                     </connections>
                 </button>
             </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="squere" destination="18M-ds-KXc" id="eRR-B7-IOS"/>
             </connections>

@@ -21,7 +21,7 @@
 
 #pragma mark - Accessors
 
-- (ABSquereView *)squareView {
+- (ABSquereView *)squereView {
     if ([self isViewLoaded] && [self.view isKindOfClass:[ABSquereView class]]) {
         return (ABSquereView *)self.view;
     }
@@ -31,11 +31,11 @@
 
 #pragma mark - Public
 - (IBAction)clockwiseButton:(UIButton *)sender {
-    [(ABSquereView *)self.view startClockwiseMoving];
+    [self.squereView startClockwiseMoving];
 }
 
 - (IBAction)randomButton:(UIButton *)sender {
-    [(ABSquereView *)self.view startRandomMoving];
+    [self.squereView startRandomMoving];
 }
 
 @end
