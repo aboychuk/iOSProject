@@ -89,15 +89,7 @@ static NSUInteger positionCount             = 4;
     
     CGFloat topX = self.frame.size.width - self.squere.frame.size.width;
     CGFloat bottomY = self.frame.size.height - self.squere.frame.size.height;
-
-    CGPoint squerePointTopRight = CGPointMake(topX, 0);
-    NSLog(@"%@", NSStringFromCGPoint(squerePointTopRight));
-
-    CGPoint squerePointBottomRight = CGPointMake(topX, bottomY);
-    NSLog(@"%@", NSStringFromCGPoint(squerePointBottomRight));
-    
-    CGPoint squerePointBottomLeft = CGPointMake(0, bottomY);
-    NSLog(@"%@", NSStringFromCGPoint(squerePointBottomLeft));
+    CGFloat zero = 0;
     
     switch (position) {
         case ABSquerePositionTopLeft:
@@ -105,15 +97,15 @@ static NSUInteger positionCount             = 4;
             break;
             
         case ABSquerePositionTopRight:
-            return squerePoint = squerePointTopRight;
+            return CGPointMake(topX, zero);
             break;
             
         case ABSquerePositionBottomRight:
-            return squerePoint = squerePointBottomRight;
+            return CGPointMake(topX, bottomY);
             break;
         
         case ABSquerePositionBottomLeft:
-            return squerePoint = squerePointBottomLeft;
+            return CGPointMake(zero, bottomY);
             break;
             
         default:
