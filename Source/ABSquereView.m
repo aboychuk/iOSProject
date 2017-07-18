@@ -11,7 +11,7 @@
 #import "ABRandomNumber.h"
 
 static BOOL ABSquereAnimation               = YES;
-static NSTimeInterval ABAnimationDuration   = 1;
+static NSTimeInterval ABAnimationDuration   = 2;
 static NSUInteger positionCount             = 4;
 
 @interface ABSquereView ()
@@ -79,12 +79,11 @@ static NSUInteger positionCount             = 4;
               }];
 }
 
-
 #pragma mark
 #pragma mark - Private Methods
 
 - (CGPoint)squereOriginPosition:(ABSquerePosition)position {
-    CGPoint squerePoint = self.squere.frame.origin;
+    CGPoint squerePoint = self.squere.bounds.origin;
     NSLog(@"%@", NSStringFromCGPoint(squerePoint));
 
     CGPoint squerePointTopRight = CGPointMake(self.frame.size.width - self.squere.frame.size.width, 0);
