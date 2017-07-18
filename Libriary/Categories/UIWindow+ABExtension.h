@@ -11,5 +11,6 @@
 @interface UIWindow (ABExtension)
 
 + (instancetype)window;
++ (instancetype)windowWithRootViewController:(UIViewController *)controller;
 
 @end

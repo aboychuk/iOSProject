@@ -14,4 +14,12 @@
     return [[self alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 }
 
++ (instancetype)windowWithRootViewController:(UIViewController *)controller {
+    UIWindow *window = [self window];
+    window.rootViewController = controller;
+    [window makeKeyAndVisible];
+    
+    return window;
+}
+
 @end
