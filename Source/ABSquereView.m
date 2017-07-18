@@ -86,15 +86,17 @@ static NSUInteger positionCount             = 4;
 
 - (CGPoint)squereOriginPosition:(ABSquerePosition)position {
     CGPoint squerePoint = self.squere.bounds.origin;
-    NSLog(@"%@", NSStringFromCGPoint(squerePoint));
+    
+    CGFloat topX = self.frame.size.width - self.squere.frame.size.width;
+    CGFloat bottomY = self.frame.size.height - self.squere.frame.size.height;
 
-    CGPoint squerePointTopRight = CGPointMake(self.frame.size.width - self.squere.frame.size.width, 0);
+    CGPoint squerePointTopRight = CGPointMake(topX, 0);
     NSLog(@"%@", NSStringFromCGPoint(squerePointTopRight));
 
-    CGPoint squerePointBottomRight = CGPointMake(self.frame.size.width - self.squere.frame.size.width,
-                                                 self.frame.size.height - self.squere.frame.size.height);
+    CGPoint squerePointBottomRight = CGPointMake(topX, bottomY);
     NSLog(@"%@", NSStringFromCGPoint(squerePointBottomRight));
-    CGPoint squerePointBottomLeft = CGPointMake(0, self.frame.size.height - self.squere.frame.size.height);
+    
+    CGPoint squerePointBottomLeft = CGPointMake(0, bottomY);
     NSLog(@"%@", NSStringFromCGPoint(squerePointBottomLeft));
     
     switch (position) {
