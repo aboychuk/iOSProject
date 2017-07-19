@@ -65,9 +65,7 @@
 #pragma mark
 #pragma mark Interface Handling
 
-- (IBAction)onRotateButton:(id)sender {
-    [self.userView rotateLabel];
-}
+
 
 
 @end

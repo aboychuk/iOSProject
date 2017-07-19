@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4935E37D1F0FB0560037660C /* ABUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4935E37C1F0FB0560037660C /* ABUserView.m */; };
-		4935E3801F0FC6410037660C /* ABUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4935E37F1F0FC6410037660C /* ABUser.m */; };
+		490A5DF11F1FE3EA00FD049F /* ABUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5DE91F1FE3EA00FD049F /* ABUser.m */; };
+		490A5DFB1F1FE44600FD049F /* ABUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5DF71F1FE44600FD049F /* ABUserView.m */; };
+		490A5DFC1F1FE44600FD049F /* ABUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5DF91F1FE44600FD049F /* ABUserViewController.m */; };
+		490A5DFD1F1FE44600FD049F /* ABUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490A5DFA1F1FE44600FD049F /* ABUserViewController.xib */; };
 		494DB09D1F0F7E6E003D34A9 /* ABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 494DB09C1F0F7E6E003D34A9 /* ABAppDelegate.m */; };
-		494DB0A11F0F7EE9003D34A9 /* ABUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494DB09F1F0F7EE9003D34A9 /* ABUserViewController.m */; };
-		494DB0A21F0F7EE9003D34A9 /* ABUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494DB0A01F0F7EE9003D34A9 /* ABUserViewController.xib */; };
 		494DB0A51F0F8019003D34A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494DB0A31F0F8019003D34A9 /* Main.storyboard */; };
-		49D0CCA11F16334B00D73194 /* ABDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D0CCA01F16334B00D73194 /* ABDraggableView.m */; };
 		49E0A4E41F0D00CB00ACD9D1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49E0A4E21F0D00CB00ACD9D1 /* Info.plist */; };
 		49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0A4E31F0D00CB00ACD9D1 /* main.m */; };
 		49E0A4F11F0D00D600ACD9D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E0A4E71F0D00D600ACD9D1 /* Assets.xcassets */; };
@@ -42,18 +41,16 @@
 
 /* Begin PBXFileReference section */
 		2A87253A4A367DC6F1E3F4C2 /* Pods-iOSProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectTests/Pods-iOSProjectTests.release.xcconfig"; sourceTree = "<group>"; };
-		4935E37B1F0FB0560037660C /* ABUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserView.h; sourceTree = "<group>"; };
-		4935E37C1F0FB0560037660C /* ABUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserView.m; sourceTree = "<group>"; };
-		4935E37E1F0FC6410037660C /* ABUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUser.h; sourceTree = "<group>"; };
-		4935E37F1F0FC6410037660C /* ABUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUser.m; sourceTree = "<group>"; };
+		490A5DE81F1FE3EA00FD049F /* ABUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUser.h; sourceTree = "<group>"; };
+		490A5DE91F1FE3EA00FD049F /* ABUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUser.m; sourceTree = "<group>"; };
+		490A5DF61F1FE44600FD049F /* ABUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserView.h; sourceTree = "<group>"; };
+		490A5DF71F1FE44600FD049F /* ABUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserView.m; sourceTree = "<group>"; };
+		490A5DF81F1FE44600FD049F /* ABUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserViewController.h; sourceTree = "<group>"; };
+		490A5DF91F1FE44600FD049F /* ABUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserViewController.m; sourceTree = "<group>"; };
+		490A5DFA1F1FE44600FD049F /* ABUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserViewController.xib; sourceTree = "<group>"; };
 		494DB09B1F0F7E6E003D34A9 /* ABAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABAppDelegate.h; sourceTree = "<group>"; };
 		494DB09C1F0F7E6E003D34A9 /* ABAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABAppDelegate.m; sourceTree = "<group>"; };
-		494DB09E1F0F7EE9003D34A9 /* ABUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserViewController.h; sourceTree = "<group>"; };
-		494DB09F1F0F7EE9003D34A9 /* ABUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserViewController.m; sourceTree = "<group>"; };
-		494DB0A01F0F7EE9003D34A9 /* ABUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserViewController.xib; sourceTree = "<group>"; };
 		494DB0A41F0F8019003D34A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		49D0CC9F1F16334B00D73194 /* ABDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABDraggableView.h; sourceTree = "<group>"; };
-		49D0CCA01F16334B00D73194 /* ABDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABDraggableView.m; sourceTree = "<group>"; };
 		49E0A4E21F0D00CB00ACD9D1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E0A4E31F0D00CB00ACD9D1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49E0A4E71F0D00D600ACD9D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,20 +93,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		494DB09A1F0F7E5D003D34A9 /* ABViewController */ = {
+		490A5DE51F1FE3EA00FD049F /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				494DB09E1F0F7EE9003D34A9 /* ABUserViewController.h */,
-				494DB09F1F0F7EE9003D34A9 /* ABUserViewController.m */,
-				494DB0A01F0F7EE9003D34A9 /* ABUserViewController.xib */,
-				4935E37B1F0FB0560037660C /* ABUserView.h */,
-				4935E37C1F0FB0560037660C /* ABUserView.m */,
-				49D0CC9F1F16334B00D73194 /* ABDraggableView.h */,
-				49D0CCA01F16334B00D73194 /* ABDraggableView.m */,
-				4935E37E1F0FC6410037660C /* ABUser.h */,
-				4935E37F1F0FC6410037660C /* ABUser.m */,
+				490A5DE61F1FE3EA00FD049F /* Models */,
+				490A5DEA1F1FE3EA00FD049F /* UI */,
 			);
-			path = ABViewController;
+			path = Source;
+			sourceTree = "<group>";
+		};
+		490A5DE61F1FE3EA00FD049F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				490A5DE71F1FE3EA00FD049F /* ABUser */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		490A5DE71F1FE3EA00FD049F /* ABUser */ = {
+			isa = PBXGroup;
+			children = (
+				490A5DE81F1FE3EA00FD049F /* ABUser.h */,
+				490A5DE91F1FE3EA00FD049F /* ABUser.m */,
+			);
+			path = ABUser;
+			sourceTree = "<group>";
+		};
+		490A5DEA1F1FE3EA00FD049F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				490A5DFE1F1FE46F00FD049F /* ABUsersViewController */,
+				490A5DF51F1FE44600FD049F /* ABUserViewController */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		490A5DF51F1FE44600FD049F /* ABUserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				490A5DF61F1FE44600FD049F /* ABUserView.h */,
+				490A5DF71F1FE44600FD049F /* ABUserView.m */,
+				490A5DF81F1FE44600FD049F /* ABUserViewController.h */,
+				490A5DF91F1FE44600FD049F /* ABUserViewController.m */,
+				490A5DFA1F1FE44600FD049F /* ABUserViewController.xib */,
+			);
+			path = ABUserViewController;
+			sourceTree = "<group>";
+		};
+		490A5DFE1F1FE46F00FD049F /* ABUsersViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ABUsersViewController;
 			sourceTree = "<group>";
 		};
 		49E0A4E11F0D00CB00ACD9D1 /* iOSProject */ = {
@@ -131,14 +166,6 @@
 				49E0A4E81F0D00D600ACD9D1 /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		49E0A4EC1F0D00D600ACD9D1 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				494DB09A1F0F7E5D003D34A9 /* ABViewController */,
-			);
-			path = Source;
 			sourceTree = "<group>";
 		};
 		49E0A4F91F0D026000ACD9D1 /* Specs */ = {
@@ -169,8 +196,8 @@
 		49FB26061F0CFB0D00801FD7 = {
 			isa = PBXGroup;
 			children = (
+				490A5DE51F1FE3EA00FD049F /* Source */,
 				49E0A4E11F0D00CB00ACD9D1 /* iOSProject */,
-				49E0A4EC1F0D00D600ACD9D1 /* Source */,
 				49E0A4E61F0D00D600ACD9D1 /* Resource */,
 				7E7EA6F84734EB9BF3ED9ABB /* Frameworks */,
 				49FB262B1F0CFB0D00801FD7 /* iOSProjectTests */,
@@ -337,9 +364,9 @@
 			files = (
 				49E0A4F21F0D00D600ACD9D1 /* LaunchScreen.storyboard in Resources */,
 				494DB0A51F0F8019003D34A9 /* Main.storyboard in Resources */,
+				490A5DFD1F1FE44600FD049F /* ABUserViewController.xib in Resources */,
 				49E0A4F11F0D00D600ACD9D1 /* Assets.xcassets in Resources */,
 				49E0A4E41F0D00CB00ACD9D1 /* Info.plist in Resources */,
-				494DB0A21F0F7EE9003D34A9 /* ABUserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,11 +440,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */,
-				494DB0A11F0F7EE9003D34A9 /* ABUserViewController.m in Sources */,
-				4935E37D1F0FB0560037660C /* ABUserView.m in Sources */,
+				490A5DF11F1FE3EA00FD049F /* ABUser.m in Sources */,
+				490A5DFC1F1FE44600FD049F /* ABUserViewController.m in Sources */,
+				490A5DFB1F1FE44600FD049F /* ABUserView.m in Sources */,
 				494DB09D1F0F7E6E003D34A9 /* ABAppDelegate.m in Sources */,
-				4935E3801F0FC6410037660C /* ABUser.m in Sources */,
-				49D0CCA11F16334B00D73194 /* ABDraggableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,46 +19,24 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rUc-Hn-veK">
-                    <rect key="frame" x="16" y="617" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <state key="normal" title="Rotate"/>
-                    <connections>
-                        <action selector="onRotateButton:" destination="-1" eventType="touchUpInside" id="X9h-2o-4ec"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MAMA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0R6-US-KKf">
-                    <rect key="frame" x="87" y="239" width="200" height="100"/>
+                    <rect key="frame" x="0.0" y="204" width="375" height="135"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </label>
-                <view contentMode="scaleToFill" misplaced="YES" id="vb1-Sh-KsA" customClass="ABDraggableView">
-                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                    <connections>
-                        <outlet property="recognizer" destination="xYO-VR-Xte" id="5Rl-VC-ZSm"/>
-                    </connections>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>
             <connections>
-                <outlet property="button" destination="rUc-Hn-veK" id="LwA-We-hdH"/>
-                <outlet property="draggableView" destination="vb1-Sh-KsA" id="Nfv-5y-FDj"/>
                 <outlet property="label" destination="0R6-US-KKf" id="dTW-r4-8Sm"/>
                 <outletCollection property="gestureRecognizers" destination="xYO-VR-Xte" appends="YES" id="XWH-uc-9aV"/>
             </connections>
             <point key="canvasLocation" x="35.5" y="53.5"/>
         </view>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="xYO-VR-Xte">
-            <connections>
-                <action selector="onPan:" destination="vb1-Sh-KsA" id="hn7-H3-dIW"/>
-            </connections>
-        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="xYO-VR-Xte"/>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

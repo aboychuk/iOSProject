@@ -25,10 +25,6 @@
 #pragma mark
 #pragma mark Public Methods
 
-- (void)rotateLabel {
-    self.label.transform = CGAffineTransformMakeRotation((float)arc4random() / UINT32_MAX * 2 * M_PI);
-}
-
 - (void)fillWithUser:(ABUser *)user {
     self.label.text = user.fullname;
 }

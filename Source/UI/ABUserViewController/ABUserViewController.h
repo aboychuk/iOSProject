@@ -13,6 +13,4 @@
 @interface ABUserViewController : UIViewController
 @property (nonatomic, strong)   ABUser    *user;
 
-- (IBAction)onRotateButton:(id)sender;
-
 @end
