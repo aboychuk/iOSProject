@@ -21,6 +21,22 @@ static NSTimeInterval ABTimeIntetval    = 1.0;
 
 @implementation ABDraggableView
 
+#pragma mark
+#pragma mark Initializations and Deallocations
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    CALayer *layer = self.layer;
+    layer.borderColor = [[UIColor blackColor] CGColor];
+    layer.borderWidth = 2.0;
+    layer.cornerRadius = CGRectGetWidth(self.frame) / 2;
+}
+
+
+#pragma mark
+#pragma mark Interface Handling
+
 - (IBAction)onPan:(UIPanGestureRecognizer *)sender {
     [self moveToLocation:[sender translationInView:self.superview]];
 }
@@ -88,11 +104,19 @@ static NSTimeInterval ABTimeIntetval    = 1.0;
 - (void)moveToLocation:(CGPoint)location {
     CGRect frame = self.frame;
     frame.origin = location;
+    CGFloat dimension = location.x / 50;
+    frame.size = CGSizeMake(dimension * 160, dimension * 160);
     
     [UIView animateWithDuration:ABTimeIntetval
                      animations:^{
                          self.frame = frame;
     }];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.layer.cornerRadius = CGRectGetWidth(self.frame) / 2;
 }
 
 
