@@ -11,8 +11,8 @@
 #import "ABRandomNumber.h"
 #import "ABMacro.h"
 
-static BOOL ABSquereAnimation               = YES;
-static NSTimeInterval ABAnimationDuration   = 2;
+static BOOL ABAnimatedDefault               = YES;
+static NSTimeInterval ABAnimationDuration   = 0.1;
 static NSUInteger positionCount             = 4;
 
 @interface ABSquereView ()
@@ -27,7 +27,7 @@ static NSUInteger positionCount             = 4;
 #pragma mark - Accessors
 
 - (void)setSquerePosition:(ABSquerePosition)squerePosition {
-    [self setSquerePosition:squerePosition animated:ABSquereAnimation];
+    [self setSquerePosition:squerePosition animated:ABAnimatedDefault];
 }
 
 - (void)setSquerePosition:(ABSquerePosition)squerePosition
@@ -63,7 +63,7 @@ static NSUInteger positionCount             = 4;
 - (void)startClockwiseMoving {
     ABWeakify(self);
     [self setSquerePosition:[self moveToNextPosition]
-                   animated:ABSquereAnimation
+                   animated:ABAnimatedDefault
           completionHandler:^{
               ABStrongify(self);
               [self startClockwiseMoving];
@@ -73,7 +73,7 @@ static NSUInteger positionCount             = 4;
 - (void)startRandomMoving {
     ABWeakify(self);
     [self setSquerePosition:[self moveToRandomPosition]
-                       animated:ABSquereAnimation
+                       animated:ABAnimatedDefault
               completionHandler:^{
                   ABStrongify(self);
                   [self startClockwiseMoving];
