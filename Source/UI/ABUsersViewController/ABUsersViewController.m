@@ -10,6 +10,7 @@
 
 #import "ABUser.h"
 #import "ABUsersView.h"
+#import "ABUserCell.h"
 
 #import "ABMacro.h"
 
@@ -53,13 +54,14 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString * const kABCellName = @"kABCellName";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kABCellName];
+    NSString *cellClass = NSStringFromClass([ABUserCell class]);
+    ABUserCell *cell = [tableView dequeueReusableCellWithIdentifier:cellClass];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:kABCellName];
+        UINib *nib = [UINib nibWithNibName:cellClass bundle:nil];
+        NSArray *cells = [nib instantiateWithOwner:nil options:nil];
+        cell = [cells firstObject];
     }
-    cell.textLabel.text = self.user.fullname;
+    cell.user = [ABUser new];
     
     return cell;
 }

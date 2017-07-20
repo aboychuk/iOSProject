@@ -9,6 +9,8 @@
 #import "ABUser.h"
 
 @implementation ABUser
+@dynamic fullname;
+@dynamic image;
 
 #pragma mark
 #pragma mark Initializations and Deallocations
@@ -28,6 +30,12 @@
 
 - (NSString *)fullname {
     return [NSString stringWithFormat:@"%@ %@", self.name, self.surname];
+}
+
+- (UIImage *)image {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"image" ofType:@"png"];
+    
+    return [UIImage imageWithContentsOfFile:path];
 }
 
 @end
