@@ -1,0 +1,100 @@
+//
+//  ABObservableObject.m
+//  IDAPCourse
+//
+//  Created by Andrew Boychuk on 5/30/17.
+//  Copyright © 2017 Andrew Boychuk. All rights reserved.
+//
+
+#import "ABObservableObject.h"
+
+@interface ABObservableObject ()
+@property (nonatomic, retain)   NSHashTable    *mutableObserversHashTable;
+
+@end
+
+@implementation ABObservableObject
+
+@dynamic observersSet;
+
+#pragma mark
+#pragma mark - Initializations and Deallocations
+
+- (void)dealloc {
+    self.mutableObserversHashTable = nil;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.mutableObserversHashTable = [NSHashTable weakObjectsHashTable];
+    }
+    
+    return self;
+}
+
+#pragma mark
+#pragma mark - Accesors
+
+- (NSSet *)obsrversSet {
+    @synchronized (self) {
+        return [self.mutableObserversHashTable setRepresentation];
+    }
+}
+
+- (void)setState:(NSUInteger)state {
+    @synchronized (self) {
+        if (state != _state) {
+            _state = state;
+            
+            [self notifyOfState:state];
+        }
+    }
+}
+
+#pragma mark
+#pragma mark - Public Methods
+
+- (void)addObserver:(id)observer {
+    @synchronized (self) {
+        [self.mutableObserversHashTable addObject:observer];
+    }
+}
+
+- (void)removeObserver:(id)observer {
+    @synchronized (self) {
+        [self.mutableObserversHashTable removeObject:observer];
+    }
+}
+
+- (BOOL)isObservedByObject:(id)observer {
+    @synchronized (self) {
+        return [self.mutableObserversHashTable containsObject:observer];
+    }
+}
+
+- (void)notifyOfState:(NSUInteger)state {
+    @synchronized (self) {
+        [self notifyOfStateChangeWithSelector:[self selectorForState:state]];
+    }
+}
+
+#pragma mark
+#pragma mark - Private Methods
+
+- (SEL)selectorForState:(NSUInteger)state {
+    [self doesNotRecognizeSelector:_cmd];
+    
+    return NULL;
+}
+
+- (void)notifyOfStateChangeWithSelector:(SEL)selector {
+    NSHashTable *observersHashTable = self.mutableObserversHashTable;
+    for (id observer in observersHashTable) {
+        if ([observer respondsToSelector:selector]) {
+            [observer performSelector:selector withObject:self];
+        }
+    }
+}
+
+@end

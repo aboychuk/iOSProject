@@ -16,6 +16,9 @@
 		490A5E061F1FE9C700FD049F /* ABUsersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E051F1FE9C700FD049F /* ABUsersView.m */; };
 		490A5E101F1FECC400FD049F /* ABMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E0F1F1FECC400FD049F /* ABMacro.m */; };
 		493B6E411F20EED5001AE474 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 493B6E401F20EED5001AE474 /* image.png */; };
+		493B6E481F20F8D2001AE474 /* ABImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B6E471F20F8D2001AE474 /* ABImageModel.m */; };
+		493B6E4F1F20FF8E001AE474 /* ABObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B6E4E1F20FF8E001AE474 /* ABObservableObject.m */; };
+		493B6E531F211E82001AE474 /* ABImageModelDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B6E521F211E82001AE474 /* ABImageModelDispatcher.m */; };
 		494DB09D1F0F7E6E003D34A9 /* ABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 494DB09C1F0F7E6E003D34A9 /* ABAppDelegate.m */; };
 		494DB0A51F0F8019003D34A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494DB0A31F0F8019003D34A9 /* Main.storyboard */; };
 		4987C0181F20C72800D989BC /* ABTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4987C0171F20C72800D989BC /* ABTableViewCell.m */; };
@@ -64,6 +67,12 @@
 		490A5E0E1F1FECC400FD049F /* ABMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMacro.h; sourceTree = "<group>"; };
 		490A5E0F1F1FECC400FD049F /* ABMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMacro.m; sourceTree = "<group>"; };
 		493B6E401F20EED5001AE474 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		493B6E461F20F8D2001AE474 /* ABImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABImageModel.h; sourceTree = "<group>"; };
+		493B6E471F20F8D2001AE474 /* ABImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABImageModel.m; sourceTree = "<group>"; };
+		493B6E4D1F20FF8E001AE474 /* ABObservableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABObservableObject.h; sourceTree = "<group>"; };
+		493B6E4E1F20FF8E001AE474 /* ABObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABObservableObject.m; sourceTree = "<group>"; };
+		493B6E511F211E82001AE474 /* ABImageModelDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABImageModelDispatcher.h; sourceTree = "<group>"; };
+		493B6E521F211E82001AE474 /* ABImageModelDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABImageModelDispatcher.m; sourceTree = "<group>"; };
 		494DB09B1F0F7E6E003D34A9 /* ABAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABAppDelegate.h; sourceTree = "<group>"; };
 		494DB09C1F0F7E6E003D34A9 /* ABAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABAppDelegate.m; sourceTree = "<group>"; };
 		494DB0A41F0F8019003D34A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +135,7 @@
 		490A5DE61F1FE3EA00FD049F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				493B6E451F20F8D2001AE474 /* ABImageModel */,
 				490A5DE71F1FE3EA00FD049F /* ABUser */,
 			);
 			path = Models;
@@ -200,9 +210,38 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		493B6E451F20F8D2001AE474 /* ABImageModel */ = {
+			isa = PBXGroup;
+			children = (
+				493B6E501F211E5A001AE474 /* Private */,
+				493B6E461F20F8D2001AE474 /* ABImageModel.h */,
+				493B6E471F20F8D2001AE474 /* ABImageModel.m */,
+			);
+			path = ABImageModel;
+			sourceTree = "<group>";
+		};
+		493B6E491F20FDB9001AE474 /* ABObservableObject */ = {
+			isa = PBXGroup;
+			children = (
+				493B6E4D1F20FF8E001AE474 /* ABObservableObject.h */,
+				493B6E4E1F20FF8E001AE474 /* ABObservableObject.m */,
+			);
+			path = ABObservableObject;
+			sourceTree = "<group>";
+		};
+		493B6E501F211E5A001AE474 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				493B6E511F211E82001AE474 /* ABImageModelDispatcher.h */,
+				493B6E521F211E82001AE474 /* ABImageModelDispatcher.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		4987C0141F20C67200D989BC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				493B6E491F20FDB9001AE474 /* ABObservableObject */,
 				4987C0151F20C67200D989BC /* ABTableViewCell */,
 			);
 			path = Classes;
@@ -531,8 +570,11 @@
 				490A5E021F1FE97600FD049F /* ABUsersViewController.m in Sources */,
 				490A5DFC1F1FE44600FD049F /* ABUserViewController.m in Sources */,
 				490A5E061F1FE9C700FD049F /* ABUsersView.m in Sources */,
+				493B6E481F20F8D2001AE474 /* ABImageModel.m in Sources */,
+				493B6E531F211E82001AE474 /* ABImageModelDispatcher.m in Sources */,
 				490A5DFB1F1FE44600FD049F /* ABUserView.m in Sources */,
 				490A5E101F1FECC400FD049F /* ABMacro.m in Sources */,
+				493B6E4F1F20FF8E001AE474 /* ABObservableObject.m in Sources */,
 				494DB09D1F0F7E6E003D34A9 /* ABAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
