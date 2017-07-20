@@ -8,7 +8,7 @@
 
 #import "ABAppDelegate.h"
 
-#import "ABUserViewController.h"
+#import "ABUsersViewController.h"
 #import "ABUser.h"
 
 @interface ABAppDelegate ()
@@ -22,7 +22,7 @@
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
 
-    ABUserViewController *controller = [ABUserViewController new];
+    ABUsersViewController *controller = [ABUsersViewController new];
     controller.user = [ABUser new];
 
     window.rootViewController = controller;
