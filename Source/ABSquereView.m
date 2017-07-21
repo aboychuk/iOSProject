@@ -12,7 +12,7 @@
 #import "ABMacro.h"
 
 static BOOL ABAnimatedDefault               = YES;
-static NSTimeInterval ABAnimationDuration   = 0.1;
+static NSTimeInterval ABAnimationDuration   = 5;
 static NSUInteger positionCount             = 4;
 
 @interface ABSquereView ()
@@ -45,14 +45,15 @@ static NSUInteger positionCount             = 4;
                         CGRect squereOrigin = self.squere.frame;
                          squereOrigin.origin = [self squereOriginPosition:squerePosition];
                          self.squere.frame = squereOrigin;
+                         NSLog(@"squereOrigin%@", NSStringFromCGPoint(self.squere.frame.origin));
 
     }
                      completion:^(BOOL finished) {
-                         _squerePosition = squerePosition;
-
                          if (handler) {
                              handler();
                          }
+                         _squerePosition = squerePosition;
+
                      }];
     
 }
