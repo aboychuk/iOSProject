@@ -8,6 +8,8 @@
 
 #import "ABUser.h"
 
+#import "NSString+ABExtensions.h"
+
 @implementation ABUser
 @dynamic fullname;
 @dynamic image;
@@ -18,8 +20,8 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.name = @"Name";
-        self.surname = @"Surname";
+        self.name = [NSString randomStringWithLength:6 alphabet:[NSString lowercaseLetterAlphabet]];
+        self.surname = [NSString randomStringWithLength:6 alphabet:[NSString lowercaseLetterAlphabet]];
     }
     
     return self;

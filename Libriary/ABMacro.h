@@ -42,10 +42,10 @@
 
 #define ABEmptyParameter
 
-#define ABStrongifyAndReturnIfNil(object) \
+#define ABStrongifyAndReturnIfNil(object); \
     ABStrongifyAndReturnValueIfNil(object, ABEmptyParameter)
 
-#define ABStrongifyAndReturnNilIfNil(object) \
+#define ABStrongifyAndReturnNilIfNil(object); \
     ABStrongifyAndReturnValueIfNil(object, nil)
 
 #define ABStrongifyAndReturnValueIfNil(object, value) \

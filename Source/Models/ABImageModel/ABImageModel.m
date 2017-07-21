@@ -93,12 +93,12 @@
 - (NSOperation *)imageLoadingOperation {
     ABWeakify(self);
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        ABStrongifyAndReturn(self)
+        ABStrongify(self);
         self.image = [UIImage imageWithContentsOfFile:[self.url absoluteString]];
     }];
     
     operation.completionBlock = ^{
-        ABStrongifyAndReturn(self);
+        ABStrongify(self);
         self.state = self.image ? ABImageModelLoaded : ABImageModelLoadingFailed;
     };
     

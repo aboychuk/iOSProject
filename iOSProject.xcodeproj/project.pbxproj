@@ -24,6 +24,11 @@
 		4987C0181F20C72800D989BC /* ABTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4987C0171F20C72800D989BC /* ABTableViewCell.m */; };
 		4987C01C1F20CA6300D989BC /* ABUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4987C01B1F20CA6300D989BC /* ABUserCell.m */; };
 		4987C0201F20D03000D989BC /* ABUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4987C01F1F20D03000D989BC /* ABUserCell.xib */; };
+		49D334A61F229929002A20CB /* ABAlphabet.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D3349C1F229929002A20CB /* ABAlphabet.m */; };
+		49D334A71F229929002A20CB /* NSString+ABExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D3349E1F229929002A20CB /* NSString+ABExtensions.m */; };
+		49D334A81F229929002A20CB /* ABClasterAlphabet.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D334A11F229929002A20CB /* ABClasterAlphabet.m */; };
+		49D334A91F229929002A20CB /* ABRangeAlphabet.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D334A31F229929002A20CB /* ABRangeAlphabet.m */; };
+		49D334AA1F229929002A20CB /* ABStringsAlphabet.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D334A51F229929002A20CB /* ABStringsAlphabet.m */; };
 		49E0A4E41F0D00CB00ACD9D1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49E0A4E21F0D00CB00ACD9D1 /* Info.plist */; };
 		49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0A4E31F0D00CB00ACD9D1 /* main.m */; };
 		49E0A4F11F0D00D600ACD9D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E0A4E71F0D00D600ACD9D1 /* Assets.xcassets */; };
@@ -81,6 +86,16 @@
 		4987C01A1F20CA6300D989BC /* ABUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserCell.h; sourceTree = "<group>"; };
 		4987C01B1F20CA6300D989BC /* ABUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserCell.m; sourceTree = "<group>"; };
 		4987C01F1F20D03000D989BC /* ABUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserCell.xib; sourceTree = "<group>"; };
+		49D3349B1F229929002A20CB /* ABAlphabet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABAlphabet.h; sourceTree = "<group>"; };
+		49D3349C1F229929002A20CB /* ABAlphabet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABAlphabet.m; sourceTree = "<group>"; };
+		49D3349D1F229929002A20CB /* NSString+ABExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ABExtensions.h"; sourceTree = "<group>"; };
+		49D3349E1F229929002A20CB /* NSString+ABExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ABExtensions.m"; sourceTree = "<group>"; };
+		49D334A01F229929002A20CB /* ABClasterAlphabet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABClasterAlphabet.h; sourceTree = "<group>"; };
+		49D334A11F229929002A20CB /* ABClasterAlphabet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABClasterAlphabet.m; sourceTree = "<group>"; };
+		49D334A21F229929002A20CB /* ABRangeAlphabet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABRangeAlphabet.h; sourceTree = "<group>"; };
+		49D334A31F229929002A20CB /* ABRangeAlphabet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABRangeAlphabet.m; sourceTree = "<group>"; };
+		49D334A41F229929002A20CB /* ABStringsAlphabet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABStringsAlphabet.h; sourceTree = "<group>"; };
+		49D334A51F229929002A20CB /* ABStringsAlphabet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABStringsAlphabet.m; sourceTree = "<group>"; };
 		49E0A4E21F0D00CB00ACD9D1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E0A4E31F0D00CB00ACD9D1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49E0A4E71F0D00D600ACD9D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,6 +202,7 @@
 		490A5E071F1FEA7100FD049F /* Libriary */ = {
 			isa = PBXGroup;
 			children = (
+				49D3349A1F229929002A20CB /* RandomStrings */,
 				4987C0141F20C67200D989BC /* Classes */,
 				490A5E0E1F1FECC400FD049F /* ABMacro.h */,
 				490A5E0F1F1FECC400FD049F /* ABMacro.m */,
@@ -264,6 +280,31 @@
 				4987C01F1F20D03000D989BC /* ABUserCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		49D3349A1F229929002A20CB /* RandomStrings */ = {
+			isa = PBXGroup;
+			children = (
+				49D3349B1F229929002A20CB /* ABAlphabet.h */,
+				49D3349C1F229929002A20CB /* ABAlphabet.m */,
+				49D3349D1F229929002A20CB /* NSString+ABExtensions.h */,
+				49D3349E1F229929002A20CB /* NSString+ABExtensions.m */,
+				49D3349F1F229929002A20CB /* Private */,
+			);
+			path = RandomStrings;
+			sourceTree = "<group>";
+		};
+		49D3349F1F229929002A20CB /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				49D334A01F229929002A20CB /* ABClasterAlphabet.h */,
+				49D334A11F229929002A20CB /* ABClasterAlphabet.m */,
+				49D334A21F229929002A20CB /* ABRangeAlphabet.h */,
+				49D334A31F229929002A20CB /* ABRangeAlphabet.m */,
+				49D334A41F229929002A20CB /* ABStringsAlphabet.h */,
+				49D334A51F229929002A20CB /* ABStringsAlphabet.m */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 		49E0A4E11F0D00CB00ACD9D1 /* iOSProject */ = {
@@ -563,10 +604,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D334A81F229929002A20CB /* ABClasterAlphabet.m in Sources */,
 				49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */,
 				4987C0181F20C72800D989BC /* ABTableViewCell.m in Sources */,
 				490A5DF11F1FE3EA00FD049F /* ABUser.m in Sources */,
+				49D334A91F229929002A20CB /* ABRangeAlphabet.m in Sources */,
 				4987C01C1F20CA6300D989BC /* ABUserCell.m in Sources */,
+				49D334AA1F229929002A20CB /* ABStringsAlphabet.m in Sources */,
 				490A5E021F1FE97600FD049F /* ABUsersViewController.m in Sources */,
 				490A5DFC1F1FE44600FD049F /* ABUserViewController.m in Sources */,
 				490A5E061F1FE9C700FD049F /* ABUsersView.m in Sources */,
@@ -574,7 +618,9 @@
 				493B6E531F211E82001AE474 /* ABImageModelDispatcher.m in Sources */,
 				490A5DFB1F1FE44600FD049F /* ABUserView.m in Sources */,
 				490A5E101F1FECC400FD049F /* ABMacro.m in Sources */,
+				49D334A61F229929002A20CB /* ABAlphabet.m in Sources */,
 				493B6E4F1F20FF8E001AE474 /* ABObservableObject.m in Sources */,
+				49D334A71F229929002A20CB /* NSString+ABExtensions.m in Sources */,
 				494DB09D1F0F7E6E003D34A9 /* ABAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
