@@ -11,11 +11,13 @@
 #import "ABRandomNumber.h"
 #import "ABMacro.h"
 
-static BOOL ABAnimatedDefault               = YES;
+static BOOL ABAnimatedDefault               = NO;
 static NSTimeInterval ABAnimationDuration   = 5;
 static NSUInteger positionCount             = 4;
 
 @interface ABSquereView ()
+@property (nonatomic, assign, getter=isStarted) BOOL    started;
+
 - (ABSquerePosition)moveToNextPosition;
 - (ABSquerePosition)moveToRandomPosition;
 
@@ -42,9 +44,7 @@ static NSUInteger positionCount             = 4;
 {
     [UIView animateWithDuration:ABAnimationDuration
                      animations:^{
-                        CGRect squereOrigin = self.squere.frame;
-                         squereOrigin.origin = [self squereOriginPosition:squerePosition];
-                         self.squere.frame = squereOrigin;
+                         self.squere.frame = [self squereOriginPosition:squerePosition];
                          NSLog(@"squereOrigin%@", NSStringFromCGPoint(self.squere.frame.origin));
 
     }
@@ -63,6 +63,7 @@ static NSUInteger positionCount             = 4;
 
 - (void)startClockwiseMoving {
     ABWeakify(self);
+    self.started = YES;
     [self setSquerePosition:[self moveToNextPosition]
                    animated:ABAnimatedDefault
           completionHandler:^{
@@ -72,51 +73,57 @@ static NSUInteger positionCount             = 4;
 }
 
 - (void)startRandomMoving {
-    ABWeakify(self);
     [self setSquerePosition:[self moveToRandomPosition]
-                       animated:ABAnimatedDefault
-              completionHandler:^{
-                  ABStrongify(self);
-                  [self startClockwiseMoving];
-              }];
+                   animated:YES];
 }
 
+- (void)stopMoving {
+    [self setSquerePosition:ABSquerePositionTopLeft
+                   animated:YES];
+}
 
 #pragma mark
 #pragma mark - Private Methods
 
-- (CGPoint)squereOriginPosition:(ABSquerePosition)position {
-    CGPoint squerePoint = self.squere.bounds.origin;
+- (CGRect)squereOriginPosition:(ABSquerePosition)position {
+//    CGPoint squerePoint = self.squere.bounds.origin;
+    CGFloat squereHeight = self.squere.bounds.size.height;
+    CGFloat squereWidth = self.squere.bounds.size.width;
     
     CGFloat topX = self.frame.size.width - self.squere.frame.size.width;
     CGFloat bottomY = self.frame.size.height - self.squere.frame.size.height;
     CGFloat zero = 0;
+    CGRect squere = CGRectMake(zero, zero, squereWidth, squereHeight);
+    
     
     switch (position) {
         case ABSquerePositionTopLeft:
-            return squerePoint;
+            return squere;
             break;
             
         case ABSquerePositionTopRight:
-            return CGPointMake(topX, zero);
+            return squere = CGRectMake(topX, zero, squereWidth, squereHeight);
             break;
             
         case ABSquerePositionBottomRight:
-            return CGPointMake(topX, bottomY);
+            return squere = CGRectMake(topX, bottomY, squereWidth, squereHeight);
             break;
         
         case ABSquerePositionBottomLeft:
-            return CGPointMake(zero, bottomY);
+            return squere = CGRectMake(zero, bottomY, squereWidth, squereHeight);
             break;
             
         default:
             break;
     }
     
-    return squerePoint;
+    return squere;
 }
 
 - (ABSquerePosition)moveToNextPosition {
+    if ([self isStarted]) {
+        
+    }
     return (self.squerePosition + 1) % positionCount;
 }
 

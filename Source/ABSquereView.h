@@ -18,8 +18,8 @@ typedef NS_ENUM(NSUInteger, ABSquerePosition) {
 };
 
 @interface ABSquereView : UIView
-@property (nonatomic, strong)   IBOutlet UIView     *squere;
-@property (nonatomic, assign)   ABSquerePosition    squerePosition;
+@property (nonatomic, strong)                       IBOutlet UIView     *squere;
+@property (nonatomic, assign)                       ABSquerePosition    squerePosition;
 
 - (void)setSquerePosition:(ABSquerePosition)squerePosition;
 - (void)setSquerePosition:(ABSquerePosition)squerePosition animated:(BOOL)animated;
