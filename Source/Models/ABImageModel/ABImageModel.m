@@ -10,6 +10,8 @@
 
 #import "ABImageModelDispatcher.h"
 
+#import "ABMacro.h"
+
 @interface ABImageModel ()
 @property (nonatomic, strong)   UIImage     *image;
 @property (nonatomic, strong)   NSURL       *url;
@@ -89,15 +91,15 @@
 #pragma mark Private Methods
 
 - (NSOperation *)imageLoadingOperation {
-    __weak ABImageModel *weakSelf = self;
+    ABWeakify(self);
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        __strong ABImageModel *strongSelf = weakSelf;
-        strongSelf.image = [UIImage imageWithContentsOfFile:[self.url absoluteString]];
+        ABStrongifyAndReturn(self)
+        self.image = [UIImage imageWithContentsOfFile:[self.url absoluteString]];
     }];
     
     operation.completionBlock = ^{
-        __strong ABImageModel *strongSelf = weakSelf;
-        strongSelf.state = self.image ? ABImageModelLoaded : ABImageModelLoadingFailed;
+        ABStrongifyAndReturn(self);
+        self.state = self.image ? ABImageModelLoaded : ABImageModelLoadingFailed;
     };
     
     return operation;

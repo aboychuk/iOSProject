@@ -30,3 +30,26 @@
     ABRootViewGetterSyntesize(rootViewClass, propertyName) \
     @end
 
+#define ABWeakify(object) \
+    __weak __typeof(object) __ABWeakified_##object = object
+
+// You should call this method after you called weakify for same variable
+#define ABStrongify(object) \
+    _Pragma("clang diagnostic push") \
+    _Pragma("clang diagnostic ignored \"-Wshadow\"") \
+    __strong __typeof(object) object = __ABWeakified_##object \
+    _Pragma("clang diagnostic pop")
+
+#define ABEmptyParameter
+
+#define ABStrongifyAndReturnIfNil(object) \
+    ABStrongifyAndReturnValueIfNil(object, ABEmptyParameter)
+
+#define ABStrongifyAndReturnNilIfNil(object) \
+    ABStrongifyAndReturnValueIfNil(object, nil)
+
+#define ABStrongifyAndReturnValueIfNil(object, value) \
+    ABStrongify(object) \
+    if (!object) { \
+        return value; \
+    }
