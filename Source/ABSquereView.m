@@ -66,6 +66,14 @@ static NSUInteger positionCount             = 4;
 #pragma mark
 #pragma mark - Public Methods
 
+- (void)startCycleMove {
+    if ([self isRunnin]) {
+        self.running = NO;
+    } else {
+        [self startClockwiseMoving];
+    }
+}
+
 - (void)startClockwiseMoving {
     ABWeakify(self);
     self.running = YES;

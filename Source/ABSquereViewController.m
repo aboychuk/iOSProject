@@ -31,7 +31,7 @@
 
 #pragma mark - Public
 - (IBAction)clockwiseButton:(UIButton *)sender {
-    [self.squereView startClockwiseMoving];
+    [self.squereView startCycleMove];
 }
 
 - (IBAction)randomButton:(UIButton *)sender {

@@ -29,5 +29,6 @@ typedef NS_ENUM(NSUInteger, ABSquerePosition) {
 
 - (void)startClockwiseMoving;
 - (void)startRandomMoving;
+- (void)startCycleMove;
 
 @end
