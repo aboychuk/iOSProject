@@ -8,24 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^ABVoidBlock)(void);
+typedef void(^ABCompletionBlock)(BOOL);
 
 typedef NS_ENUM(NSUInteger, ABSquerePosition) {
     ABSquerePositionTopLeft,
     ABSquerePositionTopRight,
     ABSquerePositionBottomRight,
-    ABSquerePositionBottomLeft
+    ABSquerePositionBottomLeft,
+    ABSquerePositionCount
 };
 
 @interface ABSquereView : UIView
-@property (nonatomic, strong)                       IBOutlet UIView     *squere;
-@property (nonatomic, assign)                       ABSquerePosition    squerePosition;
+@property (nonatomic, strong)   IBOutlet UIView     *squere;
+@property (nonatomic, assign)   ABSquerePosition    squerePosition;
 
 - (void)setSquerePosition:(ABSquerePosition)squerePosition;
-- (void)setSquerePosition:(ABSquerePosition)squerePosition animated:(BOOL)animated;
+- (void)setSquerePosition:(ABSquerePosition)squerePosition
+                 animated:(BOOL)animated;
 - (void)setSquerePosition:(ABSquerePosition)squerePosition
                  animated:(BOOL)animated
-        completionHandler:(ABVoidBlock)handler;
+        completionHandler:(ABCompletionBlock)completionHandler;
 
 - (void)startClockwiseMoving;
 - (void)startRandomMoving;

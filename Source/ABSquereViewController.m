@@ -19,7 +19,8 @@
 
 @dynamic squereView;
 
-#pragma mark - Accessors
+#pragma mark -
+#pragma mark Accessors
 
 - (ABSquereView *)squereView {
     if ([self isViewLoaded] && [self.view isKindOfClass:[ABSquereView class]]) {
@@ -29,12 +30,15 @@
     return nil;
 }
 
-#pragma mark - Public
-- (IBAction)clockwiseButton:(UIButton *)sender {
+
+#pragma mark -
+#pragma mark Button Handlers
+
+- (IBAction)onAuto:(UIButton *)sender {
     [self.squereView startCycleMove];
 }
 
-- (IBAction)randomButton:(UIButton *)sender {
+- (IBAction)onRandom:(UIButton *)sender {
     [self.squereView startRandomMoving];
 }
 

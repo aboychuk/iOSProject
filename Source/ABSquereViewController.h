@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ABSquereViewController : UIViewController
-- (IBAction)clockwiseButton:(UIButton *)sender;
-- (IBAction)randomButton:(UIButton *)sender;
+- (IBAction)onAuto:(UIButton *)sender;
+- (IBAction)onRandom:(UIButton *)sender;
 
 @end

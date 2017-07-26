@@ -30,7 +30,7 @@
                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <state key="normal" title="Random"/>
                     <connections>
-                        <action selector="randomButton:" destination="-1" eventType="touchUpInside" id="7ir-t4-WqT"/>
+                        <action selector="onRandom:" destination="-1" eventType="touchUpInside" id="Lg8-wh-B3S"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6N2-oS-jl0">
@@ -39,7 +39,7 @@
                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <state key="normal" title="Auto"/>
                     <connections>
-                        <action selector="clockwiseButton:" destination="-1" eventType="touchUpInside" id="FV0-hL-XVN"/>
+                        <action selector="onAuto:" destination="-1" eventType="touchUpInside" id="BxK-uw-dFC"/>
                     </connections>
                 </button>
             </subviews>
@@ -47,7 +47,7 @@
             <connections>
                 <outlet property="squere" destination="18M-ds-KXc" id="eRR-B7-IOS"/>
             </connections>
-            <point key="canvasLocation" x="26.5" y="69.5"/>
+            <point key="canvasLocation" x="50" y="269"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

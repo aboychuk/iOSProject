@@ -1,4 +1,4 @@
-//
+ //
 //  ABSquereView.m
 //  iOSProject
 //
@@ -11,17 +11,15 @@
 #import "ABRandomNumber.h"
 #import "ABMacro.h"
 
-static BOOL ABAnimatedDefault               = YES;
 static NSTimeInterval ABAnimationDuration   = 1;
-static NSUInteger positionCount             = 4;
+static NSUInteger positionCount             = ABSquerePositionCount;
 
 @interface ABSquereView ()
-@property (nonatomic, assign, getter=isRunnin) BOOL    running;
+@property (nonatomic, assign, getter=isRunning) BOOL    running;
 
 - (ABSquerePosition)moveToNextPosition;
 - (ABSquerePosition)moveToRandomPosition;
-- (CGRect)squreFramePosition:(ABSquerePosition)squerePosition;
-- (CGPoint)squereOriginPosition:(ABSquerePosition)position;
+- (CGRect)squereFrameForPosition:(ABSquerePosition)squerePosition;
 
 @end
 
@@ -32,7 +30,7 @@ static NSUInteger positionCount             = 4;
 
 - (void)setSquerePosition:(ABSquerePosition)squerePosition {
     [self setSquerePosition:squerePosition
-                   animated:ABAnimatedDefault];
+                   animated:YES];
 }
 
 - (void)setSquerePosition:(ABSquerePosition)squerePosition
@@ -45,93 +43,81 @@ static NSUInteger positionCount             = 4;
 
 - (void)setSquerePosition:(ABSquerePosition)squerePosition
                  animated:(BOOL)animated
-        completionHandler:(ABVoidBlock)handler
+        completionHandler:(ABCompletionBlock)completionHandler
 {
     [UIView animateWithDuration:ABAnimationDuration
+                          delay:0
+                        options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationCurveEaseOut
                      animations:^{
-                         self.squere.frame = [self squreFramePosition:squerePosition];
+                         self.squere.frame = [self squereFrameForPosition:squerePosition];
                          NSLog(@"squereOrigin%@", NSStringFromCGPoint(self.squere.frame.origin));
-
     }
                      completion:^(BOOL finished) {
-                         if (handler) {
-                             handler();
+                         if (completionHandler) {
+                             completionHandler(finished);
                          }
                          _squerePosition = squerePosition;
-
                      }];
-    
 }
 
 #pragma mark
 #pragma mark - Public Methods
 
+- (void)startRandomMoving {
+    self.running = !self.running;
+    [self setSquerePosition:[self moveToRandomPosition]
+                   animated:YES];
+
+}
+
 - (void)startCycleMove {
-    if ([self isRunnin]) {
-        self.running = NO;
-    } else {
-        [self startClockwiseMoving];
-    }
+    self.running = !self.running;
+    [self startClockwiseMoving];
 }
 
 - (void)startClockwiseMoving {
     ABWeakify(self);
-    self.running = YES;
     [self setSquerePosition:[self moveToNextPosition]
-                   animated:ABAnimatedDefault
-          completionHandler:^{
-              ABStrongify(self);
-              if ([self isRunnin]) {
-                  [self startClockwiseMoving];
-              } else {
-                  self.running = NO;
-              }
-          }];
-}
-
-- (void)startRandomMoving {
-    self.running = YES;
-    [self setSquerePosition:[self moveToRandomPosition]
-                   animated:YES];
+                   animated:YES
+          completionHandler:^(BOOL finished) {
+                           ABStrongify(self);
+                           if ([self isRunning]) {
+                               [self startClockwiseMoving];
+                           } else {
+                               self.running = NO;
+                           }
+                   }];
 }
 
 #pragma mark
 #pragma mark - Private Methods
 
-- (CGPoint)squereOriginPosition:(ABSquerePosition)position {
-    CGPoint squerePoint = self.squere.bounds.origin;
-    CGFloat maxXPosition = self.frame.size.width - self.squere.frame.size.width;
-    CGFloat maxYPosition = self.frame.size.height - self.squere.frame.size.height;
-    CGFloat zero = 0;
+- (CGRect)squereFrameForPosition:(ABSquerePosition)position {
+    CGRect squereFrame = self.squere.frame;
+    CGPoint squerePoint = CGPointZero;
     
+    CGFloat maxXPosition = self.frame.size.width - squereFrame.size.width;
+    CGFloat maxYPosition = self.frame.size.height - squereFrame.size.height;
     
     switch (position) {
-        case ABSquerePositionTopLeft:
-            return squerePoint;
-            break;
-            
         case ABSquerePositionTopRight:
-            return CGPointMake(maxXPosition, zero);
+            squerePoint.x = maxXPosition;
             break;
             
         case ABSquerePositionBottomRight:
-            return CGPointMake(maxXPosition, maxYPosition);
+            squerePoint.x = maxXPosition;
+            squerePoint.y = maxYPosition;
             break;
-        
+            
         case ABSquerePositionBottomLeft:
-            return CGPointMake(zero, maxYPosition);
+            squerePoint.y = maxYPosition;
             break;
             
         default:
             break;
     }
-    
-    return squerePoint;
-}
+    squereFrame.origin = squerePoint;
 
-- (CGRect)squreFramePosition:(ABSquerePosition)squerePosition {
-    CGRect squereFrame = self.squere.frame;
-    squereFrame.origin = [self squereOriginPosition:squerePosition];
     return squereFrame;
 }
 
@@ -140,10 +126,12 @@ static NSUInteger positionCount             = 4;
 }
 
 - (ABSquerePosition)moveToRandomPosition {
-    if ([self isRunnin]) {
-        self.running = NO;
+    ABSquerePosition randomPosition = ABRandomWithMaxValue(positionCount);
+    if (randomPosition == self.squerePosition) {
+        [self moveToRandomPosition];
     }
-    return ABRandomWithMaxValue(positionCount);
+    
+    return randomPosition;
 }
 
 @end

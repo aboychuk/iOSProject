@@ -9,8 +9,8 @@
 #define ABDefineRootViewProperty(viewClass, propertyName) \
     @property (nonatomic, readonly) viewClass  *propertyName;
 
-#define ABRootViewGetterSyntesize(viewClass, selector) \
-    - (viewClass *)selector { \
+#define ABRootViewGetterSyntesize(viewClass, propertyName) \
+    - (viewClass *)propertyName { \
         if ([self isViewLoaded] && [self.view isKindOfClass:[viewClass class]]) { \
             return (viewClass *)self.view; \
         } \
