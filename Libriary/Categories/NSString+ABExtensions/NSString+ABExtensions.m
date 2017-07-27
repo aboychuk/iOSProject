@@ -8,9 +8,18 @@
 
 #import "NSString+ABExtensions.h"
 
+static const NSUInteger ABRandomNameLength                  = 6;
 static const NSUInteger ABNSStringDefaultRandomStringLength = 30;
 
 @implementation NSString (ABExtensions)
+
++ (instancetype)randomName {
+    return [[NSString randomNameWithLength:ABRandomNameLength] capitalizedString];
+}
+
++ (instancetype)randomNameWithLength:(NSUInteger)length {
+    return [[NSString randomNameWithLength:length] capitalizedString];
+}
 
 + (instancetype)alphanumericAlphabet {
     NSMutableString *result = [NSMutableString stringWithString:[self letterAlphabet]];

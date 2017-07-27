@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (ABExtensions)
+
+//random name
++ (instancetype)randomName;
++ (instancetype)randomNameWithLength:(NSUInteger)length;
+
 //english
 + (instancetype)numericAlphabet;
 + (instancetype)alphanumericAlphabet;
