@@ -10,7 +10,6 @@
 
 @interface NSObject (ABObjectExtension)
 
-+ (instancetype)object;
 + (NSArray *)objectsWithCount:(NSUInteger)count;
 
 @end

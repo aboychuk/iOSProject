@@ -11,12 +11,8 @@
 
 @implementation NSObject (ABObjectExtension)
 
-+ (instancetype)object {
-    return [[[self alloc] init] autorelease];
-}
-
 + (NSArray *)objectsWithCount:(NSUInteger)count {
-    return [NSArray objectsWithCount:count factoryBlock: ^{ return [self object]; }];
+    return [NSArray objectsWithCount:count factoryBlock: ^{ return [self new]; }];
 }
 
 @end
