@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		490A5DF11F1FE3EA00FD049F /* ABUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5DE91F1FE3EA00FD049F /* ABUser.m */; };
-		490A5DFB1F1FE44600FD049F /* ABUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5DF71F1FE44600FD049F /* ABUserView.m */; };
-		490A5DFC1F1FE44600FD049F /* ABUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5DF91F1FE44600FD049F /* ABUserViewController.m */; };
-		490A5DFD1F1FE44600FD049F /* ABUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490A5DFA1F1FE44600FD049F /* ABUserViewController.xib */; };
 		490A5E021F1FE97600FD049F /* ABUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E001F1FE97600FD049F /* ABUsersViewController.m */; };
 		490A5E031F1FE97600FD049F /* ABUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490A5E011F1FE97600FD049F /* ABUsersViewController.xib */; };
 		490A5E061F1FE9C700FD049F /* ABUsersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E051F1FE9C700FD049F /* ABUsersView.m */; };
@@ -42,6 +39,7 @@
 		9748A9A61F2A1CF700A26097 /* ABGCDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9748A9941F2A1CF700A26097 /* ABGCDExtension.m */; };
 		9748A9A71F2A1CF700A26097 /* ABObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9748A9971F2A1CF700A26097 /* ABObservableObject.m */; };
 		9748A9A81F2A1CF700A26097 /* ABTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9748A99A1F2A1CF700A26097 /* ABTableViewCell.m */; };
+		9748A9AB1F2A3B0F00A26097 /* ABArrayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9748A9AA1F2A3B0F00A26097 /* ABArrayModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,11 +63,6 @@
 		2A87253A4A367DC6F1E3F4C2 /* Pods-iOSProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectTests/Pods-iOSProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		490A5DE81F1FE3EA00FD049F /* ABUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUser.h; sourceTree = "<group>"; };
 		490A5DE91F1FE3EA00FD049F /* ABUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUser.m; sourceTree = "<group>"; };
-		490A5DF61F1FE44600FD049F /* ABUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserView.h; sourceTree = "<group>"; };
-		490A5DF71F1FE44600FD049F /* ABUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserView.m; sourceTree = "<group>"; };
-		490A5DF81F1FE44600FD049F /* ABUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserViewController.h; sourceTree = "<group>"; };
-		490A5DF91F1FE44600FD049F /* ABUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserViewController.m; sourceTree = "<group>"; };
-		490A5DFA1F1FE44600FD049F /* ABUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserViewController.xib; sourceTree = "<group>"; };
 		490A5DFF1F1FE97600FD049F /* ABUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersViewController.h; sourceTree = "<group>"; };
 		490A5E001F1FE97600FD049F /* ABUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersViewController.m; sourceTree = "<group>"; };
 		490A5E011F1FE97600FD049F /* ABUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUsersViewController.xib; sourceTree = "<group>"; };
@@ -127,6 +120,8 @@
 		9748A9971F2A1CF700A26097 /* ABObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABObservableObject.m; sourceTree = "<group>"; };
 		9748A9991F2A1CF700A26097 /* ABTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABTableViewCell.h; sourceTree = "<group>"; };
 		9748A99A1F2A1CF700A26097 /* ABTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABTableViewCell.m; sourceTree = "<group>"; };
+		9748A9A91F2A3B0F00A26097 /* ABArrayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModel.h; sourceTree = "<group>"; };
+		9748A9AA1F2A3B0F00A26097 /* ABArrayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModel.m; sourceTree = "<group>"; };
 		D375A5E9AFDC133C93F4CB4B /* Pods-iOSProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectTests/Pods-iOSProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,21 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				490A5DFE1F1FE46F00FD049F /* ABUsersViewController */,
-				490A5DF51F1FE44600FD049F /* ABUserViewController */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		490A5DF51F1FE44600FD049F /* ABUserViewController */ = {
-			isa = PBXGroup;
-			children = (
-				490A5DF81F1FE44600FD049F /* ABUserViewController.h */,
-				490A5DF91F1FE44600FD049F /* ABUserViewController.m */,
-				490A5DFA1F1FE44600FD049F /* ABUserViewController.xib */,
-				490A5DF61F1FE44600FD049F /* ABUserView.h */,
-				490A5DF71F1FE44600FD049F /* ABUserView.m */,
-			);
-			path = ABUserViewController;
 			sourceTree = "<group>";
 		};
 		490A5DFE1F1FE46F00FD049F /* ABUsersViewController */ = {
@@ -229,9 +211,9 @@
 		493B6E451F20F8D2001AE474 /* ABImageModel */ = {
 			isa = PBXGroup;
 			children = (
-				493B6E501F211E5A001AE474 /* Private */,
 				493B6E461F20F8D2001AE474 /* ABImageModel.h */,
 				493B6E471F20F8D2001AE474 /* ABImageModel.m */,
+				493B6E501F211E5A001AE474 /* Private */,
 			);
 			path = ABImageModel;
 			sourceTree = "<group>";
@@ -503,6 +485,8 @@
 		97C964A11F29F7E60023B2A6 /* ABArrayModel */ = {
 			isa = PBXGroup;
 			children = (
+				9748A9A91F2A3B0F00A26097 /* ABArrayModel.h */,
+				9748A9AA1F2A3B0F00A26097 /* ABArrayModel.m */,
 			);
 			path = ABArrayModel;
 			sourceTree = "<group>";
@@ -630,7 +614,6 @@
 				4987C0201F20D03000D989BC /* ABUserCell.xib in Resources */,
 				494DB0A51F0F8019003D34A9 /* Main.storyboard in Resources */,
 				490A5E031F1FE97600FD049F /* ABUsersViewController.xib in Resources */,
-				490A5DFD1F1FE44600FD049F /* ABUserViewController.xib in Resources */,
 				49E0A4F11F0D00D600ACD9D1 /* Assets.xcassets in Resources */,
 				49E0A4E41F0D00CB00ACD9D1 /* Info.plist in Resources */,
 				493B6E411F20EED5001AE474 /* image.png in Resources */,
@@ -710,11 +693,11 @@
 				49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */,
 				9748A9A31F2A1CF700A26097 /* ABClasterAlphabet.m in Sources */,
 				9748A9A11F2A1CF700A26097 /* UIWindow+ABExtension.m in Sources */,
+				9748A9AB1F2A3B0F00A26097 /* ABArrayModel.m in Sources */,
 				490A5DF11F1FE3EA00FD049F /* ABUser.m in Sources */,
 				9748A9A41F2A1CF700A26097 /* ABRangeAlphabet.m in Sources */,
 				4987C01C1F20CA6300D989BC /* ABUserCell.m in Sources */,
 				490A5E021F1FE97600FD049F /* ABUsersViewController.m in Sources */,
-				490A5DFC1F1FE44600FD049F /* ABUserViewController.m in Sources */,
 				9748A9A61F2A1CF700A26097 /* ABGCDExtension.m in Sources */,
 				9748A9A81F2A1CF700A26097 /* ABTableViewCell.m in Sources */,
 				9748A9A51F2A1CF700A26097 /* ABStringsAlphabet.m in Sources */,
@@ -725,7 +708,6 @@
 				493B6E481F20F8D2001AE474 /* ABImageModel.m in Sources */,
 				493B6E531F211E82001AE474 /* ABImageModelDispatcher.m in Sources */,
 				9748A9A01F2A1CF700A26097 /* ABTimerWeakReference.m in Sources */,
-				490A5DFB1F1FE44600FD049F /* ABUserView.m in Sources */,
 				494DB09D1F0F7E6E003D34A9 /* ABAppDelegate.m in Sources */,
 				9748A9A71F2A1CF700A26097 /* ABObservableObject.m in Sources */,
 				9748A99C1F2A1CF700A26097 /* NSArray+ABExtension.m in Sources */,
