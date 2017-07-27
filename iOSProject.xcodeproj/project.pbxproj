@@ -14,7 +14,6 @@
 		490A5E021F1FE97600FD049F /* ABUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E001F1FE97600FD049F /* ABUsersViewController.m */; };
 		490A5E031F1FE97600FD049F /* ABUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490A5E011F1FE97600FD049F /* ABUsersViewController.xib */; };
 		490A5E061F1FE9C700FD049F /* ABUsersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E051F1FE9C700FD049F /* ABUsersView.m */; };
-		490A5E101F1FECC400FD049F /* ABMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E0F1F1FECC400FD049F /* ABMacro.m */; };
 		493B6E411F20EED5001AE474 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 493B6E401F20EED5001AE474 /* image.png */; };
 		493B6E481F20F8D2001AE474 /* ABImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B6E471F20F8D2001AE474 /* ABImageModel.m */; };
 		493B6E4F1F20FF8E001AE474 /* ABObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B6E4E1F20FF8E001AE474 /* ABObservableObject.m */; };
@@ -36,6 +35,7 @@
 		49E0A5031F0D047500ACD9D1 /* ABARCObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0A5021F0D047500ACD9D1 /* ABARCObject.m */; };
 		49E0A5061F0D049400ACD9D1 /* ABARCSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0A5051F0D049400ACD9D1 /* ABARCSpec.m */; };
 		54EC5C0E9136472865E5ECAB /* libPods-iOSProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 615FE69DAC50A9B7400CE7EE /* libPods-iOSProjectTests.a */; };
+		9748A96A1F2A153000A26097 /* ABMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 9748A9691F2A153000A26097 /* ABMacro.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +69,6 @@
 		490A5E011F1FE97600FD049F /* ABUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUsersViewController.xib; sourceTree = "<group>"; };
 		490A5E041F1FE9C700FD049F /* ABUsersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersView.h; sourceTree = "<group>"; };
 		490A5E051F1FE9C700FD049F /* ABUsersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersView.m; sourceTree = "<group>"; };
-		490A5E0E1F1FECC400FD049F /* ABMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMacro.h; sourceTree = "<group>"; };
-		490A5E0F1F1FECC400FD049F /* ABMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMacro.m; sourceTree = "<group>"; };
 		493B6E401F20EED5001AE474 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		493B6E461F20F8D2001AE474 /* ABImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABImageModel.h; sourceTree = "<group>"; };
 		493B6E471F20F8D2001AE474 /* ABImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABImageModel.m; sourceTree = "<group>"; };
@@ -109,6 +107,8 @@
 		49FB26331F0CFB0D00801FD7 /* iOSProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FB26391F0CFB0D00801FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		615FE69DAC50A9B7400CE7EE /* libPods-iOSProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9748A9681F2A153000A26097 /* ABMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMacro.h; sourceTree = "<group>"; };
+		9748A9691F2A153000A26097 /* ABMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMacro.m; sourceTree = "<group>"; };
 		D375A5E9AFDC133C93F4CB4B /* Pods-iOSProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectTests/Pods-iOSProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +150,7 @@
 		490A5DE61F1FE3EA00FD049F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				97C964A11F29F7E60023B2A6 /* ABArrayModel */,
 				493B6E451F20F8D2001AE474 /* ABImageModel */,
 				490A5DE71F1FE3EA00FD049F /* ABUser */,
 			);
@@ -202,10 +203,9 @@
 		490A5E071F1FEA7100FD049F /* Libriary */ = {
 			isa = PBXGroup;
 			children = (
+				9748A9671F2A153000A26097 /* ABMacro */,
 				49D3349A1F229929002A20CB /* RandomStrings */,
 				4987C0141F20C67200D989BC /* Classes */,
-				490A5E0E1F1FECC400FD049F /* ABMacro.h */,
-				490A5E0F1F1FECC400FD049F /* ABMacro.m */,
 				490A5E081F1FEA7100FD049F /* Categories */,
 			);
 			path = Libriary;
@@ -403,6 +403,22 @@
 				615FE69DAC50A9B7400CE7EE /* libPods-iOSProjectTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9748A9671F2A153000A26097 /* ABMacro */ = {
+			isa = PBXGroup;
+			children = (
+				9748A9681F2A153000A26097 /* ABMacro.h */,
+				9748A9691F2A153000A26097 /* ABMacro.m */,
+			);
+			path = ABMacro;
+			sourceTree = "<group>";
+		};
+		97C964A11F29F7E60023B2A6 /* ABArrayModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ABArrayModel;
 			sourceTree = "<group>";
 		};
 		A37FCB006A85B592D804657F /* Pods */ = {
@@ -605,6 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49D334A81F229929002A20CB /* ABClasterAlphabet.m in Sources */,
+				9748A96A1F2A153000A26097 /* ABMacro.m in Sources */,
 				49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */,
 				4987C0181F20C72800D989BC /* ABTableViewCell.m in Sources */,
 				490A5DF11F1FE3EA00FD049F /* ABUser.m in Sources */,
@@ -617,7 +634,6 @@
 				493B6E481F20F8D2001AE474 /* ABImageModel.m in Sources */,
 				493B6E531F211E82001AE474 /* ABImageModelDispatcher.m in Sources */,
 				490A5DFB1F1FE44600FD049F /* ABUserView.m in Sources */,
-				490A5E101F1FECC400FD049F /* ABMacro.m in Sources */,
 				49D334A61F229929002A20CB /* ABAlphabet.m in Sources */,
 				493B6E4F1F20FF8E001AE474 /* ABObservableObject.m in Sources */,
 				49D334A71F229929002A20CB /* NSString+ABExtensions.m in Sources */,
