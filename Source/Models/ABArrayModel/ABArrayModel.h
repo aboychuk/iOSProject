@@ -9,6 +9,7 @@
 #import "ABObservableObject.h"
 
 @interface ABArrayModel : ABObservableObject
+@property (nonatomic, assign)   NSUInteger  count;
 
 - (void)addObject:(id)object;
 - (void)addObjects:(id)objects;
@@ -16,7 +17,7 @@
 
 - (void)removeObject:(id)object;
 - (void)removeObjects:(id)objects;
-- (void)removeObject:(id)object atIndex:(NSUInteger)index;
+- (void)removeObjectAtIndex:(NSUInteger)index;
 
 - (id)objectAtIndex:(NSUInteger)index;
 
