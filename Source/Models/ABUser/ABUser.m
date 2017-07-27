@@ -20,8 +20,8 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.name = [NSString randomStringWithLength:6 alphabet:[NSString lowercaseLetterAlphabet]];
-        self.surname = [NSString randomStringWithLength:6 alphabet:[NSString lowercaseLetterAlphabet]];
+        self.name = [NSString randomName];
+        self.surname = [NSString randomName];
     }
     
     return self;
