@@ -18,7 +18,7 @@ static const NSUInteger ABNSStringDefaultRandomStringLength = 30;
 }
 
 + (instancetype)randomNameWithLength:(NSUInteger)length {
-    return [[NSString randomNameWithLength:length] capitalizedString];
+    return [[NSString randomStringWithLength:length alphabet:[self lowercaseLetterAlphabet]] capitalizedString];
 }
 
 + (instancetype)alphanumericAlphabet {
