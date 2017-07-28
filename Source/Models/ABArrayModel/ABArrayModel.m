@@ -94,4 +94,16 @@
     }
 }
 
+- (void)moveObjectFromIndex:(NSUInteger)sourceIndex ToIndex:(NSUInteger)destinationIndex {
+    if (sourceIndex == destinationIndex) {
+        return;
+    }
+    @synchronized (self) {
+        id object = [self.mutableObjects objectAtIndex:sourceIndex];
+        [self.mutableObjects removeObjectAtIndex:sourceIndex];
+        [self.mutableObjects insertObject:object atIndex:destinationIndex];
+    }
+}
+
+
 @end
