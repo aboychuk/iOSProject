@@ -10,6 +10,12 @@
 
 #import "ABUser.h"
 
+@interface ABUserCell ()
+
+- (void)fillWithModel:(ABUser *)user;
+
+@end
+
 @implementation ABUserCell
 
 #pragma mark -

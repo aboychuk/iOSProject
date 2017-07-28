@@ -94,9 +94,9 @@
     NSHashTable *observersHashTable = self.mutableObserversHashTable;
     for (id observer in observersHashTable) {
         if ([observer respondsToSelector:selector]) {
-            ABWarningPush
+            ABSelectorWarningLeakPush
             [observer performSelector:selector withObject:self];
-            ABWarningPop
+            ABSelectorWarningLeakPop
         }
     }
 }

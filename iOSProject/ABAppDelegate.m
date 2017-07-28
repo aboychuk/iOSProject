@@ -11,6 +11,8 @@
 #import "ABUsersViewController.h"
 #import "ABUser.h"
 
+#import "NSObject+ABObjectExtension.h"
+
 @interface ABAppDelegate ()
 
 @end
@@ -23,7 +25,7 @@
     self.window = window;
 
     ABUsersViewController *controller = [ABUsersViewController new];
-    controller.user = [ABUser new];
+    controller.users = [ABUser objectsWithCount:300];
 
     window.rootViewController = controller;
     window.backgroundColor = [UIColor greenColor];

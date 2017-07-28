@@ -37,9 +37,9 @@
 - (void)fireTimer:(NSTimer *)timer {
     id target = self.target;
     if (target) {
-        ABWarningPush
+        ABSelectorWarningLeakPush
         [target performSelector:self.selector withObject:timer];
-        ABWarningPop
+        ABSelectorWarningLeakPop
     }
 }
 
