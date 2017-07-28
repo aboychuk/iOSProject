@@ -9,7 +9,7 @@
 #import "ABArrayModel.h"
 
 @interface ABArrayModel ()
-@property (nonatomic, strong)   NSMutableArray  *mutableArray;
+@property (nonatomic, strong)   NSMutableArray  *mutableObjects;
 
 @end
 
@@ -21,7 +21,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.mutableArray = [NSMutableArray new];
+        self.mutableObjects = [NSMutableArray new];
     }
     
     return self;
@@ -33,54 +33,53 @@
 
 - (void)addObject:(id)object {
     @synchronized (self) {
-        [self.mutableArray addObject:object];
+        if (object) {
+            [self.mutableObjects addObject:object];
+        }
     }
 }
 
 - (void)addObjects:(id)objects {
     for (id object in objects) {
-        [self.mutableArray addObject:object];
+        [self addObject:object];
     }
 }
 
 - (void)addObject:(id)object atIndex:(NSUInteger)index {
     @synchronized (self) {
         if (index < self.count) {
-            [self.mutableArray insertObject:object atIndex:index];
+            [self.mutableObjects insertObject:object atIndex:index];
         }
     }
 }
 
 - (void)removeObject:(id)object {
     @synchronized (self) {
-        [self.mutableArray removeObject:object];
+        [self.mutableObjects removeObject:object];
     }
 }
 
 - (void)removeObjects:(id)objects {
-    @synchronized (self) {
-        for (id object in objects) {
-            [self.mutableArray removeObject:object];
-        }
+    for (id object in objects) {
+        [self removeObject:object];
     }
 }
 
 - (void)removeObjectAtIndex:(NSUInteger)index {
     @synchronized (self) {
         if (index < self.count) {
-            [self.mutableArray removeObjectAtIndex:index];
+            [self.mutableObjects removeObjectAtIndex:index];
         }
     }
 }
 
 - (id)objectAtIndex:(NSUInteger)index {
     @synchronized (self) {
-        NSMutableArray *array = self.mutableArray;
         if (index < self.count) {
             return nil;
         }
         
-        return [array objectAtIndex:index];
+        return self.mutableObjects[index];
     }
 }
 
