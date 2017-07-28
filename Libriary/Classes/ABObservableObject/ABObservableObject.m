@@ -8,6 +8,8 @@
 
 #import "ABObservableObject.h"
 
+#import "ABMacro.h"
+
 @interface ABObservableObject ()
 @property (nonatomic, retain)   NSHashTable    *mutableObserversHashTable;
 
@@ -92,7 +94,9 @@
     NSHashTable *observersHashTable = self.mutableObserversHashTable;
     for (id observer in observersHashTable) {
         if ([observer respondsToSelector:selector]) {
+            ABWarningPush
             [observer performSelector:selector withObject:self];
+            ABWarningPop
         }
     }
 }

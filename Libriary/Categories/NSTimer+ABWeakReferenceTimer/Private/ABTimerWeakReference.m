@@ -8,6 +8,8 @@
 
 #import "ABTimerWeakReference.h"
 
+#import "ABMacro.h"
+
 @interface ABTimerWeakReference ()
 @property (nonatomic, assign)   id    target;
 @property (nonatomic, assign)   SEL   selector;
@@ -35,7 +37,9 @@
 - (void)fireTimer:(NSTimer *)timer {
     id target = self.target;
     if (target) {
+        ABWarningPush
         [target performSelector:self.selector withObject:timer];
+        ABWarningPop
     }
 }
 
