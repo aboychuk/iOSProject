@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ABUser;
+@class ABArrayModel;
 
 @interface ABUsersViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong)   ABUser  *user;
+@property (nonatomic, strong)   ABArrayModel  *users;
 
 @end
