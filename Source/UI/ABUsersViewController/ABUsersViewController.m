@@ -14,6 +14,7 @@
 #import "ABArrayModel.h"
 
 #import "ABMacro.h"
+#import "UITableView+ABExtension.h"
 
 ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
@@ -38,13 +39,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellClass = NSStringFromClass([ABUserCell class]);
-    ABUserCell *cell = [tableView dequeueReusableCellWithIdentifier:cellClass];
-    if (!cell) {
-        UINib *nib = [UINib nibWithNibName:cellClass bundle:nil];
-        NSArray *cells = [nib instantiateWithOwner:nil options:nil];
-        cell = [cells firstObject];
-    }
+    ABUserCell *cell = [tableView reusableCellWithClass:[ABUserCell class]];
     cell.user = [ABUser new];
     
     return cell;
