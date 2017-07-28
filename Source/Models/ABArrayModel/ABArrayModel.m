@@ -15,6 +15,8 @@
 
 @implementation ABArrayModel
 
+@dynamic count;
+
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
@@ -25,6 +27,15 @@
     }
     
     return self;
+}
+
+#pragma mark -
+#pragma mark Accessors
+
+- (NSUInteger)count {
+    @synchronized (self) {
+        return self.mutableObjects.count;
+    }
 }
 
 
