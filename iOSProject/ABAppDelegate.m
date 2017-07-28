@@ -10,22 +10,20 @@
 
 #import "ABUsersViewController.h"
 #import "ABUser.h"
-#import "ABArrayModel.h"
 
-#import "UIWindow+ABExtension.h"
-#import "NSArray+ABExtension.h"
+@interface ABAppDelegate ()
+
+@end
 
 @implementation ABAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UIWindow *window = [UIWindow window];
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
 
     ABUsersViewController *controller = [ABUsersViewController new];
-    controller.users = [NSArray objectsWithCount:300 factoryBlock:^id{
-        return [ABUser new];
-    }];
+    controller.user = [ABUser new];
 
     window.rootViewController = controller;
     window.backgroundColor = [UIColor greenColor];
