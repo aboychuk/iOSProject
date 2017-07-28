@@ -38,7 +38,7 @@
     _Pragma("clang diagnostic push") \
     _Pragma("clang diagnostic ignored \"-Wshadow\"") \
     __strong __typeof(object) object = __ABWeakified_##object \
-    _Pragma("clang diagnostic pop")
+    ABSelectorWarningLeakPop
 
 #define ABEmptyParameter
 
@@ -53,3 +53,10 @@
     if (!object) { \
         return value; \
     }
+
+#define ABSelectorWarningLeakPush \
+    _Pragma("clang diagnostic push") \
+    _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+
+#define ABSelectorWarningLeakPop \
+    _Pragma("clang diagnostic pop")
