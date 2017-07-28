@@ -11,6 +11,7 @@
 #import "ABUser.h"
 #import "ABUsersView.h"
 #import "ABUserCell.h"
+#import "ABArrayModel.h"
 
 #import "ABMacro.h"
 
@@ -23,23 +24,6 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UITableView *tableView = self.usersView.tableView;
-    
-    [tableView reloadData];
-    [tableView addObserver:self
-                forKeyPath:@"bounds"
-                   options:NSKeyValueObservingOptionNew
-                   context:NULL];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context {
-    CGRect bounds = self.usersView.tableView.bounds;
-    
-    NSLog(@"Bounds = %@", [NSValue valueWithCGRect:bounds]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,7 +34,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 300;
+    return self.users.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -61,6 +45,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
         NSArray *cells = [nib instantiateWithOwner:nil options:nil];
         cell = [cells firstObject];
     }
+    
     cell.user = [ABUser new];
     
     return cell;
