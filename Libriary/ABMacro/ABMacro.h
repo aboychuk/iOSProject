@@ -24,7 +24,7 @@
     \
     @end \
     \
-    @implementation ABUsersViewController (ABPrivateRootClass) \
+    @implementation viewControllerClass (ABPrivateRootClass) \
     @dynamic propertyName; \
     \
     ABRootViewGetterSyntesize(rootViewClass, propertyName) \
