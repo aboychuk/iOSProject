@@ -12,13 +12,12 @@
 #import "ABMacro.h"
 
 static NSTimeInterval ABAnimationDuration   = 1;
-static NSUInteger positionCount             = ABSquerePositionCount;
 
 @interface ABSquereView ()
 @property (nonatomic, assign, getter=isRunning) BOOL    running;
 
-- (ABSquerePosition)moveToNextPosition;
-- (ABSquerePosition)moveToRandomPosition;
+- (ABSquerePosition)nextPosition;
+- (ABSquerePosition)randomPosition;
 - (CGRect)squereFrameForPosition:(ABSquerePosition)squerePosition;
 
 @end
@@ -45,7 +44,7 @@ static NSUInteger positionCount             = ABSquerePositionCount;
                  animated:(BOOL)animated
         completionHandler:(ABCompletionBlock)completionHandler
 {
-    [UIView animateWithDuration:ABAnimationDuration
+    [UIView animateWithDuration:animated ? ABAnimationDuration : 0
                           delay:0
                         options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationCurveEaseOut
                      animations:^{
@@ -65,9 +64,8 @@ static NSUInteger positionCount             = ABSquerePositionCount;
 
 - (void)startRandomMoving {
     self.running = !self.running;
-    [self setSquerePosition:[self moveToRandomPosition]
+    [self setSquerePosition:[self randomPosition]
                    animated:YES];
-
 }
 
 - (void)startCycleMove {
@@ -77,7 +75,7 @@ static NSUInteger positionCount             = ABSquerePositionCount;
 
 - (void)startClockwiseMoving {
     ABWeakify(self);
-    [self setSquerePosition:[self moveToNextPosition]
+    [self setSquerePosition:[self nextPosition]
                    animated:YES
           completionHandler:^(BOOL finished) {
                            ABStrongify(self);
@@ -121,14 +119,14 @@ static NSUInteger positionCount             = ABSquerePositionCount;
     return squereFrame;
 }
 
-- (ABSquerePosition)moveToNextPosition {
-    return (self.squerePosition + 1) % positionCount;
+- (ABSquerePosition)nextPosition {
+    return (self.squerePosition + 1) % ABSquerePositionCount;
 }
 
-- (ABSquerePosition)moveToRandomPosition {
-    ABSquerePosition randomPosition = ABRandomWithMaxValue(positionCount);
+- (ABSquerePosition)randomPosition {
+    ABSquerePosition randomPosition = ABRandomWithMaxValue(ABSquerePositionCount);
     if (randomPosition == self.squerePosition) {
-        [self moveToRandomPosition];
+        [self randomPosition];
     }
     
     return randomPosition;
