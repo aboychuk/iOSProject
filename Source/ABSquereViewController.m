@@ -10,26 +10,11 @@
 
 #import "ABSquereView.h"
 
-@interface ABSquereViewController ()
-@property (nonatomic, readonly) ABSquereView    *squereView;
+#import "ABMacro.h"
 
-@end
+ABViewControllerRootViewProperty(ABSquereViewController, ABSquereView, squereView)
 
 @implementation ABSquereViewController
-
-@dynamic squereView;
-
-#pragma mark -
-#pragma mark Accessors
-
-- (ABSquereView *)squereView {
-    if ([self isViewLoaded] && [self.view isKindOfClass:[ABSquereView class]]) {
-        return (ABSquereView *)self.view;
-    }
-    
-    return nil;
-}
-
 
 #pragma mark -
 #pragma mark Button Handlers
