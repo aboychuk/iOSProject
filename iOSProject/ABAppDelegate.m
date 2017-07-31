@@ -20,7 +20,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [UIWindow windowWithRootViewController:[ABSquereViewController new]];
+    UIWindow *window = [UIWindow windowWithRootViewController:[ABSquereViewController new]];
+    self.window = window;
+    [window makeKeyAndVisible];
 
     return YES;
 }
