@@ -9,8 +9,8 @@
 #define ABDefineRootViewProperty(viewClass, propertyName) \
     @property (nonatomic, readonly) viewClass  *propertyName;
 
-#define ABRootViewGetterSyntesize(viewClass, propertyName) \
-    - (viewClass *)propertyName { \
+#define ABRootViewGetterSyntesize(viewClass, selector) \
+    - (viewClass *)selector { \
         if ([self isViewLoaded] && [self.view isKindOfClass:[viewClass class]]) { \
             return (viewClass *)self.view; \
         } \
@@ -18,13 +18,13 @@
         return nil; \
     }
 
-#define ABViewControllerRootViewProperty(viewControllerClass, propertyName, rootViewClass) \
+#define ABViewControllerRootViewProperty(viewControllerClass, rootViewClass, propertyName) \
     @interface viewControllerClass (ABPrivateRootClass) \
     ABDefineRootViewProperty(rootViewClass, propertyName)   \
     \
     @end \
     \
-    @implementation ABUsersViewController (ABPrivateRootClass) \
+    @implementation viewControllerClass (ABPrivateRootClass) \
     @dynamic propertyName; \
     \
     ABRootViewGetterSyntesize(rootViewClass, propertyName) \
@@ -38,14 +38,14 @@
     _Pragma("clang diagnostic push") \
     _Pragma("clang diagnostic ignored \"-Wshadow\"") \
     __strong __typeof(object) object = __ABWeakified_##object \
-    _Pragma("clang diagnostic pop")
+    ABSelectorWarningLeakPop
 
 #define ABEmptyParameter
 
-#define ABStrongifyAndReturnIfNil(object) \
+#define ABStrongifyAndReturnIfNil(object); \
     ABStrongifyAndReturnValueIfNil(object, ABEmptyParameter)
 
-#define ABStrongifyAndReturnNilIfNil(object) \
+#define ABStrongifyAndReturnNilIfNil(object); \
     ABStrongifyAndReturnValueIfNil(object, nil)
 
 #define ABStrongifyAndReturnValueIfNil(object, value) \
@@ -53,3 +53,10 @@
     if (!object) { \
         return value; \
     }
+
+#define ABSelectorWarningLeakPush \
+    _Pragma("clang diagnostic push") \
+    _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+
+#define ABSelectorWarningLeakPop \
+    _Pragma("clang diagnostic pop")
