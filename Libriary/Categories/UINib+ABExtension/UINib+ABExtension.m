@@ -43,7 +43,13 @@
 
 - (id)objectWithClass:(Class)cls owner:(id)owner options:(NSDictionary *)options {
     NSArray *objects = [self instantiateWithOwner:owner options:options];
-    return [objects filteredObjectsWithClass:cls];
+    for (id object in objects) {
+        if ([object isKindOfClass:cls]) {
+            return object;
+        }
+    }
+    
+    return nil;
 }
 
 @end
