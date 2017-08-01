@@ -14,6 +14,12 @@ typedef NS_ENUM(NSUInteger, ABArrayModelState) {
     ABArrayModelObjectMoved,
 };
 
+@protocol ABArrayModelObserver <NSObject>
+
+<#methods#>
+
+@end
+
 @interface ABArrayModel : ABObservableObject
 @property (nonatomic, readonly)   NSUInteger  count;
 

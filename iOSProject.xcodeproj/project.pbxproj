@@ -42,6 +42,10 @@
 		9776C2D11F2BC39100B975E3 /* UINib+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776C2D01F2BC39100B975E3 /* UINib+ABExtension.m */; };
 		9776C2DC1F2BCF3300B975E3 /* UITableView+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776C2DB1F2BCF3300B975E3 /* UITableView+ABExtension.m */; };
 		977ADB9F1F30D5A400C51298 /* NSBundle+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */; };
+		97C075841F30F15E0095B34D /* ABArrayModelChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C075831F30F15E0095B34D /* ABArrayModelChange.m */; };
+		97C075881F30F19B0095B34D /* ABArrayModelChangeAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C075871F30F19B0095B34D /* ABArrayModelChangeAdd.m */; };
+		97C0758B1F30F1B30095B34D /* ABArrayModelChangeRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C0758A1F30F1B30095B34D /* ABArrayModelChangeRemove.m */; };
+		97C0758E1F30F1C80095B34D /* ABArrayModelChangeMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C0758D1F30F1C80095B34D /* ABArrayModelChangeMove.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +134,14 @@
 		9776C2DB1F2BCF3300B975E3 /* UITableView+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ABExtension.m"; sourceTree = "<group>"; };
 		977ADB9D1F30D5A400C51298 /* NSBundle+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ABExtension.h"; sourceTree = "<group>"; };
 		977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ABExtension.m"; sourceTree = "<group>"; };
+		97C075821F30F15E0095B34D /* ABArrayModelChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChange.h; sourceTree = "<group>"; };
+		97C075831F30F15E0095B34D /* ABArrayModelChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModelChange.m; sourceTree = "<group>"; };
+		97C075861F30F19B0095B34D /* ABArrayModelChangeAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChangeAdd.h; sourceTree = "<group>"; };
+		97C075871F30F19B0095B34D /* ABArrayModelChangeAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModelChangeAdd.m; sourceTree = "<group>"; };
+		97C075891F30F1B30095B34D /* ABArrayModelChangeRemove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChangeRemove.h; sourceTree = "<group>"; };
+		97C0758A1F30F1B30095B34D /* ABArrayModelChangeRemove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModelChangeRemove.m; sourceTree = "<group>"; };
+		97C0758C1F30F1C80095B34D /* ABArrayModelChangeMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChangeMove.h; sourceTree = "<group>"; };
+		97C0758D1F30F1C80095B34D /* ABArrayModelChangeMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModelChangeMove.m; sourceTree = "<group>"; };
 		D375A5E9AFDC133C93F4CB4B /* Pods-iOSProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectTests/Pods-iOSProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -343,6 +355,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9739D6EB1F30D9D6000F9DC2 /* ABArrayModelChange */ = {
+			isa = PBXGroup;
+			children = (
+				97C075851F30F17D0095B34D /* Private */,
+				97C075821F30F15E0095B34D /* ABArrayModelChange.h */,
+				97C075831F30F15E0095B34D /* ABArrayModelChange.m */,
+			);
+			path = ABArrayModelChange;
+			sourceTree = "<group>";
+		};
 		9748A9701F2A1CF700A26097 /* Libriary */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,9 +542,23 @@
 			path = "NSBundle+ABExtension";
 			sourceTree = "<group>";
 		};
+		97C075851F30F17D0095B34D /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				97C075861F30F19B0095B34D /* ABArrayModelChangeAdd.h */,
+				97C075871F30F19B0095B34D /* ABArrayModelChangeAdd.m */,
+				97C075891F30F1B30095B34D /* ABArrayModelChangeRemove.h */,
+				97C0758A1F30F1B30095B34D /* ABArrayModelChangeRemove.m */,
+				97C0758C1F30F1C80095B34D /* ABArrayModelChangeMove.h */,
+				97C0758D1F30F1C80095B34D /* ABArrayModelChangeMove.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		97C964A11F29F7E60023B2A6 /* ABArrayModel */ = {
 			isa = PBXGroup;
 			children = (
+				9739D6EB1F30D9D6000F9DC2 /* ABArrayModelChange */,
 				9748A9A91F2A3B0F00A26097 /* ABArrayModel.h */,
 				9748A9AA1F2A3B0F00A26097 /* ABArrayModel.m */,
 			);
@@ -732,6 +768,7 @@
 				9748A9A11F2A1CF700A26097 /* UIWindow+ABExtension.m in Sources */,
 				9748A9AB1F2A3B0F00A26097 /* ABArrayModel.m in Sources */,
 				490A5DF11F1FE3EA00FD049F /* ABUser.m in Sources */,
+				97C075841F30F15E0095B34D /* ABArrayModelChange.m in Sources */,
 				9748A9A41F2A1CF700A26097 /* ABRangeAlphabet.m in Sources */,
 				4987C01C1F20CA6300D989BC /* ABUserCell.m in Sources */,
 				9776C2D11F2BC39100B975E3 /* UINib+ABExtension.m in Sources */,
@@ -739,12 +776,14 @@
 				9748A9A61F2A1CF700A26097 /* ABGCDExtension.m in Sources */,
 				9748A9A81F2A1CF700A26097 /* ABTableViewCell.m in Sources */,
 				9776C2DC1F2BCF3300B975E3 /* UITableView+ABExtension.m in Sources */,
+				97C0758B1F30F1B30095B34D /* ABArrayModelChangeRemove.m in Sources */,
 				9748A9A51F2A1CF700A26097 /* ABStringsAlphabet.m in Sources */,
 				9748A99E1F2A1CF700A26097 /* NSString+ABExtensions.m in Sources */,
 				977ADB9F1F30D5A400C51298 /* NSBundle+ABExtension.m in Sources */,
 				9748A99F1F2A1CF700A26097 /* NSTimer+ABWeakReferenceTimer.m in Sources */,
 				490A5E061F1FE9C700FD049F /* ABUsersView.m in Sources */,
 				9748A99B1F2A1CF700A26097 /* ABMacro.m in Sources */,
+				97C075881F30F19B0095B34D /* ABArrayModelChangeAdd.m in Sources */,
 				493B6E481F20F8D2001AE474 /* ABImageModel.m in Sources */,
 				493B6E531F211E82001AE474 /* ABImageModelDispatcher.m in Sources */,
 				9748A9A01F2A1CF700A26097 /* ABTimerWeakReference.m in Sources */,
@@ -752,6 +791,7 @@
 				9748A9A71F2A1CF700A26097 /* ABObservableObject.m in Sources */,
 				9748A99C1F2A1CF700A26097 /* NSArray+ABExtension.m in Sources */,
 				9748A9A21F2A1CF700A26097 /* ABAlphabet.m in Sources */,
+				97C0758E1F30F1C80095B34D /* ABArrayModelChangeMove.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
