@@ -84,16 +84,6 @@
     }
 }
 
-- (id)objectAtIndex:(NSUInteger)index {
-    @synchronized (self) {
-        if (index < self.count) {
-            return nil;
-        }
-        
-        return self.mutableObjects[index];
-    }
-}
-
 - (void)moveObjectFromIndex:(NSUInteger)sourceIndex ToIndex:(NSUInteger)destinationIndex {
     if (sourceIndex == destinationIndex) {
         return;
@@ -104,6 +94,23 @@
         [self.mutableObjects insertObject:object atIndex:destinationIndex];
     }
 }
+
+- (id)objectAtIndex:(NSUInteger)index {
+    @synchronized (self) {
+        if (index < self.count) {
+            return nil;
+        }
+        
+        return self.mutableObjects[index];
+    }
+}
+
+- (id)objectAtIndexedSubscript:(NSUInteger)index {
+    return [self objectAtIndex:index];
+}
+
+
+
 
 
 @end

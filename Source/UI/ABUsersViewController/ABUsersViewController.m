@@ -40,7 +40,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ABUserCell *cell = [tableView reusableCellWithClass:[ABUserCell class]];
-    cell.user = [ABUser new];
+    cell.user = self.users[indexPath.row];
     
     return cell;
 }
