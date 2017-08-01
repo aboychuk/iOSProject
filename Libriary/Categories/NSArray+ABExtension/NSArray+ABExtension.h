@@ -19,5 +19,4 @@ typedef BOOL(^ABBoolBlock)(id);
 - (instancetype)filteredObjectsWithClass:(Class)cls;
 - (instancetype)filteredArrayWithBlock:(ABBoolBlock)boolBlock;
 
-
 @end
