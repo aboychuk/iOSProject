@@ -84,7 +84,7 @@
     }
 }
 
-- (void)moveObjectFromIndex:(NSUInteger)sourceIndex ToIndex:(NSUInteger)destinationIndex {
+- (void)moveObjectFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)destinationIndex {
     if (sourceIndex == destinationIndex) {
         return;
     }
