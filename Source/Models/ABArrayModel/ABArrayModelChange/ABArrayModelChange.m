@@ -8,6 +8,10 @@
 
 #import "ABArrayModelChange.h"
 
+#import "ABArrayModelChangeAdd.h"
+#import "ABArrayModelChangeRemove.h"
+#import "ABArrayModelChangeMove.h"
+
 @implementation ABArrayModelChange
 
 @end

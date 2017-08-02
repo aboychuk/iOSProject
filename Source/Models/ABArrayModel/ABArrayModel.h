@@ -8,6 +8,10 @@
 
 #import "ABObservableObject.h"
 
+#import "ABArrayModelChange.h"
+
+@class ABArrayModel;
+
 typedef NS_ENUM(NSUInteger, ABArrayModelState) {
     ABArrayModelObjectAdded,
     ABArrayModelObjectRemoved,
@@ -16,7 +20,10 @@ typedef NS_ENUM(NSUInteger, ABArrayModelState) {
 
 @protocol ABArrayModelObserver <NSObject>
 
-<#methods#>
+@optional
+- (void)arrayModelObjectAdded:(ABArrayModel *)arrayModel withModelChange:(ABArrayModelChange *)modelChange;
+- (void)arrayModelObjectRemoved:(ABArrayModel *)arrayModel withModelChange:(ABArrayModelChange *)modelChange;
+- (void)arrayModelObjectMoved:(ABArrayModel *)arrayModel withModelChange:(ABArrayModelChange *)modelChange;
 
 @end
 

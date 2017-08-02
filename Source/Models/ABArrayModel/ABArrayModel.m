@@ -112,6 +112,20 @@
 #pragma mark -
 #pragma mark Observable Object
 
+- (SEL)selectorForState:(NSUInteger)state {
+    switch (state) {
+        case ABArrayModelObjectAdded:
+            return @selector(arrayModelObjectAdded:);
+            
+        case ABArrayModelObjectRemoved:
+            return @selector(arrayModelObjectRemoved:);
+            
+        case ABArrayModelObjectMoved:
+            return @selector(arrayModelObjectMoved:);
+    }
+    
+    return nil;
+}
 
 
 @end
