@@ -13,5 +13,6 @@
 @property (nonatomic, strong)   ABArrayModel  *users;
 
 - (void)onEdit:(UIBarButtonItem *)sender;
+- (void)onAdd:(UIBarButtonItem *)sender;
 
 @end

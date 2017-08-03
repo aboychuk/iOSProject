@@ -27,15 +27,17 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     BOOL isEditing = self.usersView.tableView.editing;
     [self.usersView.tableView setEditing:!isEditing animated:YES];
     
-    UIBarButtonSystemItem item = !isEditing
-    ? UIBarButtonSystemItemDone
-    : UIBarButtonSystemItemEdit;
+    UIBarButtonSystemItem item = !isEditing ? UIBarButtonSystemItemDone : UIBarButtonSystemItemEdit;
     
     UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:item
                                                                                 target:self
                                                                                 action:@selector(onEdit:)];
     self.navigationItem.rightBarButtonItem = editButton;
 
+}
+
+- (void)onAdd:(UIBarButtonItem *)sender {
+    [self.users addObject:[ABUser new]];
 }
 
 #pragma mark
@@ -49,6 +51,12 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
                                                                                 target:self
                                                                                 action:@selector(onEdit:)];
     self.navigationItem.rightBarButtonItem = editButton;
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                         target:self
+                                                                         action:@selector(onAdd:)];
+    
+    self.navigationItem.leftBarButtonItem = addButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,5 +77,12 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
 
 @end
