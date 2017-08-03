@@ -29,6 +29,15 @@
     return self;
 }
 
+- (instancetype)initWithObjects:(NSArray *)objects {
+    self = [super init];
+    if (self) {
+        self.mutableObjects = [NSMutableArray arrayWithArray:objects];
+    }
+    
+    return self;
+}
+
 #pragma mark -
 #pragma mark Accessors
 
@@ -37,7 +46,6 @@
         return self.mutableObjects.count;
     }
 }
-
 
 #pragma mark -
 #pragma mark Public Methods
@@ -98,11 +106,11 @@
 - (id)objectAtIndex:(NSUInteger)index {
     @synchronized (self) {
         if (index < self.count) {
-            return nil;
+            return self.mutableObjects[index];
         }
-        
-        return self.mutableObjects[index];
     }
+    
+    return nil;
 }
 
 - (id)objectAtIndexedSubscript:(NSUInteger)index {

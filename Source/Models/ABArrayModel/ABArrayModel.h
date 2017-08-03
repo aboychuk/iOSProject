@@ -29,7 +29,9 @@ typedef NS_ENUM(NSUInteger, ABArrayModelState) {
 @end
 
 @interface ABArrayModel : ABObservableObject
-@property (nonatomic, readonly)   NSUInteger  count;
+@property (nonatomic, readonly) NSUInteger  count;
+
+- (instancetype)initWithObjects:(NSArray *)objects;
 
 - (void)addObject:(id)object;
 - (void)addObjects:(id)objects;

@@ -10,8 +10,11 @@
 
 #import "ABUsersViewController.h"
 #import "ABUser.h"
+#import "ABArrayModel.h"
 
 #import "NSObject+ABObjectExtension.h"
+
+static const NSUInteger usersCount    = 3000;
 
 @interface ABAppDelegate ()
 
@@ -26,13 +29,14 @@
 
     ABUsersViewController *controller = [ABUsersViewController new];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-
-    controller.users = [ABUser objectsWithCount:300];
-
+    
     window.rootViewController = navigationController;
     window.backgroundColor = [UIColor greenColor];
     
     [window makeKeyAndVisible];
+    
+    controller.users = [[ABArrayModel alloc] initWithObjects:[ABUser objectsWithCount:usersCount]];
+
 
     return YES;
 }
