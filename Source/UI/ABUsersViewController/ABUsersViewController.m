@@ -21,10 +21,34 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 @implementation ABUsersViewController
 
 #pragma mark
+#pragma mark - Actions
+
+- (void)onEdit:(UIBarButtonItem *)sender {
+    BOOL isEditing = self.usersView.tableView.editing;
+    [self.usersView.tableView setEditing:!isEditing animated:YES];
+    
+    UIBarButtonSystemItem item = !isEditing
+    ? UIBarButtonSystemItemDone
+    : UIBarButtonSystemItemEdit;
+    
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:item
+                                                                                target:self
+                                                                                action:@selector(onEdit:)];
+    self.navigationItem.rightBarButtonItem = editButton;
+
+}
+
+#pragma mark
 #pragma mark - View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Users";
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+                                                                                target:self
+                                                                                action:@selector(onEdit:)];
+    self.navigationItem.rightBarButtonItem = editButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,5 +68,6 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     
     return cell;
 }
+
 
 @end

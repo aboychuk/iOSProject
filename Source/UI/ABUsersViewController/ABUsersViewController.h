@@ -12,4 +12,6 @@
 @interface ABUsersViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong)   ABArrayModel  *users;
 
+- (void)onEdit:(UIBarButtonItem *)sender;
+
 @end
