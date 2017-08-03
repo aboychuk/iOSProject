@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ABArrayModel.h"
+
 @interface ABArrayModelChange : NSObject
 
 @end

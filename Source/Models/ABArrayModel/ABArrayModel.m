@@ -115,13 +115,13 @@
 - (SEL)selectorForState:(NSUInteger)state {
     switch (state) {
         case ABArrayModelObjectAdded:
-            return @selector(arrayModelObjectAdded:);
+            return @selector(arrayModelObjectAdded: withModelChange:);
             
         case ABArrayModelObjectRemoved:
-            return @selector(arrayModelObjectRemoved:);
+            return @selector(arrayModelObjectRemoved: withModelChange:);
             
         case ABArrayModelObjectMoved:
-            return @selector(arrayModelObjectMoved:);
+            return @selector(arrayModelObjectMoved: withModelChange:);
     }
     
     return nil;

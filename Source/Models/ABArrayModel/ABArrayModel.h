@@ -11,6 +11,7 @@
 #import "ABArrayModelChange.h"
 
 @class ABArrayModel;
+@class ABArrayModelChange;
 
 typedef NS_ENUM(NSUInteger, ABArrayModelState) {
     ABArrayModelObjectAdded,

@@ -45,5 +45,4 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     return cell;
 }
 
-
 @end
