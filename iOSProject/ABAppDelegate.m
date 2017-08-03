@@ -25,9 +25,11 @@
     self.window = window;
 
     ABUsersViewController *controller = [ABUsersViewController new];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+
     controller.users = [ABUser objectsWithCount:300];
 
-    window.rootViewController = controller;
+    window.rootViewController = navigationController;
     window.backgroundColor = [UIColor greenColor];
     
     [window makeKeyAndVisible];
