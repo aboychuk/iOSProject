@@ -34,10 +34,11 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
                                                                                 action:@selector(onEdit:)];
     self.navigationItem.rightBarButtonItem = editButton;
 
+    [self.usersView.tableView reloadData];
 }
 
 - (void)onAdd:(UIBarButtonItem *)sender {
-    [self.users addObject:[ABUser new]];
+    [self.users addObject:[ABUser new] atIndex:0];
 }
 
 #pragma mark
@@ -47,6 +48,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     [super viewDidLoad];
     
     self.navigationItem.title = @"Users";
+    
     UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
                                                                                 target:self
                                                                                 action:@selector(onEdit:)];
@@ -55,12 +57,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                          target:self
                                                                          action:@selector(onAdd:)];
-    
     self.navigationItem.leftBarButtonItem = addButton;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark
@@ -83,6 +80,20 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (UITableViewCellEditingStyleDelete == editingStyle) {
+        [self.users removeObjectAtIndex:indexPath.row];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+      toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    [self.users moveObjectFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
 }
 
 @end
