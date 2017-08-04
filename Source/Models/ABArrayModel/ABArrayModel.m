@@ -54,6 +54,7 @@
     @synchronized (self) {
         if (object) {
             [self.mutableObjects addObject:object];
+            self.state = ABArrayModelObjectAdded;
         }
     }
 }
@@ -61,6 +62,7 @@
 - (void)addObjects:(id)objects {
     for (id object in objects) {
         [self addObject:object];
+        self.state = ABArrayModelObjectAdded;
     }
 }
 
@@ -68,6 +70,8 @@
     @synchronized (self) {
         if (index < self.count) {
             [self.mutableObjects insertObject:object atIndex:index];
+            self.state = ABArrayModelObjectAdded;
+
         }
     }
 }
@@ -75,12 +79,14 @@
 - (void)removeObject:(id)object {
     @synchronized (self) {
         [self.mutableObjects removeObject:object];
+        self.state = ABArrayModelObjectRemoved;
     }
 }
 
 - (void)removeObjects:(id)objects {
     for (id object in objects) {
         [self removeObject:object];
+        self.state = ABArrayModelObjectRemoved;
     }
 }
 
@@ -88,6 +94,7 @@
     @synchronized (self) {
         if (index < self.count) {
             [self.mutableObjects removeObjectAtIndex:index];
+            self.state = ABArrayModelObjectRemoved;
         }
     }
 }
@@ -100,6 +107,7 @@
         id object = [self.mutableObjects objectAtIndex:sourceIndex];
         [self.mutableObjects removeObjectAtIndex:sourceIndex];
         [self.mutableObjects insertObject:object atIndex:destinationIndex];
+        self.state = ABArrayModelObjectMoved;
     }
 }
 
@@ -123,13 +131,11 @@
 - (SEL)selectorForState:(NSUInteger)state {
     switch (state) {
         case ABArrayModelObjectAdded:
-            return @selector(arrayModelObjectAdded: withModelChange:);
-            
+            return @selector(arrayModelObjectAdded:);
         case ABArrayModelObjectRemoved:
-            return @selector(arrayModelObjectRemoved: withModelChange:);
-            
+            return @selector(arrayModelObjectRemoved:);
         case ABArrayModelObjectMoved:
-            return @selector(arrayModelObjectMoved: withModelChange:);
+            return @selector(arrayModelObjectMoved:);
     }
     
     return nil;

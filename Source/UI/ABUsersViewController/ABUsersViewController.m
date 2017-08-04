@@ -18,7 +18,23 @@
 
 ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
+@interface ABUsersViewController () <ABArrayModelObserver>
+
+@end
+
 @implementation ABUsersViewController
+
+#pragma mark -
+#pragma mark Accessors
+
+- (void)setUsers:(ABArrayModel *)users {
+    if  (_users != users) {
+        [_users removeObserver:self];
+        
+        _users = users;
+        [_users addObserver:self];
+    }
+}
 
 #pragma mark
 #pragma mark - Actions
@@ -39,6 +55,8 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
 - (void)onAdd:(UIBarButtonItem *)sender {
     [self.users addObject:[ABUser new] atIndex:0];
+    [self.usersView.tableView reloadData];
+    
 }
 
 #pragma mark
@@ -48,12 +66,10 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     [super viewDidLoad];
     
     self.navigationItem.title = @"Users";
-    
     UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
                                                                                 target:self
                                                                                 action:@selector(onEdit:)];
     self.navigationItem.rightBarButtonItem = editButton;
-    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                          target:self
                                                                          action:@selector(onAdd:)];
@@ -86,6 +102,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (UITableViewCellEditingStyleDelete == editingStyle) {
+        NSLog(@"delete");
         [self.users removeObjectAtIndex:indexPath.row];
     }
 }
@@ -94,6 +111,23 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
       toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     [self.users moveObjectFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+}
+
+#pragma mark
+#pragma mark - ABArrayModelObserver
+
+- (void)arrayModelObjectAdded:(ABArrayModel *)arrayModel {
+    [self.usersView.tableView reloadData];
+}
+
+- (void)arrayModelObjectRemoved:(ABArrayModel *)arrayModel {
+    [self.usersView.tableView reloadData];
+
+}
+
+- (void)arrayModelObjectMoved:(ABArrayModel *)arrayModel {
+    [self.usersView.tableView reloadData];
+
 }
 
 @end
