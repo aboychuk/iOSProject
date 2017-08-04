@@ -51,27 +51,22 @@
 #pragma mark Public Methods
 
 - (void)addObject:(id)object {
-    @synchronized (self) {
-        if (object) {
-            [self.mutableObjects addObject:object];
-            self.state = ABArrayModelObjectAdded;
-        }
-    }
+    [self addObject:object atIndex:self.count];
 }
 
 - (void)addObjects:(id)objects {
     for (id object in objects) {
         [self addObject:object];
-        self.state = ABArrayModelObjectAdded;
     }
 }
 
 - (void)addObject:(id)object atIndex:(NSUInteger)index {
     @synchronized (self) {
-        if (index < self.count) {
-            [self.mutableObjects insertObject:object atIndex:index];
-            self.state = ABArrayModelObjectAdded;
-
+        if (object) {
+            if (index < self.count) {
+                [self.mutableObjects insertObject:object atIndex:index];
+                [self notifyOfState:ABArrayModelObjectAdded];
+            }
         }
     }
 }
@@ -79,14 +74,13 @@
 - (void)removeObject:(id)object {
     @synchronized (self) {
         [self.mutableObjects removeObject:object];
-        self.state = ABArrayModelObjectRemoved;
+        [self notifyOfState:ABArrayModelObjectRemoved];
     }
 }
 
 - (void)removeObjects:(id)objects {
     for (id object in objects) {
         [self removeObject:object];
-        self.state = ABArrayModelObjectRemoved;
     }
 }
 
@@ -94,7 +88,7 @@
     @synchronized (self) {
         if (index < self.count) {
             [self.mutableObjects removeObjectAtIndex:index];
-            self.state = ABArrayModelObjectRemoved;
+            [self notifyOfState:ABArrayModelObjectRemoved];
         }
     }
 }
@@ -107,7 +101,7 @@
         id object = [self.mutableObjects objectAtIndex:sourceIndex];
         [self.mutableObjects removeObjectAtIndex:sourceIndex];
         [self.mutableObjects insertObject:object atIndex:destinationIndex];
-        self.state = ABArrayModelObjectMoved;
+        [self notifyOfState:ABArrayModelObjectMoved];
     }
 }
 

@@ -14,7 +14,6 @@
 @class ABArrayModelChange;
 
 typedef NS_ENUM(NSUInteger, ABArrayModelState) {
-    ABArrayModelObjectDefault,
     ABArrayModelObjectAdded,
     ABArrayModelObjectRemoved,
     ABArrayModelObjectMoved,
