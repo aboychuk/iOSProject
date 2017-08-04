@@ -8,6 +8,8 @@
 
 #import "ABArrayModel.h"
 
+#import "NSMutableArray+ABExtension.h"
+
 @interface ABArrayModel ()
 @property (nonatomic, strong)   NSMutableArray  *mutableObjects;
 
@@ -94,13 +96,8 @@
 }
 
 - (void)moveObjectFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)destinationIndex {
-    if (sourceIndex == destinationIndex) {
-        return;
-    }
     @synchronized (self) {
-        id object = [self.mutableObjects objectAtIndex:sourceIndex];
-        [self.mutableObjects removeObjectAtIndex:sourceIndex];
-        [self.mutableObjects insertObject:object atIndex:destinationIndex];
+        [self.mutableObjects moveObjectAtIndex:sourceIndex toIndex:destinationIndex];
         [self notifyOfState:ABArrayModelObjectMoved];
     }
 }

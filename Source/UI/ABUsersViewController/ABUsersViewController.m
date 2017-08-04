@@ -110,8 +110,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)addNavigationBarItems {
     UINavigationItem *navigationItem = self.navigationItem;
     navigationItem.title = ABNavigationBarTitle;
-    UIBarButtonItem *editButton = [self editButtonWithButtonSystemItem:UIBarButtonSystemItemEdit];
     
+    UIBarButtonItem *editButton = [self editButtonWithButtonSystemItem:UIBarButtonSystemItemEdit];
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                                target:self
                                                                                action:@selector(onAdd:)];
