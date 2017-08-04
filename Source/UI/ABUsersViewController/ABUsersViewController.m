@@ -16,6 +16,8 @@
 #import "ABMacro.h"
 #import "UITableView+ABExtension.h"
 
+static NSString * const ABNavigationBarTitle = @"Users";
+
 ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
 @interface ABUsersViewController () <ABArrayModelObserver>
@@ -55,8 +57,6 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
 - (void)onAdd:(UIBarButtonItem *)sender {
     [self.users addObject:[ABUser new] atIndex:0];
-    [self.usersView.tableView reloadData];
-    
 }
 
 #pragma mark
@@ -64,16 +64,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.title = @"Users";
-    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
-                                                                                target:self
-                                                                                action:@selector(onEdit:)];
-    self.navigationItem.rightBarButtonItem = editButton;
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                         target:self
-                                                                         action:@selector(onAdd:)];
-    self.navigationItem.leftBarButtonItem = addButton;
+    [self addNavigationBarButtons];
 }
 
 #pragma mark
@@ -111,6 +102,20 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
       toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     [self.users moveObjectFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+}
+
+#pragma mark
+#pragma mark - Private
+
+- (void)addNavigationBarItems {
+    UINavigationItem *navigationItem = self.navigationItem;
+    navigationItem.title = ABNavigationBarTitle;
+    navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+                                                                                target:self
+                                                                                action:@selector(onEdit:)];
+    navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                               target:self
+                                                                               action:@selector(onAdd:)];
 }
 
 #pragma mark
