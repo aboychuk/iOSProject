@@ -42,17 +42,17 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark - Actions
 
 - (void)onEdit:(UIBarButtonItem *)sender {
+    UITableView *tableView = self.usersView.tableView;
     BOOL isEditing = self.usersView.tableView.editing;
-    [self.usersView.tableView setEditing:!isEditing animated:YES];
     
-    UIBarButtonSystemItem item = !isEditing ? UIBarButtonSystemItemDone : UIBarButtonSystemItemEdit;
+    [tableView setEditing:!isEditing animated:YES];
     
-    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:item
-                                                                                target:self
-                                                                                action:@selector(onEdit:)];
+    UIBarButtonSystemItem systemItem = !isEditing ? UIBarButtonSystemItemDone : UIBarButtonSystemItemEdit;
+    
+    UIBarButtonItem *editButton = [self editButtonWithButtonSystemItem:systemItem];
     self.navigationItem.rightBarButtonItem = editButton;
 
-    [self.usersView.tableView reloadData];
+    [tableView reloadData];
 }
 
 - (void)onAdd:(UIBarButtonItem *)sender {
@@ -64,7 +64,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addNavigationBarButtons];
+    [self addNavigationBarItems];
 }
 
 #pragma mark
@@ -110,12 +110,20 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)addNavigationBarItems {
     UINavigationItem *navigationItem = self.navigationItem;
     navigationItem.title = ABNavigationBarTitle;
-    navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
-                                                                                target:self
-                                                                                action:@selector(onEdit:)];
-    navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+    UIBarButtonItem *editButton = [self editButtonWithButtonSystemItem:UIBarButtonSystemItemEdit];
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                                target:self
                                                                                action:@selector(onAdd:)];
+    navigationItem.rightBarButtonItem = editButton;
+    navigationItem.leftBarButtonItem = addButton;
+}
+
+- (UIBarButtonItem *)editButtonWithButtonSystemItem:(UIBarButtonSystemItem)systemItem {
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem
+                                                                                target:self
+                                                                                action:@selector(onEdit:)];
+    return editButton;
 }
 
 #pragma mark
