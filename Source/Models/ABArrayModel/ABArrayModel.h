@@ -14,18 +14,14 @@
 @class ABArrayModelChange;
 
 typedef NS_ENUM(NSUInteger, ABArrayModelState) {
-    ABArrayModelObjectAdded,
-    ABArrayModelObjectRemoved,
-    ABArrayModelObjectMoved,
+    ABArrayModelObjectChanged,
     ABArrayModelObjectCount
 };
 
 @protocol ABArrayModelObserver <NSObject>
 
 @optional
-- (void)arrayModelObjectAdded:(ABArrayModel *)arrayModel;
-- (void)arrayModelObjectRemoved:(ABArrayModel *)arrayModel;
-- (void)arrayModelObjectMoved:(ABArrayModel *)arrayModel;
+- (void)arrayModel:(ABArrayModel *)arrayModel didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel;
 
 @end
 

@@ -31,7 +31,6 @@ static const NSUInteger usersCount    = 3000;
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
     
     window.rootViewController = navigationController;
-    window.backgroundColor = [UIColor greenColor];
     
     [window makeKeyAndVisible];
     

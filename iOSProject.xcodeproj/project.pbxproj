@@ -213,12 +213,12 @@
 		490A5DFE1F1FE46F00FD049F /* ABUsersViewController */ = {
 			isa = PBXGroup;
 			children = (
-				974BF47F1F3323440050FBBA /* ABUserCell */,
 				490A5DFF1F1FE97600FD049F /* ABUsersViewController.h */,
 				490A5E001F1FE97600FD049F /* ABUsersViewController.m */,
 				490A5E011F1FE97600FD049F /* ABUsersViewController.xib */,
 				490A5E041F1FE9C700FD049F /* ABUsersView.h */,
 				490A5E051F1FE9C700FD049F /* ABUsersView.m */,
+				974BF47F1F3323440050FBBA /* ABUserCell */,
 			);
 			path = ABUsersViewController;
 			sourceTree = "<group>";
@@ -300,15 +300,15 @@
 		49FB26061F0CFB0D00801FD7 = {
 			isa = PBXGroup;
 			children = (
-				9748A9701F2A1CF700A26097 /* Libriary */,
 				490A5DE51F1FE3EA00FD049F /* Source */,
 				49E0A4E11F0D00CB00ACD9D1 /* iOSProject */,
 				49E0A4E61F0D00D600ACD9D1 /* Resource */,
-				7E7EA6F84734EB9BF3ED9ABB /* Frameworks */,
+				9748A9701F2A1CF700A26097 /* Libriary */,
 				49FB262B1F0CFB0D00801FD7 /* iOSProjectTests */,
 				49FB26361F0CFB0D00801FD7 /* iOSProjectUITests */,
 				A37FCB006A85B592D804657F /* Pods */,
 				49FB26101F0CFB0D00801FD7 /* Products */,
+				7E7EA6F84734EB9BF3ED9ABB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -351,9 +351,9 @@
 		9739D6EB1F30D9D6000F9DC2 /* ABArrayModelChange */ = {
 			isa = PBXGroup;
 			children = (
-				97C075851F30F17D0095B34D /* Private */,
 				97C075821F30F15E0095B34D /* ABArrayModelChange.h */,
 				97C075831F30F15E0095B34D /* ABArrayModelChange.m */,
+				97C075851F30F17D0095B34D /* Private */,
 			);
 			path = ABArrayModelChange;
 			sourceTree = "<group>";
@@ -571,9 +571,9 @@
 		97C964A11F29F7E60023B2A6 /* ABArrayModel */ = {
 			isa = PBXGroup;
 			children = (
-				9739D6EB1F30D9D6000F9DC2 /* ABArrayModelChange */,
 				9748A9A91F2A3B0F00A26097 /* ABArrayModel.h */,
 				9748A9AA1F2A3B0F00A26097 /* ABArrayModel.m */,
+				9739D6EB1F30D9D6000F9DC2 /* ABArrayModelChange */,
 			);
 			path = ABArrayModel;
 			sourceTree = "<group>";

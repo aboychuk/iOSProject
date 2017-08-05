@@ -67,7 +67,6 @@
         if (object) {
             if (index < self.count) {
                 [self.mutableObjects insertObject:object atIndex:index];
-                [self notifyOfState:ABArrayModelObjectAdded];
             }
         }
     }
@@ -76,7 +75,6 @@
 - (void)removeObject:(id)object {
     @synchronized (self) {
         [self.mutableObjects removeObject:object];
-        [self notifyOfState:ABArrayModelObjectRemoved];
     }
 }
 
@@ -90,7 +88,6 @@
     @synchronized (self) {
         if (index < self.count) {
             [self.mutableObjects removeObjectAtIndex:index];
-            [self notifyOfState:ABArrayModelObjectRemoved];
         }
     }
 }
@@ -98,7 +95,6 @@
 - (void)moveObjectFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)destinationIndex {
     @synchronized (self) {
         [self.mutableObjects moveObjectAtIndex:sourceIndex toIndex:destinationIndex];
-        [self notifyOfState:ABArrayModelObjectMoved];
     }
 }
 
@@ -121,12 +117,8 @@
 
 - (SEL)selectorForState:(NSUInteger)state {
     switch (state) {
-        case ABArrayModelObjectAdded:
-            return @selector(arrayModelObjectAdded:);
-        case ABArrayModelObjectRemoved:
-            return @selector(arrayModelObjectRemoved:);
-        case ABArrayModelObjectMoved:
-            return @selector(arrayModelObjectMoved:);
+        case ABArrayModelObjectChanged:
+            return @selector(arrayModel:didChangeWithArrayModelChange:);
     }
     
     return nil;

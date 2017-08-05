@@ -19,6 +19,7 @@
 - (void)setState:(NSUInteger)state;
 
 - (void)notifyOfState:(NSUInteger)state;
+- (void)notifyOfState:(NSUInteger)state withObject:(id)object;
 
 //This method is intendent for subclassing. Never call it directly.
 - (SEL)selectorForState:(NSUInteger)state;
