@@ -93,7 +93,6 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (UITableViewCellEditingStyleDelete == editingStyle) {
-        NSLog(@"delete");
         [self.users removeObjectAtIndex:indexPath.row];
     }
 }
@@ -130,7 +129,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 #pragma mark - ABArrayModelObserver
 
 - (void)arrayModelObjectAdded:(ABArrayModel *)arrayModel {
-    [self.usersView.tableView reloadData];
+    UITableView *tableview = self.usersView.tableView;
+    [tableview beginUpdates];
+    [tableview insertRowsAtIndexPaths:
+                     withRowAnimation:<#(UITableViewRowAnimation)#>]
+    [tableview endUpdates];
+//    [tableview reloadData];
 }
 
 - (void)arrayModelObjectRemoved:(ABArrayModel *)arrayModel {
