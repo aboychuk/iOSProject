@@ -76,8 +76,12 @@
 }
 
 - (void)notifyOfState:(NSUInteger)state {
+    [self notifyOfState:state withObject:nil];
+}
+
+- (void)notifyOfState:(NSUInteger)state withObject:(id)object {
     @synchronized (self) {
-        [self notifyOfStateChangeWithSelector:[self selectorForState:state]];
+        [self notifyOfStateChangeWithSelector:[self selectorForState:state] andObject:nil];
     }
 }
 
@@ -90,12 +94,12 @@
     return NULL;
 }
 
-- (void)notifyOfStateChangeWithSelector:(SEL)selector {
+- (void)notifyOfStateChangeWithSelector:(SEL)selector andObject:(id)object {
     NSHashTable *observersHashTable = self.mutableObserversHashTable;
     for (id observer in observersHashTable) {
         if ([observer respondsToSelector:selector]) {
             ABSelectorWarningLeakPush
-            [observer performSelector:selector withObject:self];
+            [observer performSelector:selector withObject:self withObject:object];
             ABSelectorWarningLeakPop
         }
     }
