@@ -9,12 +9,11 @@
 #import "ABArrayModelChange.h"
 
 @interface ABArrayModelChangeAdd : ABArrayModelChange
-@property (nonatomic, assign)   NSUInteger  index;
 
 - (instancetype)initWithIndex:(NSUInteger)index;
 
 - (void)updateTableView:(UITableView *)tableView
-              inSection:(NSIndexSet *)sections
+              inSection:(NSUInteger)section
        withRowAnimation:(UITableViewRowAnimation)animation;
 
 @end
