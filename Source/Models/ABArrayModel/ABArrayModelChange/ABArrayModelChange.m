@@ -24,8 +24,11 @@
     
 }
 
-- (void)updateTableView:(UITableView *)tableView {
-    
+- (void)updateTableView:(UITableView *)tableView
+{
+    [self updateTableView:tableView
+                inSection:0
+         withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)updateTableView:(UITableView *)tableView

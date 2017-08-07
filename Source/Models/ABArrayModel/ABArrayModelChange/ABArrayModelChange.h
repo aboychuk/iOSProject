@@ -10,9 +10,9 @@
 
 #import "ABArrayModel.h"
 
-#import "ABArrayModelChangeAdd.h"
-#import "ABArrayModelChangeRemove.h"
-#import "ABArrayModelChangeMove.h"
+@class ABArrayModelChangeAdd;
+@class ABArrayModelChangeRemove;
+@class ABArrayModelChangeMove;
 
 @interface ABArrayModelChange : NSObject
 
