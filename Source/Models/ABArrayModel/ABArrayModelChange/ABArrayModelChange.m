@@ -8,10 +8,31 @@
 
 #import "ABArrayModelChange.h"
 
-#import "ABArrayModelChangeAdd.h"
-#import "ABArrayModelChangeRemove.h"
-#import "ABArrayModelChangeMove.h"
-
 @implementation ABArrayModelChange
+
++ (instancetype)modelChangeAddWithIndex:(NSUInteger)index {
+    
+}
+
++ (instancetype)modelChangeDeleteWithIndex:(NSUInteger)index {
+    
+}
+
++ (instancetype)modelChangeMoveAtIndex:(NSUInteger)sourceIndex
+                               toIndex:(NSUInteger)destinationIndex
+{
+    
+}
+
+- (void)updateTableView:(UITableView *)tableView {
+    
+}
+
+- (void)updateTableView:(UITableView *)tableView
+              inSection:(NSIndexSet *)sections
+       withRowAnimation:(UITableViewRowAnimation)animation
+{
+    
+}
 
 @end
