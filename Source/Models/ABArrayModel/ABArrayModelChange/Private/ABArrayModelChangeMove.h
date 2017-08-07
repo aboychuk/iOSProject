@@ -11,10 +11,11 @@
 @interface ABArrayModelChangeMove : ABArrayModelChange
 @property (nonatomic, assign)   NSUInteger  index;
 
-- (instancetype)initWithSourceIndex:(NSUInteger)index destinationIndex:(NSUInteger)index;
+- (instancetype)initWithSourceIndex:(NSUInteger)index
+                   destinationIndex:(NSUInteger)index;
 
 - (void)updateTableView:(UITableView *)tableView
-              inSection:(NSIndexSet *)sections
+              inSection:(NSUInteger)section
        withRowAnimation:(UITableViewRowAnimation)animation;
 
 @end
