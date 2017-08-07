@@ -20,11 +20,16 @@
 + (instancetype)modelChangeDeleteWithIndex:(NSUInteger)index;
 + (instancetype)modelChangeMoveAtIndex:(NSUInteger)sourceIndex
                                toIndex:(NSUInteger)destinationIndex;
+@end
+
+@interface ABArrayModelChange (UITableView)
 
 - (void)updateTableView:(UITableView *)tableView;
-
 - (void)updateTableView:(UITableView *)tableView
-           withSections:(NSIndexSet *)sections
-           rowAnimation:(UITableViewRowAnimation)animation;
+            inSection:(NSUInteger)section;
+- (void)updateTableView:(UITableView *)tableView
+              inSection:(NSUInteger)section
+       withRowAnimation:(UITableViewRowAnimation)animation;
 
 @end
+
