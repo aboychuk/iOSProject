@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, ABArrayModelState) {
 
 - (void)addObject:(id)object;
 - (void)addObjects:(id)objects;
-- (void)addObject:(id)object atIndex:(NSUInteger)index;
+- (void)insertObject:(id)object atIndex:(NSUInteger)index;
 
 - (void)removeObject:(id)object;
 - (void)removeObjects:(id)objects;
@@ -42,5 +42,6 @@ typedef NS_ENUM(NSUInteger, ABArrayModelState) {
 
 - (id)objectAtIndex:(NSUInteger)index;
 - (id)objectAtIndexedSubscript:(NSUInteger)index;
+- (NSUInteger)indexOfObject:(id)object;
 
 @end

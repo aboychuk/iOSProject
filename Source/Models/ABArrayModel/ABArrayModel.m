@@ -53,7 +53,7 @@
 #pragma mark Public Methods
 
 - (void)addObject:(id)object {
-    [self addObject:object atIndex:self.count];
+    [self insertObject:object atIndex:self.count];
 }
 
 - (void)addObjects:(id)objects {
@@ -62,20 +62,20 @@
     }
 }
 
-- (void)addObject:(id)object atIndex:(NSUInteger)index {
+- (void)insertObject:(id)object atIndex:(NSUInteger)index {
     @synchronized (self) {
         if (object) {
             if (index < self.count) {
                 [self.mutableObjects insertObject:object atIndex:index];
+                [self notifyOfState:ABArrayModelObjectChanged
+                         withObject:[ABArrayModelChange modelChangeAddWithIndex:index]];
             }
         }
     }
 }
 
 - (void)removeObject:(id)object {
-    @synchronized (self) {
-        [self.mutableObjects removeObject:object];
-    }
+    [self removeObjectAtIndex:[self indexOfObject:object]];
 }
 
 - (void)removeObjects:(id)objects {
@@ -88,6 +88,8 @@
     @synchronized (self) {
         if (index < self.count) {
             [self.mutableObjects removeObjectAtIndex:index];
+            [self notifyOfState:ABArrayModelObjectChanged
+                     withObject:[ABArrayModelChange modelChangeDeleteWithIndex:index]];
         }
     }
 }
@@ -95,6 +97,9 @@
 - (void)moveObjectFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)destinationIndex {
     @synchronized (self) {
         [self.mutableObjects moveObjectAtIndex:sourceIndex toIndex:destinationIndex];
+        [self notifyOfState:ABArrayModelObjectChanged
+                 withObject:[ABArrayModelChange modelChangeMoveAtIndex:sourceIndex
+                                                               toIndex:destinationIndex]];
     }
 }
 
@@ -110,6 +115,10 @@
 
 - (id)objectAtIndexedSubscript:(NSUInteger)index {
     return [self objectAtIndex:index];
+}
+
+- (NSUInteger)indexOfObject:(id)object {
+    return [self.mutableObjects indexOfObject:object];
 }
 
 #pragma mark -
