@@ -51,12 +51,10 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     
     UIBarButtonItem *editButton = [self editButtonWithButtonSystemItem:systemItem];
     self.navigationItem.rightBarButtonItem = editButton;
-
-    [tableView reloadData];
 }
 
 - (void)onAdd:(UIBarButtonItem *)sender {
-    [self.users addObject:[ABUser new] atIndex:0];
+    [self.users insertObject:[ABUser new] atIndex:0];
 }
 
 #pragma mark
@@ -128,23 +126,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 #pragma mark
 #pragma mark - ABArrayModelObserver
 
-- (void)arrayModelObjectAdded:(ABArrayModel *)arrayModel {
-    UITableView *tableview = self.usersView.tableView;
-    [tableview beginUpdates];
-    [tableview insertRowsAtIndexPaths:
-                     withRowAnimation:<#(UITableViewRowAnimation)#>]
-    [tableview endUpdates];
-//    [tableview reloadData];
-}
-
-- (void)arrayModelObjectRemoved:(ABArrayModel *)arrayModel {
-    [self.usersView.tableView reloadData];
-
-}
-
-- (void)arrayModelObjectMoved:(ABArrayModel *)arrayModel {
-    [self.usersView.tableView reloadData];
-
+- (void)arrayModel:(ABArrayModel *)arrayModel didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel {
+    [changeModel updateTableView:self.usersView.tableView];
 }
 
 @end
