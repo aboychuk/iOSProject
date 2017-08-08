@@ -8,7 +8,7 @@
 
 #import "ABAppDelegate.h"
 
-#import "ABSquereViewController.h"
+#import "ABSquareViewController.h"
 
 #import "UIWindow+ABExtension.h"
 
@@ -20,7 +20,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UIWindow *window = [UIWindow windowWithRootViewController:[ABSquereViewController new]];
+    UIWindow *window = [UIWindow windowWithRootViewController:[ABSquareViewController new]];
     self.window = window;
     [window makeKeyAndVisible];
 

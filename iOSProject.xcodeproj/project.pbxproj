@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4934DAA81F10BD2E00F2BF52 /* ABSquereViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4934DAA61F10BD2E00F2BF52 /* ABSquereViewController.m */; };
-		4934DAA91F10BD2E00F2BF52 /* ABSquereViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4934DAA71F10BD2E00F2BF52 /* ABSquereViewController.xib */; };
-		4934DAAC1F10BD6400F2BF52 /* ABSquereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4934DAAB1F10BD6400F2BF52 /* ABSquereView.m */; };
 		4935E3831F1001470037660C /* ABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4935E3821F1001470037660C /* ABAppDelegate.m */; };
 		49A17DF81F220C9300E4F78F /* ABMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A17DEB1F220C9300E4F78F /* ABMacro.m */; };
 		49A17DF91F220C9300E4F78F /* ABRandomNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A17DED1F220C9300E4F78F /* ABRandomNumber.m */; };
@@ -19,6 +16,9 @@
 		49FB262D1F0CFB0D00801FD7 /* iOSProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FB262C1F0CFB0D00801FD7 /* iOSProjectTests.m */; };
 		49FB26381F0CFB0D00801FD7 /* iOSProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FB26371F0CFB0D00801FD7 /* iOSProjectUITests.m */; };
 		54EC5C0E9136472865E5ECAB /* libPods-iOSProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 615FE69DAC50A9B7400CE7EE /* libPods-iOSProjectTests.a */; };
+		97762F1B1F39BC2C00E98A67 /* ABSquareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97762F171F39BC2C00E98A67 /* ABSquareView.m */; };
+		97762F1C1F39BC2C00E98A67 /* ABSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97762F191F39BC2C00E98A67 /* ABSquareViewController.m */; };
+		97762F1D1F39BC2C00E98A67 /* ABSquareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97762F1A1F39BC2C00E98A67 /* ABSquareViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,11 +40,6 @@
 
 /* Begin PBXFileReference section */
 		2A87253A4A367DC6F1E3F4C2 /* Pods-iOSProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectTests/Pods-iOSProjectTests.release.xcconfig"; sourceTree = "<group>"; };
-		4934DAA51F10BD2E00F2BF52 /* ABSquereViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABSquereViewController.h; sourceTree = "<group>"; };
-		4934DAA61F10BD2E00F2BF52 /* ABSquereViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABSquereViewController.m; sourceTree = "<group>"; };
-		4934DAA71F10BD2E00F2BF52 /* ABSquereViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABSquereViewController.xib; sourceTree = "<group>"; };
-		4934DAAA1F10BD6400F2BF52 /* ABSquereView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABSquereView.h; sourceTree = "<group>"; };
-		4934DAAB1F10BD6400F2BF52 /* ABSquereView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABSquereView.m; sourceTree = "<group>"; };
 		4935E3811F1001470037660C /* ABAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABAppDelegate.h; sourceTree = "<group>"; };
 		4935E3821F1001470037660C /* ABAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABAppDelegate.m; sourceTree = "<group>"; };
 		49A17DEA1F220C9300E4F78F /* ABMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMacro.h; sourceTree = "<group>"; };
@@ -64,6 +59,11 @@
 		49FB26371F0CFB0D00801FD7 /* iOSProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSProjectUITests.m; sourceTree = "<group>"; };
 		49FB26391F0CFB0D00801FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		615FE69DAC50A9B7400CE7EE /* libPods-iOSProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97762F161F39BC2C00E98A67 /* ABSquareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABSquareView.h; sourceTree = "<group>"; };
+		97762F171F39BC2C00E98A67 /* ABSquareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABSquareView.m; sourceTree = "<group>"; };
+		97762F181F39BC2C00E98A67 /* ABSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABSquareViewController.h; sourceTree = "<group>"; };
+		97762F191F39BC2C00E98A67 /* ABSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABSquareViewController.m; sourceTree = "<group>"; };
+		97762F1A1F39BC2C00E98A67 /* ABSquareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABSquareViewController.xib; sourceTree = "<group>"; };
 		D375A5E9AFDC133C93F4CB4B /* Pods-iOSProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectTests/Pods-iOSProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,11 +136,11 @@
 		49E0A4EC1F0D00D600ACD9D1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				4934DAA51F10BD2E00F2BF52 /* ABSquereViewController.h */,
-				4934DAA61F10BD2E00F2BF52 /* ABSquereViewController.m */,
-				4934DAA71F10BD2E00F2BF52 /* ABSquereViewController.xib */,
-				4934DAAA1F10BD6400F2BF52 /* ABSquereView.h */,
-				4934DAAB1F10BD6400F2BF52 /* ABSquereView.m */,
+				97762F161F39BC2C00E98A67 /* ABSquareView.h */,
+				97762F171F39BC2C00E98A67 /* ABSquareView.m */,
+				97762F181F39BC2C00E98A67 /* ABSquareViewController.h */,
+				97762F191F39BC2C00E98A67 /* ABSquareViewController.m */,
+				97762F1A1F39BC2C00E98A67 /* ABSquareViewController.xib */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4934DAA91F10BD2E00F2BF52 /* ABSquereViewController.xib in Resources */,
+				97762F1D1F39BC2C00E98A67 /* ABSquareViewController.xib in Resources */,
 				49E0A4F11F0D00D600ACD9D1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,12 +389,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4934DAAC1F10BD6400F2BF52 /* ABSquereView.m in Sources */,
 				49A17DF81F220C9300E4F78F /* ABMacro.m in Sources */,
 				49A17DF91F220C9300E4F78F /* ABRandomNumber.m in Sources */,
 				49A17DFA1F220C9300E4F78F /* UIWindow+ABExtension.m in Sources */,
 				4935E3831F1001470037660C /* ABAppDelegate.m in Sources */,
-				4934DAA81F10BD2E00F2BF52 /* ABSquereViewController.m in Sources */,
+				97762F1B1F39BC2C00E98A67 /* ABSquareView.m in Sources */,
+				97762F1C1F39BC2C00E98A67 /* ABSquareViewController.m in Sources */,
 				49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

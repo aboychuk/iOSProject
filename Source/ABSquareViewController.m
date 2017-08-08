@@ -1,20 +1,20 @@
 //
-//  ABSquereViewController.m
+//  ABSquareViewController.m
 //  iOSProject
 //
 //  Created by Andrew Boychuk on 7/8/17.
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import "ABSquereViewController.h"
+#import "ABSquareViewController.h"
 
-#import "ABSquereView.h"
+#import "ABSquareView.h"
 
 #import "ABMacro.h"
 
-ABViewControllerRootViewProperty(ABSquereViewController, ABSquereView, squereView)
+ABViewControllerRootViewProperty(ABSquareViewController, ABSquareView, squereView)
 
-@implementation ABSquereViewController
+@implementation ABSquareViewController
 
 #pragma mark -
 #pragma mark Button Handlers

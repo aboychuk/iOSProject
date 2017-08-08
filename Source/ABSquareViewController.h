@@ -1,5 +1,5 @@
 //
-//  ABSquereViewController.h
+//  ABSquareViewController.h
 //  iOSProject
 //
 //  Created by Andrew Boychuk on 7/8/17.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ABSquereViewController : UIViewController
+@interface ABSquareViewController : UIViewController
 - (IBAction)onAuto:(UIButton *)sender;
 - (IBAction)onRandom:(UIButton *)sender;
 
