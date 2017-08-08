@@ -81,7 +81,7 @@
 
 - (void)notifyOfState:(NSUInteger)state withObject:(id)object {
     @synchronized (self) {
-        [self notifyOfStateChangeWithSelector:[self selectorForState:state] andObject:nil];
+        [self notifyOfStateChangeWithSelector:[self selectorForState:state] andObject:object];
     }
 }
 
