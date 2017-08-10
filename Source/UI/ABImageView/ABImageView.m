@@ -10,6 +10,8 @@
 
 #import "ABImageModel.h"
 
+#import "ABObservableObject.h"
+
 @interface ABImageView ()
 
 - (void)initSubViews;
@@ -42,6 +44,18 @@
     }
 }
 
+- (void)initSubViews {
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+    imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin
+                                | UIViewAutoresizingFlexibleWidth
+                                | UIViewAutoresizingFlexibleRightMargin
+                                | UIViewAutoresizingFlexibleTopMargin
+                                | UIViewAutoresizingFlexibleHeight
+                                | UIViewAutoresizingFlexibleBottomMargin;
+    
+    self.contentImageView = imageView;
+}
+
 #pragma mark -
 #pragma mark Accessors
 
@@ -53,19 +67,18 @@
     }
 }
 
+- (void)setImageModel:(ABImageModel *)imageModel {
+    if (_imageModel != imageModel) {
+        [_imageModel removeObserver:self];
+        _imageModel = imageModel;
+        [_imageModel addObserver:self];
+        
+    }
+}
+
 #pragma mark - 
 #pragma mark Private
 
-- (void)initSubViews {
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
-    imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin
-                                    | UIViewAutoresizingFlexibleWidth
-                                    | UIViewAutoresizingFlexibleRightMargin
-                                    | UIViewAutoresizingFlexibleTopMargin
-                                    | UIViewAutoresizingFlexibleHeight
-                                    | UIViewAutoresizingFlexibleBottomMargin;
-    
-    self.contentImageView = imageView;
-}
+
 
 @end
