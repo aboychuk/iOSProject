@@ -100,7 +100,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
    moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
           toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-//    [self.users moveObjectFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+    [self.users moveObjectFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
 }
 
 #pragma mark
@@ -135,7 +135,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark
 #pragma mark - ABArrayModelObserver
 
-- (void)arrayModel:(ABArrayModel *)arrayModel didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel {
+- (void)didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel {
     [changeModel updateTableView:self.usersView.tableView];
 }
 

@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger, ABArrayModelState) {
 @protocol ABArrayModelObserver <NSObject>
 
 @optional
-- (void)arrayModel:(ABArrayModel *)arrayModel didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel;
+- (void)didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel;
 
 @end
 

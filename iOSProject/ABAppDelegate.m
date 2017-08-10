@@ -36,7 +36,6 @@ static const NSUInteger usersCount    = 3000;
     
     controller.users = [[ABArrayModel alloc] initWithObjects:[ABUser objectsWithCount:usersCount]];
 
-
     return YES;
 }
 
