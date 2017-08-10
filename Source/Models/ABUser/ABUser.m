@@ -10,6 +10,9 @@
 
 #import "NSString+ABExtensions.h"
 
+static NSString * const ABName = @"name";
+static NSString * const ABSurname = @"surname";
+
 @implementation ABUser
 @dynamic fullname;
 @dynamic image;
@@ -27,6 +30,8 @@
     return self;
 }
 
+
+
 #pragma mark
 #pragma mark Accessors
 
@@ -38,6 +43,24 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"image" ofType:@"png"];
     
     return [UIImage imageWithContentsOfFile:path];
+}
+
+#pragma mark - 
+#pragma marl NSCoding
+
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    self = [super init];
+    if (self) {
+        self.name = [coder decodeObjectForKey:ABName];
+        self.surname = [coder decodeObjectForKey:ABSurname];
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+    [coder encodeObject:self.name forKey:ABName];
+    [coder encodeObject:self.surname forKey:ABSurname];
 }
 
 @end
