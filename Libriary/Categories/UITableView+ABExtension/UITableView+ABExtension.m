@@ -21,4 +21,14 @@
     return cell;
 }
 
+- (void)updateWithBlock:(void (^)(void))block {
+    if (!block) {
+        return;
+    }
+    
+    [self beginUpdates];
+    block();
+    [self endUpdates];
+}
+
 @end

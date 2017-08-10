@@ -8,6 +8,8 @@
 
 #import "ABArrayModelChangeMove.h"
 
+#import "UITableView+ABExtension.h"
+
 @interface ABArrayModelChangeMove ()
 @property (nonatomic, assign)   NSUInteger  sourceIndex;
 @property (nonatomic, assign)   NSUInteger  destinationIndex;
@@ -41,9 +43,10 @@
     NSIndexPath *sourceIndex = [NSIndexPath indexPathForRow:self.index inSection:section];
     NSIndexPath *destinationIndex = [NSIndexPath indexPathForRow:self.destinationIndex inSection:section];
     
-    [tableView beginUpdates];
-    [tableView moveRowAtIndexPath:sourceIndex toIndexPath:destinationIndex];
-    [tableView endUpdates];
+    [tableView updateWithBlock:^{
+        [tableView moveRowAtIndexPath:sourceIndex
+                          toIndexPath:destinationIndex];
+    }];
 }
 
 

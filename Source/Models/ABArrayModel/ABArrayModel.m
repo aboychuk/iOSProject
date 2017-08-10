@@ -97,9 +97,9 @@
 - (void)moveObjectFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)destinationIndex {
     @synchronized (self) {
         [self.mutableObjects moveObjectAtIndex:sourceIndex toIndex:destinationIndex];
-        [self notifyOfState:ABArrayModelObjectChanged
-                 withObject:[ABArrayModelChange modelChangeMoveAtIndex:sourceIndex
-                                                               toIndex:destinationIndex]];
+//        [self notifyOfState:ABArrayModelObjectChanged
+//                 withObject:[ABArrayModelChange modelChangeMoveAtIndex:sourceIndex
+//                                                               toIndex:destinationIndex]];
     }
 }
 

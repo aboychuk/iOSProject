@@ -11,5 +11,6 @@
 @interface UITableView (ABExtension)
 
 - (id)reusableCellWithClass:(Class)cls;
+- (void)updateWithBlock:(void (^)(void))block;
 
 @end

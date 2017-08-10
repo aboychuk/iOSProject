@@ -8,6 +8,8 @@
 
 #import "ABArrayModelChangeRemove.h"
 
+#import "UITableView+ABExtension.h"
+
 @interface ABArrayModelChangeRemove ()
 @property (nonatomic, assign)   NSUInteger  index;
 
@@ -37,9 +39,10 @@
     NSIndexPath *index = [NSIndexPath indexPathForRow:self.index inSection:section];
     NSArray *indexArray = @[index];
     
-    [tableView beginUpdates];
-    [tableView deleteRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationAutomatic];
-    [tableView endUpdates];
+    [tableView updateWithBlock:^{
+        [tableView deleteRowsAtIndexPaths:indexArray
+                         withRowAnimation:animation];
+    }];
 }
 
 @end
