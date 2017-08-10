@@ -10,6 +10,8 @@
 
 #import "NSMutableArray+ABExtension.h"
 
+static NSString * const ABPlistName = @"arrayModel.plist";
+
 @interface ABArrayModel ()
 @property (nonatomic, strong)   NSMutableArray  *mutableObjects;
 
@@ -119,6 +121,24 @@
 
 - (NSUInteger)indexOfObject:(id)object {
     return [self.mutableObjects indexOfObject:object];
+}
+
+- (void)saveData {
+    [NSKeyedArchiver archiveRootObject:self.mutableObjects toFile:[self savePath]];
+}
+
+- (void)loadData {
+    self.mutableObjects = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (NSString *)savePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *savePath = [paths firstObject];
+    
+    return [savePath stringByAppendingPathComponent:ABPlistName];
 }
 
 #pragma mark -

@@ -38,8 +38,12 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     }
 }
 
-#pragma mark
-#pragma mark - Actions
+#pragma mark -
+#pragma mark Public
+
+
+#pragma mark -
+#pragma mark Actions
 
 - (void)onEdit:(UIBarButtonItem *)sender {
     UITableView *tableView = self.usersView.tableView;
@@ -57,16 +61,16 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     [self.users insertObject:[ABUser new] atIndex:0];
 }
 
-#pragma mark
-#pragma mark - View Lifecycle
+#pragma mark -
+#pragma mark View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationBarItems];
 }
 
-#pragma mark
-#pragma mark - UITableViewDataSource
+#pragma mark -
+#pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.users.count;
@@ -103,15 +107,15 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     [self.users moveObjectFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
 }
 
-#pragma mark
-#pragma mark - UITableViewDelegate
+#pragma mark -
+#pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark
-#pragma mark - Private
+#pragma mark -
+#pragma mark Private
 
 - (void)addNavigationBarItems {
     UINavigationItem *navigationItem = self.navigationItem;
@@ -132,10 +136,10 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     return editButton;
 }
 
-#pragma mark
-#pragma mark - ABArrayModelObserver
+#pragma mark -
+#pragma mark ABArrayModelObserver
 
-- (void)didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel {
+- (void)arrayModel:(ABArrayModel *)arrayModel didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel {
     [changeModel updateTableView:self.usersView.tableView];
 }
 

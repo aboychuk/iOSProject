@@ -33,8 +33,10 @@ static const NSUInteger usersCount    = 3000;
     window.rootViewController = navigationController;
     
     [window makeKeyAndVisible];
+    ABArrayModel *arrayModel = [[ABArrayModel alloc] initWithObjects:[ABUser objectsWithCount:usersCount]];
+    self.arrayModel = arrayModel;
     
-    controller.users = [[ABArrayModel alloc] initWithObjects:[ABUser objectsWithCount:usersCount]];
+    controller.users = arrayModel;
 
     return YES;
 }
@@ -46,12 +48,12 @@ static const NSUInteger usersCount    = 3000;
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-
+    [self.arrayModel saveData];
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-
+    [self.arrayModel loadData];
 }
 
 

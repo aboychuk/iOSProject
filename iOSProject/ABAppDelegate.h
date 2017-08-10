@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ABArrayModel.h"
+
 @interface ABAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic)   UIWindow        *window;
+@property (strong, nonatomic)   ABArrayModel    *arrayModel;
 
 @end
 
