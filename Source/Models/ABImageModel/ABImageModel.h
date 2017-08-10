@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ABObservableObject.h"
+#import "ABModel.h"
 
 typedef NS_ENUM(NSUInteger, ABImageModelState) {
     ABImageModelUnloaded,
@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, ABImageModelState) {
     ABImageModelLoadingFailed
 };
 
-@interface ABImageModel : ABObservableObject
+@interface ABImageModel : ABModel
 @property (nonatomic, readonly)                     UIImage *image;
 @property (nonatomic, readonly)                     NSURL   *url;
 @property (nonatomic, readonly, getter=isLoaded)    BOOL    loaded;

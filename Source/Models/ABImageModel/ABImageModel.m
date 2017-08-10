@@ -93,7 +93,7 @@
 - (NSOperation *)imageLoadingOperation {
     ABWeakify(self);
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        ABStrongify(self);
+        ABStrongifyAndReturnIfNil(self);
         self.image = [UIImage imageWithContentsOfFile:[self.url absoluteString]];
     }];
     

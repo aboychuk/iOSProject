@@ -6,7 +6,7 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import "ABObservableObject.h"
+#import "ABModel.h"
 
 #import "ABArrayModelChange.h"
 
@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, ABArrayModelState) {
 
 @end
 
-@interface ABArrayModel : ABObservableObject
+@interface ABArrayModel : ABModel
 @property (nonatomic, readonly) NSUInteger  count;
 
 - (instancetype)initWithObjects:(NSArray *)objects;

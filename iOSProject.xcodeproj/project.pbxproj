@@ -42,6 +42,7 @@
 		9755BD6A1F3882EE000269C5 /* ABArrayModelChangeAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9755BD691F3882EE000269C5 /* ABArrayModelChangeAdd.m */; };
 		9755BD6D1F388319000269C5 /* ABArrayModelChangeMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 9755BD6C1F388319000269C5 /* ABArrayModelChangeMove.m */; };
 		9755BD701F38832E000269C5 /* ABArrayModelChangeRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = 9755BD6F1F38832E000269C5 /* ABArrayModelChangeRemove.m */; };
+		976585D91F3CB98200F3E7DF /* ABModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 976585D81F3CB98200F3E7DF /* ABModel.m */; };
 		9776C2D11F2BC39100B975E3 /* UINib+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776C2D01F2BC39100B975E3 /* UINib+ABExtension.m */; };
 		9776C2DC1F2BCF3300B975E3 /* UITableView+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776C2DB1F2BCF3300B975E3 /* UITableView+ABExtension.m */; };
 		977ADB9F1F30D5A400C51298 /* NSBundle+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */; };
@@ -135,6 +136,8 @@
 		9755BD6C1F388319000269C5 /* ABArrayModelChangeMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModelChangeMove.m; sourceTree = "<group>"; };
 		9755BD6E1F38832E000269C5 /* ABArrayModelChangeRemove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChangeRemove.h; sourceTree = "<group>"; };
 		9755BD6F1F38832E000269C5 /* ABArrayModelChangeRemove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModelChangeRemove.m; sourceTree = "<group>"; };
+		976585D71F3CB98200F3E7DF /* ABModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABModel.h; sourceTree = "<group>"; };
+		976585D81F3CB98200F3E7DF /* ABModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABModel.m; sourceTree = "<group>"; };
 		9776C2CF1F2BC39100B975E3 /* UINib+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINib+ABExtension.h"; sourceTree = "<group>"; };
 		9776C2D01F2BC39100B975E3 /* UINib+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINib+ABExtension.m"; sourceTree = "<group>"; };
 		9776C2DA1F2BCF3300B975E3 /* UITableView+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+ABExtension.h"; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 		490A5DE61F1FE3EA00FD049F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				976585D61F3CB96600F3E7DF /* ABModel */,
 				97C964A11F29F7E60023B2A6 /* ABArrayModel */,
 				493B6E451F20F8D2001AE474 /* ABImageModel */,
 				490A5DE71F1FE3EA00FD049F /* ABUser */,
@@ -519,6 +523,15 @@
 			path = ABUserCell;
 			sourceTree = "<group>";
 		};
+		976585D61F3CB96600F3E7DF /* ABModel */ = {
+			isa = PBXGroup;
+			children = (
+				976585D71F3CB98200F3E7DF /* ABModel.h */,
+				976585D81F3CB98200F3E7DF /* ABModel.m */,
+			);
+			path = ABModel;
+			sourceTree = "<group>";
+		};
 		9776C2CE1F2BC36900B975E3 /* UINib+ABExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -799,6 +812,7 @@
 				9748A99F1F2A1CF700A26097 /* NSTimer+ABWeakReferenceTimer.m in Sources */,
 				490A5E061F1FE9C700FD049F /* ABUsersView.m in Sources */,
 				9748A99B1F2A1CF700A26097 /* ABMacro.m in Sources */,
+				976585D91F3CB98200F3E7DF /* ABModel.m in Sources */,
 				493B6E481F20F8D2001AE474 /* ABImageModel.m in Sources */,
 				493B6E531F211E82001AE474 /* ABImageModelDispatcher.m in Sources */,
 				9748A9A01F2A1CF700A26097 /* ABTimerWeakReference.m in Sources */,
