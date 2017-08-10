@@ -37,15 +37,15 @@
 #define ABStrongify(object) \
     _Pragma("clang diagnostic push") \
     _Pragma("clang diagnostic ignored \"-Wshadow\"") \
-    __strong __typeof(object) object = __ABWeakified_##object \
+    __strong __typeof(object) object = __ABWeakified_##object; \
     ABSelectorWarningLeakPop
 
 #define ABEmptyParameter
 
-#define ABStrongifyAndReturnIfNil(object); \
+#define ABStrongifyAndReturnIfNil(object) \
     ABStrongifyAndReturnValueIfNil(object, ABEmptyParameter)
 
-#define ABStrongifyAndReturnNilIfNil(object); \
+#define ABStrongifyAndReturnNilIfNil(object) \
     ABStrongifyAndReturnValueIfNil(object, nil)
 
 #define ABStrongifyAndReturnValueIfNil(object, value) \
