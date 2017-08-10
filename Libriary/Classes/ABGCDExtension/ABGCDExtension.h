@@ -23,7 +23,6 @@ void ABDispatchSyncOnMainThread(dispatch_block_t block);
 void ABDispatchAsyncOnMainThread(dispatch_block_t block);
 void ABDispatchAsyncInBackgroundThread(dispatch_block_t block);
 void ABDispatchSyncInBackgroundThread(dispatch_block_t block);
-void ABDispatchInBackgroundThreadAsynchronous(BOOL async, dispatch_block_t block);
 
 void ABDispatchAfterDelay(NSUInteger delay, dispatch_block_t block);
 void ABDispatchAfterDelayWithCondition(NSUInteger delay, dispatch_block_t block, ABConditionBlock conditionBlock);

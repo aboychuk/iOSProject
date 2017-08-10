@@ -87,18 +87,27 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)    tableView:(UITableView *)tableView
+   commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+    forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (UITableViewCellEditingStyleDelete == editingStyle) {
         [self.users removeObjectAtIndex:indexPath.row];
     }
 }
 
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
-      toIndexPath:(NSIndexPath *)destinationIndexPath
+- (void)    tableView:(UITableView *)tableView
+   moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+          toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     [self.users moveObjectFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+}
+
+#pragma mark
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark
@@ -126,7 +135,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 #pragma mark
 #pragma mark - ABArrayModelObserver
 
-- (void)arrayModel:(ABArrayModel *)arrayModel didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel {
+- (void)didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel {
     [changeModel updateTableView:self.usersView.tableView];
 }
 

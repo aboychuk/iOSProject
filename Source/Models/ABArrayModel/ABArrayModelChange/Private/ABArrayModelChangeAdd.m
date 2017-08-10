@@ -8,6 +8,8 @@
 
 #import "ABArrayModelChangeAdd.h"
 
+#import "UITableView+ABExtension.h"
+
 @interface ABArrayModelChangeAdd ()
 @property (nonatomic, assign)   NSUInteger  index;
 
@@ -36,10 +38,10 @@
 {
     NSIndexPath *index = [NSIndexPath indexPathForRow:self.index inSection:section];
     NSArray *indexArray = @[index];
-    
-    [tableView beginUpdates];
-    [tableView insertRowsAtIndexPaths:indexArray withRowAnimation:animation];
-    [tableView endUpdates];
+    [tableView updateWithBlock:^{
+        [tableView insertRowsAtIndexPaths:indexArray
+                         withRowAnimation:animation];
+    }];
 }
 
 @end
