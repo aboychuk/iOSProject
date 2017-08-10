@@ -29,7 +29,6 @@ typedef NS_ENUM(NSUInteger, ABModelState) {
 @interface ABModel : ABObservableObject
 
 - (void)load;
-- (void)dump;
 
 //Method created for subclassing do not call it directly.
 - (void)processLoadingInBackground;

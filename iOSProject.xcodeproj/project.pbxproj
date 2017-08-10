@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		490A5DF11F1FE3EA00FD049F /* ABUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5DE91F1FE3EA00FD049F /* ABUser.m */; };
-		490A5E021F1FE97600FD049F /* ABUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E001F1FE97600FD049F /* ABUsersViewController.m */; };
-		490A5E031F1FE97600FD049F /* ABUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490A5E011F1FE97600FD049F /* ABUsersViewController.xib */; };
-		490A5E061F1FE9C700FD049F /* ABUsersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E051F1FE9C700FD049F /* ABUsersView.m */; };
 		493B6E411F20EED5001AE474 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 493B6E401F20EED5001AE474 /* image.png */; };
 		493B6E481F20F8D2001AE474 /* ABImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B6E471F20F8D2001AE474 /* ABImageModel.m */; };
 		493B6E531F211E82001AE474 /* ABImageModelDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B6E521F211E82001AE474 /* ABImageModelDispatcher.m */; };
@@ -37,12 +34,15 @@
 		9748A9A71F2A1CF700A26097 /* ABObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9748A9971F2A1CF700A26097 /* ABObservableObject.m */; };
 		9748A9A81F2A1CF700A26097 /* ABTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9748A99A1F2A1CF700A26097 /* ABTableViewCell.m */; };
 		9748A9AB1F2A3B0F00A26097 /* ABArrayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9748A9AA1F2A3B0F00A26097 /* ABArrayModel.m */; };
-		974BF4831F3323440050FBBA /* ABUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 974BF4811F3323440050FBBA /* ABUserCell.m */; };
-		974BF4841F3323440050FBBA /* ABUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 974BF4821F3323440050FBBA /* ABUserCell.xib */; };
 		9755BD6A1F3882EE000269C5 /* ABArrayModelChangeAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9755BD691F3882EE000269C5 /* ABArrayModelChangeAdd.m */; };
 		9755BD6D1F388319000269C5 /* ABArrayModelChangeMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 9755BD6C1F388319000269C5 /* ABArrayModelChangeMove.m */; };
 		9755BD701F38832E000269C5 /* ABArrayModelChangeRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = 9755BD6F1F38832E000269C5 /* ABArrayModelChangeRemove.m */; };
 		976585D91F3CB98200F3E7DF /* ABModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 976585D81F3CB98200F3E7DF /* ABModel.m */; };
+		976585E91F3CE7F100F3E7DF /* ABUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976585DE1F3CE7F100F3E7DF /* ABUsersViewController.m */; };
+		976585EA1F3CE7F100F3E7DF /* ABUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 976585E31F3CE7F100F3E7DF /* ABUserCell.m */; };
+		976585EB1F3CE7F100F3E7DF /* ABUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 976585E41F3CE7F100F3E7DF /* ABUserCell.xib */; };
+		976585EC1F3CE7F100F3E7DF /* ABUsersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 976585E71F3CE7F100F3E7DF /* ABUsersView.m */; };
+		976585ED1F3CE7F100F3E7DF /* ABUsersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 976585E81F3CE7F100F3E7DF /* ABUsersView.xib */; };
 		9776C2D11F2BC39100B975E3 /* UINib+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776C2D01F2BC39100B975E3 /* UINib+ABExtension.m */; };
 		9776C2DC1F2BCF3300B975E3 /* UITableView+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776C2DB1F2BCF3300B975E3 /* UITableView+ABExtension.m */; };
 		977ADB9F1F30D5A400C51298 /* NSBundle+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */; };
@@ -71,11 +71,6 @@
 		2A87253A4A367DC6F1E3F4C2 /* Pods-iOSProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectTests/Pods-iOSProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		490A5DE81F1FE3EA00FD049F /* ABUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUser.h; sourceTree = "<group>"; };
 		490A5DE91F1FE3EA00FD049F /* ABUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUser.m; sourceTree = "<group>"; };
-		490A5DFF1F1FE97600FD049F /* ABUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersViewController.h; sourceTree = "<group>"; };
-		490A5E001F1FE97600FD049F /* ABUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersViewController.m; sourceTree = "<group>"; };
-		490A5E011F1FE97600FD049F /* ABUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUsersViewController.xib; sourceTree = "<group>"; };
-		490A5E041F1FE9C700FD049F /* ABUsersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersView.h; sourceTree = "<group>"; };
-		490A5E051F1FE9C700FD049F /* ABUsersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersView.m; sourceTree = "<group>"; };
 		493B6E401F20EED5001AE474 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		493B6E461F20F8D2001AE474 /* ABImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABImageModel.h; sourceTree = "<group>"; };
 		493B6E471F20F8D2001AE474 /* ABImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABImageModel.m; sourceTree = "<group>"; };
@@ -127,9 +122,6 @@
 		9748A99A1F2A1CF700A26097 /* ABTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABTableViewCell.m; sourceTree = "<group>"; };
 		9748A9A91F2A3B0F00A26097 /* ABArrayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModel.h; sourceTree = "<group>"; };
 		9748A9AA1F2A3B0F00A26097 /* ABArrayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModel.m; sourceTree = "<group>"; };
-		974BF4801F3323440050FBBA /* ABUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserCell.h; sourceTree = "<group>"; };
-		974BF4811F3323440050FBBA /* ABUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserCell.m; sourceTree = "<group>"; };
-		974BF4821F3323440050FBBA /* ABUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserCell.xib; sourceTree = "<group>"; };
 		9755BD681F3882EE000269C5 /* ABArrayModelChangeAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChangeAdd.h; sourceTree = "<group>"; };
 		9755BD691F3882EE000269C5 /* ABArrayModelChangeAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModelChangeAdd.m; sourceTree = "<group>"; };
 		9755BD6B1F388319000269C5 /* ABArrayModelChangeMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChangeMove.h; sourceTree = "<group>"; };
@@ -138,6 +130,14 @@
 		9755BD6F1F38832E000269C5 /* ABArrayModelChangeRemove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModelChangeRemove.m; sourceTree = "<group>"; };
 		976585D71F3CB98200F3E7DF /* ABModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABModel.h; sourceTree = "<group>"; };
 		976585D81F3CB98200F3E7DF /* ABModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABModel.m; sourceTree = "<group>"; };
+		976585DD1F3CE7F100F3E7DF /* ABUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersViewController.h; sourceTree = "<group>"; };
+		976585DE1F3CE7F100F3E7DF /* ABUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersViewController.m; sourceTree = "<group>"; };
+		976585E21F3CE7F100F3E7DF /* ABUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserCell.h; sourceTree = "<group>"; };
+		976585E31F3CE7F100F3E7DF /* ABUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserCell.m; sourceTree = "<group>"; };
+		976585E41F3CE7F100F3E7DF /* ABUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserCell.xib; sourceTree = "<group>"; };
+		976585E61F3CE7F100F3E7DF /* ABUsersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersView.h; sourceTree = "<group>"; };
+		976585E71F3CE7F100F3E7DF /* ABUsersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersView.m; sourceTree = "<group>"; };
+		976585E81F3CE7F100F3E7DF /* ABUsersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUsersView.xib; sourceTree = "<group>"; };
 		9776C2CF1F2BC39100B975E3 /* UINib+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINib+ABExtension.h"; sourceTree = "<group>"; };
 		9776C2D01F2BC39100B975E3 /* UINib+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINib+ABExtension.m"; sourceTree = "<group>"; };
 		9776C2DA1F2BCF3300B975E3 /* UITableView+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+ABExtension.h"; sourceTree = "<group>"; };
@@ -180,8 +180,8 @@
 		490A5DE51F1FE3EA00FD049F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				976585DB1F3CE7F100F3E7DF /* UI */,
 				490A5DE61F1FE3EA00FD049F /* Models */,
-				490A5DEA1F1FE3EA00FD049F /* UI */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -204,27 +204,6 @@
 				490A5DE91F1FE3EA00FD049F /* ABUser.m */,
 			);
 			path = ABUser;
-			sourceTree = "<group>";
-		};
-		490A5DEA1F1FE3EA00FD049F /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				490A5DFE1F1FE46F00FD049F /* ABUsersViewController */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		490A5DFE1F1FE46F00FD049F /* ABUsersViewController */ = {
-			isa = PBXGroup;
-			children = (
-				490A5DFF1F1FE97600FD049F /* ABUsersViewController.h */,
-				490A5E001F1FE97600FD049F /* ABUsersViewController.m */,
-				490A5E011F1FE97600FD049F /* ABUsersViewController.xib */,
-				490A5E041F1FE9C700FD049F /* ABUsersView.h */,
-				490A5E051F1FE9C700FD049F /* ABUsersView.m */,
-				974BF47F1F3323440050FBBA /* ABUserCell */,
-			);
-			path = ABUsersViewController;
 			sourceTree = "<group>";
 		};
 		493B6E3F1F20EED5001AE474 /* Images */ = {
@@ -513,16 +492,6 @@
 			path = ABTableViewCell;
 			sourceTree = "<group>";
 		};
-		974BF47F1F3323440050FBBA /* ABUserCell */ = {
-			isa = PBXGroup;
-			children = (
-				974BF4801F3323440050FBBA /* ABUserCell.h */,
-				974BF4811F3323440050FBBA /* ABUserCell.m */,
-				974BF4821F3323440050FBBA /* ABUserCell.xib */,
-			);
-			path = ABUserCell;
-			sourceTree = "<group>";
-		};
 		976585D61F3CB96600F3E7DF /* ABModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +499,53 @@
 				976585D81F3CB98200F3E7DF /* ABModel.m */,
 			);
 			path = ABModel;
+			sourceTree = "<group>";
+		};
+		976585DB1F3CE7F100F3E7DF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				976585DC1F3CE7F100F3E7DF /* ABUsersViewController */,
+				976585E01F3CE7F100F3E7DF /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		976585DC1F3CE7F100F3E7DF /* ABUsersViewController */ = {
+			isa = PBXGroup;
+			children = (
+				976585DD1F3CE7F100F3E7DF /* ABUsersViewController.h */,
+				976585DE1F3CE7F100F3E7DF /* ABUsersViewController.m */,
+			);
+			path = ABUsersViewController;
+			sourceTree = "<group>";
+		};
+		976585E01F3CE7F100F3E7DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				976585E11F3CE7F100F3E7DF /* ABUserCellView */,
+				976585E51F3CE7F100F3E7DF /* ABUsersView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		976585E11F3CE7F100F3E7DF /* ABUserCellView */ = {
+			isa = PBXGroup;
+			children = (
+				976585E21F3CE7F100F3E7DF /* ABUserCell.h */,
+				976585E31F3CE7F100F3E7DF /* ABUserCell.m */,
+				976585E41F3CE7F100F3E7DF /* ABUserCell.xib */,
+			);
+			path = ABUserCellView;
+			sourceTree = "<group>";
+		};
+		976585E51F3CE7F100F3E7DF /* ABUsersView */ = {
+			isa = PBXGroup;
+			children = (
+				976585E61F3CE7F100F3E7DF /* ABUsersView.h */,
+				976585E71F3CE7F100F3E7DF /* ABUsersView.m */,
+				976585E81F3CE7F100F3E7DF /* ABUsersView.xib */,
+			);
+			path = ABUsersView;
 			sourceTree = "<group>";
 		};
 		9776C2CE1F2BC36900B975E3 /* UINib+ABExtension */ = {
@@ -711,9 +727,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49E0A4F21F0D00D600ACD9D1 /* LaunchScreen.storyboard in Resources */,
-				974BF4841F3323440050FBBA /* ABUserCell.xib in Resources */,
+				976585EB1F3CE7F100F3E7DF /* ABUserCell.xib in Resources */,
+				976585ED1F3CE7F100F3E7DF /* ABUsersView.xib in Resources */,
 				494DB0A51F0F8019003D34A9 /* Main.storyboard in Resources */,
-				490A5E031F1FE97600FD049F /* ABUsersViewController.xib in Resources */,
 				49E0A4F11F0D00D600ACD9D1 /* Assets.xcassets in Resources */,
 				493B6E411F20EED5001AE474 /* image.png in Resources */,
 			);
@@ -796,23 +812,23 @@
 				9748A9AB1F2A3B0F00A26097 /* ABArrayModel.m in Sources */,
 				490A5DF11F1FE3EA00FD049F /* ABUser.m in Sources */,
 				97C075841F30F15E0095B34D /* ABArrayModelChange.m in Sources */,
+				976585E91F3CE7F100F3E7DF /* ABUsersViewController.m in Sources */,
 				9748A9A41F2A1CF700A26097 /* ABRangeAlphabet.m in Sources */,
 				9776C2D11F2BC39100B975E3 /* UINib+ABExtension.m in Sources */,
-				490A5E021F1FE97600FD049F /* ABUsersViewController.m in Sources */,
 				9748A9A61F2A1CF700A26097 /* ABGCDExtension.m in Sources */,
 				9748A9A81F2A1CF700A26097 /* ABTableViewCell.m in Sources */,
 				9790362A1F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.m in Sources */,
 				9776C2DC1F2BCF3300B975E3 /* UITableView+ABExtension.m in Sources */,
-				974BF4831F3323440050FBBA /* ABUserCell.m in Sources */,
 				9755BD6D1F388319000269C5 /* ABArrayModelChangeMove.m in Sources */,
 				9755BD6A1F3882EE000269C5 /* ABArrayModelChangeAdd.m in Sources */,
 				9748A9A51F2A1CF700A26097 /* ABStringsAlphabet.m in Sources */,
 				9748A99E1F2A1CF700A26097 /* NSString+ABExtensions.m in Sources */,
+				976585EA1F3CE7F100F3E7DF /* ABUserCell.m in Sources */,
 				977ADB9F1F30D5A400C51298 /* NSBundle+ABExtension.m in Sources */,
 				9748A99F1F2A1CF700A26097 /* NSTimer+ABWeakReferenceTimer.m in Sources */,
-				490A5E061F1FE9C700FD049F /* ABUsersView.m in Sources */,
 				9748A99B1F2A1CF700A26097 /* ABMacro.m in Sources */,
 				976585D91F3CB98200F3E7DF /* ABModel.m in Sources */,
+				976585EC1F3CE7F100F3E7DF /* ABUsersView.m in Sources */,
 				493B6E481F20F8D2001AE474 /* ABImageModel.m in Sources */,
 				493B6E531F211E82001AE474 /* ABImageModelDispatcher.m in Sources */,
 				9748A9A01F2A1CF700A26097 /* ABTimerWeakReference.m in Sources */,

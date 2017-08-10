@@ -10,7 +10,7 @@
 
 #import "NSMutableArray+ABExtension.h"
 
-static NSString * const ABPlistName = @"arrayModel.plist";
+static NSString * const ABPlistName = @"arrayModelData.plist";
 
 @interface ABArrayModel ()
 @property (nonatomic, strong)   NSMutableArray  *mutableObjects;
@@ -129,6 +129,7 @@ static NSString * const ABPlistName = @"arrayModel.plist";
 
 - (void)loadData {
     self.mutableObjects = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
+
 }
 
 #pragma mark -
@@ -152,6 +153,5 @@ static NSString * const ABPlistName = @"arrayModel.plist";
     
     return nil;
 }
-
 
 @end
