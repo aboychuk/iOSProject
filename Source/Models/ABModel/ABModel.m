@@ -18,17 +18,18 @@
 
 - (void)load {
     @synchronized (self) {
-        if (ABModelLoading == self.state) {
+        NSUInteger state = self.state;
+        if (ABModelLoading == state) {
             return;
         }
         
-        if (ABModelUnloaded == self.state || ABModelLoaded == self.state) {
-            [self notifyOfState:self.state];
+        if (ABModelLoaded == state) {
+            [self notifyOfState:state];
             return;
         }
-        self.state = ABModelLoading;
+        state = ABModelLoading;
     }
-    
+
     [self processLoading];
 }
 

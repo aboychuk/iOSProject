@@ -9,9 +9,9 @@
 #import "ABObservableObject.h"
 
 typedef NS_ENUM(NSUInteger, ABModelState) {
+    ABModelUnloaded,
     ABModelLoading,
     ABModelLoaded,
-    ABModelUnloaded,
     ABModelLoadingFailed,
     ABModelStateCount
 };
