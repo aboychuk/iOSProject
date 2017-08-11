@@ -14,7 +14,7 @@
 @class ABArrayModelChange;
 
 typedef NS_ENUM(NSUInteger, ABArrayModelState) {
-    ABArrayModelObjectChanged,
+    ABArrayModelObjectChanged = ABModelStateCount,
     ABArrayModelObjectCount
 };
 

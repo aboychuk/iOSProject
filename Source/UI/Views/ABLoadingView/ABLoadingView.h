@@ -11,6 +11,6 @@
 @interface ABLoadingView : UIView
 @property (nonatomic, strong)   IBOutlet UIActivityIndicatorView    *indicatorView;
 
-+ (instancetype)initWithView:(UIView *)view;
++ (instancetype)initLoadingViewWithView:(UIView *)view;
 
 @end

@@ -12,6 +12,7 @@
 #import "ABUsersView.h"
 #import "ABUserCell.h"
 #import "ABArrayModel.h"
+#import "ABLoadingView.h"
 
 #import "ABMacro.h"
 #import "UITableView+ABExtension.h"
@@ -35,6 +36,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
         
         _users = users;
         [_users addObserver:self];
+        [_users load];
     }
 }
 
