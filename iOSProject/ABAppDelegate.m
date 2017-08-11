@@ -63,7 +63,7 @@ static const NSUInteger usersCount    = 3000;
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-
+    [self.arrayModel saveData];
 }
 
 

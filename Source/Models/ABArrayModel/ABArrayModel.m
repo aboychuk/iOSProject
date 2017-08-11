@@ -129,7 +129,6 @@ static NSString * const ABPlistName = @"arrayModelData.plist";
 
 - (void)loadData {
     self.mutableObjects = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
-
 }
 
 #pragma mark -
