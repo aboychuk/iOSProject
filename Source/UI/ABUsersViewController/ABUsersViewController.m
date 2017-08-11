@@ -63,6 +63,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationBarItems];
+    [self.usersView.tableView reloadData];
 }
 
 #pragma mark
@@ -135,7 +136,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark
 #pragma mark - ABArrayModelObserver
 
-- (void)didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel {
+- (void)arrayModel:(ABArrayModel *)arrayModel didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel {
     [changeModel updateTableView:self.usersView.tableView];
 }
 
