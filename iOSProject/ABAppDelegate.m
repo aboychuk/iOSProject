@@ -48,12 +48,12 @@ static const NSUInteger usersCount    = 3000;
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [self.arrayModel saveData];
+    [self.arrayModel save];
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [self.arrayModel loadData];
+    [self.arrayModel load];
 }
 
 
@@ -63,7 +63,7 @@ static const NSUInteger usersCount    = 3000;
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    [self.arrayModel saveData];
+    [self.arrayModel save];
 }
 
 

@@ -21,7 +21,7 @@ static NSString * const ABNavigationBarTitle = @"Users";
 
 ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
-@interface ABUsersViewController () <ABModelObserver, ABArrayModelObserver>
+@interface ABUsersViewController () <ABArrayModelObserver>
 
 @end
 
@@ -36,7 +36,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
         
         _users = users;
         [_users addObserver:self];
-        [_users load];
+        [users load];
     }
 }
 
@@ -132,13 +132,6 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
                                                                                 target:self
                                                                                 action:@selector(onEdit:)];
     return editButton;
-}
-
-#pragma mark -
-#pragma mark ABModelObserver
-
-- (void)modelLoading:(id)model {
-    
 }
 
 #pragma mark -

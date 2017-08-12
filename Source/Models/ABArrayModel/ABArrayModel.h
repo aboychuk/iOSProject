@@ -44,7 +44,7 @@ typedef NS_ENUM(NSUInteger, ABArrayModelState) {
 - (id)objectAtIndexedSubscript:(NSUInteger)index;
 - (NSUInteger)indexOfObject:(id)object;
 
-- (void)saveData;
-- (void)loadData;
+- (void)save;
+- (void)processLoadingInBackground;
 
 @end

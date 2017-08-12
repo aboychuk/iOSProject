@@ -8,9 +8,14 @@
 
 #import "ABArrayModel.h"
 
-#import "NSMutableArray+ABExtension.h"
+#import "ABUser.h"
 
-static NSString * const ABPlistName = @"arrayModelData.plist";
+#import "NSMutableArray+ABExtension.h"
+#import "NSObject+ABObjectExtension.h"
+
+static NSString * const ABPlistName     = @"arrayModelData.plist";
+static const NSUInteger usersCount      = 3000;
+
 
 @interface ABArrayModel ()
 @property (nonatomic, strong)   NSMutableArray  *mutableObjects;
@@ -123,12 +128,19 @@ static NSString * const ABPlistName = @"arrayModelData.plist";
     return [self.mutableObjects indexOfObject:object];
 }
 
-- (void)saveData {
+- (void)save {
     [NSKeyedArchiver archiveRootObject:self.mutableObjects toFile:[self savePath]];
 }
+- (void)processLoadingInBackground {
+    NSArray *users = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
+    if (users) {
+        self.mutableObjects = [NSMutableArray arrayWithArray:users];
+    } else {
+        for (NSUInteger i = 0; i < usersCount; i++) {
+            [self addObject:[ABUser new]];
+        }
 
-- (void)loadData {
-    self.mutableObjects = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
+    }
 }
 
 #pragma mark -
