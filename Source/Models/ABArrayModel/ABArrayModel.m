@@ -105,12 +105,8 @@
 
 - (id)objectAtIndex:(NSUInteger)index {
     @synchronized (self) {
-        if (index < self.count) {
-            return self.mutableObjects[index];
-        }
+        return index < self.count ? self.mutableObjects[index] : nil;
     }
-    
-    return nil;
 }
 
 - (id)objectAtIndexedSubscript:(NSUInteger)index {
