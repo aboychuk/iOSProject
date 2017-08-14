@@ -16,9 +16,10 @@
 static NSString * const ABPlistName     = @"arrayModelData.plist";
 static const NSUInteger usersCount      = 3000;
 
-
 @interface ABArrayModel ()
 @property (nonatomic, strong)   NSMutableArray  *mutableObjects;
+
+- (void)notifyOfStateWithModelChange:(ABArrayModelChange *)modelChange;
 
 @end
 
@@ -73,9 +74,8 @@ static const NSUInteger usersCount      = 3000;
     @synchronized (self) {
         if (object) {
             if (index < self.count) {
+                [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeAddWithIndex:index]];
                 [self.mutableObjects insertObject:object atIndex:index];
-                [self notifyOfState:ABArrayModelObjectChanged
-                         withObject:[ABArrayModelChange modelChangeAddWithIndex:index]];
             }
         }
     }
@@ -94,30 +94,24 @@ static const NSUInteger usersCount      = 3000;
 - (void)removeObjectAtIndex:(NSUInteger)index {
     @synchronized (self) {
         if (index < self.count) {
+            [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeDeleteWithIndex:index]];
             [self.mutableObjects removeObjectAtIndex:index];
-            [self notifyOfState:ABArrayModelObjectChanged
-                     withObject:[ABArrayModelChange modelChangeDeleteWithIndex:index]];
         }
     }
 }
 
 - (void)moveObjectFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)destinationIndex {
     @synchronized (self) {
+        [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeMoveAtIndex:sourceIndex
+                                                                              toIndex:destinationIndex]];
         [self.mutableObjects moveObjectAtIndex:sourceIndex toIndex:destinationIndex];
-        [self notifyOfState:ABArrayModelObjectChanged
-                 withObject:[ABArrayModelChange modelChangeMoveAtIndex:sourceIndex
-                                                               toIndex:destinationIndex]];
     }
 }
 
 - (id)objectAtIndex:(NSUInteger)index {
     @synchronized (self) {
-        if (index < self.count) {
-            return self.mutableObjects[index];
-        }
+        return index < self.count ? self.mutableObjects[index] : nil;
     }
-    
-    return nil;
 }
 
 - (id)objectAtIndexedSubscript:(NSUInteger)index {
@@ -126,6 +120,10 @@ static const NSUInteger usersCount      = 3000;
 
 - (NSUInteger)indexOfObject:(id)object {
     return [self.mutableObjects indexOfObject:object];
+}
+
+- (void)notifyOfStateWithModelChange:(ABArrayModelChange *)modelChange {
+    [self notifyOfState:ABArrayModelObjectChanged withObject:modelChange];
 }
 
 - (void)save {
@@ -139,7 +137,6 @@ static const NSUInteger usersCount      = 3000;
         for (NSUInteger i = 0; i < usersCount; i++) {
             [self addObject:[ABUser new]];
         }
-
     }
 }
 

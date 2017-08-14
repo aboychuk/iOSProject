@@ -8,6 +8,8 @@
 
 #import "NSBundle+ABExtension.h"
 
+#import "NSArray+ABExtension.h"
+
 @implementation NSBundle (ABExtension)
 
 - (id)objectWithClass:(Class)cls {
@@ -16,11 +18,10 @@
 
 - (id)objectWithClass:(Class)cls owner:(id)owner options:(NSDictionary *)options {
     NSArray *objects = [self loadNibNamed:NSStringFromClass([cls class]) owner:owner options:options];
-    for (id object in objects) {
-        if ([object isKindOfClass:cls]) {
-            return object;
-        }
+    if (objects) {
+        return [objects objectWithClass:cls];
     }
+
     return nil;
 }
 
