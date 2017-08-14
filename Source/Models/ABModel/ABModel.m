@@ -11,6 +11,12 @@
 #import "ABGCDExtension.h"
 #import "ABMacro.h"
 
+@interface ABModel ()
+
+- (void)processLoading;
+
+@end
+
 @implementation ABModel
 
 #pragma mark -
@@ -33,7 +39,7 @@
     [self processLoading];
 }
 
-- (void)processLoadingInBackground {
+- (void)performLoading {
     
 }
 
@@ -44,7 +50,7 @@
     ABWeakify(self);
     ABDispatchAsyncInBackgroundThread(^{
         ABStrongifyAndReturnIfNil(self);
-        [self processLoadingInBackground];
+        [self performLoading];
     });
 }
 
@@ -54,13 +60,13 @@
 - (SEL)selectorForState:(NSUInteger)state {
     switch (state) {
         case ABModelLoading:
-            return @selector(modelLoading:);
+            return @selector(modelWillLoad:);
         case ABModelLoaded:
             return @selector(modelDidLoad:);
         case ABModelUnloaded:
-            return @selector(modelUnloaded:);
+            return @selector(modelDidUnloaded:);
         case ABModelLoadingFailed:
-            return @selector(modelLoadingFailed:);
+            return @selector(modelDidFailLoading:);
     }
     
     return nil;

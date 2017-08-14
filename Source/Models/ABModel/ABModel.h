@@ -19,10 +19,10 @@ typedef NS_ENUM(NSUInteger, ABModelState) {
 @protocol ABModelObserver <NSObject>
 
 @optional
-- (void)modelLoading:(id)model;
+- (void)modelWillLoad:(id)model;
 - (void)modelDidLoad:(id)model;
-- (void)modelUnloaded:(id)model;
-- (void)modelLoadingFailed:(id)model;
+- (void)modelDidUnloaded:(id)model;
+- (void)modelDidFailLoading:(id)model;
 
 @end
 
@@ -31,6 +31,6 @@ typedef NS_ENUM(NSUInteger, ABModelState) {
 - (void)load;
 
 //Method created for subclassing do not call it directly.
-- (void)processLoadingInBackground;
+- (void)performLoading;
 
 @end
