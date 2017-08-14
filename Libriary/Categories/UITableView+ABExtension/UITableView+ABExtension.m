@@ -10,6 +10,8 @@
 
 #import "UINib+ABExtension.h"
 
+#import "ABArrayModelChange.h"
+
 @implementation UITableView (ABExtension)
 
 - (id)reusableCellWithClass:(Class)cls {
@@ -30,5 +32,29 @@
     block();
     [self endUpdates];
 }
+
+- (void)applyModel:(ABArrayModelChange *)model {
+    [self applyModel:model
+           inSection:0
+        rowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void)applyModel:(ABArrayModelChange *)model
+                    inSection:(NSUInteger)section
+{
+    [self applyModel:model
+           inSection:section
+        rowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void)applyModel:(ABArrayModelChange *)model
+                    inSection:(NSUInteger)section
+                 rowAnimation:(UITableViewRowAnimation)rowAnimation
+{
+    [model updateTableView:self
+                 inSection:section
+          withRowAnimation:rowAnimation];
+}
+
 
 @end

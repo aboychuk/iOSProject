@@ -22,6 +22,8 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
 @interface ABUsersViewController () <ABArrayModelObserver>
 
+- (void)setupNavigationBar;
+
 @end
 
 @implementation ABUsersViewController
@@ -35,6 +37,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
         
         _users = users;
         [_users addObserver:self];
+        [self.usersView.tableView reloadData];
     }
 }
 
@@ -62,8 +65,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addNavigationBarItems];
-    [self.usersView.tableView reloadData];
+    [self setupNavigationBar];
 }
 
 #pragma mark
@@ -114,7 +116,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark
 #pragma mark - Private
 
-- (void)addNavigationBarItems {
+- (void)setupNavigationBar {
     UINavigationItem *navigationItem = self.navigationItem;
     navigationItem.title = ABNavigationBarTitle;
     
@@ -136,8 +138,10 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark
 #pragma mark - ABArrayModelObserver
 
-- (void)arrayModel:(ABArrayModel *)arrayModel didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel {
-    [changeModel updateTableView:self.usersView.tableView];
+- (void)            arrayModel:(ABArrayModel *)arrayModel
+ didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel
+{
+    [self.usersView.tableView applyModel:changeModel];
 }
 
 @end
