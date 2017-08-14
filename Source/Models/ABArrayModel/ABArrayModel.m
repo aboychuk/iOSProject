@@ -13,6 +13,8 @@
 @interface ABArrayModel ()
 @property (nonatomic, strong)   NSMutableArray  *mutableObjects;
 
+- (void)notifyOfStateWithModelChange:(ABArrayModelChange *)modelChange;
+
 @end
 
 @implementation ABArrayModel
@@ -66,9 +68,8 @@
     @synchronized (self) {
         if (object) {
             if (index < self.count) {
+                [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeAddWithIndex:index]];
                 [self.mutableObjects insertObject:object atIndex:index];
-                [self notifyOfState:ABArrayModelObjectChanged
-                         withObject:[ABArrayModelChange modelChangeAddWithIndex:index]];
             }
         }
     }
@@ -87,19 +88,17 @@
 - (void)removeObjectAtIndex:(NSUInteger)index {
     @synchronized (self) {
         if (index < self.count) {
+            [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeDeleteWithIndex:index]];
             [self.mutableObjects removeObjectAtIndex:index];
-            [self notifyOfState:ABArrayModelObjectChanged
-                     withObject:[ABArrayModelChange modelChangeDeleteWithIndex:index]];
         }
     }
 }
 
 - (void)moveObjectFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)destinationIndex {
     @synchronized (self) {
+        [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeMoveAtIndex:sourceIndex
+                                                                              toIndex:destinationIndex]];
         [self.mutableObjects moveObjectAtIndex:sourceIndex toIndex:destinationIndex];
-        [self notifyOfState:ABArrayModelObjectChanged
-                 withObject:[ABArrayModelChange modelChangeMoveAtIndex:sourceIndex
-                                                               toIndex:destinationIndex]];
     }
 }
 
@@ -115,6 +114,10 @@
 
 - (NSUInteger)indexOfObject:(id)object {
     return [self.mutableObjects indexOfObject:object];
+}
+
+- (void)notifyOfStateWithModelChange:(ABArrayModelChange *)modelChange {
+    [self notifyOfState:ABArrayModelObjectChanged withObject:modelChange];
 }
 
 #pragma mark -
