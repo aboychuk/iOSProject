@@ -15,6 +15,7 @@ typedef BOOL(^ABBoolBlock)(id);
 
 + (NSArray *)objectsWithCount:(NSUInteger)count factoryBlock:(ABFactoryBlock)factoryBlock;
 
+- (instancetype)objectWithClass:(Class)cls;
 - (instancetype)objectsWithClass:(Class)cls;
 - (instancetype)filteredObjectsWithClass:(Class)cls;
 - (instancetype)filteredArrayWithBlock:(ABBoolBlock)boolBlock;

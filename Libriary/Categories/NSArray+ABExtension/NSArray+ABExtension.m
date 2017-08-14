@@ -39,6 +39,10 @@
     return [self filteredArrayUsingPredicate:predicate];
 }
 
+- (instancetype)objectWithClass:(Class)cls {
+    return [[self objectsWithClass:cls] firstObject];
+}
+
 - (instancetype)objectsWithClass:(Class)cls {
     NSPredicate *predicate = [NSPredicate predicateWithBlock: ^BOOL(id obj, NSDictionary *bindings) {
         return [obj isKindOfClass:cls];
@@ -56,6 +60,5 @@
     }];
     return [self filteredArrayUsingPredicate:predicate];
 }
-
 
 @end
