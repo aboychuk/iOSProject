@@ -8,13 +8,9 @@
 
 #import "ABArrayModel.h"
 
-#import "ABUser.h"
+#import "ABArrayModelChange.h"
 
 #import "NSMutableArray+ABExtension.h"
-#import "NSObject+ABObjectExtension.h"
-
-static NSString * const ABPlistName     = @"arrayModelData.plist";
-static const NSUInteger usersCount      = 3000;
 
 @interface ABArrayModel ()
 @property (nonatomic, strong)   NSMutableArray  *mutableObjects;
@@ -124,30 +120,6 @@ static const NSUInteger usersCount      = 3000;
 
 - (void)notifyOfStateWithModelChange:(ABArrayModelChange *)modelChange {
     [self notifyOfState:ABArrayModelObjectChanged withObject:modelChange];
-}
-
-- (void)save {
-    [NSKeyedArchiver archiveRootObject:self.mutableObjects toFile:[self savePath]];
-}
-- (void)processLoadingInBackground {
-    NSArray *users = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
-    if (users) {
-        self.mutableObjects = [NSMutableArray arrayWithArray:users];
-    } else {
-        for (NSUInteger i = 0; i < usersCount; i++) {
-            [self addObject:[ABUser new]];
-        }
-    }
-}
-
-#pragma mark -
-#pragma mark Private
-
-- (NSString *)savePath {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *savePath = [paths firstObject];
-    
-    return [savePath stringByAppendingPathComponent:ABPlistName];
 }
 
 #pragma mark -

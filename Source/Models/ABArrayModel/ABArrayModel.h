@@ -8,8 +8,6 @@
 
 #import "ABModel.h"
 
-#import "ABArrayModelChange.h"
-
 @class ABArrayModel;
 @class ABArrayModelChange;
 
@@ -43,8 +41,5 @@ typedef NS_ENUM(NSUInteger, ABArrayModelState) {
 - (id)objectAtIndex:(NSUInteger)index;
 - (id)objectAtIndexedSubscript:(NSUInteger)index;
 - (NSUInteger)indexOfObject:(id)object;
-
-- (void)save;
-- (void)processLoadingInBackground;
 
 @end
