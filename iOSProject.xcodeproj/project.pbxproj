@@ -47,6 +47,7 @@
 		977ADB9F1F30D5A400C51298 /* NSBundle+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */; };
 		9790362A1F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 979036291F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.m */; };
 		97C075841F30F15E0095B34D /* ABArrayModelChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C075831F30F15E0095B34D /* ABArrayModelChange.m */; };
+		97CDA2D51F421E62000F2138 /* ABUsersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CDA2D41F421E62000F2138 /* ABUsersModel.m */; };
 		97D1FE561F3DDFC9009F4248 /* ABUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D1FE551F3DDFC9009F4248 /* ABUsersViewController.xib */; };
 		97D1FE621F3DE207009F4248 /* ABLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D1FE611F3DE207009F4248 /* ABLoadingView.m */; };
 		97D1FE641F3DE220009F4248 /* ABLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D1FE631F3DE220009F4248 /* ABLoadingView.xib */; };
@@ -149,6 +150,8 @@
 		979036291F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ABExtension.m"; sourceTree = "<group>"; };
 		97C075821F30F15E0095B34D /* ABArrayModelChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChange.h; sourceTree = "<group>"; };
 		97C075831F30F15E0095B34D /* ABArrayModelChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModelChange.m; sourceTree = "<group>"; };
+		97CDA2D31F421E62000F2138 /* ABUsersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersModel.h; sourceTree = "<group>"; };
+		97CDA2D41F421E62000F2138 /* ABUsersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersModel.m; sourceTree = "<group>"; };
 		97D1FE551F3DDFC9009F4248 /* ABUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUsersViewController.xib; sourceTree = "<group>"; };
 		97D1FE601F3DE207009F4248 /* ABLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLoadingView.h; sourceTree = "<group>"; };
 		97D1FE611F3DE207009F4248 /* ABLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLoadingView.m; sourceTree = "<group>"; };
@@ -194,6 +197,7 @@
 		490A5DE61F1FE3EA00FD049F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				97CDA2D21F421E4F000F2138 /* ABUsersModel */,
 				976585D61F3CB96600F3E7DF /* ABModel */,
 				97C964A11F29F7E60023B2A6 /* ABArrayModel */,
 				493B6E451F20F8D2001AE474 /* ABImageModel */,
@@ -613,6 +617,15 @@
 			path = ABArrayModel;
 			sourceTree = "<group>";
 		};
+		97CDA2D21F421E4F000F2138 /* ABUsersModel */ = {
+			isa = PBXGroup;
+			children = (
+				97CDA2D31F421E62000F2138 /* ABUsersModel.h */,
+				97CDA2D41F421E62000F2138 /* ABUsersModel.m */,
+			);
+			path = ABUsersModel;
+			sourceTree = "<group>";
+		};
 		97D1FE571F3DE108009F4248 /* ABLoadingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -826,6 +839,7 @@
 				97D1FE621F3DE207009F4248 /* ABLoadingView.m in Sources */,
 				9748A9A31F2A1CF700A26097 /* ABClasterAlphabet.m in Sources */,
 				9755BD701F38832E000269C5 /* ABArrayModelChangeRemove.m in Sources */,
+				97CDA2D51F421E62000F2138 /* ABUsersModel.m in Sources */,
 				9748A9A11F2A1CF700A26097 /* UIWindow+ABExtension.m in Sources */,
 				9748A9AB1F2A3B0F00A26097 /* ABArrayModel.m in Sources */,
 				490A5DF11F1FE3EA00FD049F /* ABUser.m in Sources */,

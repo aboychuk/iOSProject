@@ -10,7 +10,8 @@
 
 @interface ABUsersModel : ABArrayModel
 
+
 - (void)save;
-- (void)processLoadingInBackground;
+- (void)performLoading;
 
 @end

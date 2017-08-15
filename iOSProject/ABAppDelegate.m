@@ -10,11 +10,12 @@
 
 #import "ABUsersViewController.h"
 #import "ABUser.h"
+#import "ABUsersModel.h"
 #import "ABArrayModel.h"
 
 #import "NSObject+ABObjectExtension.h"
 
-static const NSUInteger usersCount    = 3000;
+static const NSUInteger usersCount    = 1;
 
 @interface ABAppDelegate ()
 
@@ -33,10 +34,10 @@ static const NSUInteger usersCount    = 3000;
     window.rootViewController = navigationController;
     
     [window makeKeyAndVisible];
-    ABArrayModel *arrayModel = [[ABArrayModel alloc] initWithObjects:[ABUser objectsWithCount:usersCount]];
-    self.arrayModel = arrayModel;
     
-    controller.users = arrayModel;
+    ABUsersModel *usersModel = [[ABUsersModel alloc] initWithObjects:[ABUser objectsWithCount:usersCount]];
+    self.usersModel = usersModel;
+    controller.users = self.usersModel;
 
     return YES;
 }
@@ -48,12 +49,12 @@ static const NSUInteger usersCount    = 3000;
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [self.arrayModel save];
+    [self.usersModel save];
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [self.arrayModel load];
+    [self.usersModel load];
 }
 
 
@@ -63,7 +64,7 @@ static const NSUInteger usersCount    = 3000;
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    [self.arrayModel save];
+    [self.usersModel save];
 }
 
 

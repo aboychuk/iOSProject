@@ -13,6 +13,7 @@
 #import "ABUserCell.h"
 #import "ABArrayModel.h"
 #import "ABLoadingView.h"
+#import "ABUsersModel.h"
 
 #import "ABMacro.h"
 #import "UITableView+ABExtension.h"
@@ -23,6 +24,8 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
 @interface ABUsersViewController () <ABArrayModelObserver>
 
+- (void)setupNavigationBar;
+
 @end
 
 @implementation ABUsersViewController
@@ -30,13 +33,12 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark -
 #pragma mark Accessors
 
-- (void)setUsers:(ABArrayModel *)users {
+- (void)setUsers:(ABUsersModel *)users {
     if  (_users != users) {
         [_users removeObserver:self];
         
         _users = users;
         [_users addObserver:self];
-        [users load];
     }
 }
 
@@ -64,7 +66,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addNavigationBarItems];
+    [self setupNavigationBar];
 }
 
 #pragma mark -
@@ -115,7 +117,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark -
 #pragma mark Private
 
-- (void)addNavigationBarItems {
+- (void)setupNavigationBar {
     UINavigationItem *navigationItem = self.navigationItem;
     navigationItem.title = ABNavigationBarTitle;
     
@@ -138,7 +140,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark ABArrayModelObserver
 
 - (void)arrayModel:(ABArrayModel *)arrayModel didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel {
-    [changeModel updateTableView:self.usersView.tableView];
+    [self.usersView.tableView applyModel:changeModel];
 }
 
 @end

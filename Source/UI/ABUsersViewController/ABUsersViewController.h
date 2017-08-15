@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @class ABArrayModel;
+@class ABUsersModel;
 
 @interface ABUsersViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong)   ABArrayModel  *users;
+@property (nonatomic, strong)   ABUsersModel    *users;
 
 - (void)onEdit:(UIBarButtonItem *)sender;
 - (void)onAdd:(UIBarButtonItem *)sender;

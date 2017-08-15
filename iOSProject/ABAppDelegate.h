@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ABArrayModel.h"
+#import "ABUsersModel.h"
 
 @interface ABAppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic)   UIWindow        *window;
-@property (strong, nonatomic)   ABArrayModel    *arrayModel;
+@property (strong, nonatomic)   ABUsersModel    *usersModel;
 
 @end
 

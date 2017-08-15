@@ -10,17 +10,23 @@
 
 #import "ABUser.h"
 
+#import "NSObject+ABObjectExtension.h"
+
 
 static NSString * const ABPlistName     = @"arrayModelData.plist";
-static const NSUInteger usersCount      = 3000;
+static const NSUInteger usersCount      = 10;
 
 @implementation ABUsersModel
 
 - (void)save {
-    [NSKeyedArchiver archiveRootObject:[self copy] toFile:[self savePath]];
+    [NSKeyedArchiver archiveRootObject:[self copyObjects] toFile:[self savePath]];
 }
-- (void)processLoadingInBackground {
-
+- (void)performLoading {
+    NSArray *users = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
+    if (!users) {
+        users = [ABUser objectsWithCount:usersCount];
+    }
+    [self addObjects:users];
 }
 
 #pragma mark -
