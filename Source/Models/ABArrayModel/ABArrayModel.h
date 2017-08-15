@@ -36,6 +36,8 @@ typedef NS_ENUM(NSUInteger, ABArrayModelState) {
 - (void)removeObjects:(id)objects;
 - (void)removeObjectAtIndex:(NSUInteger)index;
 
+- (id)copyObjects;
+
 - (void)moveObjectFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)destinationIndex;
 
 - (id)objectAtIndex:(NSUInteger)index;
