@@ -25,14 +25,11 @@
 - (void)load {
     @synchronized (self) {
         NSUInteger state = self.state;
-        if (ABModelLoading == state) {
-            return;
-        }
-        
-        if (ABModelLoaded == state) {
+        if (ABModelLoading == state || ABModelLoaded == state) {
             [self notifyOfState:state];
             return;
         }
+        
         state = ABModelLoading;
     }
 
@@ -69,7 +66,7 @@
             return @selector(modelDidFailLoading:);
     }
     
-    return nil;
+    return [super selectorForState:state];
 }
 
 @end
