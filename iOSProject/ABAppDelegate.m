@@ -14,11 +14,7 @@
 
 #import "NSObject+ABObjectExtension.h"
 
-static const NSUInteger usersCount    = 3000;
-
-@interface ABAppDelegate ()
-
-@end
+static const NSUInteger usersCount  = 3000;
 
 @implementation ABAppDelegate
 

@@ -68,8 +68,9 @@
     @synchronized (self) {
         if (object) {
             if (index < self.count) {
-                [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeAddWithIndex:index]];
                 [self.mutableObjects insertObject:object atIndex:index];
+                [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeAddWithIndex:index]];
+
             }
         }
     }
@@ -88,17 +89,17 @@
 - (void)removeObjectAtIndex:(NSUInteger)index {
     @synchronized (self) {
         if (index < self.count) {
-            [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeDeleteWithIndex:index]];
             [self.mutableObjects removeObjectAtIndex:index];
+            [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeDeleteWithIndex:index]];
         }
     }
 }
 
 - (void)moveObjectFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)destinationIndex {
     @synchronized (self) {
+        [self.mutableObjects moveObjectAtIndex:sourceIndex toIndex:destinationIndex];
         [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeMoveAtIndex:sourceIndex
                                                                               toIndex:destinationIndex]];
-        [self.mutableObjects moveObjectAtIndex:sourceIndex toIndex:destinationIndex];
     }
 }
 

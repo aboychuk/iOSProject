@@ -138,9 +138,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark
 #pragma mark - ABArrayModelObserver
 
-- (void)            arrayModel:(ABArrayModel *)arrayModel
- didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel
-{
+- (void)arrayModel:(ABArrayModel *)arrayModel didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel {
     [self.usersView.tableView applyModel:changeModel];
 }
 

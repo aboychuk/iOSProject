@@ -10,8 +10,13 @@
 
 #import "NSString+ABExtensions.h"
 
+static NSString * const ABImageName = @"image";
+static NSString * const ABImageType = @"png";
+
 @implementation ABUser
+
 @dynamic fullname;
+
 @dynamic image;
 
 #pragma mark
@@ -35,7 +40,7 @@
 }
 
 - (UIImage *)image {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"image" ofType:@"png"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:ABImageName ofType:ABImageType];
     
     return [UIImage imageWithContentsOfFile:path];
 }
