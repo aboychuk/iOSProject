@@ -26,7 +26,10 @@ static const NSUInteger usersCount      = 10;
     if (!users) {
         users = [ABUser objectsWithCount:usersCount];
     }
+    
     [self addObjects:users];
+    
+    self.state = ABModelLoaded;
 }
 
 #pragma mark -

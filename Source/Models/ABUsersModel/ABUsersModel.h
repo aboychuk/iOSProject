@@ -10,7 +10,6 @@
 
 @interface ABUsersModel : ABArrayModel
 
-
 - (void)save;
 - (void)performLoading;
 
