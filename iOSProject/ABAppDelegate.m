@@ -15,8 +15,6 @@
 
 #import "NSObject+ABObjectExtension.h"
 
-static const NSUInteger usersCount    = 1;
-
 @interface ABAppDelegate ()
 
 @end
@@ -35,9 +33,7 @@ static const NSUInteger usersCount    = 1;
     
     [window makeKeyAndVisible];
     
-    ABUsersModel *usersModel = [[ABUsersModel alloc] initWithObjects:[ABUser objectsWithCount:usersCount]];
-    self.usersModel = usersModel;
-    controller.users = self.usersModel;
+    controller.users = [[ABUsersModel alloc] init];
 
     return YES;
 }
