@@ -69,7 +69,7 @@
 - (void)insertObject:(id)object atIndex:(NSUInteger)index {
     @synchronized (self) {
         if (object) {
-            if (index < self.count) {
+            if (index <= self.count) {
                 [self.mutableObjects insertObject:object atIndex:index];
                 [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeAddWithIndex:index]];
             }
@@ -89,7 +89,7 @@
 
 - (void)removeObjectAtIndex:(NSUInteger)index {
     @synchronized (self) {
-        if (index < self.count) {
+        if (index <= self.count) {
             [self.mutableObjects removeObjectAtIndex:index];
             [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeDeleteWithIndex:index]];
         }

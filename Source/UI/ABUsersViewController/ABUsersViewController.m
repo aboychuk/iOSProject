@@ -39,6 +39,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
         
         _users = users;
         [_users addObserver:self];
+        [self.users load];
     }
 }
 
