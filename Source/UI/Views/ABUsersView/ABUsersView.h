@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ABUsersView : UIView
+#import "ABView.h"
+
+@interface ABUsersView : ABView
 @property (nonatomic, strong)   IBOutlet UITableView    *tableView;
 
 @end

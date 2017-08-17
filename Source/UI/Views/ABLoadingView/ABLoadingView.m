@@ -13,13 +13,16 @@
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
-+ (instancetype)initLoadingViewWithView:(UIView *)view {
-    return [[self alloc] initWithFrame:view.bounds];
++ (instancetype)initLoadingViewWithSuperview:(UIView *)superview {
+    ABLoadingView *loadingView = [[self alloc] initWithFrame:superview.bounds];
+    [superview addSubview:loadingView];
+    
+    return loadingView;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    self.backgroundColor = [UIColor colorWithWhite:1 alpha:1];
+    
     return self;
 }
 
