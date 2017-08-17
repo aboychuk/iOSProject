@@ -9,11 +9,11 @@
 #import "ABTableViewCell.h"
 
 @class ABUser;
-@class ABImageModel;
+@class ABImageView;
 
 @interface ABUserCell : ABTableViewCell
 @property (nonatomic, strong)   IBOutlet UILabel        *fullNameLabel;
-@property (nonatomic, strong)   IBOutlet ABImageModel   *userImageModel;
+@property (nonatomic, strong)   IBOutlet ABImageView    *userImageView;
 
 @property (nonatomic, strong)   ABUser  *user;
 

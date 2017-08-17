@@ -33,7 +33,7 @@
     
     [window makeKeyAndVisible];
     
-    controller.users = [[ABUsersModel alloc] init];
+    controller.usersModel = [[ABUsersModel alloc] init];
 
     return YES;
 }

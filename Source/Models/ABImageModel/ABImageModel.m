@@ -43,7 +43,7 @@
 #pragma mark Public Methods
 
 - (void)performLoading {
-    self.image = [UIImage imageWithContentsOfFile:[self.url absoluteString]];
+    self.image = [UIImage imageWithContentsOfFile:self.url.path];
     self.state = self.image ? ABImageModelLoaded : ABImageModelLoadingFailed;
 }
 

@@ -33,14 +33,14 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark -
 #pragma mark Accessors
 
-- (void)setUsers:(ABUsersModel *)users {
-    if  (_users != users) {
-        [_users removeObserver:self];
+- (void)setUsersModel:(ABUsersModel *)usersModel {
+    if  (_usersModel != usersModel) {
+        [_usersModel removeObserver:self];
         
-        _users = users;
-        [_users addObserver:self];
+        _usersModel = usersModel;
+        [_usersModel addObserver:self];
         
-        [self.users load];
+        [self.usersModel load];
     }
 }
 
@@ -60,7 +60,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 }
 
 - (void)onAdd:(UIBarButtonItem *)sender {
-    [self.users insertObject:[ABUser new] atIndex:0];
+    [self.usersModel insertObject:[ABUser new] atIndex:0];
 }
 
 #pragma mark -
@@ -75,12 +75,12 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.users.count;
+    return self.usersModel.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ABUserCell *cell = [tableView reusableCellWithClass:[ABUserCell class]];
-    cell.user = self.users[indexPath.row];
+    cell.user = self.usersModel[indexPath.row];
     
     return cell;
 }
@@ -98,7 +98,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (UITableViewCellEditingStyleDelete == editingStyle) {
-        [self.users removeObjectAtIndex:indexPath.row];
+        [self.usersModel removeObjectAtIndex:indexPath.row];
     }
 }
 
@@ -106,7 +106,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
    moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
           toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-    [self.users moveObjectFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+    [self.usersModel moveObjectFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
 }
 
 #pragma mark -

@@ -20,6 +20,7 @@
 		49E0A5061F0D049400ACD9D1 /* ABARCSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0A5051F0D049400ACD9D1 /* ABARCSpec.m */; };
 		54EC5C0E9136472865E5ECAB /* libPods-iOSProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 615FE69DAC50A9B7400CE7EE /* libPods-iOSProjectTests.a */; };
 		97362A231F45876200D98F88 /* ABView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97362A221F45876200D98F88 /* ABView.m */; };
+		97362A271F45CE1200D98F88 /* ABImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97362A261F45CE1200D98F88 /* ABImageView.m */; };
 		9748A99B1F2A1CF700A26097 /* ABMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 9748A9731F2A1CF700A26097 /* ABMacro.m */; };
 		9748A99C1F2A1CF700A26097 /* NSArray+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9748A9771F2A1CF700A26097 /* NSArray+ABExtension.m */; };
 		9748A99D1F2A1CF700A26097 /* NSObject+ABObjectExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9748A97A1F2A1CF700A26097 /* NSObject+ABObjectExtension.m */; };
@@ -98,6 +99,8 @@
 		615FE69DAC50A9B7400CE7EE /* libPods-iOSProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97362A211F45876200D98F88 /* ABView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABView.h; sourceTree = "<group>"; };
 		97362A221F45876200D98F88 /* ABView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABView.m; sourceTree = "<group>"; };
+		97362A251F45CE1200D98F88 /* ABImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABImageView.h; sourceTree = "<group>"; };
+		97362A261F45CE1200D98F88 /* ABImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABImageView.m; sourceTree = "<group>"; };
 		9748A9721F2A1CF700A26097 /* ABMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMacro.h; sourceTree = "<group>"; };
 		9748A9731F2A1CF700A26097 /* ABMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMacro.m; sourceTree = "<group>"; };
 		9748A9761F2A1CF700A26097 /* NSArray+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ABExtension.h"; sourceTree = "<group>"; };
@@ -352,6 +355,15 @@
 			path = ABView;
 			sourceTree = "<group>";
 		};
+		97362A241F45CDFE00D98F88 /* ABImageView */ = {
+			isa = PBXGroup;
+			children = (
+				97362A251F45CE1200D98F88 /* ABImageView.h */,
+				97362A261F45CE1200D98F88 /* ABImageView.m */,
+			);
+			path = ABImageView;
+			sourceTree = "<group>";
+		};
 		9739D6EB1F30D9D6000F9DC2 /* ABArrayModelChange */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +556,7 @@
 		976585E01F3CE7F100F3E7DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				97362A241F45CDFE00D98F88 /* ABImageView */,
 				97362A201F45874F00D98F88 /* ABView */,
 				97D1FE571F3DE108009F4248 /* ABLoadingView */,
 				976585E11F3CE7F100F3E7DF /* ABUserCellView */,
@@ -854,6 +867,7 @@
 				9755BD701F38832E000269C5 /* ABArrayModelChangeRemove.m in Sources */,
 				97CDA2D51F421E62000F2138 /* ABUsersModel.m in Sources */,
 				9748A9A11F2A1CF700A26097 /* UIWindow+ABExtension.m in Sources */,
+				97362A271F45CE1200D98F88 /* ABImageView.m in Sources */,
 				9748A9AB1F2A3B0F00A26097 /* ABArrayModel.m in Sources */,
 				490A5DF11F1FE3EA00FD049F /* ABUser.m in Sources */,
 				97C075841F30F15E0095B34D /* ABArrayModelChange.m in Sources */,

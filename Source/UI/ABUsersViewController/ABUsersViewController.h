@@ -12,7 +12,7 @@
 @class ABUsersModel;
 
 @interface ABUsersViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong)   ABUsersModel    *users;
+@property (nonatomic, strong)   ABUsersModel    *usersModel;
 
 - (void)onEdit:(UIBarButtonItem *)sender;
 - (void)onAdd:(UIBarButtonItem *)sender;

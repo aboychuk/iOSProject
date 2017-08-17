@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lh2-uA-KGj" id="FbC-Sh-r5k">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="faw-xH-Dg0">
@@ -25,15 +25,16 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="TG6-px-xRs">
-                        <rect key="frame" x="0.0" y="0.0" width="75" height="44"/>
+                    <view contentMode="scaleToFill" misplaced="YES" id="YxU-56-hSq" customClass="ABImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="67" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="fullNameLabel" destination="faw-xH-Dg0" id="4gh-cF-zsa"/>
-                <outlet property="userImageView" destination="TG6-px-xRs" id="EQI-w6-gob"/>
+                <outlet property="userImageView" destination="YxU-56-hSq" id="5So-Ef-P2X"/>
             </connections>
             <point key="canvasLocation" x="38.5" y="69"/>
         </tableViewCell>

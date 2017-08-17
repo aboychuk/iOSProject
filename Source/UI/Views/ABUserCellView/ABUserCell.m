@@ -9,6 +9,7 @@
 #import "ABUserCell.h"
 
 #import "ABUser.h"
+#import "ABImageView.h"
 #import "ABImageModel.h"
 
 @interface ABUserCell ()
@@ -42,7 +43,7 @@
 
 - (void)fillWithModel:(ABUser *)user {
     self.fullNameLabel.text = user.fullname;
-    self.userImageModel.image = user.image;
+    self.userImageView.imageModel = user.imageModel;
 }
 
 @end

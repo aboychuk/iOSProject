@@ -15,6 +15,6 @@
 @property (nonatomic, copy)     NSString        *name;
 @property (nonatomic, copy)     NSString        *surname;
 @property (nonatomic, readonly) NSString        *fullname;
-@property (nonatomic, readonly) ABImageModel    *image;
+@property (nonatomic, readonly) ABImageModel    *imageModel;
 
 @end

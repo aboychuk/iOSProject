@@ -20,7 +20,7 @@ static NSString * const ABImageType = @"png";
 
 @implementation ABUser
 @dynamic fullname;
-@dynamic image;
+@dynamic imageModel;
 
 #pragma mark
 #pragma mark Initializations and Deallocations
@@ -42,7 +42,7 @@ static NSString * const ABImageType = @"png";
     return [NSString stringWithFormat:@"%@ %@", self.name, self.surname];
 }
 
-- (ABImageModel *)image {
+- (ABImageModel *)imageModel {
     NSURL *url = [[NSBundle mainBundle] URLForResource:ABImageName withExtension:ABImageType];
     
     return [ABImageModel imageWithUrl:url];
