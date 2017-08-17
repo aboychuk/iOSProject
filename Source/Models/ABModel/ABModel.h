@@ -19,9 +19,9 @@ typedef NS_ENUM(NSUInteger, ABModelState) {
 @protocol ABModelObserver <NSObject>
 
 @optional
+- (void)modelDidUnloaded:(id)model;
 - (void)modelWillLoad:(id)model;
 - (void)modelDidLoad:(id)model;
-- (void)modelDidUnloaded:(id)model;
 - (void)modelDidFailLoading:(id)model;
 
 @end

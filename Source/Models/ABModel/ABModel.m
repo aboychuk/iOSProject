@@ -29,8 +29,7 @@
             [self notifyOfState:state];
             return;
         }
-        
-        state = ABModelLoading;
+        self.state = ABModelLoading;
     }
 
     [self processLoading];
