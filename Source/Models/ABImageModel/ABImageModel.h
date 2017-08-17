@@ -18,8 +18,8 @@ typedef NS_ENUM(NSUInteger, ABImageModelState) {
 };
 
 @interface ABImageModel : ABModel
-@property (nonatomic, readonly)                     UIImage *image;
-@property (nonatomic, readonly)                     NSURL   *url;
+@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, readonly) NSURL   *url;
 
 + (instancetype)imageWithUrl:(NSURL *)url;
 

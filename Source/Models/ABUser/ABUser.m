@@ -8,6 +8,8 @@
 
 #import "ABUser.h"
 
+#import "ABImageModel.h"
+
 #import "NSString+ABExtensions.h"
 
 static NSString * const ABName = @"name";
@@ -33,8 +35,6 @@ static NSString * const ABImageType = @"png";
     return self;
 }
 
-
-
 #pragma mark
 #pragma mark Accessors
 
@@ -42,10 +42,10 @@ static NSString * const ABImageType = @"png";
     return [NSString stringWithFormat:@"%@ %@", self.name, self.surname];
 }
 
-- (UIImage *)image {
-    NSString *path = [[NSBundle mainBundle] pathForResource:ABImageName ofType:ABImageType];
+- (ABImageModel *)image {
+    NSURL *url = [[NSBundle mainBundle] URLForResource:ABImageName withExtension:ABImageType];
     
-    return [UIImage imageWithContentsOfFile:path];
+    return [ABImageModel imageWithUrl:url];
 }
 
 #pragma mark - 

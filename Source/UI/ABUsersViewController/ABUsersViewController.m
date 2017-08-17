@@ -22,7 +22,7 @@ static NSString * const ABNavigationBarTitle = @"Users";
 
 ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
-@interface ABUsersViewController () <ABArrayModelObserver>
+@interface ABUsersViewController () <ABArrayModelObserver, ABModelObserver>
 
 - (void)setupNavigationBar;
 
@@ -144,5 +144,8 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 - (void)arrayModel:(ABArrayModel *)arrayModel didChangeWithArrayModelChange:(ABArrayModelChange *)changeModel {
     [self.usersView.tableView applyModel:changeModel];
 }
+
+#pragma mark -
+#pragma mark ABModelObserver
 
 @end
