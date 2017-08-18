@@ -27,6 +27,15 @@
     return self;
 }
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+    imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    self.contentImageView = imageView;
+}
+
 #pragma mark -
 #pragma mark Accessors
 
