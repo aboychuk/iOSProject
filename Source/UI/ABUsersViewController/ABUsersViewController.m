@@ -148,11 +148,14 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark -
 #pragma mark ABModelObserver
 
-#pragma mark -
-#pragma mark ABModelObserver
+- (void)modelWillLoad:(id)model {
+//    [self.usersView showLoadingView];
+}
 
 - (void)modelDidLoad:(id)model {
+    [self.usersView hideLoadingView];
     [self.usersView.tableView reloadData];
 }
+
 
 @end

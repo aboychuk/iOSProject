@@ -16,12 +16,34 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.loadingView = [ABLoadingView initLoadingViewWithSuperview:self];
-
+        [self initLoadingView];
     }
     
     return self;
 }
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+     [self initLoadingView];
+}
+
+#pragma mark -
+#pragma mark Public
+
+- (void)showLoadingView {
+    [self.loadingView setVisible:YES animated:YES];
+}
+
+- (void)hideLoadingView {
+    [self.loadingView setVisible:NO animated:YES];
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (void)initLoadingView {
+    self.loadingView = [ABLoadingView initLoadingViewWithSuperview:self];
+    
+}
 
 @end

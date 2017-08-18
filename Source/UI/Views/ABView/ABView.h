@@ -11,6 +11,9 @@
 #import "ABLoadingView.h"
 
 @interface ABView : UIView
-@property (nonatomic, strong)   ABLoadingView   *loadingView;
+@property (nonatomic, strong)  IBOutlet ABLoadingView   *loadingView;
+
+- (void)showLoadingView;
+- (void)hideLoadingView;
 
 @end

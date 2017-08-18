@@ -41,6 +41,7 @@
 #pragma mark Public Methods
 
 - (void)performLoading {
+    usleep(1000 * 1000 * 10);
     self.image = [UIImage imageWithContentsOfFile:self.url.path];
     self.state = self.image ? ABModelLoaded : ABModelLoadingFailed;
 }

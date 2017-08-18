@@ -9,8 +9,19 @@
 #import <UIKit/UIKit.h>
 
 @interface ABLoadingView : UIView
-@property (nonatomic, strong)   IBOutlet UIActivityIndicatorView    *indicatorView;
+@property (nonatomic, strong)   IBOutlet UIActivityIndicatorView    *spinner;
 
 + (instancetype)initLoadingViewWithSuperview:(UIView *)view;
+
+- (instancetype)initWithFrame:(CGRect)frame;
+
+- (void)setVisible:(BOOL)visible;
+
+- (void)setVisible:(BOOL)visible
+          animated:(BOOL)animated;
+
+- (void)setVisible:(BOOL)visible
+          animated:(BOOL)animated
+ completionHandler:(void (^)(void))completionHandler;
 
 @end
