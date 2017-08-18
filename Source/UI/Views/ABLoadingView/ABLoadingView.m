@@ -19,7 +19,7 @@ static const CGFloat        ABInisibleAlpha         = 0.0;
 
 + (instancetype)initLoadingViewWithSuperview:(UIView *)superview {
     ABLoadingView *loadingView = [[self alloc] initWithFrame:superview.bounds];
-//    [superview addSubview:loadingView];
+    [superview addSubview:loadingView];
     
     return loadingView;
 }
@@ -84,15 +84,20 @@ static const CGFloat        ABInisibleAlpha         = 0.0;
 }
 
 - (void)initSpinner {
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    spinner.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    spinner.center = self.center;
-    NSLog(@"%@", NSStringFromCGPoint(self.center));
-    NSLog(@"%@", NSStringFromCGPoint(spinner.center));
-
-    [spinner startAnimating];
+    UIActivityIndicatorView *spinner = self.spinner;
+    if (!spinner) {
+        spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        spinner.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        spinner.center = self.center;
+        NSLog(@"%@", NSStringFromCGPoint(self.center));
+        NSLog(@"%@", NSStringFromCGPoint(spinner.center));
+        [self addSubview:spinner];
+        
+        [spinner startAnimating];
+        
+        self.spinner = spinner;;
+    }
     
-    self.spinner = spinner;
     
 }
 
