@@ -148,4 +148,11 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark -
 #pragma mark ABModelObserver
 
+#pragma mark -
+#pragma mark ABModelObserver
+
+- (void)modelDidLoad:(id)model {
+    [self.usersView.tableView reloadData];
+}
+
 @end

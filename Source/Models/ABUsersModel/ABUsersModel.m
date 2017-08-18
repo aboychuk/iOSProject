@@ -22,7 +22,6 @@ static const NSUInteger usersCount      = 10;
     [NSKeyedArchiver archiveRootObject:[self copyObjects] toFile:[self savePath]];
 }
 - (void)performLoading {
-//    usleep(1000 * 1000);
     NSArray *users = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
     if (!users) {
         users = [ABUser objectsWithCount:usersCount];

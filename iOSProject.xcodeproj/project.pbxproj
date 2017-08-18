@@ -10,7 +10,6 @@
 		490A5DF11F1FE3EA00FD049F /* ABUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 490A5DE91F1FE3EA00FD049F /* ABUser.m */; };
 		493B6E411F20EED5001AE474 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 493B6E401F20EED5001AE474 /* image.png */; };
 		493B6E481F20F8D2001AE474 /* ABImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B6E471F20F8D2001AE474 /* ABImageModel.m */; };
-		493B6E531F211E82001AE474 /* ABImageModelDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B6E521F211E82001AE474 /* ABImageModelDispatcher.m */; };
 		494DB09D1F0F7E6E003D34A9 /* ABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 494DB09C1F0F7E6E003D34A9 /* ABAppDelegate.m */; };
 		494DB0A51F0F8019003D34A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494DB0A31F0F8019003D34A9 /* Main.storyboard */; };
 		49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0A4E31F0D00CB00ACD9D1 /* main.m */; };
@@ -79,8 +78,6 @@
 		493B6E401F20EED5001AE474 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		493B6E461F20F8D2001AE474 /* ABImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABImageModel.h; sourceTree = "<group>"; };
 		493B6E471F20F8D2001AE474 /* ABImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABImageModel.m; sourceTree = "<group>"; };
-		493B6E511F211E82001AE474 /* ABImageModelDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABImageModelDispatcher.h; sourceTree = "<group>"; };
-		493B6E521F211E82001AE474 /* ABImageModelDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABImageModelDispatcher.m; sourceTree = "<group>"; };
 		494DB09B1F0F7E6E003D34A9 /* ABAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABAppDelegate.h; sourceTree = "<group>"; };
 		494DB09C1F0F7E6E003D34A9 /* ABAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABAppDelegate.m; sourceTree = "<group>"; };
 		494DB0A41F0F8019003D34A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -203,11 +200,11 @@
 		490A5DE61F1FE3EA00FD049F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				97CDA2D21F421E4F000F2138 /* ABUsersModel */,
-				976585D61F3CB96600F3E7DF /* ABModel */,
 				97C964A11F29F7E60023B2A6 /* ABArrayModel */,
 				493B6E451F20F8D2001AE474 /* ABImageModel */,
+				976585D61F3CB96600F3E7DF /* ABModel */,
 				490A5DE71F1FE3EA00FD049F /* ABUser */,
+				97CDA2D21F421E4F000F2138 /* ABUsersModel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,18 +231,8 @@
 			children = (
 				493B6E461F20F8D2001AE474 /* ABImageModel.h */,
 				493B6E471F20F8D2001AE474 /* ABImageModel.m */,
-				493B6E501F211E5A001AE474 /* Private */,
 			);
 			path = ABImageModel;
-			sourceTree = "<group>";
-		};
-		493B6E501F211E5A001AE474 /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				493B6E511F211E82001AE474 /* ABImageModelDispatcher.h */,
-				493B6E521F211E82001AE474 /* ABImageModelDispatcher.m */,
-			);
-			path = Private;
 			sourceTree = "<group>";
 		};
 		49E0A4E11F0D00CB00ACD9D1 /* iOSProject */ = {
@@ -557,10 +544,10 @@
 			isa = PBXGroup;
 			children = (
 				97362A241F45CDFE00D98F88 /* ABImageView */,
-				97362A201F45874F00D98F88 /* ABView */,
 				97D1FE571F3DE108009F4248 /* ABLoadingView */,
 				976585E11F3CE7F100F3E7DF /* ABUserCellView */,
 				976585E51F3CE7F100F3E7DF /* ABUsersView */,
+				97362A201F45874F00D98F88 /* ABView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -890,7 +877,6 @@
 				976585D91F3CB98200F3E7DF /* ABModel.m in Sources */,
 				976585EC1F3CE7F100F3E7DF /* ABUsersView.m in Sources */,
 				493B6E481F20F8D2001AE474 /* ABImageModel.m in Sources */,
-				493B6E531F211E82001AE474 /* ABImageModelDispatcher.m in Sources */,
 				9748A9A01F2A1CF700A26097 /* ABTimerWeakReference.m in Sources */,
 				494DB09D1F0F7E6E003D34A9 /* ABAppDelegate.m in Sources */,
 				9748A9A71F2A1CF700A26097 /* ABObservableObject.m in Sources */,

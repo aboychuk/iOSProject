@@ -43,9 +43,9 @@ static NSString * const ABImageType = @"png";
 }
 
 - (ABImageModel *)imageModel {
-    NSURL *url = [[NSBundle mainBundle] URLForResource:ABImageName withExtension:ABImageType];
-    
-    return [ABImageModel imageWithUrl:url];
+    return [ABImageModel imageWithUrl:[[NSBundle mainBundle]
+                                       URLForResource:ABImageName
+                                       withExtension:ABImageType]];
 }
 
 #pragma mark - 

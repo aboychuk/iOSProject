@@ -10,13 +10,6 @@
 
 #import "ABModel.h"
 
-typedef NS_ENUM(NSUInteger, ABImageModelState) {
-    ABImageModelUnloaded,
-    ABImageModelLoading,
-    ABImageModelLoaded,
-    ABImageModelLoadingFailed
-};
-
 @interface ABImageModel : ABModel
 @property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, readonly) NSURL   *url;

@@ -8,8 +8,6 @@
 
 #import "ABImageModel.h"
 
-#import "ABImageModelDispatcher.h"
-
 #import "ABMacro.h"
 
 @interface ABImageModel ()
@@ -44,12 +42,12 @@
 
 - (void)performLoading {
     self.image = [UIImage imageWithContentsOfFile:self.url.path];
-    self.state = self.image ? ABImageModelLoaded : ABImageModelLoadingFailed;
+    self.state = self.image ? ABModelLoaded : ABModelLoadingFailed;
 }
 
 - (void)dump {
     self.image = nil;
-    self.state = ABImageModelUnloaded;
+    self.state = ABModelUnloaded;
 }
 
 @end
