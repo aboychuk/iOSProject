@@ -20,13 +20,6 @@
 
 @implementation ABUserCell
 
-#pragma mark -
-#pragma mark Initializations and Deallocations
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-}
-
 #pragma mark - 
 #pragma mark Accessors
 
