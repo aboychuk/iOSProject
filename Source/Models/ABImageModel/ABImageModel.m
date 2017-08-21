@@ -10,6 +10,10 @@
 
 #import "ABMacro.h"
 
+#import "ABGCDExtension.h"
+
+static const NSUInteger ABDelayBeforeDispatch = 10;
+
 @interface ABImageModel ()
 @property (nonatomic, strong)   UIImage     *image;
 @property (nonatomic, strong)   NSURL       *url;
@@ -41,9 +45,11 @@
 #pragma mark Public Methods
 
 - (void)performLoading {
-    usleep(1000 * 1000 * 10);
-    self.image = [UIImage imageWithContentsOfFile:self.url.path];
-    self.state = self.image ? ABModelLoaded : ABModelLoadingFailed;
+    ABDispatchAfterDelay(ABDelayBeforeDispatch, ^{
+        self.image = [UIImage imageWithContentsOfFile:self.url.path];
+        self.state = self.image ? ABModelLoaded : ABModelLoadingFailed;
+
+    });
 }
 
 - (void)dump {

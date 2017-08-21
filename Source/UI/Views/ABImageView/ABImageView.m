@@ -10,6 +10,8 @@
 
 #import "ABImageModel.h"
 
+#import "ABGCDExtension.h"
+
 @implementation ABImageView
 
 #pragma mark -
@@ -71,12 +73,16 @@
 #pragma mark ABModelObserver
 
 - (void)modelWillLoad:(id)model {
-    [self showLoadingView];
+    ABDispatchAsyncOnMainThread(^{
+        [self showLoadingView];
+    });
 }
 
 - (void)modelDidLoad:(id)model {
-    [self hideLoadingView];
-    [self fillWithModel:model];
+    ABDispatchAsyncOnMainThread(^{
+        [self hideLoadingView];
+        [self fillWithModel:model];
+    });
 }
 
 @end

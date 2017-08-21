@@ -14,6 +14,7 @@
 #import "ABArrayModel.h"
 #import "ABLoadingView.h"
 #import "ABUsersModel.h"
+#import "ABGCDExtension.h"
 
 #import "ABMacro.h"
 #import "UITableView+ABExtension.h"
@@ -149,12 +150,16 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 #pragma mark ABModelObserver
 
 - (void)modelWillLoad:(id)model {
-//    [self.usersView showLoadingView];
+    ABDispatchAsyncOnMainThread(^{
+        [self.usersView showLoadingView];
+    });
 }
 
 - (void)modelDidLoad:(id)model {
-    [self.usersView hideLoadingView];
-    [self.usersView.tableView reloadData];
+    ABDispatchAsyncOnMainThread(^{
+        [self.usersView hideLoadingView];
+        [self.usersView.tableView reloadData];
+    });
 }
 
 
