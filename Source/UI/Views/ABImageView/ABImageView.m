@@ -42,7 +42,7 @@
         _imageModel = imageModel;
         [_imageModel addObserver:self];
         
-        [_imageModel load];
+        [_imageModel loadModel];
     }
 }
 

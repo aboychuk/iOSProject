@@ -9,12 +9,20 @@
 #import "ABObservableObject.h"
 
 typedef NS_ENUM(NSUInteger, ABModelState) {
-    ABModelUnloaded,
-    ABModelLoading,
-    ABModelLoaded,
-    ABModelLoadingFailed,
+    ABModelDidUnloaded,
+    ABModelWillLoad,
+    ABModelDidLoad,
+    ABModelDidFailLoading,
     ABModelStateCount
 };
+
+@protocol ABModelSaveAndDump <NSObject>
+
+@optional
+- (void)saveModel;
+- (void)dumpModel;
+
+@end
 
 @protocol ABModelObserver <NSObject>
 
@@ -28,7 +36,7 @@ typedef NS_ENUM(NSUInteger, ABModelState) {
 
 @interface ABModel : ABObservableObject
 
-- (void)load;
+- (void)loadModel;
 
 //Method created for subclassing do not call it directly.
 - (void)performLoading;

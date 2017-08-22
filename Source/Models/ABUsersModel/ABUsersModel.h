@@ -8,9 +8,10 @@
 
 #import "ABArrayModel.h"
 
-@interface ABUsersModel : ABArrayModel
+@interface ABUsersModel : ABArrayModel <ABModelSaveAndDump>
 
-- (void)save;
+- (void)saveModel;
+- (void)dumpModel;
 - (void)performLoading;
 
 @end

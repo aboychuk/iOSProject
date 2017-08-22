@@ -11,25 +11,34 @@
 #import "ABUser.h"
 
 #import "NSObject+ABObjectExtension.h"
+#import "ABGCDExtension.h"
 
-
-static NSString * const ABPlistName     = @"arrayModelData.plist";
-static const NSUInteger usersCount      = 10;
+static NSString * const ABPlistName     = @"users.plist";
+static const NSUInteger ABUsersCount    = 100;
+static const NSUInteger ABDispatchDelay = 10;
 
 @implementation ABUsersModel
 
-- (void)save {
+- (void)saveModel {
     [NSKeyedArchiver archiveRootObject:[self copyObjects] toFile:[self savePath]];
 }
 - (void)performLoading {
-    NSArray *users = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
-    if (!users) {
-        users = [ABUser objectsWithCount:usersCount];
-    }
+    ABDispatchAfterDelay(ABDispatchDelay, ^{
+        NSArray *users = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
+        if (!users) {
+            users = [ABUser objectsWithCount:ABUsersCount];
+        }
+        [self addObjects:users];
+        
+        self.state = ABModelDidLoad;
+    });
+}
+
+- (void)dumpModel {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager removeItemAtPath:[self savePath] error:nil];
     
-    [self addObjects:users];
-    
-    self.state = ABModelLoaded;
+    self.state = ABModelDidUnloaded;
 }
 
 #pragma mark -

@@ -22,14 +22,14 @@
 #pragma mark -
 #pragma mark Public
 
-- (void)load {
+- (void)loadModel {
     @synchronized (self) {
         NSUInteger state = self.state;
-        if (ABModelLoading == state || ABModelLoaded == state) {
+        if (ABModelWillLoad == state || ABModelDidLoad == state) {
             [self notifyOfState:state];
             return;
         }
-        self.state = ABModelLoading;
+        self.state = ABModelWillLoad;
     }
 
     [self processLoading];
@@ -55,13 +55,13 @@
 
 - (SEL)selectorForState:(NSUInteger)state {
     switch (state) {
-        case ABModelLoading:
+        case ABModelWillLoad:
             return @selector(modelWillLoad:);
-        case ABModelLoaded:
+        case ABModelDidLoad:
             return @selector(modelDidLoad:);
-        case ABModelUnloaded:
+        case ABModelDidUnloaded:
             return @selector(modelDidUnloaded:);
-        case ABModelLoadingFailed:
+        case ABModelDidFailLoading:
             return @selector(modelDidFailLoading:);
     }
     

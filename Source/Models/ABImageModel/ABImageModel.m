@@ -47,14 +47,13 @@ static const NSUInteger ABDelayBeforeDispatch = 10;
 - (void)performLoading {
     ABDispatchAfterDelay(ABDelayBeforeDispatch, ^{
         self.image = [UIImage imageWithContentsOfFile:self.url.path];
-        self.state = self.image ? ABModelLoaded : ABModelLoadingFailed;
-
+        self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
     });
 }
 
-- (void)dump {
+- (void)dumpModel {
     self.image = nil;
-    self.state = ABModelUnloaded;
+    self.state = ABModelDidUnloaded;
 }
 
 @end

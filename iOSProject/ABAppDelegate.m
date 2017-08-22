@@ -34,6 +34,7 @@
     [window makeKeyAndVisible];
     
     controller.usersModel = [[ABUsersModel alloc] init];
+    self.usersModel = controller.usersModel;
 
     return YES;
 }
@@ -45,12 +46,12 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [self.usersModel save];
+    [self.usersModel saveModel];
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [self.usersModel load];
+    [self.usersModel loadModel];
 }
 
 
@@ -60,7 +61,7 @@
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    [self.usersModel save];
+    [self.usersModel dumpModel];
 }
 
 
