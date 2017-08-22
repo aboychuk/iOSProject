@@ -27,7 +27,7 @@ static const CGFloat        ABInisibleAlpha         = 0.0;
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initView];
+//        [self initView];
     }
     
     return self;
@@ -35,7 +35,7 @@ static const CGFloat        ABInisibleAlpha         = 0.0;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self initView];
+//    [self initView];
 }
 
 #pragma mark -

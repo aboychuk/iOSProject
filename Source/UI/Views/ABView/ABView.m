@@ -24,7 +24,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-     [self initLoadingView];
+    [self initLoadingView];
 }
 
 #pragma mark -
