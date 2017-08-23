@@ -14,12 +14,18 @@ static const NSTimeInterval ABDefaultTimerDuration  = 3;
 static const CGFloat        ABVisibleAlpha          = 0.8;
 static const CGFloat        ABInisibleAlpha         = 0.0;
 
+@interface ABLoadingView ()
+
+- (void)prepareView;
+
+@end
+
 @implementation ABLoadingView
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
-+ (instancetype)initLoadingViewWithSuperview:(UIView *)superview {
++ (instancetype)loadingViewWithSuperview:(UIView *)superview {
     ABLoadingView *loadingView = [[self alloc] initWithFrame:superview.bounds];
     [superview addSubview:loadingView];
     
@@ -29,7 +35,7 @@ static const CGFloat        ABInisibleAlpha         = 0.0;
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initView];
+        [self prepareView];
     }
     
     return self;
@@ -72,14 +78,14 @@ static const CGFloat        ABInisibleAlpha         = 0.0;
 #pragma mark -
 #pragma mark Private
 
-- (void)initView {
+- (void)prepareView {
     self.autoresizingMask = ABAutoresizeWithFixedPosition;
     self.backgroundColor = [UIColor blackColor];
-    self.alpha = 0.1;
-    [self initSpinner];
+    self.alpha = 0.0;
+    [self prepareSpinner];
 }
 
-- (void)initSpinner {
+- (void)prepareSpinner {
     UIActivityIndicatorView *spinner = self.spinner;
     if (!spinner) {
         spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
@@ -93,7 +99,8 @@ static const CGFloat        ABInisibleAlpha         = 0.0;
         self.spinner = spinner;
 
     }
-    [self addSubview:spinner];
+    
+    [self addSubview:self.spinner];
 }
 
 @end

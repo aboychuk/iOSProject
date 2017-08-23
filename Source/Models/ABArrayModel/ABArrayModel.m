@@ -6,6 +6,8 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 #import "ABArrayModel.h"
 
 #import "ABArrayModelChange.h"

@@ -12,7 +12,7 @@
 @property (nonatomic, strong)   IBOutlet UIActivityIndicatorView    *spinner;
 @property (nonatomic, assign)   BOOL                                visible;
 
-+ (instancetype)initLoadingViewWithSuperview:(UIView *)view;
++ (instancetype)loadingViewWithSuperview:(UIView *)view;
 
 - (instancetype)initWithFrame:(CGRect)frame;
 

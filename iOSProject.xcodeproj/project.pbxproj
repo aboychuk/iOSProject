@@ -51,7 +51,7 @@
 		97CDA2D51F421E62000F2138 /* ABUsersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CDA2D41F421E62000F2138 /* ABUsersModel.m */; };
 		97D1FE561F3DDFC9009F4248 /* ABUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D1FE551F3DDFC9009F4248 /* ABUsersViewController.xib */; };
 		97D1FE621F3DE207009F4248 /* ABLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D1FE611F3DE207009F4248 /* ABLoadingView.m */; };
-		97D1FE641F3DE220009F4248 /* ABLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D1FE631F3DE220009F4248 /* ABLoadingView.xib */; };
+		97D5281A1F4DA2B10054D5E4 /* ABLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D528191F4DA2B10054D5E4 /* ABLoadingView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,8 +158,8 @@
 		97D1FE551F3DDFC9009F4248 /* ABUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUsersViewController.xib; sourceTree = "<group>"; };
 		97D1FE601F3DE207009F4248 /* ABLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLoadingView.h; sourceTree = "<group>"; };
 		97D1FE611F3DE207009F4248 /* ABLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLoadingView.m; sourceTree = "<group>"; };
-		97D1FE631F3DE220009F4248 /* ABLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABLoadingView.xib; sourceTree = "<group>"; };
 		97D528141F4D7B1D0054D5E4 /* ABConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABConstants.h; sourceTree = "<group>"; };
+		97D528191F4DA2B10054D5E4 /* ABLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABLoadingView.xib; sourceTree = "<group>"; };
 		D375A5E9AFDC133C93F4CB4B /* Pods-iOSProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectTests/Pods-iOSProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -646,7 +646,7 @@
 			children = (
 				97D1FE601F3DE207009F4248 /* ABLoadingView.h */,
 				97D1FE611F3DE207009F4248 /* ABLoadingView.m */,
-				97D1FE631F3DE220009F4248 /* ABLoadingView.xib */,
+				97D528191F4DA2B10054D5E4 /* ABLoadingView.xib */,
 			);
 			path = ABLoadingView;
 			sourceTree = "<group>";
@@ -780,7 +780,7 @@
 			files = (
 				49E0A4F21F0D00D600ACD9D1 /* LaunchScreen.storyboard in Resources */,
 				9738EBE21F4C6CE50044583F /* ABUserCell.xib in Resources */,
-				97D1FE641F3DE220009F4248 /* ABLoadingView.xib in Resources */,
+				97D5281A1F4DA2B10054D5E4 /* ABLoadingView.xib in Resources */,
 				494DB0A51F0F8019003D34A9 /* Main.storyboard in Resources */,
 				97D1FE561F3DDFC9009F4248 /* ABUsersViewController.xib in Resources */,
 				49E0A4F11F0D00D600ACD9D1 /* Assets.xcassets in Resources */,

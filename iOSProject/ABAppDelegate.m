@@ -46,7 +46,7 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [self.usersModel saveModel];
+//    [self.usersModel saveModel];
 }
 
 

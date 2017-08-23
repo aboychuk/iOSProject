@@ -10,7 +10,15 @@
 
 #import "ABImageModel.h"
 
+#import "UINib+ABExtension.h"
 #import "ABGCDExtension.h"
+
+@interface ABImageView ()
+
+- (void)prepareContentView;
+- (void)fillWithModel:(ABImageModel *)model;
+
+@end
 
 @implementation ABImageView
 
@@ -20,7 +28,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initContentView];
+        [self prepareContentView];
     }
     
     return self;
@@ -28,7 +36,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self initContentView];
+    [self prepareContentView];
 }
 
 
@@ -58,7 +66,7 @@
 #pragma mark -
 #pragma mark Private Methods
 
-- (void)initContentView {
+- (void)prepareContentView {
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
     imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     

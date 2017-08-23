@@ -10,6 +10,12 @@
 
 #import "UINib+ABExtension.h"
 
+@interface ABView ()
+
+- (void)prepareLoadingView;
+
+@end
+
 @implementation ABView
 
 #pragma mark -
@@ -18,7 +24,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initLoadingView];
+        [self prepareLoadingView];
     }
     
     return self;
@@ -26,7 +32,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self initLoadingView];
+//    self.loadingView = [UINib objectWithClass:[ABLoadingView class]];
+//    [self addSubview:self.loadingView];
+    [self prepareLoadingView];
 }
 
 #pragma mark -
@@ -39,8 +47,8 @@
 #pragma mark -
 #pragma mark Private
 
-- (void)initLoadingView {
-    self.loadingView = [ABLoadingView initLoadingViewWithSuperview:self];
+- (void)prepareLoadingView {
+    self.loadingView = [ABLoadingView loadingViewWithSuperview:self];
     
 }
 

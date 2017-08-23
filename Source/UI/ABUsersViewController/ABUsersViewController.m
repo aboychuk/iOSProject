@@ -162,5 +162,4 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     });
 }
 
-
 @end
