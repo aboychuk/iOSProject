@@ -33,7 +33,7 @@
             <connections>
                 <outlet property="tableView" destination="jL5-ZO-ERm" id="XhD-F0-ZHF"/>
             </connections>
-            <point key="canvasLocation" x="367" y="46"/>
+            <point key="canvasLocation" x="485" y="72"/>
         </view>
     </objects>
 </document>

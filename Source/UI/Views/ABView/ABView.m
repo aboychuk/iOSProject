@@ -8,6 +8,8 @@
 
 #import "ABView.h"
 
+#import "UINib+ABExtension.h"
+
 @implementation ABView
 
 #pragma mark -
@@ -30,12 +32,8 @@
 #pragma mark -
 #pragma mark Public
 
-- (void)showLoadingView {
-    [self.loadingView setVisible:YES animated:YES];
-}
-
-- (void)hideLoadingView {
-    [self.loadingView setVisible:NO animated:YES];
+- (void)loadingViewVisible:(BOOL)visible {
+    [self.loadingView setVisible:visible];
 }
 
 #pragma mark -

@@ -151,13 +151,13 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 
 - (void)modelWillLoad:(id)model {
     ABDispatchAsyncOnMainThread(^{
-        [self.usersView showLoadingView];
+        [self.usersView loadingViewVisible:YES];
     });
 }
 
 - (void)modelDidLoad:(id)model {
     ABDispatchAsyncOnMainThread(^{
-        [self.usersView hideLoadingView];
+        [self.usersView loadingViewVisible:NO];
         [self.usersView.tableView reloadData];
     });
 }

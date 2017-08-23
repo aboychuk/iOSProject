@@ -10,6 +10,7 @@
 
 @interface ABLoadingView : UIView
 @property (nonatomic, strong)   IBOutlet UIActivityIndicatorView    *spinner;
+@property (nonatomic, assign)   BOOL                                visible;
 
 + (instancetype)initLoadingViewWithSuperview:(UIView *)view;
 
@@ -22,6 +23,6 @@
 
 - (void)setVisible:(BOOL)visible
           animated:(BOOL)animated
- completionHandler:(void (^)(void))completionHandler;
+ completionHandler:(void (^)(BOOL))completionHandler;
 
 @end

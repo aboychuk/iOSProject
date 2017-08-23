@@ -159,6 +159,7 @@
 		97D1FE601F3DE207009F4248 /* ABLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLoadingView.h; sourceTree = "<group>"; };
 		97D1FE611F3DE207009F4248 /* ABLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLoadingView.m; sourceTree = "<group>"; };
 		97D1FE631F3DE220009F4248 /* ABLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABLoadingView.xib; sourceTree = "<group>"; };
+		97D528141F4D7B1D0054D5E4 /* ABConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABConstants.h; sourceTree = "<group>"; };
 		D375A5E9AFDC133C93F4CB4B /* Pods-iOSProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProjectTests/Pods-iOSProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +192,7 @@
 		490A5DE51F1FE3EA00FD049F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				97D528101F4D74990054D5E4 /* Constants */,
 				976585DB1F3CE7F100F3E7DF /* UI */,
 				490A5DE61F1FE3EA00FD049F /* Models */,
 			);
@@ -647,6 +649,14 @@
 				97D1FE631F3DE220009F4248 /* ABLoadingView.xib */,
 			);
 			path = ABLoadingView;
+			sourceTree = "<group>";
+		};
+		97D528101F4D74990054D5E4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				97D528141F4D7B1D0054D5E4 /* ABConstants.h */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		A37FCB006A85B592D804657F /* Pods */ = {
