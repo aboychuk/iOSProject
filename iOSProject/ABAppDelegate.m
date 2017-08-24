@@ -9,11 +9,11 @@
 #import "ABAppDelegate.h"
 
 #import "ABUsersViewController.h"
-#import "ABUser.h"
 #import "ABUsersModel.h"
-#import "ABArrayModel.h"
 
 #import "NSObject+ABObjectExtension.h"
+
+#import "ABConstants.h"
 
 @interface ABAppDelegate ()
 
@@ -33,9 +33,9 @@
     
     [window makeKeyAndVisible];
     
-    controller.usersModel = [[ABUsersModel alloc] init];
-    self.usersModel = controller.usersModel;
-
+    
+    controller.usersModel = [ABUsersModel new];
+    
     return YES;
 }
 
@@ -46,12 +46,12 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-//    [self.usersModel saveModel];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ABSaveNotification object:nil];
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [self.usersModel loadModel];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ABLoadNotification object:nil];
 }
 
 
@@ -61,7 +61,7 @@
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    [self.usersModel dumpModel];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ABSaveNotification object:nil];
 }
 
 

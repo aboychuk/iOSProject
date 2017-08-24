@@ -6,8 +6,6 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 #import "ABUsersModel.h"
 
 #import "ABUser.h"
@@ -15,25 +13,21 @@
 #import "NSObject+ABObjectExtension.h"
 #import "ABGCDExtension.h"
 
-static NSString *const ABNotificationCenterSaveModel = @"applicationDidEnterBackground";
-static NSString *const ABNotificationCenterLoadModel = @"LoadModel";
-static NSString *const ABNotificationCenterDumpModel = @"DumpModel";
-static NSString * const ABPlistName     = @"users.plist";
-static const NSUInteger ABUsersCount    = 100;
-static const NSUInteger ABDispatchDelay = 10;
+#import "ABConstants.h"
 
 @implementation ABUsersModel
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(saveModel)
-                                                     name:ABNotificationCenterSaveModel
-                                                   object:nil];
+        [self prepareNSNotificationCenter];
     }
     
     return self;
@@ -46,7 +40,7 @@ static const NSUInteger ABDispatchDelay = 10;
     [NSKeyedArchiver archiveRootObject:[self copyObjects] toFile:[self savePath]];
 }
 - (void)performLoading {
-//    ABDispatchAfterDelay(ABDispatchDelay, ^{
+    ABDispatchAfterDelay(ABDispatchDelay, ^{
         NSArray *users = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
         if (!users) {
             users = [ABUser objectsWithCount:ABUsersCount];
@@ -54,7 +48,7 @@ static const NSUInteger ABDispatchDelay = 10;
         [self addObjects:users];
         
         self.state = ABModelDidLoad;
-//    });
+    });
 }
 
 - (void)dumpModel {
@@ -74,8 +68,24 @@ static const NSUInteger ABDispatchDelay = 10;
     return [savePath stringByAppendingPathComponent:ABPlistName];
 }
 
-
 #pragma mark -
 #pragma mark NSNotificationCenter
+
+- (void)prepareNSNotificationCenter {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(saveModel)
+                                                 name:ABSaveNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadModel)
+                                                 name:ABLoadNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dumpModel)
+                                                 name:ABDumpNotification
+                                               object:nil];
+}
 
 @end

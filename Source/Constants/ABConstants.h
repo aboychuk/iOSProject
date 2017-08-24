@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+//NSNotificationCenter constants
+static NSString *const ABLoadNotification = @"loadNotification";
+static NSString *const ABSaveNotification = @"saveNotification";
+static NSString *const ABDumpNotification = @"dumpNotification";
+
+//ABUsersModel constants
+static NSString * const ABPlistName     = @"users.plist";
+static const NSUInteger ABUsersCount    = 10;
+static const NSUInteger ABDispatchDelay = 10;
+
+//UIView autoresizing constants
 static const UIViewAutoresizing ABAutoresizeWithFixedPosition = UIViewAutoresizingFlexibleLeftMargin
                                                                 | UIViewAutoresizingFlexibleWidth
                                                                 | UIViewAutoresizingFlexibleRightMargin
