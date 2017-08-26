@@ -21,13 +21,13 @@
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self unsubscribeNotifications];
 }
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self prepareNSNotificationCenter];
+        [self subscribeNotifications];
     }
     
     return self;
@@ -73,21 +73,26 @@
 #pragma mark -
 #pragma mark NSNotificationCenter
 
-- (void)prepareNSNotificationCenter {
+- (void)subscribeNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(saveModel)
-                                                 name:ABSaveNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(loadModel)
-                                                 name:ABLoadNotification
+                                                 name:UIApplicationDidEnterBackgroundNotification
                                                object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(dumpModel)
-                                                 name:ABDumpNotification
+                                                 name:UIApplicationWillTerminateNotification
                                                object:nil];
+}
+
+- (void)unsubscribeNotifications {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIApplicationDidEnterBackgroundNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIApplicationWillTerminateNotification
+                                                  object:nil];
 }
 
 @end
