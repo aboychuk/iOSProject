@@ -12,6 +12,10 @@
 
 @interface ABObservableObject ()
 @property (nonatomic, retain)   NSHashTable    *mutableObserversHashTable;
+@property (nonatomic, assign)   BOOL           notify;
+
+- (void)notifyOfStateChangeWithSelector:(SEL)selector andObject:(id)object;
+- (void)performBlock:(void(^)(void))block notification:(BOOL)notification;
 
 @end
 
@@ -30,6 +34,7 @@
     self = [super init];
     if (self) {
         self.mutableObserversHashTable = [NSHashTable weakObjectsHashTable];
+        self.notify = YES;
     }
     
     return self;
@@ -81,12 +86,29 @@
 
 - (void)notifyOfState:(NSUInteger)state withObject:(id)object {
     @synchronized (self) {
-        [self notifyOfStateChangeWithSelector:[self selectorForState:state] andObject:object];
+        if (self.notify) {
+            [self notifyOfStateChangeWithSelector:[self selectorForState:state] andObject:object];
+        }
     }
 }
 
+- (void)performBlockWithNotification:(ABVoidBlock)voidBlock {
+    [self performBlock:voidBlock notification:YES];
+}
+
+- (void)performBlockWithoutNotification:(ABVoidBlock)voidBlock {
+    [self performBlock:voidBlock notification:NO];
+}
+
+
 #pragma mark
 #pragma mark - Private Methods
+
+- (void)performBlock:(ABVoidBlock)voidBlock notification:(BOOL)notification {
+    self.notify = notification;
+    voidBlock();
+    self.notify = !notification;
+}
 
 - (SEL)selectorForState:(NSUInteger)state {
     [self doesNotRecognizeSelector:_cmd];

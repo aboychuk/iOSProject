@@ -42,10 +42,12 @@
 - (void)performLoading {
     ABDispatchAfterDelay(ABDispatchDelay, ^{
         NSArray *users = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
-        if (!users) {
+        if (!users.count) {
             users = [ABUser objectsWithCount:ABUsersCount];
         }
-        [self addObjects:users];
+        [self performBlockWithoutNotification:^{
+            [self addObjects:users];
+        }];
         
         self.state = ABModelDidLoad;
     });

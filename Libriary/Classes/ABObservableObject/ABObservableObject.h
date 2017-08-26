@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^ABVoidBlock)(void);
+
 @interface ABObservableObject : NSObject
 @property (nonatomic, assign)   NSUInteger  state;
 @property (nonatomic, readonly) NSSet       *observersSet;
@@ -20,6 +22,9 @@
 
 - (void)notifyOfState:(NSUInteger)state;
 - (void)notifyOfState:(NSUInteger)state withObject:(id)object;
+
+- (void)performBlockWithNotification:(ABVoidBlock)voidBlock;
+- (void)performBlockWithoutNotification:(ABVoidBlock)voidBlock;
 
 //This method is intendent for subclassing. Never call it directly.
 - (SEL)selectorForState:(NSUInteger)state;
