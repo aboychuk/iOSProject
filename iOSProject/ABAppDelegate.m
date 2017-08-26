@@ -33,7 +33,6 @@
     
     [window makeKeyAndVisible];
     
-    
     controller.usersModel = [ABUsersModel new];
     
     return YES;
@@ -46,12 +45,12 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [[NSNotificationCenter defaultCenter] postNotificationName:ABSaveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ABSaveNotification object:[ABUsersModel class]];
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [[NSNotificationCenter defaultCenter] postNotificationName:ABLoadNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ABLoadNotification object:[ABUsersModel class]];
 }
 
 
@@ -61,7 +60,7 @@
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    [[NSNotificationCenter defaultCenter] postNotificationName:ABSaveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ABSaveNotification object:[ABUsersModel class]];
 }
 
 

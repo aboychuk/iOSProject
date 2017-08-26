@@ -32,9 +32,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-//    self.loadingView = [UINib objectWithClass:[ABLoadingView class]];
-//    [self addSubview:self.loadingView];
-    [self prepareLoadingView];
+    self.loadingView = [UINib objectWithClass:[ABLoadingView class]];
+    [self addSubview:self.loadingView];
+//    [self prepareLoadingView];
 }
 
 #pragma mark -
