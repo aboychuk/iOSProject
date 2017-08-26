@@ -37,7 +37,7 @@
 #pragma mark Public
 
 - (void)saveModel {
-    [NSKeyedArchiver archiveRootObject:[self copyObjects] toFile:[self savePath]];
+    [NSKeyedArchiver archiveRootObject:self.allObjects toFile:[self savePath]];
 }
 - (void)performLoading {
     ABDispatchAfterDelay(ABDispatchDelay, ^{

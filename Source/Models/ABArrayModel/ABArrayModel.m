@@ -24,6 +24,7 @@
 @implementation ABArrayModel
 
 @dynamic count;
+@dynamic allObjects;
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
@@ -31,7 +32,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.mutableObjects = [NSMutableArray new];
+        self = [self initWithObjects:nil];
     }
     
     return self;
@@ -52,6 +53,12 @@
 - (NSUInteger)count {
     @synchronized (self) {
         return self.mutableObjects.count;
+    }
+}
+
+- (NSArray *)allObjects {
+    @synchronized (self) {
+        return [self.mutableObjects copy];
     }
 }
 
@@ -98,10 +105,6 @@
     }
 }
 
-- (id)copyObjects {
-    return [self.mutableObjects copy];
-}
-
 - (void)moveObjectFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)destinationIndex {
     @synchronized (self) {
         [self.mutableObjects moveObjectAtIndex:sourceIndex toIndex:destinationIndex];
@@ -121,7 +124,9 @@
 }
 
 - (NSUInteger)indexOfObject:(id)object {
-    return [self.mutableObjects indexOfObject:object];
+    @synchronized (self) {
+        return [self.mutableObjects indexOfObject:object];
+    }
 }
 
 #pragma mark -

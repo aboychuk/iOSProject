@@ -25,6 +25,7 @@ typedef NS_ENUM(NSUInteger, ABArrayModelState) {
 
 @interface ABArrayModel : ABModel
 @property (nonatomic, readonly) NSUInteger  count;
+@property (nonatomic, readonly) NSArray     *allObjects;
 
 - (instancetype)initWithObjects:(NSArray *)objects;
 
@@ -35,8 +36,6 @@ typedef NS_ENUM(NSUInteger, ABArrayModelState) {
 - (void)removeObject:(id)object;
 - (void)removeObjects:(id)objects;
 - (void)removeObjectAtIndex:(NSUInteger)index;
-
-- (id)copyObjects;
 
 - (void)moveObjectFromIndex:(NSUInteger)sourceIndex toIndex:(NSUInteger)destinationIndex;
 
