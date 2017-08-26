@@ -15,7 +15,18 @@
 
 #import "ABConstants.h"
 
+@interface ABUsersModel ()
+@property (nonatomic, strong)   NSArray *notifications;
+
+- (NSString *)savePath;
+- (void)subscribeNotifications;
+- (void)unsubscribeNotifications;
+
+@end
+
 @implementation ABUsersModel
+
+@dynamic notifications;
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
@@ -31,6 +42,14 @@
     }
     
     return self;
+}
+
+#pragma mark -
+#pragma mark Accessors
+
+- (NSArray *)notifications {
+    return @[UIApplicationDidEnterBackgroundNotification,
+             UIApplicationWillTerminateNotification];
 }
 
 #pragma mark - 
@@ -74,25 +93,20 @@
 #pragma mark NSNotificationCenter
 
 - (void)subscribeNotifications {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(saveModel)
-                                                 name:UIApplicationDidEnterBackgroundNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(dumpModel)
-                                                 name:UIApplicationWillTerminateNotification
-                                               object:nil];
+    for (id notification in self.notifications) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(saveModel)
+                                                     name:notification
+                                                   object:nil];
+    }
 }
 
 - (void)unsubscribeNotifications {
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIApplicationDidEnterBackgroundNotification
-                                                  object:nil];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIApplicationWillTerminateNotification
-                                                  object:nil];
+    for (id notification in self.notifications) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:notification
+                                                      object:nil];
+    }
 }
 
 @end
