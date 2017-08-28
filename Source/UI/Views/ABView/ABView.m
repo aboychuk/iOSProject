@@ -33,6 +33,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.loadingView = [UINib objectWithClass:[ABLoadingView class]];
+    self.loadingView.frame = self.bounds;
+    self.loadingView.alpha = 0.1;
     [self addSubview:self.loadingView];
 //    [self prepareLoadingView];
 }

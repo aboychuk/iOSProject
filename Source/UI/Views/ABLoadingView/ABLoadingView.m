@@ -72,6 +72,7 @@ static const CGFloat        ABInisibleAlpha         = 0.0;
                          if (completionHandler) {
                              completionHandler(finished);
                          }
+                         _visible = visible;
                      }];
 }
 
@@ -80,8 +81,7 @@ static const CGFloat        ABInisibleAlpha         = 0.0;
 
 - (void)prepareView {
     self.autoresizingMask = ABAutoresizeWithFixedPosition;
-    self.backgroundColor = [UIColor blackColor];
-    self.alpha = 0.0;
+    self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
     [self prepareSpinner];
 }
 
@@ -92,7 +92,6 @@ static const CGFloat        ABInisibleAlpha         = 0.0;
         spinner.autoresizingMask = ABAutoresize;
         spinner.center = self.center;
         NSLog(@"%@", NSStringFromCGPoint(self.center));
-        NSLog(@"%@", NSStringFromCGPoint(spinner.center));
     
         [spinner startAnimating];
         

@@ -353,13 +353,14 @@
 			path = ABImageView;
 			sourceTree = "<group>";
 		};
-		9738EBDA1F4C6CE50044583F /* ABUserCellView */ = {
+		9738EBDA1F4C6CE50044583F /* ABUserCell */ = {
 			isa = PBXGroup;
 			children = (
 				9738EBDB1F4C6CE50044583F /* ABUserCell.h */,
 				9738EBDC1F4C6CE50044583F /* ABUserCell.m */,
 				9738EBDD1F4C6CE50044583F /* ABUserCell.xib */,
 			);
+			name = ABUserCell;
 			path = ABUserCellView;
 			sourceTree = "<group>";
 		};
@@ -557,7 +558,7 @@
 				976585DD1F3CE7F100F3E7DF /* ABUsersViewController.h */,
 				976585DE1F3CE7F100F3E7DF /* ABUsersViewController.m */,
 				97D1FE551F3DDFC9009F4248 /* ABUsersViewController.xib */,
-				9738EBDA1F4C6CE50044583F /* ABUserCellView */,
+				9738EBDA1F4C6CE50044583F /* ABUserCell */,
 				9738EBDE1F4C6CE50044583F /* ABUsersView */,
 			);
 			path = ABUsersViewController;
