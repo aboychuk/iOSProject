@@ -10,6 +10,8 @@
 
 #import "UINib+ABExtension.h"
 
+#import "ABConstants.h"
+
 @interface ABView ()
 
 - (void)prepareLoadingView;
@@ -32,26 +34,26 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.loadingView = [UINib objectWithClass:[ABLoadingView class]];
-    self.loadingView.frame = self.bounds;
-    self.loadingView.alpha = 0.1;
-    [self addSubview:self.loadingView];
-//    [self prepareLoadingView];
-}
-
-#pragma mark -
-#pragma mark Public
-
-- (void)loadingViewVisible:(BOOL)visible {
-    [self.loadingView setVisible:visible];
+    [self prepareLoadingViewFromNib];
 }
 
 #pragma mark -
 #pragma mark Private
 
+- (void)prepareLoadingViewFromNib {
+    ABLoadingView *loadingView = self.loadingView;
+    
+    loadingView = [UINib objectWithClass:[ABLoadingView class]];
+    loadingView.frame = self.bounds;
+    loadingView.visible = NO;
+
+    self.loadingView = loadingView;
+    
+    [self addSubview:self.loadingView];
+}
+
 - (void)prepareLoadingView {
     self.loadingView = [ABLoadingView loadingViewWithSuperview:self];
-    
 }
 
 @end

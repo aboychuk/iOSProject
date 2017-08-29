@@ -82,13 +82,13 @@
 
 - (void)modelWillLoad:(id)model {
     ABDispatchAsyncOnMainThread(^{
-        [self loadingViewVisible:YES];
+        self.loadingView.visible = YES;
     });
 }
 
 - (void)modelDidLoad:(id)model {
     ABDispatchAsyncOnMainThread(^{
-        [self loadingViewVisible:NO];
+        self.loadingView.visible = NO;
         [self fillWithModel:model];
     });
 }

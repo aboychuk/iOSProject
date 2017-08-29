@@ -16,6 +16,8 @@
 
 - (instancetype)initWithFrame:(CGRect)frame;
 
+- (void)setVisible:(BOOL)visible;
+
 - (void)setVisible:(BOOL)visible
           animated:(BOOL)animated;
 

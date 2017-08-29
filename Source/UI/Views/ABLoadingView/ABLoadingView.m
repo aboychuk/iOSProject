@@ -10,9 +10,10 @@
 
 #import "ABConstants.h"
 
-static const NSTimeInterval ABDefaultTimerDuration  = 3;
-static const CGFloat        ABVisibleAlpha          = 0.8;
-static const CGFloat        ABInisibleAlpha         = 0.0;
+static const NSTimeInterval ABDefaultDuration  = 3;
+static const CGFloat        ABVisibleAlpha     = 1;
+static const CGFloat        ABInisibleAlpha    = 0.0;
+static const CGFloat        ABDefaultAlpha     = 0.5;
 
 @interface ABLoadingView ()
 
@@ -41,10 +42,6 @@ static const CGFloat        ABInisibleAlpha         = 0.0;
     return self;
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-}
-
 #pragma mark -
 #pragma mark Public
 
@@ -64,7 +61,7 @@ static const CGFloat        ABInisibleAlpha         = 0.0;
           animated:(BOOL)animated
  completionHandler:(void (^)(BOOL))completionHandler
 {
-    [UIView animateWithDuration:animated ? ABDefaultTimerDuration : 0
+    [UIView animateWithDuration:animated ? ABDefaultDuration : 0
                      animations:^{
                          self.alpha = visible ? ABVisibleAlpha : ABInisibleAlpha;
                      }
@@ -81,7 +78,7 @@ static const CGFloat        ABInisibleAlpha         = 0.0;
 
 - (void)prepareView {
     self.autoresizingMask = ABAutoresizeWithFixedPosition;
-    self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
+    self.backgroundColor = [UIColor colorWithWhite:0 alpha:ABDefaultAlpha];
     [self prepareSpinner];
 }
 

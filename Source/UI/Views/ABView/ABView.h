@@ -13,6 +13,4 @@
 @interface ABView : UIView
 @property (nonatomic, strong)   ABLoadingView   *loadingView;
 
-- (void)loadingViewVisible:(BOOL)visible;
-
 @end
