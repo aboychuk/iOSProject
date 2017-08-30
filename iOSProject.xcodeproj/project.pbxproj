@@ -46,6 +46,7 @@
 		9776C2D11F2BC39100B975E3 /* UINib+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776C2D01F2BC39100B975E3 /* UINib+ABExtension.m */; };
 		9776C2DC1F2BCF3300B975E3 /* UITableView+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776C2DB1F2BCF3300B975E3 /* UITableView+ABExtension.m */; };
 		977ADB9F1F30D5A400C51298 /* NSBundle+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */; };
+		978C5A6B1F56B28B00678EC0 /* ABSharedCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C5A6A1F56B28B00678EC0 /* ABSharedCache.m */; };
 		9790362A1F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 979036291F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.m */; };
 		97C075841F30F15E0095B34D /* ABArrayModelChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C075831F30F15E0095B34D /* ABArrayModelChange.m */; };
 		97CDA2D51F421E62000F2138 /* ABUsersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CDA2D41F421E62000F2138 /* ABUsersModel.m */; };
@@ -149,6 +150,8 @@
 		9776C2DB1F2BCF3300B975E3 /* UITableView+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ABExtension.m"; sourceTree = "<group>"; };
 		977ADB9D1F30D5A400C51298 /* NSBundle+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ABExtension.h"; sourceTree = "<group>"; };
 		977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ABExtension.m"; sourceTree = "<group>"; };
+		978C5A691F56B28B00678EC0 /* ABSharedCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABSharedCache.h; sourceTree = "<group>"; };
+		978C5A6A1F56B28B00678EC0 /* ABSharedCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABSharedCache.m; sourceTree = "<group>"; };
 		979036281F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ABExtension.h"; sourceTree = "<group>"; };
 		979036291F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ABExtension.m"; sourceTree = "<group>"; };
 		97C075821F30F15E0095B34D /* ABArrayModelChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChange.h; sourceTree = "<group>"; };
@@ -476,6 +479,7 @@
 		9748A9871F2A1CF700A26097 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				978C5A681F56B21B00678EC0 /* ABSharedCache */,
 				9748A9881F2A1CF700A26097 /* ABAlphabet */,
 				9748A9921F2A1CF700A26097 /* ABGCDExtension */,
 				9748A9951F2A1CF700A26097 /* ABObservableObject */,
@@ -599,6 +603,15 @@
 				977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */,
 			);
 			path = "NSBundle+ABExtension";
+			sourceTree = "<group>";
+		};
+		978C5A681F56B21B00678EC0 /* ABSharedCache */ = {
+			isa = PBXGroup;
+			children = (
+				978C5A691F56B28B00678EC0 /* ABSharedCache.h */,
+				978C5A6A1F56B28B00678EC0 /* ABSharedCache.m */,
+			);
+			path = ABSharedCache;
 			sourceTree = "<group>";
 		};
 		979036271F34F0DE00DDA6B9 /* NSMutableArray+ABExtension */ = {
@@ -858,6 +871,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				978C5A6B1F56B28B00678EC0 /* ABSharedCache.m in Sources */,
 				9748A99D1F2A1CF700A26097 /* NSObject+ABObjectExtension.m in Sources */,
 				49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */,
 				97D1FE621F3DE207009F4248 /* ABLoadingView.m in Sources */,
