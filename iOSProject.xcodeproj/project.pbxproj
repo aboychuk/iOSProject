@@ -47,6 +47,8 @@
 		9776C2DC1F2BCF3300B975E3 /* UITableView+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776C2DB1F2BCF3300B975E3 /* UITableView+ABExtension.m */; };
 		977ADB9F1F30D5A400C51298 /* NSBundle+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */; };
 		978C5A6B1F56B28B00678EC0 /* ABSharedCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C5A6A1F56B28B00678EC0 /* ABSharedCache.m */; };
+		978C5A701F56F96100678EC0 /* ABFileSystemImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C5A6F1F56F96100678EC0 /* ABFileSystemImageModel.m */; };
+		978C5A731F56F97D00678EC0 /* ABInternetImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C5A721F56F97D00678EC0 /* ABInternetImageModel.m */; };
 		9790362A1F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 979036291F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.m */; };
 		97C075841F30F15E0095B34D /* ABArrayModelChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C075831F30F15E0095B34D /* ABArrayModelChange.m */; };
 		97CDA2D51F421E62000F2138 /* ABUsersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CDA2D41F421E62000F2138 /* ABUsersModel.m */; };
@@ -152,6 +154,10 @@
 		977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ABExtension.m"; sourceTree = "<group>"; };
 		978C5A691F56B28B00678EC0 /* ABSharedCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABSharedCache.h; sourceTree = "<group>"; };
 		978C5A6A1F56B28B00678EC0 /* ABSharedCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABSharedCache.m; sourceTree = "<group>"; };
+		978C5A6E1F56F96100678EC0 /* ABFileSystemImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFileSystemImageModel.h; sourceTree = "<group>"; };
+		978C5A6F1F56F96100678EC0 /* ABFileSystemImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFileSystemImageModel.m; sourceTree = "<group>"; };
+		978C5A711F56F97D00678EC0 /* ABInternetImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABInternetImageModel.h; sourceTree = "<group>"; };
+		978C5A721F56F97D00678EC0 /* ABInternetImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABInternetImageModel.m; sourceTree = "<group>"; };
 		979036281F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ABExtension.h"; sourceTree = "<group>"; };
 		979036291F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ABExtension.m"; sourceTree = "<group>"; };
 		97C075821F30F15E0095B34D /* ABArrayModelChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChange.h; sourceTree = "<group>"; };
@@ -236,6 +242,8 @@
 			children = (
 				493B6E461F20F8D2001AE474 /* ABImageModel.h */,
 				493B6E471F20F8D2001AE474 /* ABImageModel.m */,
+				978C5A6C1F56F93A00678EC0 /* ABFileSystemImageModel */,
+				978C5A6D1F56F93A00678EC0 /* ABInternetImageModel */,
 			);
 			path = ABImageModel;
 			sourceTree = "<group>";
@@ -614,6 +622,24 @@
 			path = ABSharedCache;
 			sourceTree = "<group>";
 		};
+		978C5A6C1F56F93A00678EC0 /* ABFileSystemImageModel */ = {
+			isa = PBXGroup;
+			children = (
+				978C5A6E1F56F96100678EC0 /* ABFileSystemImageModel.h */,
+				978C5A6F1F56F96100678EC0 /* ABFileSystemImageModel.m */,
+			);
+			path = ABFileSystemImageModel;
+			sourceTree = "<group>";
+		};
+		978C5A6D1F56F93A00678EC0 /* ABInternetImageModel */ = {
+			isa = PBXGroup;
+			children = (
+				978C5A711F56F97D00678EC0 /* ABInternetImageModel.h */,
+				978C5A721F56F97D00678EC0 /* ABInternetImageModel.m */,
+			);
+			path = ABInternetImageModel;
+			sourceTree = "<group>";
+		};
 		979036271F34F0DE00DDA6B9 /* NSMutableArray+ABExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -890,7 +916,9 @@
 				9776C2D11F2BC39100B975E3 /* UINib+ABExtension.m in Sources */,
 				9748A9A61F2A1CF700A26097 /* ABGCDExtension.m in Sources */,
 				97362A231F45876200D98F88 /* ABView.m in Sources */,
+				978C5A701F56F96100678EC0 /* ABFileSystemImageModel.m in Sources */,
 				9748A9A81F2A1CF700A26097 /* ABTableViewCell.m in Sources */,
+				978C5A731F56F97D00678EC0 /* ABInternetImageModel.m in Sources */,
 				9790362A1F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.m in Sources */,
 				9776C2DC1F2BCF3300B975E3 /* UITableView+ABExtension.m in Sources */,
 				9755BD6D1F388319000269C5 /* ABArrayModelChangeMove.m in Sources */,

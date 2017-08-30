@@ -7,12 +7,16 @@
 //
 
 #import "ABImageModel.h"
+#import "ABSharedCache.h"
+#import "ABFileSystemImageModel.h"
+#import "ABInternetImageModel.h"
 
 #import "ABMacro.h"
 
 #import "ABGCDExtension.h"
 
-static const NSUInteger ABDelayBeforeDispatch = 10;
+static const NSUInteger ABDelayBeforeDispatch   = 10;
+static NSString *const  ABImageURL              = @"imageURL";
 
 @interface ABImageModel ()
 @property (nonatomic, strong)   UIImage     *image;
@@ -26,6 +30,15 @@ static const NSUInteger ABDelayBeforeDispatch = 10;
 #pragma mark Class Methods
 
 + (instancetype)imageWithUrl:(NSURL *)url {
+    ABSharedCache *cache = [ABSharedCache sharedCache];
+    ABImageModel *imageModel = [cache objectForKey:url];
+
+    if (imageModel) {
+       return [[ABFileSystemImageModel alloc] initWithUrl:url];
+    } else {
+        return [[ABInternetImageModel alloc] initWithUrl:url];
+    }
+    
     return [[self alloc] initWithUrl:url];
 }
 
@@ -55,5 +68,22 @@ static const NSUInteger ABDelayBeforeDispatch = 10;
     self.image = nil;
     self.state = ABModelDidUnloaded;
 }
+
+#pragma mark -
+#pragma marl NSCoding
+
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    self = [super init];
+    if (self) {
+        self.url = [coder decodeObjectForKey:ABImageURL];
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+    [coder encodeObject:self.url forKey:ABImageURL];
+}
+
 
 @end
