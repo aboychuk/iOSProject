@@ -17,6 +17,7 @@
 
 static const NSUInteger ABDelayBeforeDispatch   = 10;
 static NSString *const  ABImageURL              = @"imageURL";
+static NSString *const  ABImagePath             = @"imagePath";
 
 @interface ABImageModel ()
 @property (nonatomic, strong)   UIImage     *image;
@@ -32,14 +33,18 @@ static NSString *const  ABImageURL              = @"imageURL";
 + (instancetype)imageWithUrl:(NSURL *)url {
     ABSharedCache *cache = [ABSharedCache sharedCache];
     ABImageModel *imageModel = [cache objectForKey:url];
-
     if (imageModel) {
-       return [[ABFileSystemImageModel alloc] initWithUrl:url];
-    } else {
-        return [[ABInternetImageModel alloc] initWithUrl:url];
+        return imageModel;
     }
+    if (url.isFileURL) {
+        imageModel = [[ABFileSystemImageModel alloc] initWithUrl:url];
+    } else {
+        imageModel = [[ABInternetImageModel alloc] initWithUrl:url];
+    }
+
+    [cache addObject:imageModel forKey:url];
     
-    return [[self alloc] initWithUrl:url];
+    return imageModel;
 }
 
 #pragma mark -
@@ -59,8 +64,10 @@ static NSString *const  ABImageURL              = @"imageURL";
 
 - (void)performLoading {
     ABDispatchAfterDelay(ABDelayBeforeDispatch, ^{
-        self.image = [UIImage imageWithContentsOfFile:self.url.path];
-        self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
+        self.image = [self loadImage];
+        ABDispatchAsyncOnMainThread(^{
+            self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
+        });
     });
 }
 
@@ -69,8 +76,22 @@ static NSString *const  ABImageURL              = @"imageURL";
     self.state = ABModelDidUnloaded;
 }
 
+- (UIImage *)loadImage {
+    return [UIImage imageWithContentsOfFile:self.url.path];
+}
+
 #pragma mark -
-#pragma marl NSCoding
+#pragma mark Private
+
+- (NSString *)imagePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *imagePath = [paths firstObject];
+    
+    return [imagePath stringByAppendingPathComponent:ABImagePath];
+}
+
+#pragma mark -
+#pragma mark NSCoding
 
 - (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super init];
@@ -84,6 +105,5 @@ static NSString *const  ABImageURL              = @"imageURL";
 - (void)encodeWithCoder:(NSCoder *)coder {
     [coder encodeObject:self.url forKey:ABImageURL];
 }
-
 
 @end

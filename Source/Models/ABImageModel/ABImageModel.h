@@ -19,5 +19,6 @@
 - (instancetype)initWithUrl:(NSURL *)url;
 - (void)performLoading;
 - (void)dumpModel;
+- (UIImage *)loadImage;
 
 @end
