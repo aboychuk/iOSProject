@@ -10,6 +10,4 @@
 
 @interface ABFileSystemImageModel : ABImageModel
 
-- (instancetype)initWithUrl:(NSURL *)url;
-
 @end

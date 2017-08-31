@@ -10,8 +10,12 @@
 
 @implementation ABFileSystemImageModel
 
-- (instancetype)initWithUrl:(NSURL *)url {
-    
+#pragma mark -
+#pragma mark Public Methods
+
+- (UIImage *)loadImage {
+    return [UIImage imageWithContentsOfFile:self.url.path];
 }
+
 
 @end
