@@ -45,10 +45,10 @@
 		976585E91F3CE7F100F3E7DF /* ABUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976585DE1F3CE7F100F3E7DF /* ABUsersViewController.m */; };
 		9768C4921F595F0200C2DA9C /* ABInternetImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9768C4911F595F0200C2DA9C /* ABInternetImageModel.m */; };
 		9768C4961F59639800C2DA9C /* ABRandomNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 9768C4951F59639800C2DA9C /* ABRandomNumber.m */; };
+		9768C49A1F59884700C2DA9C /* ABSharedModelCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9768C4991F59884700C2DA9C /* ABSharedModelCache.m */; };
 		9776C2D11F2BC39100B975E3 /* UINib+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776C2D01F2BC39100B975E3 /* UINib+ABExtension.m */; };
 		9776C2DC1F2BCF3300B975E3 /* UITableView+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776C2DB1F2BCF3300B975E3 /* UITableView+ABExtension.m */; };
 		977ADB9F1F30D5A400C51298 /* NSBundle+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */; };
-		978C5A6B1F56B28B00678EC0 /* ABSharedCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C5A6A1F56B28B00678EC0 /* ABSharedCache.m */; };
 		978C5A701F56F96100678EC0 /* ABFileSystemImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C5A6F1F56F96100678EC0 /* ABFileSystemImageModel.m */; };
 		9790362A1F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 979036291F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.m */; };
 		97C075841F30F15E0095B34D /* ABArrayModelChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C075831F30F15E0095B34D /* ABArrayModelChange.m */; };
@@ -151,14 +151,14 @@
 		9768C4911F595F0200C2DA9C /* ABInternetImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABInternetImageModel.m; sourceTree = "<group>"; };
 		9768C4941F59638600C2DA9C /* ABRandomNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABRandomNumber.h; sourceTree = "<group>"; };
 		9768C4951F59639800C2DA9C /* ABRandomNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABRandomNumber.m; sourceTree = "<group>"; };
+		9768C4981F59884700C2DA9C /* ABSharedModelCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABSharedModelCache.h; sourceTree = "<group>"; };
+		9768C4991F59884700C2DA9C /* ABSharedModelCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABSharedModelCache.m; sourceTree = "<group>"; };
 		9776C2CF1F2BC39100B975E3 /* UINib+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINib+ABExtension.h"; sourceTree = "<group>"; };
 		9776C2D01F2BC39100B975E3 /* UINib+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINib+ABExtension.m"; sourceTree = "<group>"; };
 		9776C2DA1F2BCF3300B975E3 /* UITableView+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+ABExtension.h"; sourceTree = "<group>"; };
 		9776C2DB1F2BCF3300B975E3 /* UITableView+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ABExtension.m"; sourceTree = "<group>"; };
 		977ADB9D1F30D5A400C51298 /* NSBundle+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ABExtension.h"; sourceTree = "<group>"; };
 		977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ABExtension.m"; sourceTree = "<group>"; };
-		978C5A691F56B28B00678EC0 /* ABSharedCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABSharedCache.h; sourceTree = "<group>"; };
-		978C5A6A1F56B28B00678EC0 /* ABSharedCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABSharedCache.m; sourceTree = "<group>"; };
 		978C5A6E1F56F96100678EC0 /* ABFileSystemImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFileSystemImageModel.h; sourceTree = "<group>"; };
 		978C5A6F1F56F96100678EC0 /* ABFileSystemImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFileSystemImageModel.m; sourceTree = "<group>"; };
 		979036281F34F0DE00DDA6B9 /* NSMutableArray+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ABExtension.h"; sourceTree = "<group>"; };
@@ -490,8 +490,8 @@
 		9748A9871F2A1CF700A26097 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9768C4971F59884700C2DA9C /* ABSharedImageCache */,
 				9768C4931F59636900C2DA9C /* ABRandomNumber */,
-				978C5A681F56B21B00678EC0 /* ABSharedCache */,
 				9748A9881F2A1CF700A26097 /* ABAlphabet */,
 				9748A9921F2A1CF700A26097 /* ABGCDExtension */,
 				9748A9951F2A1CF700A26097 /* ABObservableObject */,
@@ -599,6 +599,15 @@
 			path = ABRandomNumber;
 			sourceTree = "<group>";
 		};
+		9768C4971F59884700C2DA9C /* ABSharedImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				9768C4981F59884700C2DA9C /* ABSharedModelCache.h */,
+				9768C4991F59884700C2DA9C /* ABSharedModelCache.m */,
+			);
+			path = ABSharedImageCache;
+			sourceTree = "<group>";
+		};
 		9776C2CE1F2BC36900B975E3 /* UINib+ABExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -624,15 +633,6 @@
 				977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */,
 			);
 			path = "NSBundle+ABExtension";
-			sourceTree = "<group>";
-		};
-		978C5A681F56B21B00678EC0 /* ABSharedCache */ = {
-			isa = PBXGroup;
-			children = (
-				978C5A691F56B28B00678EC0 /* ABSharedCache.h */,
-				978C5A6A1F56B28B00678EC0 /* ABSharedCache.m */,
-			);
-			path = ABSharedCache;
 			sourceTree = "<group>";
 		};
 		978C5A6C1F56F93A00678EC0 /* ABFileSystemImageModel */ = {
@@ -910,7 +910,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				978C5A6B1F56B28B00678EC0 /* ABSharedCache.m in Sources */,
 				9748A99D1F2A1CF700A26097 /* NSObject+ABObjectExtension.m in Sources */,
 				49E0A4E51F0D00CB00ACD9D1 /* main.m in Sources */,
 				97D1FE621F3DE207009F4248 /* ABLoadingView.m in Sources */,
@@ -918,6 +917,7 @@
 				9755BD701F38832E000269C5 /* ABArrayModelChangeRemove.m in Sources */,
 				97CDA2D51F421E62000F2138 /* ABUsersModel.m in Sources */,
 				9748A9A11F2A1CF700A26097 /* UIWindow+ABExtension.m in Sources */,
+				9768C49A1F59884700C2DA9C /* ABSharedModelCache.m in Sources */,
 				9768C4961F59639800C2DA9C /* ABRandomNumber.m in Sources */,
 				97362A271F45CE1200D98F88 /* ABImageView.m in Sources */,
 				9738EBE11F4C6CE50044583F /* ABUserCell.m in Sources */,

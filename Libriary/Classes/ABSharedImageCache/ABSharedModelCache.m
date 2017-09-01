@@ -1,25 +1,26 @@
 //
-//  ABSharedCache.m
+//  ABSharedModelCache.m
 //  iOSProject
 //
 //  Created by Andrew Boychuk on 8/30/17.
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import "ABSharedCache.h"
+#import "ABSharedModelCache.h"
+#import "ABImageModel.h"
 
-@interface ABSharedCache ()
+@interface ABSharedModelCache ()
 @property (nonatomic, strong)   NSMapTable  *cachedObjects;
 
 @end
 
-@implementation ABSharedCache
+@implementation ABSharedModelCache
 
 #pragma mark -
 #pragma mark Class Methods
 
 + (instancetype)sharedCache {
-    static ABSharedCache *sharedCache = nil;
+    static ABSharedModelCache *sharedCache = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedCache = [[self alloc] init];
@@ -43,19 +44,19 @@
 #pragma mark - 
 #pragma mark Public
 
-- (void)addObject:(id)object forKey:(id)key {
+- (void)addModel:(id)model forKey:(id)key {
     @synchronized (self) {
-        [self.cachedObjects setObject:object forKey:key];
+        [self.cachedObjects setObject:model forKey:key];
     }
 }
 
-- (void)removeObjectforKey:(id)key {
+- (void)removeModelForKey:(id)key {
     @synchronized (self) {
         [self.cachedObjects removeObjectForKey:key];
     }
 }
 
-- (id)objectForKey:(id)key {
+- (id)modelForKey:(id)key {
     @synchronized (self) {
         return [self.cachedObjects objectForKey:key];
     }

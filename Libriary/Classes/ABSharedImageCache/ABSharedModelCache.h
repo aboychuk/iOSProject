@@ -1,5 +1,5 @@
 //
-//  ABSharedCache.h
+//  ABSharedModelCache.h
 //  iOSProject
 //
 //  Created by Andrew Boychuk on 8/30/17.
@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface ABSharedCache : NSObject
+@interface ABSharedModelCache : NSObject
 
 + (instancetype)sharedCache;
 
-- (void)addObject:(id)object forKey:(id)key;
-- (void)removeObjectforKey:(id)key;
-- (id)objectForKey:(id)key;
+- (void)addModel:(id)model forKey:(id)key;
+- (void)removeModelForKey:(id)key;
+- (id)modelForKey:(id)key;
 
 @end

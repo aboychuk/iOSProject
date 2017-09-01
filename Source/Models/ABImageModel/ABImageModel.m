@@ -7,7 +7,7 @@
 //
 
 #import "ABImageModel.h"
-#import "ABSharedCache.h"
+#import "ABSharedModelCache.h"
 #import "ABFileSystemImageModel.h"
 #import "ABInternetImageModel.h"
 
@@ -31,8 +31,8 @@ static NSString *const  ABImagePath             = @"imagePath";
 #pragma mark Class Methods
 
 + (instancetype)imageWithUrl:(NSURL *)url {
-    ABSharedCache *cache = [ABSharedCache sharedCache];
-    ABImageModel *imageModel = [cache objectForKey:url];
+    ABSharedModelCache *cache = [ABSharedModelCache sharedCache];
+    ABImageModel *imageModel = [cache modelForKey:url];
     if (imageModel) {
         return imageModel;
     }
@@ -42,7 +42,7 @@ static NSString *const  ABImagePath             = @"imagePath";
         imageModel = [[ABInternetImageModel alloc] initWithUrl:url];
     }
 
-    [cache addObject:imageModel forKey:url];
+    [cache addModel:imageModel forKey:url];
     
     return imageModel;
 }
@@ -77,7 +77,7 @@ static NSString *const  ABImagePath             = @"imagePath";
 }
 
 - (UIImage *)loadImage {
-    return [UIImage imageWithContentsOfFile:self.url.path];
+    return nil;
 }
 
 #pragma mark -
