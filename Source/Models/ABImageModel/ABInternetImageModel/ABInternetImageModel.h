@@ -2,12 +2,12 @@
 //  ABInternetImageModel.h
 //  iOSProject
 //
-//  Created by Andrew Boychuk on 8/30/17.
+//  Created by Andrew Boychuk on 9/1/17.
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import "ABImageModel.h"
+#import "ABFileSystemImageModel.h"
 
-@interface ABInternetImageModel : ABImageModel
+@interface ABInternetImageModel : ABFileSystemImageModel
 
 @end

@@ -19,6 +19,8 @@
 - (instancetype)initWithUrl:(NSURL *)url;
 - (void)performLoading;
 - (void)dumpModel;
+
+// Method created for overriding, do not call it directly
 - (UIImage *)loadImage;
 
 @end

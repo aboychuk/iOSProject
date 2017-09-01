@@ -10,6 +10,7 @@
 
 #import "ABImageModel.h"
 
+#import "ABRandomNumber.h"
 #import "NSString+ABExtensions.h"
 
 static NSString * const ABName = @"name";
@@ -43,12 +44,16 @@ static NSString * const ABImageType = @"png";
 }
 
 - (ABImageModel *)imageModel {
-    return [ABImageModel imageWithUrl:[[NSBundle mainBundle]
-                                       URLForResource:ABImageName
-                                       withExtension:ABImageType]];
+    return [ABImageModel imageWithUrl:self.imageURL];
 }
 
-#pragma mark - 
+- (NSURL *)imageURL {
+    NSURL *url = [NSURL URLWithString:
+     @"http://upload.wikimedia.org/wikipedia/commons/7/7f/Williams_River-27527.jpg"];
+    return url;
+}
+
+#pragma mark -
 #pragma marl NSCoding
 
 - (instancetype)initWithCoder:(NSCoder *)coder {

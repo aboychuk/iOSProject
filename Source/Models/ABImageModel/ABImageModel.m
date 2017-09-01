@@ -90,20 +90,4 @@ static NSString *const  ABImagePath             = @"imagePath";
     return [imagePath stringByAppendingPathComponent:ABImagePath];
 }
 
-#pragma mark -
-#pragma mark NSCoding
-
-- (instancetype)initWithCoder:(NSCoder *)coder {
-    self = [super init];
-    if (self) {
-        self.url = [coder decodeObjectForKey:ABImageURL];
-    }
-    
-    return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)coder {
-    [coder encodeObject:self.url forKey:ABImageURL];
-}
-
 @end
