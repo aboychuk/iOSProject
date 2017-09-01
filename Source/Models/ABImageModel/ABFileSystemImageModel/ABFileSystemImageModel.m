@@ -14,8 +14,12 @@
 #pragma mark Public Methods
 
 - (UIImage *)loadImage {
-    return [UIImage imageWithContentsOfFile:self.url.path];
+    UIImage *image = [UIImage imageWithContentsOfFile:[self imagePath]];
+    return image;
 }
 
+- (void)saveData:(NSData *)data {
+    [data writeToFile:[self imagePath] atomically:YES];
+}
 
 @end

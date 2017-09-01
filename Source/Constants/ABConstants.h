@@ -11,7 +11,7 @@
 //ABUsersModel constants
 static NSString * const ABPlistName     = @"users.plist";
 static const NSUInteger ABUsersCount    = 10;
-static const NSUInteger ABDispatchDelay = 10;
+static const NSUInteger ABDispatchDelay = 1;
 
 //UIView autoresizing constants
 static const UIViewAutoresizing ABAutoresizeWithFixedPosition = UIViewAutoresizingFlexibleLeftMargin

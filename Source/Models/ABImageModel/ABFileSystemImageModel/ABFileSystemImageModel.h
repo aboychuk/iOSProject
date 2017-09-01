@@ -10,4 +10,6 @@
 
 @interface ABFileSystemImageModel : ABImageModel
 
+- (void)saveData:(NSData *)data;
+
 @end

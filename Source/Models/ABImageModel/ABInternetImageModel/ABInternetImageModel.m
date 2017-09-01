@@ -11,9 +11,19 @@
 @implementation ABInternetImageModel
 
 - (UIImage *)loadImage {
-    NSData *imageData = [NSData dataWithContentsOfURL:self.url];
-    UIImage *image = [UIImage imageWithData:imageData];
+    [self downloadImage];
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfFile:[self imagePath]]];
     return image;
+}
+
+- (void)downloadImage {
+    NSURLSession *urlSession = [NSURLSession sharedSession];
+    NSURLSessionDownloadTask *downloadTask = [urlSession downloadTaskWithURL:self.url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        NSData *imageData = [NSData dataWithContentsOfURL:location];
+        [imageData writeToFile:[self imagePath] atomically:YES];
+        
+    }];
+    [downloadTask resume];
 }
 
 
