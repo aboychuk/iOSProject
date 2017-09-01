@@ -18,8 +18,4 @@
     return image;
 }
 
-- (void)saveData:(NSData *)data {
-    [data writeToFile:[self imagePath] atomically:YES];
-}
-
 @end

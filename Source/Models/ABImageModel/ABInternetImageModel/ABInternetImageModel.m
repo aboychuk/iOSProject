@@ -8,6 +8,8 @@
 
 #import "ABInternetImageModel.h"
 
+
+
 @implementation ABInternetImageModel
 
 - (UIImage *)loadImage {
@@ -16,6 +18,10 @@
     UIImage *image = [UIImage imageWithData:imageData];
 
     return image;
+}
+
+- (void)saveData:(NSData *)data {
+    [data writeToFile:[self imagePath] atomically:YES];
 }
 
 @end

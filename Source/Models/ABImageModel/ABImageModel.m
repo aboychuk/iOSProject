@@ -16,7 +16,6 @@
 #import "ABGCDExtension.h"
 
 static const NSUInteger ABDelayBeforeDispatch   = 1;
-static NSString *const  ABImageURL              = @"imageURL";
 static NSString *const  ABImagePath             = @"imagePath";
 
 @interface ABImageModel ()
@@ -38,7 +37,7 @@ static NSString *const  ABImagePath             = @"imagePath";
     }
     if (url.isFileURL) {
         imageModel = [[ABFileSystemImageModel alloc] initWithUrl:url];
-    } else {
+        } else {
         imageModel = [[ABInternetImageModel alloc] initWithUrl:url];
     }
 
@@ -64,6 +63,7 @@ static NSString *const  ABImagePath             = @"imagePath";
 
 - (void)performLoading {
     ABDispatchAfterDelay(ABDelayBeforeDispatch, ^{
+        
         self.image = [self loadImage];
         ABDispatchAsyncOnMainThread(^{
             self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
