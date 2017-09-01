@@ -9,7 +9,6 @@
 #import "ABImageModel.h"
 
 @interface ABFileSystemImageModel : ABImageModel
-
-- (void)saveData:(NSData *)data;
+@property (nonatomic, assign)   BOOL    cached;
 
 @end

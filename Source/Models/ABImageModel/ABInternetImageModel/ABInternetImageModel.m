@@ -13,10 +13,15 @@
 @implementation ABInternetImageModel
 
 - (UIImage *)loadImage {
-    NSData *imageData = [NSData dataWithContentsOfURL:self.url];
-    [self saveData:imageData];
-    UIImage *image = [UIImage imageWithData:imageData];
-
+    UIImage *image = nil;
+    if (!self.cached) {
+        NSData *imageData = [NSData dataWithContentsOfURL:self.url];
+        [self saveData:imageData];
+        image = [UIImage imageWithData:imageData];
+    } else {
+        [super loadImage];
+    }
+   
     return image;
 }
 

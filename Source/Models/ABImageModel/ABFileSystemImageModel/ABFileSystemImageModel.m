@@ -10,12 +10,28 @@
 
 @implementation ABFileSystemImageModel
 
+@dynamic cached;
+
+#pragma mark -
+#pragma mark Accessors
+
+- (BOOL)cached {
+    return [[NSFileManager defaultManager] fileExistsAtPath:[self imagePath]];
+}
+
 #pragma mark -
 #pragma mark Public Methods
 
 - (UIImage *)loadImage {
-    UIImage *image = [UIImage imageWithContentsOfFile:[self imagePath]];
+    UIImage *image = nil;
+    if (!self.cached) {
+        image = [UIImage imageWithContentsOfFile:[self imagePath]];
+    } else {
+        image = [UIImage imageWithContentsOfFile:[self.url absoluteString]];
+    }
     return image;
 }
+
+
 
 @end
