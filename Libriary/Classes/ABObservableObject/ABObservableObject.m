@@ -15,13 +15,14 @@
 @property (nonatomic, assign)   BOOL           notify;
 
 - (void)notifyOfStateChangeWithSelector:(SEL)selector andObject:(id)object;
-- (void)performBlock:(void(^)(void))block notification:(BOOL)notification;
+- (void)performBlock:(void(^)(void))block notification:(BOOL)notify;
 
 @end
 
 @implementation ABObservableObject
 
 @dynamic observersSet;
+@dynamic notification;
 
 #pragma mark
 #pragma mark - Initializations and Deallocations
@@ -57,6 +58,10 @@
             [self notifyOfState:state];
         }
     }
+}
+
+- (BOOL)notification {
+    return self.notify;
 }
 
 #pragma mark
@@ -104,10 +109,11 @@
 #pragma mark
 #pragma mark - Private Methods
 
-- (void)performBlock:(ABVoidBlock)voidBlock notification:(BOOL)notification {
+- (void)performBlock:(ABVoidBlock)block notification:(BOOL)notify {
+    BOOL notification = self.notify;
+    self.notify = notify;
+    block();
     self.notify = notification;
-    voidBlock();
-    self.notify = !notification;
 }
 
 - (SEL)selectorForState:(NSUInteger)state {

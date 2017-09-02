@@ -8,8 +8,6 @@
 
 #import "ABInternetImageModel.h"
 
-
-
 @implementation ABInternetImageModel
 
 - (UIImage *)loadImage {

@@ -29,6 +29,7 @@
     } else {
         image = [UIImage imageWithContentsOfFile:self.url.path];
     }
+    
     return image;
 }
 

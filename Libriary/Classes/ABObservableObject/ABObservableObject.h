@@ -13,6 +13,8 @@ typedef void(^ABVoidBlock)(void);
 @interface ABObservableObject : NSObject
 @property (nonatomic, assign)   NSUInteger  state;
 @property (nonatomic, readonly) NSSet       *observersSet;
+@property (nonatomic, readonly) BOOL        notification; //Disables notification, default state is YES;
+
 
 - (void)addObserver:(id)observer;
 - (void)removeObserver:(id)observer;
