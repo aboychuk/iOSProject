@@ -18,6 +18,7 @@ static const CGFloat        ABDefaultAlpha     = 0.5;
 @interface ABLoadingView ()
 
 - (void)prepareView;
+- (instancetype)initWithFrame:(CGRect)frame;
 
 @end
 

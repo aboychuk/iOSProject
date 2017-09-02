@@ -18,6 +18,7 @@
 		49E0A5031F0D047500ACD9D1 /* ABARCObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0A5021F0D047500ACD9D1 /* ABARCObject.m */; };
 		49E0A5061F0D049400ACD9D1 /* ABARCSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0A5051F0D049400ACD9D1 /* ABARCSpec.m */; };
 		54EC5C0E9136472865E5ECAB /* libPods-iOSProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 615FE69DAC50A9B7400CE7EE /* libPods-iOSProjectTests.a */; };
+		97114A4D1F5AFE8F0015830B /* ABImageModelCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 97114A4C1F5AFE8F0015830B /* ABImageModelCache.m */; };
 		97362A231F45876200D98F88 /* ABView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97362A221F45876200D98F88 /* ABView.m */; };
 		97362A271F45CE1200D98F88 /* ABImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97362A261F45CE1200D98F88 /* ABImageView.m */; };
 		9738EBE11F4C6CE50044583F /* ABUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738EBDC1F4C6CE50044583F /* ABUserCell.m */; };
@@ -45,7 +46,6 @@
 		976585E91F3CE7F100F3E7DF /* ABUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976585DE1F3CE7F100F3E7DF /* ABUsersViewController.m */; };
 		9768C4921F595F0200C2DA9C /* ABInternetImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9768C4911F595F0200C2DA9C /* ABInternetImageModel.m */; };
 		9768C4961F59639800C2DA9C /* ABRandomNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 9768C4951F59639800C2DA9C /* ABRandomNumber.m */; };
-		9768C49A1F59884700C2DA9C /* ABSharedModelCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9768C4991F59884700C2DA9C /* ABSharedModelCache.m */; };
 		9776C2D11F2BC39100B975E3 /* UINib+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776C2D01F2BC39100B975E3 /* UINib+ABExtension.m */; };
 		9776C2DC1F2BCF3300B975E3 /* UITableView+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776C2DB1F2BCF3300B975E3 /* UITableView+ABExtension.m */; };
 		977ADB9F1F30D5A400C51298 /* NSBundle+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 977ADB9E1F30D5A400C51298 /* NSBundle+ABExtension.m */; };
@@ -98,6 +98,8 @@
 		49FB26331F0CFB0D00801FD7 /* iOSProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FB26391F0CFB0D00801FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		615FE69DAC50A9B7400CE7EE /* libPods-iOSProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97114A4B1F5AFE8F0015830B /* ABImageModelCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABImageModelCache.h; sourceTree = "<group>"; };
+		97114A4C1F5AFE8F0015830B /* ABImageModelCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABImageModelCache.m; sourceTree = "<group>"; };
 		97362A211F45876200D98F88 /* ABView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABView.h; sourceTree = "<group>"; };
 		97362A221F45876200D98F88 /* ABView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABView.m; sourceTree = "<group>"; };
 		97362A251F45CE1200D98F88 /* ABImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABImageView.h; sourceTree = "<group>"; };
@@ -151,8 +153,6 @@
 		9768C4911F595F0200C2DA9C /* ABInternetImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABInternetImageModel.m; sourceTree = "<group>"; };
 		9768C4941F59638600C2DA9C /* ABRandomNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABRandomNumber.h; sourceTree = "<group>"; };
 		9768C4951F59639800C2DA9C /* ABRandomNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABRandomNumber.m; sourceTree = "<group>"; };
-		9768C4981F59884700C2DA9C /* ABSharedModelCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABSharedModelCache.h; sourceTree = "<group>"; };
-		9768C4991F59884700C2DA9C /* ABSharedModelCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABSharedModelCache.m; sourceTree = "<group>"; };
 		9776C2CF1F2BC39100B975E3 /* UINib+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINib+ABExtension.h"; sourceTree = "<group>"; };
 		9776C2D01F2BC39100B975E3 /* UINib+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINib+ABExtension.m"; sourceTree = "<group>"; };
 		9776C2DA1F2BCF3300B975E3 /* UITableView+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+ABExtension.h"; sourceTree = "<group>"; };
@@ -349,6 +349,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		97114A4A1F5AFE8F0015830B /* ABImageModelCache */ = {
+			isa = PBXGroup;
+			children = (
+				97114A4B1F5AFE8F0015830B /* ABImageModelCache.h */,
+				97114A4C1F5AFE8F0015830B /* ABImageModelCache.m */,
+			);
+			path = ABImageModelCache;
+			sourceTree = "<group>";
+		};
 		97362A201F45874F00D98F88 /* ABView */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,7 +499,7 @@
 		9748A9871F2A1CF700A26097 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				9768C4971F59884700C2DA9C /* ABSharedImageCache */,
+				97114A4A1F5AFE8F0015830B /* ABImageModelCache */,
 				9768C4931F59636900C2DA9C /* ABRandomNumber */,
 				9748A9881F2A1CF700A26097 /* ABAlphabet */,
 				9748A9921F2A1CF700A26097 /* ABGCDExtension */,
@@ -597,15 +606,6 @@
 				9768C4951F59639800C2DA9C /* ABRandomNumber.m */,
 			);
 			path = ABRandomNumber;
-			sourceTree = "<group>";
-		};
-		9768C4971F59884700C2DA9C /* ABSharedImageCache */ = {
-			isa = PBXGroup;
-			children = (
-				9768C4981F59884700C2DA9C /* ABSharedModelCache.h */,
-				9768C4991F59884700C2DA9C /* ABSharedModelCache.m */,
-			);
-			path = ABSharedImageCache;
 			sourceTree = "<group>";
 		};
 		9776C2CE1F2BC36900B975E3 /* UINib+ABExtension */ = {
@@ -917,13 +917,13 @@
 				9755BD701F38832E000269C5 /* ABArrayModelChangeRemove.m in Sources */,
 				97CDA2D51F421E62000F2138 /* ABUsersModel.m in Sources */,
 				9748A9A11F2A1CF700A26097 /* UIWindow+ABExtension.m in Sources */,
-				9768C49A1F59884700C2DA9C /* ABSharedModelCache.m in Sources */,
 				9768C4961F59639800C2DA9C /* ABRandomNumber.m in Sources */,
 				97362A271F45CE1200D98F88 /* ABImageView.m in Sources */,
 				9738EBE11F4C6CE50044583F /* ABUserCell.m in Sources */,
 				9748A9AB1F2A3B0F00A26097 /* ABArrayModel.m in Sources */,
 				490A5DF11F1FE3EA00FD049F /* ABUser.m in Sources */,
 				97C075841F30F15E0095B34D /* ABArrayModelChange.m in Sources */,
+				97114A4D1F5AFE8F0015830B /* ABImageModelCache.m in Sources */,
 				9738EBE31F4C6CE50044583F /* ABUsersView.m in Sources */,
 				976585E91F3CE7F100F3E7DF /* ABUsersViewController.m in Sources */,
 				9748A9A41F2A1CF700A26097 /* ABRangeAlphabet.m in Sources */,

@@ -78,7 +78,7 @@
 - (void)insertObject:(id)object atIndex:(NSUInteger)index {
     @synchronized (self) {
         if (object) {
-            if (self.count > index) {
+            if (self.count >= index) {
                 [self.mutableObjects insertObject:object atIndex:index];
                 [self notifyOfStateWithModelChange:[ABArrayModelChange modelChangeAddWithIndex:index]];
             }

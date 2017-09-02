@@ -14,8 +14,7 @@
 @interface ABUserCell : ABTableViewCell
 @property (nonatomic, strong)   IBOutlet UILabel        *fullNameLabel;
 @property (nonatomic, strong)   IBOutlet ABImageView    *userImageView;
-
-@property (nonatomic, strong)   ABUser  *user;
+@property (nonatomic, strong)   ABUser                  *user;
 
 - (void)fillWithModel:(ABUser *)user;
 

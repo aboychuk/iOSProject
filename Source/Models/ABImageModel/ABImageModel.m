@@ -7,7 +7,7 @@
 //
 
 #import "ABImageModel.h"
-#import "ABSharedModelCache.h"
+#import "ABImageModelCache.h"
 #import "ABFileSystemImageModel.h"
 #import "ABInternetImageModel.h"
 
@@ -30,7 +30,7 @@ static NSString *const  ABImagePath             = @"imagePath";
 #pragma mark Class Methods
 
 + (instancetype)imageWithUrl:(NSURL *)url {
-    ABSharedModelCache *cache = [ABSharedModelCache sharedCache];
+    ABImageModelCache *cache = [ABImageModelCache sharedCache];
     ABImageModel *imageModel = [cache modelForKey:url];
     if (imageModel) {
         return imageModel;
@@ -49,6 +49,11 @@ static NSString *const  ABImagePath             = @"imagePath";
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
+- (void)dealloc {
+    ABImageModelCache *cache = [ABImageModelCache sharedCache];
+    [cache removeModelForKey:self.url];
+}
+
 - (instancetype)initWithUrl:(NSURL *)url {
     self = [super init];
     if (self) {
@@ -56,11 +61,6 @@ static NSString *const  ABImagePath             = @"imagePath";
     }
     
     return self;
-}
-
-- (void)dealloc {
-    ABSharedModelCache *cache = [ABSharedModelCache sharedCache];
-    [cache removeModelForKey:self.url];
 }
 
 #pragma mark -

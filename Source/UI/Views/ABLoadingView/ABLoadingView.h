@@ -9,14 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ABLoadingView : UIView
-@property (nonatomic, strong)   IBOutlet UIActivityIndicatorView    *spinner;
-@property (nonatomic, assign)   BOOL                                visible;
+@property (nonatomic, strong)                       IBOutlet UIActivityIndicatorView    *spinner;
+@property (nonatomic, assign, getter=isVisible)     BOOL                                visible;
 
 + (instancetype)loadingViewWithSuperview:(UIView *)view;
-
-- (instancetype)initWithFrame:(CGRect)frame;
-
-- (void)setVisible:(BOOL)visible;
 
 - (void)setVisible:(BOOL)visible
           animated:(BOOL)animated;
