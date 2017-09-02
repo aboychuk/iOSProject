@@ -27,7 +27,7 @@
     if (!self.cached) {
         image = [UIImage imageWithContentsOfFile:[self imagePath]];
     } else {
-        image = [UIImage imageWithContentsOfFile:[self.url absoluteString]];
+        image = [UIImage imageWithContentsOfFile:self.url.path];
     }
     return image;
 }

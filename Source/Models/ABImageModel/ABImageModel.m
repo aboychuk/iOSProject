@@ -58,12 +58,16 @@ static NSString *const  ABImagePath             = @"imagePath";
     return self;
 }
 
+- (void)dealloc {
+    ABSharedModelCache *cache = [ABSharedModelCache sharedCache];
+    [cache removeModelForKey:self.url];
+}
+
 #pragma mark -
 #pragma mark Public Methods
 
 - (void)performLoading {
     ABDispatchAfterDelay(ABDelayBeforeDispatch, ^{
-        
         self.image = [self loadImage];
         ABDispatchAsyncOnMainThread(^{
             self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
@@ -79,9 +83,6 @@ static NSString *const  ABImagePath             = @"imagePath";
 - (UIImage *)loadImage {
     return nil;
 }
-
-#pragma mark -
-#pragma mark Private
 
 - (NSString *)imagePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
