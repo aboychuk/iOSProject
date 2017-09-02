@@ -32,11 +32,20 @@
 }
 
 #pragma mark -
-#pragma mark Public
+#pragma mark Public Methods
 
 - (void)fillWithModel:(ABUser *)user {
     self.fullNameLabel.text = user.fullname;
     self.userImageView.imageModel = user.imageModel;
+}
+
+#pragma mark -
+#pragma mark Overriden Methods
+
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    
+    self.userImageView.contentImageView.image = nil;
 }
 
 @end
