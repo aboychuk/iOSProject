@@ -32,15 +32,11 @@ static NSString *const  ABImagePath             = @"imagePath";
 + (instancetype)imageWithUrl:(NSURL *)url {
     ABImageModelCache *cache = [ABImageModelCache sharedCache];
     ABImageModel *imageModel = [cache modelForKey:url];
-    if (imageModel) {
-        return imageModel;
+    if (!imageModel) {
+        Class imageModelClass = url.isFileURL ? [ABFileSystemImageModel class] : [ABInternetImageModel class];
+        
+        return imageModel = [[imageModelClass alloc] initWithUrl:url];
     }
-    if (url.isFileURL) {
-        imageModel = [[ABFileSystemImageModel alloc] initWithUrl:url];
-        } else {
-        imageModel = [[ABInternetImageModel alloc] initWithUrl:url];
-    }
-
     [cache addModel:imageModel forKey:url];
     
     return imageModel;
