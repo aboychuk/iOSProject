@@ -84,20 +84,20 @@ static const CGFloat        ABDefaultAlpha     = 0.5;
 }
 
 - (void)prepareSpinner {
-    UIActivityIndicatorView *spinner = self.spinner;
-    if (!spinner) {
-        spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-        spinner.autoresizingMask = ABAutoresize;
-        spinner.center = self.center;
+    UIActivityIndicatorView *activityIndicator = self.activityIndicator;
+    if (!activityIndicator) {
+        activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        activityIndicator.autoresizingMask = ABAutoresize;
+        activityIndicator.center = self.center;
         NSLog(@"%@", NSStringFromCGPoint(self.center));
     
-        [spinner startAnimating];
+        [activityIndicator startAnimating];
         
-        self.spinner = spinner;
+        self.activityIndicator = activityIndicator;
 
     }
     
-    [self addSubview:self.spinner];
+    [self addSubview:self.activityIndicator];
 }
 
 @end

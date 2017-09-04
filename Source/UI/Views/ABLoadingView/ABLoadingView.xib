@@ -15,14 +15,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <activityIndicatorView contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" id="bsu-5m-QMw">
+                <activityIndicatorView contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" id="bsu-5m-QMw" userLabel="ActivityIndicator">
                     <rect key="frame" x="177" y="325" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="0.0" blue="0.011259603314101696" alpha="0.30037992294520549" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
-                <outlet property="spinner" destination="bsu-5m-QMw" id="o06-mr-0Ao"/>
+                <outlet property="activityIndicator" destination="bsu-5m-QMw" id="ayo-Ch-h7L"/>
             </connections>
             <point key="canvasLocation" x="34" y="55"/>
         </view>
