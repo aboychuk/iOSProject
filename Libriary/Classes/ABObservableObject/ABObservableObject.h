@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^ABVoidBlock)(void);
+#import "ABConstants.h"
 
 @interface ABObservableObject : NSObject
 @property (nonatomic, assign)   NSUInteger  state;
