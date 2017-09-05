@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-//ABUsersModel constants
+#pragma mark -
+#pragma mark ABUsersModel
+
+typedef void(^ABVoidBlock)(void);
+
 static NSString * const ABPlistName     = @"users.plist";
 static const NSUInteger ABUsersCount    = 10;
 static const NSUInteger ABDispatchDelay = 1;
