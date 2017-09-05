@@ -11,7 +11,6 @@
 #import "ABUser.h"
 #import "ABUsersView.h"
 #import "ABUserCell.h"
-#import "ABArrayModel.h"
 #import "ABLoadingView.h"
 #import "ABUsersModel.h"
 #import "ABGCDExtension.h"
@@ -26,6 +25,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
 @interface ABUsersViewController () <ABArrayModelObserver, ABModelObserver>
 
 - (void)setupNavigationBar;
+- (UIBarButtonItem *)barButtonSystmeItem:(UIBarButtonSystemItem)systemItem selector:(SEL)selector;
 
 @end
 
@@ -56,7 +56,7 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     
     UIBarButtonSystemItem systemItem = !isEditing ? UIBarButtonSystemItemDone : UIBarButtonSystemItemEdit;
     
-    UIBarButtonItem *editButton = [self editButtonWithButtonSystemItem:systemItem];
+    UIBarButtonItem *editButton = [self barButtonSystmeItem:systemItem selector:@selector(onEdit:)];
     self.navigationItem.rightBarButtonItem = editButton;
 }
 
@@ -124,19 +124,17 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     UINavigationItem *navigationItem = self.navigationItem;
     navigationItem.title = ABNavigationBarTitle;
     
-    UIBarButtonItem *editButton = [self editButtonWithButtonSystemItem:UIBarButtonSystemItemEdit];
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                               target:self
-                                                                               action:@selector(onAdd:)];
+    UIBarButtonItem *editButton = [self barButtonSystmeItem:UIBarButtonSystemItemEdit selector:@selector(onEdit:)];
+    UIBarButtonItem *addButton = [self barButtonSystmeItem:UIBarButtonSystemItemAdd selector:@selector(onAdd:)];
+    
     navigationItem.rightBarButtonItem = editButton;
     navigationItem.leftBarButtonItem = addButton;
 }
 
-- (UIBarButtonItem *)editButtonWithButtonSystemItem:(UIBarButtonSystemItem)systemItem {
-    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem
-                                                                                target:self
-                                                                                action:@selector(onEdit:)];
-    return editButton;
+- (UIBarButtonItem *)barButtonSystmeItem:(UIBarButtonSystemItem)systemItem selector:(SEL)selector {
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem
+                                                         target:self
+                                                         action:selector];
 }
 
 #pragma mark -
@@ -159,6 +157,12 @@ ABViewControllerRootViewProperty(ABUsersViewController, usersView, ABUsersView)
     ABDispatchAsyncOnMainThread(^{
         self.usersView.loadingView.visible = NO;
         [self.usersView.tableView reloadData];
+    });
+}
+
+- (void)modelDidFailLoading:(id)model {
+    ABDispatchAsyncOnMainThread(^{
+        self.usersView.loadingView.visible = NO;
     });
 }
 
