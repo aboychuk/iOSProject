@@ -27,11 +27,22 @@
     if (!self.cached) {
         image = [UIImage imageWithContentsOfFile:[self imagePath]];
     } else {
-        image = [UIImage imageWithContentsOfFile:self.url.path];
+        image = [UIImage imageNamed:self.url.path];
     }
     
     return image;
 }
+
+- (void)loadImageWithCompletionHandler:(ABCompletionHandlerBlock)handler {
+    UIImage *image = nil;
+    if (!self.cached) {
+        image = [UIImage imageWithContentsOfFile:[self imagePath]];
+    } else {
+        image = [UIImage imageWithContentsOfFile:self.url.path];
+    }
+    handler(image, nil);
+}
+
 
 
 
