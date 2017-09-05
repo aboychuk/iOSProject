@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ABLoadingView : UIView
-@property (nonatomic, strong)                       IBOutlet UIActivityIndicatorView    *activityIndicator;
-@property (nonatomic, assign, getter=isVisible)     BOOL                                visible;
+@property (nonatomic, strong)   IBOutlet UIActivityIndicatorView    *activityIndicator;
+
+@property (nonatomic, assign, getter=isVisible) BOOL    visible;
 
 + (instancetype)loadingViewWithSuperview:(UIView *)view;
 
