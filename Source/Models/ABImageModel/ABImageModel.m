@@ -71,9 +71,14 @@ static NSString *const  ABImagePath             = @"imagePath";
     });
 }
 
+
 - (void)dumpModel {
     self.image = nil;
     self.state = ABModelDidUnloaded;
+}
+
+- (void)loadImageWithCompletionHandler:(ABCompletionHandlerBlock)handler {
+
 }
 
 - (UIImage *)loadImage {
@@ -83,8 +88,8 @@ static NSString *const  ABImagePath             = @"imagePath";
 - (NSString *)imagePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *imagePath = [[paths firstObject] stringByAppendingPathComponent:ABImagePath] ;
-    
-    return [imagePath stringByAppendingString:self.url.path];
+    imagePath = [imagePath stringByAppendingPathComponent:self.url.path];
+    return imagePath;
 }
 
 @end

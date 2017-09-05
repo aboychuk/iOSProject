@@ -10,6 +10,8 @@
 
 #import "ABModel.h"
 
+typedef void(^ABCompletionHandlerBlock)(UIImage *image, NSError *error);
+
 @interface ABImageModel : ABModel <ABModelSaveAndDump>
 @property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, readonly) NSURL   *url;
@@ -23,5 +25,6 @@
 
 // Method created for overriding, do not call it directly
 - (UIImage *)loadImage;
+- (void)loadImageWithCompletionHandler:(ABCompletionHandlerBlock)handler;
 
 @end
