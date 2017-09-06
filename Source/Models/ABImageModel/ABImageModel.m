@@ -64,7 +64,9 @@ static NSString *const  ABImagePath             = @"imagePath";
 
 - (void)performLoading {
     ABDispatchAfterDelay(ABDelayBeforeDispatch, ^{
-        self.image = [self loadImage];
+        [self loadImageWithCompletionHandler:^(UIImage *image, id error) {
+            self.image = image;
+        }];
         ABDispatchAsyncOnMainThread(^{
             self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
         });
@@ -77,19 +79,15 @@ static NSString *const  ABImagePath             = @"imagePath";
     self.state = ABModelDidUnloaded;
 }
 
-- (void)loadImageWithCompletionHandler:(ABCompletionHandlerBlock)handler {
+- (void)loadImageWithCompletionHandler:(void(^)(UIImage *image, id error))handler {
 
-}
-
-- (UIImage *)loadImage {
-    return nil;
 }
 
 - (NSString *)imagePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *imagePath = [[paths firstObject] stringByAppendingPathComponent:ABImagePath] ;
-    imagePath = [imagePath stringByAppendingPathComponent:self.url.path];
-    return imagePath;
+    
+    return [imagePath stringByAppendingPathComponent:self.url.path];
 }
 
 @end

@@ -22,28 +22,15 @@
 #pragma mark -
 #pragma mark Public Methods
 
-- (UIImage *)loadImage {
-    UIImage *image = nil;
-    if (!self.cached) {
-        image = [UIImage imageWithContentsOfFile:[self imagePath]];
-    } else {
+- (void)loadImageWithCompletionHandler:(void(^)(UIImage *image, id error))handler {
+    UIImage *image;
+    if (self.cached) {
         image = [UIImage imageNamed:self.url.path];
-    }
-    
-    return image;
-}
-
-- (void)loadImageWithCompletionHandler:(ABCompletionHandlerBlock)handler {
-    UIImage *image = nil;
-    if (!self.cached) {
-        image = [UIImage imageWithContentsOfFile:[self imagePath]];
     } else {
-        image = [UIImage imageWithContentsOfFile:self.url.path];
+        image = [UIImage imageWithContentsOfFile:[self imagePath]];
+
     }
     handler(image, nil);
 }
-
-
-
 
 @end
