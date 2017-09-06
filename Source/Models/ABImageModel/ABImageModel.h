@@ -22,6 +22,7 @@
 - (NSString *)imagePath;
 
 // Method created for overriding, do not call it directly
-- (void)loadImageWithCompletionHandler:(void(^)(UIImage *image, id error))handler;
+- (UIImage *)loadImage;
+- (UIImage *)loadImageWithCompletionHandler:(void(^)(UIImage *image, id error))handler;
 
 @end

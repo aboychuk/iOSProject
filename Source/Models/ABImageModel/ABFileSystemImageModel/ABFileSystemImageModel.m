@@ -22,15 +22,13 @@
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)loadImageWithCompletionHandler:(void(^)(UIImage *image, id error))handler {
-    UIImage *image;
-    if (self.cached) {
+- (UIImage *)loadImage {
+    UIImage *image = [UIImage imageWithContentsOfFile:[self imagePath]];
+    if (!image) {
         image = [UIImage imageNamed:self.url.path];
-    } else {
-        image = [UIImage imageWithContentsOfFile:[self imagePath]];
-
     }
-    handler(image, nil);
+    
+    return image;
 }
 
 @end

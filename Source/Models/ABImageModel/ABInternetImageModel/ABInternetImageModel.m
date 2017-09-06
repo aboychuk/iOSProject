@@ -13,22 +13,35 @@
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)loadImageWithCompletionHandler:(void(^)(UIImage *image, id error))handler {
+- (UIImage *)loadImage {
     if (!self.cached) {
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSURLSession *session = [NSURLSession sharedSession];
-        
-        NSURLSessionDownloadTask *task = [session downloadTaskWithURL:self.url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-            [fileManager copyItemAtPath:location.path toPath:[self imagePath] error:nil];
-            UIImage *image = [UIImage imageWithContentsOfFile:[self imagePath]];
-            
-            handler(image, error);
+        UIImage image = [self loadImageWithCompletionHandler:^(UIImage *image, id error) {
+            <#code#>
         }];
-        
-        [task resume];
     } else {
-        [super loadImageWithCompletionHandler:handler];
+        [super loadImage];
     }
+    
+    return nil;
+}
+
+- (UIImage *)loadImageWithCompletionHandler:(void(^)(UIImage *image, id error))handler {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSURLSessionDownloadTask *task = [session downloadTaskWithURL:self.url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        [fileManager copyItemAtPath:location.path toPath:[self imagePath] error:nil];
+        
+
+    }];
+
+    [task resume];
+    UIImage *image = nil;
+    if (handler) {
+        image = [UIImage imageWithContentsOfFile:[self imagePath]];
+    }
+    
+    return image;
 }
 
 @end

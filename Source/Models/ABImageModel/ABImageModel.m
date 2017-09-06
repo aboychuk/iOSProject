@@ -63,24 +63,25 @@ static NSString *const  ABImagePath             = @"imagePath";
 #pragma mark Public Methods
 
 - (void)performLoading {
-    ABDispatchAfterDelay(ABDelayBeforeDispatch, ^{
-        [self loadImageWithCompletionHandler:^(UIImage *image, id error) {
-            self.image = image;
-        }];
-        ABDispatchAsyncOnMainThread(^{
-            self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
-        });
-    });
-}
+    ABDispatchAsyncOnMainThread(^{
+        self.image = [self loadImage];
 
+        self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
+    });
+
+}
 
 - (void)dumpModel {
     self.image = nil;
     self.state = ABModelDidUnloaded;
 }
 
-- (void)loadImageWithCompletionHandler:(void(^)(UIImage *image, id error))handler {
+- (UIImage *)loadImage {
+    return nil;
+}
 
+- (UIImage *)loadImageWithCompletionHandler:(void(^)(UIImage *image, id error))handler {
+    return nil;
 }
 
 - (NSString *)imagePath {
