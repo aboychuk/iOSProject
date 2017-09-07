@@ -23,6 +23,5 @@
 
 // Method created for overriding, do not call it directly
 - (UIImage *)loadImage;
-- (UIImage *)loadImageWithCompletionHandler:(void(^)(UIImage *image, id error))handler;
 
 @end

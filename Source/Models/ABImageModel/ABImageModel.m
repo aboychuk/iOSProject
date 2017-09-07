@@ -30,14 +30,15 @@ static NSString *const  ABImagePath             = @"imagePath";
 #pragma mark Class Methods
 
 + (instancetype)imageWithUrl:(NSURL *)url {
+    ABImageModel *imageModel = nil;
     ABImageModelCache *cache = [ABImageModelCache sharedCache];
-    ABImageModel *imageModel = [cache modelForKey:url];
+    imageModel = [cache modelForKey:url];
     if (!imageModel) {
         Class imageModelClass = url.isFileURL ? [ABFileSystemImageModel class] : [ABInternetImageModel class];
+        imageModel = [[imageModelClass alloc] initWithUrl:url];
         
-        return imageModel = [[imageModelClass alloc] initWithUrl:url];
+        [cache addModel:imageModel forKey:url];
     }
-    [cache addModel:imageModel forKey:url];
     
     return imageModel;
 }
@@ -63,14 +64,10 @@ static NSString *const  ABImagePath             = @"imagePath";
 #pragma mark Public Methods
 
 - (void)performLoading {
+    self.image = [self loadImage];
     ABDispatchAsyncOnMainThread(^{
-        self.image = [self loadImageWithCompletionHandler:^(UIImage *image, id error) {
-            self.image = image;
-        }];
-
         self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
     });
-
 }
 
 - (void)dumpModel {
@@ -82,15 +79,11 @@ static NSString *const  ABImagePath             = @"imagePath";
     return nil;
 }
 
-- (UIImage *)loadImageWithCompletionHandler:(void(^)(UIImage *image, id error))handler {
-    return nil;
-}
-
 - (NSString *)imagePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *imagePath = [[paths firstObject] stringByAppendingPathComponent:ABImagePath] ;
     
-    return [imagePath stringByAppendingPathComponent:self.url.path];
+    return [imagePath stringByAppendingString:[self.url.path stringByDeletingLastPathComponent]];
 }
 
 @end

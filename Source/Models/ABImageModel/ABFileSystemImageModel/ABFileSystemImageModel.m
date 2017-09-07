@@ -23,12 +23,15 @@
 #pragma mark Public Methods
 
 - (UIImage *)loadImage {
-    UIImage *image = [UIImage imageWithContentsOfFile:[self imagePath]];
+    NSData *imageData = [NSData dataWithContentsOfFile:[self imagePath]];
+    UIImage *image = [UIImage imageWithData:imageData];
     if (!image) {
-        image = [UIImage imageNamed:self.url.path];
+        image = [UIImage imageWithContentsOfFile:self.url.path];
     }
     
     return image;
 }
+
+
 
 @end
