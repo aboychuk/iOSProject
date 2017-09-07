@@ -12,19 +12,19 @@
 
 - (UIImage *)loadImage {
     UIImage *image = nil;
-//    if (self.cached) {
-//        [super loadImage];
-//    } else {
+    if (self.cached) {
+        image = [super loadImage];
+    } else {
         NSData *imageData = [NSData dataWithContentsOfURL:self.url];
         [self saveData:imageData];
         image = [UIImage imageWithData:imageData];
-//    }
+    }
    
     return image;
 }
 
 - (void)saveData:(NSData *)data {
-    BOOL saved = [data writeToFile:[self imagePath] atomically:YES];
+    BOOL saved = [data writeToFile:[[self imagePath] stringByDeletingPathExtension] atomically:YES];
     if (!saved) {
         NSLog(@"Not Saved");
     }

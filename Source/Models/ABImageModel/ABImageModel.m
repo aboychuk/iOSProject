@@ -15,8 +15,7 @@
 
 #import "ABGCDExtension.h"
 
-static const NSUInteger ABDelayBeforeDispatch   = 1;
-static NSString *const  ABImagePath             = @"imagePath";
+static NSString *const  ABImagePath = @"imagePath";
 
 @interface ABImageModel ()
 @property (nonatomic, strong)   UIImage     *image;
@@ -81,9 +80,9 @@ static NSString *const  ABImagePath             = @"imagePath";
 
 - (NSString *)imagePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *imagePath = [[paths firstObject] stringByAppendingPathComponent:ABImagePath] ;
+    NSString *imagePath = [[paths firstObject] stringByAppendingPathComponent:ABImagePath];
     
-    return [imagePath stringByAppendingString:[self.url.path stringByDeletingLastPathComponent]];
+    return [imagePath stringByAppendingPathComponent:self.url.path];
 }
 
 @end
