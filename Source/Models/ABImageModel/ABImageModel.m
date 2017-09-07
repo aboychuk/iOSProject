@@ -64,7 +64,9 @@ static NSString *const  ABImagePath             = @"imagePath";
 
 - (void)performLoading {
     ABDispatchAsyncOnMainThread(^{
-        self.image = [self loadImage];
+        self.image = [self loadImageWithCompletionHandler:^(UIImage *image, id error) {
+            self.image = image;
+        }];
 
         self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
     });
