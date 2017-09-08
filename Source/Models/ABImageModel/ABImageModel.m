@@ -82,7 +82,7 @@ static NSString *const  ABImagePath = @"imagePath";
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *imagePath = [[paths firstObject] stringByAppendingPathComponent:ABImagePath];
     
-    return [imagePath stringByAppendingPathComponent:self.url.path];
+    return [[imagePath stringByAppendingPathComponent:self.url.path] stringByDeletingPathExtension];
 }
 
 @end

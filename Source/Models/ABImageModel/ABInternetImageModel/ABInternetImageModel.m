@@ -8,7 +8,27 @@
 
 #import "ABInternetImageModel.h"
 
+@interface ABInternetImageModel ()
+@property (nonatomic, strong)   NSURLSessionDownloadTask    *downloadTask;
+
+@end
+
 @implementation ABInternetImageModel
+
+#pragma mark -
+#pragma mark Accessors
+
+- (void)setDownloadTask:(NSURLSessionDownloadTask *)downloadTask {
+    if (_downloadTask != downloadTask) {
+        [_downloadTask cancel];
+        
+        _downloadTask = downloadTask;
+        [_downloadTask resume];
+    }
+}
+
+#pragma mark -
+#pragma mark Public Methods
 
 - (UIImage *)loadImage {
     UIImage *image = nil;
@@ -18,13 +38,22 @@
         NSData *imageData = [NSData dataWithContentsOfURL:self.url];
         [self saveData:imageData];
         image = [UIImage imageWithData:imageData];
+        [self prepareDownloadTask];
     }
    
     return image;
 }
 
+- (void)prepareDownloadTask {
+    NSURLSession *urlSession = [NSURLSession sharedSession];
+    NSFileManager *filemanager = [NSFileManager defaultManager];
+    self.downloadTask = [urlSession downloadTaskWithURL:self.url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        [filemanager copyItemAtPath:location.path toPath:[self imagePath] error:nil];
+    }];
+}
+
 - (void)saveData:(NSData *)data {
-    BOOL saved = [data writeToFile:[[self imagePath] stringByDeletingPathExtension] atomically:YES];
+    BOOL saved = [data writeToFile:[self imagePath] atomically:YES];
     if (!saved) {
         NSLog(@"Not Saved");
     }
