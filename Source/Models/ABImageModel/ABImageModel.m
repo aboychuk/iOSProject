@@ -15,6 +15,8 @@
 
 #import "ABGCDExtension.h"
 
+
+typedef void (^ABCompletionBlock)(UIImage *image, NSError *error);
 static NSString *const  ABImagePath = @"imagePath";
 
 @interface ABImageModel ()
@@ -63,7 +65,10 @@ static NSString *const  ABImagePath = @"imagePath";
 #pragma mark Public Methods
 
 - (void)performLoading {
-    self.image = [self loadImage];
+    [self loadImageWithCompletionHandler:^(UIImage *image, NSError *error){
+        self.image = image;
+    }];
+//    self.image = [self loadImage];
     ABDispatchAsyncOnMainThread(^{
         self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
     });
@@ -76,6 +81,10 @@ static NSString *const  ABImagePath = @"imagePath";
 
 - (UIImage *)loadImage {
     return nil;
+}
+
+- (void)loadImageWithCompletionHandler:(ABCompletionBlock)completion {
+    
 }
 
 - (NSString *)imagePath {

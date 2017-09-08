@@ -42,10 +42,10 @@
 #pragma mark -
 #pragma mark Overriden Methods
 
-- (void)prepareForReuse {
-    [super prepareForReuse];
-    
-    self.userImageView.contentImageView.image = nil;
-}
+//- (void)prepareForReuse {
+//    [super prepareForReuse];
+//    
+//    self.userImageView.contentImageView.image = nil;
+//}
 
 @end

@@ -44,6 +44,23 @@
     return image;
 }
 
+- (void)loadImageWithCompletionHandler:(void (^)(UIImage *, NSError *))handler {
+    if (self.cached) {
+        [super loadImageWithCompletionHandler:handler];
+        if (self.image) {
+            return;
+        }
+    }
+    NSURLSession *urlSession = [NSURLSession sharedSession];
+    NSFileManager *filemanager = [NSFileManager defaultManager];
+    self.downloadTask = [urlSession downloadTaskWithURL:self.url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        [filemanager copyItemAtPath:location.path toPath:[self imagePath] error:nil];
+        
+        [super loadImageWithCompletionHandler:handler];
+    }];
+
+}
+
 - (void)prepareDownloadTask {
     NSURLSession *urlSession = [NSURLSession sharedSession];
     NSFileManager *filemanager = [NSFileManager defaultManager];

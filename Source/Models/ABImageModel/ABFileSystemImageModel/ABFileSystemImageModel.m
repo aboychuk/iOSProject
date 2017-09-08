@@ -32,6 +32,16 @@
     return image;
 }
 
+- (void)loadImageWithCompletionHandler:(void (^)(UIImage *, NSError *))handler {
+    NSData *imageData = [NSData dataWithContentsOfFile:[self imagePath]];
+    UIImage *image = [UIImage imageWithData:imageData];
+    NSError *error = nil;
+    if (handler) {
+        handler(image, error);
+    }
+
+}
+
 
 
 @end
