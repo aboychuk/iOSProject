@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ABUsersModel.h"
-
 @interface ABAppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic)   UIWindow        *window;
 
