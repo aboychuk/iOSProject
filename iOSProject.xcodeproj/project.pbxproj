@@ -55,6 +55,9 @@
 		970C4A0A1F6A847700AAB728 /* ABView.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C49D91F6A847700AAB728 /* ABView.m */; };
 		97D57F9B1F6A91D50048CD7B /* ABUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D57F991F6A91D50048CD7B /* ABUserCell.m */; };
 		97D57F9C1F6A91D50048CD7B /* ABUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D57F9A1F6A91D50048CD7B /* ABUserCell.xib */; };
+		97D57FA61F6A99DB0048CD7B /* ABContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D57FA41F6A99DB0048CD7B /* ABContext.m */; };
+		97D57FA91F6A99F40048CD7B /* ABLoginContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D57FA81F6A99F40048CD7B /* ABLoginContext.m */; };
+		97D57FAD1F6A9D770048CD7B /* ABLoginContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D57FAC1F6A9D770048CD7B /* ABLoginContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +149,12 @@
 		97D57F981F6A91D50048CD7B /* ABUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserCell.h; sourceTree = "<group>"; };
 		97D57F991F6A91D50048CD7B /* ABUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserCell.m; sourceTree = "<group>"; };
 		97D57F9A1F6A91D50048CD7B /* ABUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserCell.xib; sourceTree = "<group>"; };
+		97D57FA31F6A99DB0048CD7B /* ABContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABContext.h; sourceTree = "<group>"; };
+		97D57FA41F6A99DB0048CD7B /* ABContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABContext.m; sourceTree = "<group>"; };
+		97D57FA71F6A99F40048CD7B /* ABLoginContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLoginContext.h; sourceTree = "<group>"; };
+		97D57FA81F6A99F40048CD7B /* ABLoginContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLoginContext.m; sourceTree = "<group>"; };
+		97D57FAB1F6A9D770048CD7B /* ABLoginContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLoginContext.h; sourceTree = "<group>"; };
+		97D57FAC1F6A9D770048CD7B /* ABLoginContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLoginContext.m; sourceTree = "<group>"; };
 		CBE27B6C8B9F1CA6ED2CFFAA /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E470E32AE2A3C09EA831FECF /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -423,6 +432,7 @@
 		970C49A01F6A847700AAB728 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				97D57F9D1F6A99100048CD7B /* Contexts */,
 				970C49A11F6A847700AAB728 /* Constants */,
 				970C49A31F6A847700AAB728 /* Models */,
 				970C49C31F6A847700AAB728 /* UI */,
@@ -617,6 +627,43 @@
 			path = ABUserCell;
 			sourceTree = "<group>";
 		};
+		97D57F9D1F6A99100048CD7B /* Contexts */ = {
+			isa = PBXGroup;
+			children = (
+				97D57FAA1F6A9D770048CD7B /* ABLoginContext */,
+				97D57FA21F6A99DB0048CD7B /* ABContext */,
+				97D57FA51F6A99DB0048CD7B /* ABLoginContext */,
+			);
+			path = Contexts;
+			sourceTree = "<group>";
+		};
+		97D57FA21F6A99DB0048CD7B /* ABContext */ = {
+			isa = PBXGroup;
+			children = (
+				97D57FA31F6A99DB0048CD7B /* ABContext.h */,
+				97D57FA41F6A99DB0048CD7B /* ABContext.m */,
+			);
+			path = ABContext;
+			sourceTree = "<group>";
+		};
+		97D57FA51F6A99DB0048CD7B /* ABLoginContext */ = {
+			isa = PBXGroup;
+			children = (
+				97D57FA71F6A99F40048CD7B /* ABLoginContext.h */,
+				97D57FA81F6A99F40048CD7B /* ABLoginContext.m */,
+			);
+			path = ABLoginContext;
+			sourceTree = "<group>";
+		};
+		97D57FAA1F6A9D770048CD7B /* ABLoginContext */ = {
+			isa = PBXGroup;
+			children = (
+				97D57FAB1F6A9D770048CD7B /* ABLoginContext.h */,
+				97D57FAC1F6A9D770048CD7B /* ABLoginContext.m */,
+			);
+			path = ABLoginContext;
+			sourceTree = "<group>";
+		};
 		A54C3AD9DFBA3070B4BF1C7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,11 +820,14 @@
 				970C49E71F6A847700AAB728 /* UIWindow+ABExtension.m in Sources */,
 				970C49E51F6A847700AAB728 /* UINib+ABExtension.m in Sources */,
 				970C49DC1F6A847700AAB728 /* main.m in Sources */,
+				97D57FA61F6A99DB0048CD7B /* ABContext.m in Sources */,
 				970C49EE1F6A847700AAB728 /* ABObservableObject.m in Sources */,
+				97D57FAD1F6A9D770048CD7B /* ABLoginContext.m in Sources */,
 				970C49E41F6A847700AAB728 /* ABTimerWeakReference.m in Sources */,
 				970C4A0A1F6A847700AAB728 /* ABView.m in Sources */,
 				970C4A051F6A847700AAB728 /* ABUsersViewController.m in Sources */,
 				970C49F81F6A847700AAB728 /* ABArrayModelChange.m in Sources */,
+				97D57FA91F6A99F40048CD7B /* ABLoginContext.m in Sources */,
 				970C4A001F6A847700AAB728 /* ABUser.m in Sources */,
 				970C49F71F6A847700AAB728 /* ABArrayModel.m in Sources */,
 				970C49EC1F6A847700AAB728 /* ABGCDExtension.m in Sources */,
