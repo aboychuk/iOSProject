@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0C4C619E955DC81FD5A94D /* libPods-iOSProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E470E32AE2A3C09EA831FECF /* libPods-iOSProject.a */; };
 		970C49DA1F6A847700AAB728 /* ABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C49521F6A847700AAB728 /* ABAppDelegate.m */; };
 		970C49DB1F6A847700AAB728 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 970C49531F6A847700AAB728 /* Info.plist */; };
 		970C49DC1F6A847700AAB728 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C49541F6A847700AAB728 /* main.m */; };
@@ -45,8 +46,6 @@
 		970C49FF1F6A847700AAB728 /* ABModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C49BC1F6A847700AAB728 /* ABModel.m */; };
 		970C4A001F6A847700AAB728 /* ABUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C49BF1F6A847700AAB728 /* ABUser.m */; };
 		970C4A011F6A847700AAB728 /* ABUsersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C49C21F6A847700AAB728 /* ABUsersModel.m */; };
-		970C4A021F6A847700AAB728 /* ABUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C49C71F6A847700AAB728 /* ABUserCell.m */; };
-		970C4A031F6A847700AAB728 /* ABUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 970C49C81F6A847700AAB728 /* ABUserCell.xib */; };
 		970C4A041F6A847700AAB728 /* ABUsersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C49CB1F6A847700AAB728 /* ABUsersView.m */; };
 		970C4A051F6A847700AAB728 /* ABUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C49CD1F6A847700AAB728 /* ABUsersViewController.m */; };
 		970C4A061F6A847700AAB728 /* ABUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 970C49CE1F6A847700AAB728 /* ABUsersViewController.xib */; };
@@ -54,9 +53,12 @@
 		970C4A081F6A847700AAB728 /* ABLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C49D51F6A847700AAB728 /* ABLoadingView.m */; };
 		970C4A091F6A847700AAB728 /* ABLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 970C49D61F6A847700AAB728 /* ABLoadingView.xib */; };
 		970C4A0A1F6A847700AAB728 /* ABView.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C49D91F6A847700AAB728 /* ABView.m */; };
+		97D57F9B1F6A91D50048CD7B /* ABUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D57F991F6A91D50048CD7B /* ABUserCell.m */; };
+		97D57F9C1F6A91D50048CD7B /* ABUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97D57F9A1F6A91D50048CD7B /* ABUserCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17FBFFA518F91D146CD323B6 /* Pods-iOSProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.release.xcconfig"; sourceTree = "<group>"; };
 		970C49361F6A842700AAB728 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		970C49511F6A847700AAB728 /* ABAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABAppDelegate.h; sourceTree = "<group>"; };
 		970C49521F6A847700AAB728 /* ABAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABAppDelegate.m; sourceTree = "<group>"; };
@@ -129,9 +131,6 @@
 		970C49BF1F6A847700AAB728 /* ABUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUser.m; sourceTree = "<group>"; };
 		970C49C11F6A847700AAB728 /* ABUsersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersModel.h; sourceTree = "<group>"; };
 		970C49C21F6A847700AAB728 /* ABUsersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersModel.m; sourceTree = "<group>"; };
-		970C49C61F6A847700AAB728 /* ABUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserCell.h; sourceTree = "<group>"; };
-		970C49C71F6A847700AAB728 /* ABUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserCell.m; sourceTree = "<group>"; };
-		970C49C81F6A847700AAB728 /* ABUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserCell.xib; sourceTree = "<group>"; };
 		970C49CA1F6A847700AAB728 /* ABUsersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersView.h; sourceTree = "<group>"; };
 		970C49CB1F6A847700AAB728 /* ABUsersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersView.m; sourceTree = "<group>"; };
 		970C49CC1F6A847700AAB728 /* ABUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersViewController.h; sourceTree = "<group>"; };
@@ -144,6 +143,11 @@
 		970C49D61F6A847700AAB728 /* ABLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABLoadingView.xib; sourceTree = "<group>"; };
 		970C49D81F6A847700AAB728 /* ABView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABView.h; sourceTree = "<group>"; };
 		970C49D91F6A847700AAB728 /* ABView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABView.m; sourceTree = "<group>"; };
+		97D57F981F6A91D50048CD7B /* ABUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserCell.h; sourceTree = "<group>"; };
+		97D57F991F6A91D50048CD7B /* ABUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserCell.m; sourceTree = "<group>"; };
+		97D57F9A1F6A91D50048CD7B /* ABUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserCell.xib; sourceTree = "<group>"; };
+		CBE27B6C8B9F1CA6ED2CFFAA /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
+		E470E32AE2A3C09EA831FECF /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0C4C619E955DC81FD5A94D /* libPods-iOSProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +170,8 @@
 				970C49981F6A847700AAB728 /* Resource */,
 				970C49A01F6A847700AAB728 /* Source */,
 				970C49371F6A842700AAB728 /* Products */,
+				FDFBEDDD4034E8530E774ED9 /* Pods */,
+				A54C3AD9DFBA3070B4BF1C7D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -544,23 +551,13 @@
 		970C49C41F6A847700AAB728 /* ABUsersViewController */ = {
 			isa = PBXGroup;
 			children = (
-				970C49C51F6A847700AAB728 /* ABUserCellView */,
+				97D57F971F6A91D50048CD7B /* ABUserCell */,
 				970C49C91F6A847700AAB728 /* ABUsersView */,
 				970C49CC1F6A847700AAB728 /* ABUsersViewController.h */,
 				970C49CD1F6A847700AAB728 /* ABUsersViewController.m */,
 				970C49CE1F6A847700AAB728 /* ABUsersViewController.xib */,
 			);
 			path = ABUsersViewController;
-			sourceTree = "<group>";
-		};
-		970C49C51F6A847700AAB728 /* ABUserCellView */ = {
-			isa = PBXGroup;
-			children = (
-				970C49C61F6A847700AAB728 /* ABUserCell.h */,
-				970C49C71F6A847700AAB728 /* ABUserCell.m */,
-				970C49C81F6A847700AAB728 /* ABUserCell.xib */,
-			);
-			path = ABUserCellView;
 			sourceTree = "<group>";
 		};
 		970C49C91F6A847700AAB728 /* ABUsersView */ = {
@@ -610,6 +607,33 @@
 			path = ABView;
 			sourceTree = "<group>";
 		};
+		97D57F971F6A91D50048CD7B /* ABUserCell */ = {
+			isa = PBXGroup;
+			children = (
+				97D57F981F6A91D50048CD7B /* ABUserCell.h */,
+				97D57F991F6A91D50048CD7B /* ABUserCell.m */,
+				97D57F9A1F6A91D50048CD7B /* ABUserCell.xib */,
+			);
+			path = ABUserCell;
+			sourceTree = "<group>";
+		};
+		A54C3AD9DFBA3070B4BF1C7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E470E32AE2A3C09EA831FECF /* libPods-iOSProject.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDFBEDDD4034E8530E774ED9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CBE27B6C8B9F1CA6ED2CFFAA /* Pods-iOSProject.debug.xcconfig */,
+				17FBFFA518F91D146CD323B6 /* Pods-iOSProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -617,9 +641,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 970C494D1F6A842700AAB728 /* Build configuration list for PBXNativeTarget "iOSProject" */;
 			buildPhases = (
+				0BC50D7BA58AA37513A933EE /* [CP] Check Pods Manifest.lock */,
 				970C49321F6A842700AAB728 /* Sources */,
 				970C49331F6A842700AAB728 /* Frameworks */,
 				970C49341F6A842700AAB728 /* Resources */,
+				EEF560A6CE39B98C1CC1FEA4 /* [CP] Embed Pods Frameworks */,
+				D64F20E4C5C256D9A32D24E9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -669,7 +696,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				970C49F41F6A847700AAB728 /* LaunchScreen.storyboard in Resources */,
-				970C4A031F6A847700AAB728 /* ABUserCell.xib in Resources */,
+				97D57F9C1F6A91D50048CD7B /* ABUserCell.xib in Resources */,
 				970C49F31F6A847700AAB728 /* Assets.xcassets in Resources */,
 				970C49DB1F6A847700AAB728 /* Info.plist in Resources */,
 				970C4A061F6A847700AAB728 /* ABUsersViewController.xib in Resources */,
@@ -680,6 +707,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BC50D7BA58AA37513A933EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D64F20E4C5C256D9A32D24E9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEF560A6CE39B98C1CC1FEA4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		970C49321F6A842700AAB728 /* Sources */ = {
@@ -712,13 +793,13 @@
 				970C49FD1F6A847700AAB728 /* ABImageModel.m in Sources */,
 				970C49DA1F6A847700AAB728 /* ABAppDelegate.m in Sources */,
 				970C49E01F6A847700AAB728 /* NSMutableArray+ABExtension.m in Sources */,
-				970C4A021F6A847700AAB728 /* ABUserCell.m in Sources */,
 				970C49E81F6A847700AAB728 /* ABAlphabet.m in Sources */,
 				970C49FC1F6A847700AAB728 /* ABFileSystemImageModel.m in Sources */,
 				970C4A081F6A847700AAB728 /* ABLoadingView.m in Sources */,
 				970C49EF1F6A847700AAB728 /* ABRandomNumber.m in Sources */,
 				970C49EA1F6A847700AAB728 /* ABRangeAlphabet.m in Sources */,
 				970C49E11F6A847700AAB728 /* NSObject+ABObjectExtension.m in Sources */,
+				97D57F9B1F6A91D50048CD7B /* ABUserCell.m in Sources */,
 				970C49F01F6A847700AAB728 /* ABTableViewCell.m in Sources */,
 				970C4A071F6A847700AAB728 /* ABImageView.m in Sources */,
 				970C49DE1F6A847700AAB728 /* NSArray+ABExtension.m in Sources */,
@@ -842,6 +923,7 @@
 		};
 		970C494E1F6A842700AAB728 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBE27B6C8B9F1CA6ED2CFFAA /* Pods-iOSProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOSProject/Info.plist;
@@ -853,6 +935,7 @@
 		};
 		970C494F1F6A842700AAB728 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17FBFFA518F91D146CD323B6 /* Pods-iOSProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOSProject/Info.plist;
@@ -881,6 +964,7 @@
 				970C494F1F6A842700AAB728 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
