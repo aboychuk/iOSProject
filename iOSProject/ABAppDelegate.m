@@ -17,10 +17,6 @@
 
 #import "ABConstants.h"
 
-@interface ABAppDelegate ()
-
-@end
-
 @implementation ABAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -38,11 +34,30 @@
     
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
-    // Add any custom logic here.
     
     return YES;
 }
-    
+
+- (void)applicationWillResignActive:(UIApplication *)application {
+
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBSDKAppEvents activateApp];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+
+}
+
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
@@ -52,33 +67,9 @@
                                                         sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
                                                                annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
                     ];
-    // Add any custom logic here.
+    
     return handled;
 }
 
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-
-}
-
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-
-}
-
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-
-}
-
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    [FBSDKAppEvents activateApp];
-}
-
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-
-}
 
 @end

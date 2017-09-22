@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #pragma mark -
-#pragma mark ABUsersModel
+#pragma mark ABUsersModel constants
 
 typedef void(^ABVoidBlock)(void);
 

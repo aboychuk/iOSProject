@@ -10,4 +10,12 @@
 
 @implementation ABContext
 
+- (void)execute {
+    
+}
+
+- (void)cancel {
+    
+}
+
 @end
