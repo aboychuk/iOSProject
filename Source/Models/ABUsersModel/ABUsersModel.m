@@ -17,7 +17,6 @@
 
 static NSString * const ABPlistName     = @"users.plist";
 static const NSUInteger ABUsersCount    = 10;
-static const NSUInteger ABDispatchDelay = 1;
 
 @interface ABUsersModel ()
 @property (nonatomic, strong)   NSArray *notifications;
@@ -63,17 +62,15 @@ static const NSUInteger ABDispatchDelay = 1;
     [NSKeyedArchiver archiveRootObject:self.allObjects toFile:[self savePath]];
 }
 - (void)performLoading {
-    ABDispatchAfterDelay(ABDispatchDelay, ^{
-        NSArray *users = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
-        if (!users.count) {
-            users = [ABUser objectsWithCount:ABUsersCount];
-        }
-        [self performBlockWithoutNotification:^{
-            [self addObjects:users];
-        }];
-        
-        self.state = ABModelDidLoad;
-    });
+    NSArray *users = [NSKeyedUnarchiver unarchiveObjectWithFile:[self savePath]];
+    if (!users.count) {
+        users = [ABUser objectsWithCount:ABUsersCount];
+    }
+    [self performBlockWithoutNotification:^{
+        [self addObjects:users];
+    }];
+    
+    self.state = ABModelDidLoad;
 }
 
 - (void)dumpModel {

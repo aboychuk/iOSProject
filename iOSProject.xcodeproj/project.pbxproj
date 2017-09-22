@@ -60,8 +60,8 @@
 		971FFBD61F757FF400884C7C /* ABUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBD41F757FF400884C7C /* ABUserCell.m */; };
 		971FFBD71F757FF400884C7C /* ABUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971FFBD51F757FF400884C7C /* ABUserCell.xib */; };
 		971FFBDD1F7582A400884C7C /* ABFriendsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBD91F7582A400884C7C /* ABFriendsView.m */; };
-		971FFBDE1F7582A400884C7C /* ABUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBDB1F7582A400884C7C /* ABUsersViewController.m */; };
-		971FFBDF1F7582A400884C7C /* ABUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971FFBDC1F7582A400884C7C /* ABUsersViewController.xib */; };
+		971FFBDE1F7582A400884C7C /* ABFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBDB1F7582A400884C7C /* ABFriendsViewController.m */; };
+		971FFBDF1F7582A400884C7C /* ABFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971FFBDC1F7582A400884C7C /* ABFriendsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,9 +164,9 @@
 		971FFBD51F757FF400884C7C /* ABUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserCell.xib; sourceTree = "<group>"; };
 		971FFBD81F7582A400884C7C /* ABFriendsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFriendsView.h; sourceTree = "<group>"; };
 		971FFBD91F7582A400884C7C /* ABFriendsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFriendsView.m; sourceTree = "<group>"; };
-		971FFBDA1F7582A400884C7C /* ABUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersViewController.h; sourceTree = "<group>"; };
-		971FFBDB1F7582A400884C7C /* ABUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersViewController.m; sourceTree = "<group>"; };
-		971FFBDC1F7582A400884C7C /* ABUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUsersViewController.xib; sourceTree = "<group>"; };
+		971FFBDA1F7582A400884C7C /* ABFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFriendsViewController.h; sourceTree = "<group>"; };
+		971FFBDB1F7582A400884C7C /* ABFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFriendsViewController.m; sourceTree = "<group>"; };
+		971FFBDC1F7582A400884C7C /* ABFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABFriendsViewController.xib; sourceTree = "<group>"; };
 		CBE27B6C8B9F1CA6ED2CFFAA /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E470E32AE2A3C09EA831FECF /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -674,9 +674,9 @@
 			children = (
 				971FFBD81F7582A400884C7C /* ABFriendsView.h */,
 				971FFBD91F7582A400884C7C /* ABFriendsView.m */,
-				971FFBDA1F7582A400884C7C /* ABUsersViewController.h */,
-				971FFBDB1F7582A400884C7C /* ABUsersViewController.m */,
-				971FFBDC1F7582A400884C7C /* ABUsersViewController.xib */,
+				971FFBDA1F7582A400884C7C /* ABFriendsViewController.h */,
+				971FFBDB1F7582A400884C7C /* ABFriendsViewController.m */,
+				971FFBDC1F7582A400884C7C /* ABFriendsViewController.xib */,
 				971FFBD21F757FF400884C7C /* ABUserCell */,
 			);
 			path = ABFriendsViewController;
@@ -796,7 +796,7 @@
 			files = (
 				970C49F41F6A847700AAB728 /* LaunchScreen.storyboard in Resources */,
 				970C49F31F6A847700AAB728 /* Assets.xcassets in Resources */,
-				971FFBDF1F7582A400884C7C /* ABUsersViewController.xib in Resources */,
+				971FFBDF1F7582A400884C7C /* ABFriendsViewController.xib in Resources */,
 				970C49F51F6A847700AAB728 /* Main.storyboard in Resources */,
 				971FFBB71F752BC400884C7C /* ABLoginViewController.xib in Resources */,
 				971FFB821F75243F00884C7C /* ABLoadingView.xib in Resources */,
@@ -905,7 +905,7 @@
 				971FFB771F75243F00884C7C /* ABArrayModel.m in Sources */,
 				971FFBC41F75565300884C7C /* ABUserDetailView.m in Sources */,
 				971FFBA71F7524BA00884C7C /* ABLoginContext.m in Sources */,
-				971FFBDE1F7582A400884C7C /* ABUsersViewController.m in Sources */,
+				971FFBDE1F7582A400884C7C /* ABFriendsViewController.m in Sources */,
 				971FFB7F1F75243F00884C7C /* ABModel.m in Sources */,
 				971FFB641F75243F00884C7C /* NSBundle+ABExtension.m in Sources */,
 				971FFB631F75243F00884C7C /* NSArray+ABExtension.m in Sources */,

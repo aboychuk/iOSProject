@@ -8,12 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#pragma mark -
-#pragma mark ABUsersModel constants
-
+//Block
 typedef void(^ABVoidBlock)(void);
-
-
 
 //UIView autoresizing constants
 static const UIViewAutoresizing ABAutoresizeWithFixedPosition = UIViewAutoresizingFlexibleLeftMargin
@@ -22,7 +18,6 @@ static const UIViewAutoresizing ABAutoresizeWithFixedPosition = UIViewAutoresizi
                                                                 | UIViewAutoresizingFlexibleTopMargin
                                                                 | UIViewAutoresizingFlexibleHeight
                                                                 | UIViewAutoresizingFlexibleBottomMargin;
-
 
 static const UIViewAutoresizing ABAutoresize = UIViewAutoresizingFlexibleWidth
                                                 | UIViewAutoresizingFlexibleHeight;

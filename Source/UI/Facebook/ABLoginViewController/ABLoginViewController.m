@@ -50,8 +50,7 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
                                     NSLog(@"Logged in");
                                 }
                             }];
-    
-    if ([FBSDKAccessToken currentAccessToken]) {
+        if ([FBSDKAccessToken currentAccessToken]) {
         [self.navigationController pushViewController:[ABUserDetailViewController new] animated:YES];
     }
 }

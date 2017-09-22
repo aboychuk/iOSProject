@@ -1,5 +1,5 @@
 //
-//  ABUsersView.h
+//  ABFriendsView.h
 //  iOSProject
 //
 //  Created by Andrew Boychuk on 19.07.17.
@@ -10,7 +10,7 @@
 
 #import "ABView.h"
 
-@interface ABUsersView : ABView
+@interface ABFriendsView : ABView
 @property (nonatomic, strong)   IBOutlet UITableView    *tableView;
 
 @end
