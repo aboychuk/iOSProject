@@ -6,22 +6,47 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 #import "ABLoginViewController.h"
 
-@interface ABLoginViewController ()
+#import "ABLoginView.h"
 
-@end
+#import "ABMacro.h"
+
+ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 
 @implementation ABLoginViewController
 
+#pragma mark -
+#pragma mark Actions
+
+- (IBAction)onLoginButton:(UIButton *)sender {
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login
+     logInWithReadPermissions: @[@"public_profile"]
+     fromViewController:self
+     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         if (error) {
+             NSLog(@"Process error");
+         } else if (result.isCancelled) {
+             NSLog(@"Cancelled");
+         } else {
+             NSLog(@"Logged in");
+         }
+     }];
+}
+
+#pragma mark -
+#pragma mark View Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -11,24 +11,30 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ABLoginViewController">
             <connections>
-                <outlet property="view" destination="v5e-wy-KCb" id="vCT-wm-jrl"/>
+                <outlet property="view" destination="FEN-Je-RQY" id="p7i-0J-u9I"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="ABLoginView">
+        <view contentMode="scaleToFill" id="FEN-Je-RQY" customClass="ABLoginView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="v5e-wy-KCb">
-                    <rect key="frame" x="86" y="318" width="202" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IwP-nB-xgn">
+                    <rect key="frame" x="87" y="318" width="200" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Login to Facebook"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <state key="normal" title="Login to Facebook">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
-                        <action selector="onLoginButton:" destination="-2" eventType="touchUpInside" id="KbS-4o-hYe"/>
+                        <action selector="onLoginButton:" destination="-2" eventType="touchUpInside" id="pXD-oP-buS"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.59999999999999998" green="0.20000000000000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="loginButton" destination="IwP-nB-xgn" id="7ee-PX-jpD"/>
+            </connections>
             <point key="canvasLocation" x="33.5" y="70.5"/>
         </view>
     </objects>
