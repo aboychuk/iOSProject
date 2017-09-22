@@ -12,6 +12,7 @@
 #import "ABLoginViewController.h"
 
 #import "ABLoginView.h"
+#import "ABUserDetailViewController.h"
 
 #import "ABMacro.h"
 
@@ -22,12 +23,11 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 #pragma mark -
 #pragma mark Actions
 
-- (IBAction)onLoginButton:(UIButton *)sender {
+- (IBAction)onLogin:(UIButton *)sender {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login
-     logInWithReadPermissions: @[@"public_profile"]
-     fromViewController:self
-     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+    [login logInWithReadPermissions: @[@"public_profile"]
+                 fromViewController:self
+                            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
          if (error) {
              NSLog(@"Process error");
          } else if (result.isCancelled) {
@@ -43,10 +43,9 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [self.navigationController pushViewController:[ABUserDetailViewController new] animated:YES];
+    }
 }
 
 @end

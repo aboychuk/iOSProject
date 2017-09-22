@@ -1,5 +1,5 @@
 //
-//  ABLoginViewController.h
+//  ABUserDetailViewController.h
 //  iOSProject
 //
 //  Created by Andrew Boychuk on 9/22/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ABLoginViewController : UIViewController
-
-- (IBAction)onLogin:(UIButton *)sender;
+@interface ABUserDetailViewController : UIViewController
 
 @end

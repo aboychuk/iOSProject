@@ -27,7 +27,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="onLoginButton:" destination="-2" eventType="touchUpInside" id="pXD-oP-buS"/>
+                        <action selector="onLogin:" destination="-2" eventType="touchUpInside" id="3bG-ul-MP6"/>
                     </connections>
                 </button>
             </subviews>
