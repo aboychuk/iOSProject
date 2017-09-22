@@ -15,7 +15,6 @@
 
 #import "ABGCDExtension.h"
 
-
 typedef void (^ABCompletionBlock)(UIImage *image, NSError *error);
 static NSString *const  ABImagePath = @"imagePath";
 

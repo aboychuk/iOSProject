@@ -39,7 +39,6 @@
     if (handler) {
         handler(image, error);
     }
-
 }
 
 

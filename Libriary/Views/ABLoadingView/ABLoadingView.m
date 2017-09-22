@@ -68,7 +68,7 @@ static const CGFloat        ABDefaultAlpha     = 0.5;
                      }
                      completion:^(BOOL finished) {
                          if (completionHandler) {
-//                             completionHandler(finished);
+                             completionHandler(finished);
                          }
                          _visible = visible;
                      }];

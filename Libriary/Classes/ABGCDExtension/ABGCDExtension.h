@@ -15,7 +15,7 @@ typedef BOOL(^ABConditionBlock)(void);
 dispatch_queue_t ABQueueSerial();
 dispatch_queue_t ABQueueConcurrent();
 
-dispatch_queue_t ABQueueWithQOSClass (long cls);
+dispatch_queue_t ABQueueWithQOSClass(long cls);
 dispatch_queue_t ABBackgroundQueue();
 dispatch_queue_t ABMainQueue();
 

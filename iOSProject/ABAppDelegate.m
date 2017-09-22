@@ -10,7 +10,7 @@
 
 #import "ABAppDelegate.h"
 
-#import "ABUsersViewController.h"
+#import "ABLoginViewController.h"
 #import "ABUsersModel.h"
 
 #import "NSObject+ABObjectExtension.h"
@@ -23,14 +23,12 @@
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
 
-    ABUsersViewController *controller = [ABUsersViewController new];
+    ABLoginViewController *controller = [ABLoginViewController new];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
     
     window.rootViewController = navigationController;
     
     [window makeKeyAndVisible];
-    
-    controller.usersModel = [ABUsersModel new];
     
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
