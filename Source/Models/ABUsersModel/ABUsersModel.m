@@ -15,6 +15,10 @@
 
 #import "ABConstants.h"
 
+static NSString * const ABPlistName     = @"users.plist";
+static const NSUInteger ABUsersCount    = 10;
+static const NSUInteger ABDispatchDelay = 1;
+
 @interface ABUsersModel ()
 @property (nonatomic, strong)   NSArray *notifications;
 

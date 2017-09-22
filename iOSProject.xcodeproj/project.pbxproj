@@ -51,17 +51,17 @@
 		971FFBA71F7524BA00884C7C /* ABLoginContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFB8E1F7524BA00884C7C /* ABLoginContext.m */; };
 		971FFBA81F7524BA00884C7C /* ABUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFB921F7524BA00884C7C /* ABUser.m */; };
 		971FFBA91F7524BA00884C7C /* ABUsersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFB951F7524BA00884C7C /* ABUsersModel.m */; };
-		971FFBAA1F7524BA00884C7C /* ABUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFB9A1F7524BA00884C7C /* ABUserCell.m */; };
-		971FFBAB1F7524BA00884C7C /* ABUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971FFB9B1F7524BA00884C7C /* ABUserCell.xib */; };
-		971FFBAC1F7524BA00884C7C /* ABUsersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFB9E1F7524BA00884C7C /* ABUsersView.m */; };
-		971FFBAD1F7524BA00884C7C /* ABUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBA01F7524BA00884C7C /* ABUsersViewController.m */; };
-		971FFBAE1F7524BA00884C7C /* ABUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971FFBA11F7524BA00884C7C /* ABUsersViewController.xib */; };
 		971FFBB21F752B8700884C7C /* ABLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBB11F752B8700884C7C /* ABLoginView.m */; };
 		971FFBB61F752BC400884C7C /* ABLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBB41F752BC400884C7C /* ABLoginViewController.m */; };
 		971FFBB71F752BC400884C7C /* ABLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971FFBB51F752BC400884C7C /* ABLoginViewController.xib */; };
 		971FFBC41F75565300884C7C /* ABUserDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBC31F75565300884C7C /* ABUserDetailView.m */; };
 		971FFBC81F75567A00884C7C /* ABUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBC61F75567A00884C7C /* ABUserDetailViewController.m */; };
 		971FFBC91F75567A00884C7C /* ABUserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971FFBC71F75567A00884C7C /* ABUserDetailViewController.xib */; };
+		971FFBD61F757FF400884C7C /* ABUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBD41F757FF400884C7C /* ABUserCell.m */; };
+		971FFBD71F757FF400884C7C /* ABUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971FFBD51F757FF400884C7C /* ABUserCell.xib */; };
+		971FFBDD1F7582A400884C7C /* ABFriendsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBD91F7582A400884C7C /* ABFriendsView.m */; };
+		971FFBDE1F7582A400884C7C /* ABUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBDB1F7582A400884C7C /* ABUsersViewController.m */; };
+		971FFBDF1F7582A400884C7C /* ABUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971FFBDC1F7582A400884C7C /* ABUsersViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,14 +149,6 @@
 		971FFB921F7524BA00884C7C /* ABUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUser.m; sourceTree = "<group>"; };
 		971FFB941F7524BA00884C7C /* ABUsersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersModel.h; sourceTree = "<group>"; };
 		971FFB951F7524BA00884C7C /* ABUsersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersModel.m; sourceTree = "<group>"; };
-		971FFB991F7524BA00884C7C /* ABUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserCell.h; sourceTree = "<group>"; };
-		971FFB9A1F7524BA00884C7C /* ABUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserCell.m; sourceTree = "<group>"; };
-		971FFB9B1F7524BA00884C7C /* ABUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserCell.xib; sourceTree = "<group>"; };
-		971FFB9D1F7524BA00884C7C /* ABUsersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersView.h; sourceTree = "<group>"; };
-		971FFB9E1F7524BA00884C7C /* ABUsersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersView.m; sourceTree = "<group>"; };
-		971FFB9F1F7524BA00884C7C /* ABUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersViewController.h; sourceTree = "<group>"; };
-		971FFBA01F7524BA00884C7C /* ABUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersViewController.m; sourceTree = "<group>"; };
-		971FFBA11F7524BA00884C7C /* ABUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUsersViewController.xib; sourceTree = "<group>"; };
 		971FFBB01F752B8700884C7C /* ABLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLoginView.h; sourceTree = "<group>"; };
 		971FFBB11F752B8700884C7C /* ABLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLoginView.m; sourceTree = "<group>"; };
 		971FFBB31F752BC400884C7C /* ABLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLoginViewController.h; sourceTree = "<group>"; };
@@ -167,6 +159,14 @@
 		971FFBC51F75567A00884C7C /* ABUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserDetailViewController.h; sourceTree = "<group>"; };
 		971FFBC61F75567A00884C7C /* ABUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserDetailViewController.m; sourceTree = "<group>"; };
 		971FFBC71F75567A00884C7C /* ABUserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserDetailViewController.xib; sourceTree = "<group>"; };
+		971FFBD31F757FF400884C7C /* ABUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserCell.h; sourceTree = "<group>"; };
+		971FFBD41F757FF400884C7C /* ABUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserCell.m; sourceTree = "<group>"; };
+		971FFBD51F757FF400884C7C /* ABUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserCell.xib; sourceTree = "<group>"; };
+		971FFBD81F7582A400884C7C /* ABFriendsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFriendsView.h; sourceTree = "<group>"; };
+		971FFBD91F7582A400884C7C /* ABFriendsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFriendsView.m; sourceTree = "<group>"; };
+		971FFBDA1F7582A400884C7C /* ABUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUsersViewController.h; sourceTree = "<group>"; };
+		971FFBDB1F7582A400884C7C /* ABUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUsersViewController.m; sourceTree = "<group>"; };
+		971FFBDC1F7582A400884C7C /* ABUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUsersViewController.xib; sourceTree = "<group>"; };
 		CBE27B6C8B9F1CA6ED2CFFAA /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E470E32AE2A3C09EA831FECF /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -654,41 +654,9 @@
 		971FFB961F7524BA00884C7C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				971FFB971F7524BA00884C7C /* ABUsersViewController */,
 				971FFBA21F7524BA00884C7C /* Facebook */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		971FFB971F7524BA00884C7C /* ABUsersViewController */ = {
-			isa = PBXGroup;
-			children = (
-				971FFB981F7524BA00884C7C /* ABUserCell */,
-				971FFB9C1F7524BA00884C7C /* ABUsersView */,
-				971FFB9F1F7524BA00884C7C /* ABUsersViewController.h */,
-				971FFBA01F7524BA00884C7C /* ABUsersViewController.m */,
-				971FFBA11F7524BA00884C7C /* ABUsersViewController.xib */,
-			);
-			path = ABUsersViewController;
-			sourceTree = "<group>";
-		};
-		971FFB981F7524BA00884C7C /* ABUserCell */ = {
-			isa = PBXGroup;
-			children = (
-				971FFB991F7524BA00884C7C /* ABUserCell.h */,
-				971FFB9A1F7524BA00884C7C /* ABUserCell.m */,
-				971FFB9B1F7524BA00884C7C /* ABUserCell.xib */,
-			);
-			path = ABUserCell;
-			sourceTree = "<group>";
-		};
-		971FFB9C1F7524BA00884C7C /* ABUsersView */ = {
-			isa = PBXGroup;
-			children = (
-				971FFB9D1F7524BA00884C7C /* ABUsersView.h */,
-				971FFB9E1F7524BA00884C7C /* ABUsersView.m */,
-			);
-			path = ABUsersView;
 			sourceTree = "<group>";
 		};
 		971FFBA21F7524BA00884C7C /* Facebook */ = {
@@ -704,6 +672,12 @@
 		971FFBA41F7524BA00884C7C /* ABFriendsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				971FFBD81F7582A400884C7C /* ABFriendsView.h */,
+				971FFBD91F7582A400884C7C /* ABFriendsView.m */,
+				971FFBDA1F7582A400884C7C /* ABUsersViewController.h */,
+				971FFBDB1F7582A400884C7C /* ABUsersViewController.m */,
+				971FFBDC1F7582A400884C7C /* ABUsersViewController.xib */,
+				971FFBD21F757FF400884C7C /* ABUserCell */,
 			);
 			path = ABFriendsViewController;
 			sourceTree = "<group>";
@@ -730,6 +704,16 @@
 				971FFBC71F75567A00884C7C /* ABUserDetailViewController.xib */,
 			);
 			path = ABUserDetailViewController;
+			sourceTree = "<group>";
+		};
+		971FFBD21F757FF400884C7C /* ABUserCell */ = {
+			isa = PBXGroup;
+			children = (
+				971FFBD31F757FF400884C7C /* ABUserCell.h */,
+				971FFBD41F757FF400884C7C /* ABUserCell.m */,
+				971FFBD51F757FF400884C7C /* ABUserCell.xib */,
+			);
+			path = ABUserCell;
 			sourceTree = "<group>";
 		};
 		A54C3AD9DFBA3070B4BF1C7D /* Frameworks */ = {
@@ -811,14 +795,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				970C49F41F6A847700AAB728 /* LaunchScreen.storyboard in Resources */,
-				971FFBAB1F7524BA00884C7C /* ABUserCell.xib in Resources */,
 				970C49F31F6A847700AAB728 /* Assets.xcassets in Resources */,
+				971FFBDF1F7582A400884C7C /* ABUsersViewController.xib in Resources */,
 				970C49F51F6A847700AAB728 /* Main.storyboard in Resources */,
-				971FFBAE1F7524BA00884C7C /* ABUsersViewController.xib in Resources */,
 				971FFBB71F752BC400884C7C /* ABLoginViewController.xib in Resources */,
 				971FFB821F75243F00884C7C /* ABLoadingView.xib in Resources */,
 				971FFBC91F75567A00884C7C /* ABUserDetailViewController.xib in Resources */,
 				970C49F61F6A847700AAB728 /* image.png in Resources */,
+				971FFBD71F757FF400884C7C /* ABUserCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,9 +890,9 @@
 				971FFB791F75243F00884C7C /* ABArrayModelChangeAdd.m in Sources */,
 				971FFB6B1F75243F00884C7C /* UITableView+ABExtension.m in Sources */,
 				971FFB6F1F75243F00884C7C /* ABRangeAlphabet.m in Sources */,
-				971FFBAA1F7524BA00884C7C /* ABUserCell.m in Sources */,
+				971FFBD61F757FF400884C7C /* ABUserCell.m in Sources */,
+				971FFBDD1F7582A400884C7C /* ABFriendsView.m in Sources */,
 				971FFB831F75243F00884C7C /* ABView.m in Sources */,
-				971FFBAC1F7524BA00884C7C /* ABUsersView.m in Sources */,
 				970C49DA1F6A847700AAB728 /* ABAppDelegate.m in Sources */,
 				971FFB751F75243F00884C7C /* ABTableViewCell.m in Sources */,
 				971FFB711F75243F00884C7C /* ABGCDExtension.m in Sources */,
@@ -918,10 +902,10 @@
 				971FFB6C1F75243F00884C7C /* UIWindow+ABExtension.m in Sources */,
 				971FFB721F75243F00884C7C /* ABImageModelCache.m in Sources */,
 				971FFB761F75243F00884C7C /* ABMacro.m in Sources */,
-				971FFBAD1F7524BA00884C7C /* ABUsersViewController.m in Sources */,
 				971FFB771F75243F00884C7C /* ABArrayModel.m in Sources */,
 				971FFBC41F75565300884C7C /* ABUserDetailView.m in Sources */,
 				971FFBA71F7524BA00884C7C /* ABLoginContext.m in Sources */,
+				971FFBDE1F7582A400884C7C /* ABUsersViewController.m in Sources */,
 				971FFB7F1F75243F00884C7C /* ABModel.m in Sources */,
 				971FFB641F75243F00884C7C /* NSBundle+ABExtension.m in Sources */,
 				971FFB631F75243F00884C7C /* NSArray+ABExtension.m in Sources */,

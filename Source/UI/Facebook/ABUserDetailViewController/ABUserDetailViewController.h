@@ -10,4 +10,7 @@
 
 @interface ABUserDetailViewController : UIViewController
 
+- (IBAction)onFriends:(UIButton *)sender;
+- (IBAction)onLogout:(UIButton *)sender;
+
 @end

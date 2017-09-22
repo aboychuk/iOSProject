@@ -16,6 +16,4 @@
 @property (nonatomic, strong)   IBOutlet    UILabel     *userCity;
 @property (nonatomic, strong)   IBOutlet    UILabel     *userCountry;
 
-- (IBAction)onFriends:(UIButton *)sender;
-
 @end

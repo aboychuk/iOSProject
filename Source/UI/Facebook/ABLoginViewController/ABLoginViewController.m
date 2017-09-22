@@ -24,18 +24,7 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 #pragma mark Actions
 
 - (IBAction)onLogin:(UIButton *)sender {
-    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login logInWithReadPermissions: @[@"public_profile"]
-                 fromViewController:self
-                            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-         if (error) {
-             NSLog(@"Process error");
-         } else if (result.isCancelled) {
-             NSLog(@"Cancelled");
-         } else {
-             NSLog(@"Logged in");
-         }
-     }];
+    [self login];
 }
 
 #pragma mark -
@@ -43,6 +32,25 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (void)login {
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logInWithReadPermissions: @[@"public_profile"]
+                 fromViewController:self
+                            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+                                if (error) {
+                                    NSLog(@"Process error");
+                                } else if (result.isCancelled) {
+                                    NSLog(@"Cancelled");
+                                } else {
+                                    NSLog(@"Logged in");
+                                }
+                            }];
+    
     if ([FBSDKAccessToken currentAccessToken]) {
         [self.navigationController pushViewController:[ABUserDetailViewController new] animated:YES];
     }

@@ -50,7 +50,15 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Friends"/>
                     <connections>
-                        <action selector="onFriends:" destination="-2" eventType="touchUpInside" id="QXC-Pa-JM6"/>
+                        <action selector="onFriends:" destination="-2" eventType="touchUpInside" id="iTy-jd-aVJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDh-zZ-ve9">
+                    <rect key="frame" x="141" y="492" width="92" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Logout"/>
+                    <connections>
+                        <action selector="onLogout:" destination="-2" eventType="touchUpInside" id="omq-QF-HeZ"/>
                     </connections>
                 </button>
             </subviews>
