@@ -16,14 +16,14 @@
 #pragma mark Accessors
 
 - (BOOL)cached {
-    return [[NSFileManager defaultManager] fileExistsAtPath:[self imagePath]];
+    return [[NSFileManager defaultManager] fileExistsAtPath:self.imagePath];
 }
 
 #pragma mark -
 #pragma mark Public Methods
 
 - (UIImage *)loadImage {
-    NSData *imageData = [NSData dataWithContentsOfFile:[self imagePath]];
+    NSData *imageData = [NSData dataWithContentsOfFile:self.imagePath];
     UIImage *image = [UIImage imageWithData:imageData];
     if (!image) {
         image = [UIImage imageWithContentsOfFile:self.url.path];
@@ -33,7 +33,7 @@
 }
 
 - (void)loadImageWithCompletionHandler:(void (^)(UIImage *, NSError *))handler {
-    NSData *imageData = [NSData dataWithContentsOfFile:[self imagePath]];
+    NSData *imageData = [NSData dataWithContentsOfFile:self.imagePath];
     UIImage *image = [UIImage imageWithData:imageData];
     NSError *error = nil;
     if (handler) {

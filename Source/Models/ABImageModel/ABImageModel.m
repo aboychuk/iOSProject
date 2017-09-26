@@ -27,6 +27,8 @@ static NSString *const  ABImagePath = @"imagePath";
 
 @implementation ABImageModel
 
+@dynamic imagePath;
+
 #pragma mark -
 #pragma mark Class Methods
 
@@ -62,13 +64,22 @@ static NSString *const  ABImagePath = @"imagePath";
 }
 
 #pragma mark -
+#pragma mark Accessors
+
+- (NSString *)imagePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *imagePath = [[paths firstObject] stringByAppendingPathComponent:ABImagePath];
+    
+    return [[imagePath stringByAppendingPathComponent:self.url.path] stringByAddingPercentEncodingWithAllowedCharacters:<#(nonnull NSCharacterSet *)#>];
+}
+
+#pragma mark -
 #pragma mark Public Methods
 
 - (void)performLoading {
     [self loadImageWithCompletionHandler:^(UIImage *image, NSError *error){
         self.image = image;
     }];
-//    self.image = [self loadImage];
     ABDispatchAsyncOnMainThread(^{
         self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
     });
@@ -85,13 +96,6 @@ static NSString *const  ABImagePath = @"imagePath";
 
 - (void)loadImageWithCompletionHandler:(ABCompletionBlock)completion {
     
-}
-
-- (NSString *)imagePath {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *imagePath = [[paths firstObject] stringByAppendingPathComponent:ABImagePath];
-    
-    return [[imagePath stringByAppendingPathComponent:self.url.path] stringByDeletingPathExtension];
 }
 
 @end
