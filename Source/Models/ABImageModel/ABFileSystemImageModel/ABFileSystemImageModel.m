@@ -22,16 +22,6 @@
 #pragma mark -
 #pragma mark Public Methods
 
-- (UIImage *)loadImage {
-    NSData *imageData = [NSData dataWithContentsOfFile:self.imagePath];
-    UIImage *image = [UIImage imageWithData:imageData];
-    if (!image) {
-        image = [UIImage imageWithContentsOfFile:self.url.path];
-    }
-    
-    return image;
-}
-
 - (void)loadImageWithCompletionHandler:(void (^)(UIImage *, NSError *))handler {
     NSData *imageData = [NSData dataWithContentsOfFile:self.imagePath];
     UIImage *image = [UIImage imageWithData:imageData];

@@ -68,19 +68,23 @@ static NSString *const  ABImagePath = @"imagePath";
 
 - (NSString *)imagePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *imagePath = [[paths firstObject] stringByAppendingPathComponent:ABImagePath];
+    NSString *imageFolder = [[paths firstObject] stringByAppendingPathComponent:ABImagePath];
+    NSString *imagePath = [imageFolder stringByAppendingPathComponent:self.url.path];
     
-    return [[imagePath stringByAppendingPathComponent:self.url.path] stringByAddingPercentEncodingWithAllowedCharacters:<#(nonnull NSCharacterSet *)#>];
+    return imagePath;
 }
 
 #pragma mark -
 #pragma mark Public Methods
 
 - (void)performLoading {
+    ABWeakify(self);
     [self loadImageWithCompletionHandler:^(UIImage *image, NSError *error){
+        ABStrongifyAndReturnIfNil(self);
         self.image = image;
     }];
     ABDispatchAsyncOnMainThread(^{
+        ABStrongifyAndReturnIfNil(self);
         self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
     });
 }
@@ -88,10 +92,6 @@ static NSString *const  ABImagePath = @"imagePath";
 - (void)dumpModel {
     self.image = nil;
     self.state = ABModelDidUnloaded;
-}
-
-- (UIImage *)loadImage {
-    return nil;
 }
 
 - (void)loadImageWithCompletionHandler:(ABCompletionBlock)completion {
