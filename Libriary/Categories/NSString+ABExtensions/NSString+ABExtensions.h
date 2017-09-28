@@ -36,4 +36,6 @@
 
 - (NSArray *)symbols;
 
+- (instancetype)stringByReplacingSlashCharacters:(NSString *)string;
+
 @end

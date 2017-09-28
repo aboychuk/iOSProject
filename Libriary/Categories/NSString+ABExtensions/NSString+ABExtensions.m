@@ -91,4 +91,8 @@ static const NSUInteger ABNSStringDefaultRandomStringLength = 30;
     return result;
 }
 
+- (instancetype)stringByReplacingSlashCharacters:(NSString *)string {
+    return [string stringByReplacingOccurrencesOfString:@"/" withString:@""];
+}
+
 @end

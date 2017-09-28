@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) UIImage     *image;
 @property (nonatomic, readonly) NSURL       *url;
 @property (nonatomic, strong)   NSString    *imagePath;
+@property (nonatomic, strong)   NSString    *imageName;
 
 + (instancetype)imageWithUrl:(NSURL *)url;
 
