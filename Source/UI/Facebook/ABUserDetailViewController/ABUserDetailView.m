@@ -10,4 +10,8 @@
 
 @implementation ABUserDetailView
 
+- (void)fillWithModel {
+    
+}
+
 @end

@@ -16,4 +16,6 @@
 @property (nonatomic, strong)   IBOutlet    UILabel     *userCity;
 @property (nonatomic, strong)   IBOutlet    UILabel     *userCountry;
 
+- (void)fillWithModel;
+
 @end
