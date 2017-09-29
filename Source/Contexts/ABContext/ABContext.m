@@ -10,6 +10,29 @@
 
 @implementation ABContext
 
+#pragma mark -
+#pragma mark Class Methods
+
++ (instancetype)contextWithModel:(id)model {
+    return [[self alloc] initContextWithModel:model];
+}
+
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (void)dealloc {
+    self.model = nil;
+}
+
+- (instancetype)initContextWithModel:(id)model {
+    self = [super init];
+    if (self) {
+        self.model = model;
+    }
+    
+    return self;
+}
+
 - (void)execute {
     
 }

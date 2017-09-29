@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface ABContext : NSObject
+@property (nonatomic, strong)   id model;
+
++ (instancetype)contextWithModel:(id)model;
 
 - (void)execute;
 - (void)cancel;
