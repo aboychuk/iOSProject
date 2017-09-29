@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 @interface ABContext : NSObject
 @property (nonatomic, strong)   id model;
 
 + (instancetype)contextWithModel:(id)model;
 
+//Methods Created for overriding, do not call directly
 - (void)execute;
 - (void)cancel;
 

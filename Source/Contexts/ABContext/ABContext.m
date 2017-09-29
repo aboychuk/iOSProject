@@ -14,7 +14,7 @@
 #pragma mark Class Methods
 
 + (instancetype)contextWithModel:(id)model {
-    return [[self alloc] initContextWithModel:model];
+    return [[self alloc] initWithModel:model];
 }
 
 #pragma mark -
@@ -24,7 +24,7 @@
     self.model = nil;
 }
 
-- (instancetype)initContextWithModel:(id)model {
+- (instancetype)initWithModel:(id)model {
     self = [super init];
     if (self) {
         self.model = model;
@@ -32,6 +32,9 @@
     
     return self;
 }
+
+#pragma mark - 
+#pragma mark Public Methods
 
 - (void)execute {
     
