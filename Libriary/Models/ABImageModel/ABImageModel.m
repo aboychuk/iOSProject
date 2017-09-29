@@ -15,6 +15,7 @@
 
 #import "ABGCDExtension.h"
 
+
 typedef void (^ABCompletionBlock)(UIImage *image, NSError *error);
 static NSString *const  ABImagePath = @"imagePath";
 
@@ -25,6 +26,8 @@ static NSString *const  ABImagePath = @"imagePath";
 @end
 
 @implementation ABImageModel
+
+@dynamic imagePath;
 
 #pragma mark -
 #pragma mark Class Methods
@@ -61,14 +64,27 @@ static NSString *const  ABImagePath = @"imagePath";
 }
 
 #pragma mark -
+#pragma mark Accessors
+
+- (NSString *)imagePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *imagePath = [[paths firstObject] stringByAppendingPathComponent:ABImagePath];
+    NSString *imageName = [self.url.path stringByReplacingOccurrencesOfString:@"/" withString:@""];
+    
+    return [imagePath stringByAppendingPathComponent:imageName];
+}
+
+#pragma mark -
 #pragma mark Public Methods
 
 - (void)performLoading {
+    ABWeakify(self);
     [self loadImageWithCompletionHandler:^(UIImage *image, NSError *error){
+        ABStrongify(self);
         self.image = image;
     }];
-//    self.image = [self loadImage];
     ABDispatchAsyncOnMainThread(^{
+        ABStrongify(self);
         self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
     });
 }
@@ -78,19 +94,8 @@ static NSString *const  ABImagePath = @"imagePath";
     self.state = ABModelDidUnloaded;
 }
 
-- (UIImage *)loadImage {
-    return nil;
-}
-
 - (void)loadImageWithCompletionHandler:(ABCompletionBlock)completion {
     
-}
-
-- (NSString *)imagePath {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *imagePath = [[paths firstObject] stringByAppendingPathComponent:ABImagePath];
-    
-    return [[imagePath stringByAppendingPathComponent:self.url.path] stringByDeletingPathExtension];
 }
 
 @end
