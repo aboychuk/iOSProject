@@ -11,10 +11,14 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
+@class ABModel;
+
 @interface ABContext : NSObject
-@property (nonatomic, strong)   id model;
+@property (nonatomic, strong)   id          model;
 
 + (instancetype)contextWithModel:(id)model;
+
+- (instancetype)initWithModel:(ABModel *)model;
 
 //Methods Created for overriding, do not call directly
 - (void)execute;

@@ -8,6 +8,8 @@
 
 #import "ABContext.h"
 
+#import "ABModel.h"
+
 @implementation ABContext
 
 #pragma mark -
@@ -24,7 +26,7 @@
     self.model = nil;
 }
 
-- (instancetype)initWithModel:(id)model {
+- (instancetype)initWithModel:(ABModel *)model {
     self = [super init];
     if (self) {
         self.model = model;
