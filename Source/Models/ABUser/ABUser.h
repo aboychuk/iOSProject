@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "ABModel.h"
+
 @class ABImageModel;
 
-@interface ABUser : NSObject
+@interface ABUser : ABModel
 @property (nonatomic, copy)     NSString        *name;
 @property (nonatomic, copy)     NSString        *surname;
 @property (nonatomic, readonly) NSString        *fullname;
