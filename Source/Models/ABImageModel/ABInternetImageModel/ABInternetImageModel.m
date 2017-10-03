@@ -31,14 +31,14 @@
 #pragma mark Public Methods
 
 - (void)loadImageWithCompletionHandler:(void (^)(UIImage *, NSError *))handler {
+    NSURLSession *urlSession = [NSURLSession sharedSession];
+    NSFileManager *filemanager = [NSFileManager defaultManager];
     if (self.cached) {
         [super loadImageWithCompletionHandler:handler];
         if (self.image) {
             return;
         }
     }
-    NSURLSession *urlSession = [NSURLSession sharedSession];
-    NSFileManager *filemanager = [NSFileManager defaultManager];
     self.downloadTask = [urlSession downloadTaskWithURL:self.url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         BOOL created = [self createDirectoryAtPath:self.imagePath];
         if (created) {

@@ -25,16 +25,18 @@
 - (void)loadImageWithCompletionHandler:(void (^)(UIImage *, NSError *))handler {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error = nil;
-    NSData *imageData = [NSData dataWithContentsOfFile:self.imagePath options:NSDataReadingMappedIfSafe error:&error];
-    UIImage *image = [UIImage imageWithData:imageData];
-    if (!image) {
-        [fileManager removeItemAtPath:self.imagePath error:&error];
-    }
-    if (handler) {
-        handler(image, error);
+    NSData *imageData = [NSData dataWithContentsOfFile:self.imagePath
+                                               options:NSDataReadingMappedIfSafe
+                                                 error:&error];
+    if (!error) {
+        UIImage *image = [UIImage imageWithData:imageData];
+        if (!image) {
+            [fileManager removeItemAtPath:self.imagePath error:&error];
+        }
+        if (handler) {
+            handler(image, error);
+        }
     }
 }
-
-
 
 @end
