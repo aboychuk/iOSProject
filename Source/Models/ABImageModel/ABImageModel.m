@@ -68,10 +68,10 @@ static NSString *const  ABImagePath = @"imagePath";
 
 - (NSString *)imagePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *imageFolder = [[paths firstObject] stringByAppendingPathComponent:ABImagePath];
-    NSString *imagePath = [imageFolder stringByAppendingPathComponent:self.url.path];
+    NSString *imagePath = [[paths firstObject] stringByAppendingPathComponent:ABImagePath];
+    NSString *imageName = [self.url.path stringByReplacingOccurrencesOfString:@"/" withString:@""];
     
-    return imagePath;
+    return [imagePath stringByAppendingPathComponent:imageName];
 }
 
 #pragma mark -
@@ -80,11 +80,11 @@ static NSString *const  ABImagePath = @"imagePath";
 - (void)performLoading {
     ABWeakify(self);
     [self loadImageWithCompletionHandler:^(UIImage *image, NSError *error){
-        ABStrongifyAndReturnIfNil(self);
+        ABStrongify(self);
         self.image = image;
     }];
     ABDispatchAsyncOnMainThread(^{
-        ABStrongifyAndReturnIfNil(self);
+        ABStrongify(self);
         self.state = self.image ? ABModelDidLoad : ABModelDidFailLoading;
     });
 }

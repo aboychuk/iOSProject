@@ -23,17 +23,16 @@
 #pragma mark Public Methods
 
 - (void)loadImageWithCompletionHandler:(void (^)(UIImage *, NSError *))handler {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error = nil;
-    NSData *imageData = [NSData dataWithContentsOfFile:self.imagePath];
+    NSData *imageData = [NSData dataWithContentsOfFile:self.imagePath options:NSDataReadingMappedIfSafe error:&error];
     UIImage *image = [UIImage imageWithData:imageData];
     if (!image) {
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        [fileManager removeItemAtPath:self.imagePath error:nil];
+        [fileManager removeItemAtPath:self.imagePath error:&error];
     }
     if (handler) {
         handler(image, error);
     }
-
 }
 
 

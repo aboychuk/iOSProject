@@ -40,14 +40,14 @@
     NSURLSession *urlSession = [NSURLSession sharedSession];
     NSFileManager *filemanager = [NSFileManager defaultManager];
     self.downloadTask = [urlSession downloadTaskWithURL:self.url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-        if (!error) {
-            [self createDirectoryAtPath:self.imagePath];
-            [filemanager copyItemAtPath:location.path toPath:self.imagePath error:nil];
+        BOOL created = [self createDirectoryAtPath:self.imagePath];
+        if (created) {
+            [filemanager moveItemAtPath:location.path toPath:self.imagePath error:&error];
+            if (!error) {
+                [super loadImageWithCompletionHandler:handler];
+            }
         }
-        
-        [super loadImageWithCompletionHandler:handler];
     }];
-
 }
 
 - (BOOL)createDirectoryAtPath:(NSString *)path {
@@ -64,5 +64,6 @@
     
     return NO;
 }
+
 
 @end
