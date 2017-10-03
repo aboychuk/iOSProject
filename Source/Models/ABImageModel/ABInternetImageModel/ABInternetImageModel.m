@@ -40,13 +40,29 @@
     NSURLSession *urlSession = [NSURLSession sharedSession];
     NSFileManager *filemanager = [NSFileManager defaultManager];
     self.downloadTask = [urlSession downloadTaskWithURL:self.url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-        [filemanager copyItemAtPath:location.path toPath:[self imagePath] error:nil];
+        if (!error) {
+            [self createDirectoryAtPath:self.imagePath];
+            [filemanager copyItemAtPath:location.path toPath:self.imagePath error:nil];
+        }
         
         [super loadImageWithCompletionHandler:handler];
     }];
 
 }
 
-
+- (BOOL)createDirectoryAtPath:(NSString *)path {
+    NSError *error = nil;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:path]) {
+        return YES;
+    } else {
+        [fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];
+        if (!error) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
 
 @end
