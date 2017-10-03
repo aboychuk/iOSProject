@@ -34,8 +34,13 @@
 //with the class of reciever
 + (instancetype)randomStringWithLength:(NSUInteger)length alphabet:(NSString *)alphabet;
 
+//returns valid string for Unix filesystem by replacing invalid characters with "" character.
++ (instancetype)stringByReplacingIllegalCharactersFromString:(NSString *)string;
+
+//returns valid string for Unix filesystem by replacing all non alphanumeric characters with "%" character.
++ (instancetype)stringWithAlphanumericCharactersFromString:(NSString *)string;
+
 - (NSArray *)symbols;
 
-- (instancetype)stringByReplacingSlashCharacters:(NSString *)string;
 
 @end
