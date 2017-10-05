@@ -13,7 +13,8 @@
 @interface ABImageModel : ABModel <ABModelSaveAndDump>
 @property (nonatomic, readonly) UIImage     *image;
 @property (nonatomic, readonly) NSURL       *url;
-@property (nonatomic, strong)   NSString    *imagePath;
+@property (nonatomic, readonly) NSString    *imagePath;
+@property (nonatomic, readonly) NSString    *imageName;
 
 + (instancetype)imageWithUrl:(NSURL *)url;
 

@@ -8,6 +8,8 @@
 
 #import "ABInternetImageModel.h"
 
+#import "NSFileManager+ABExtension.h"
+
 @interface ABInternetImageModel ()
 @property (nonatomic, strong)   NSURLSessionDownloadTask    *downloadTask;
 
@@ -31,20 +33,23 @@
 #pragma mark Public Methods
 
 - (void)loadImageWithCompletionHandler:(void (^)(UIImage *, NSError *))handler {
+    NSURLSession *urlSession = [NSURLSession sharedSession];
+    NSFileManager *filemanager = [NSFileManager defaultManager];
+    NSString *imagePath = self.imagePath;
+    
     if (self.cached) {
         [super loadImageWithCompletionHandler:handler];
         if (self.image) {
             return;
         }
     }
-    NSURLSession *urlSession = [NSURLSession sharedSession];
-    NSFileManager *filemanager = [NSFileManager defaultManager];
     self.downloadTask = [urlSession downloadTaskWithURL:self.url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-        [filemanager moveItemAtPath:location.path toPath:self.imagePath error:&error];
-        if (error) {
-            NSLog(@"Error occured while moving: %@", error);
-        } else {
-            [super loadImageWithCompletionHandler:handler];
+        BOOL created = [filemanager createDirectoryAtPath:imagePath];
+        if (created) {
+            [filemanager moveItemAtPath:location.path toPath:imagePath error:&error];
+            if (!error) {
+                [super loadImageWithCompletionHandler:handler];
+            }
         }
     }];
 }

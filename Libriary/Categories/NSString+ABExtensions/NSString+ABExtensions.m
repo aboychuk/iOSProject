@@ -8,8 +8,10 @@
 
 #import "NSString+ABExtensions.h"
 
-static const NSUInteger ABRandomNameLength                  = 6;
-static const NSUInteger ABNSStringDefaultRandomStringLength = 30;
+static const NSUInteger ABRandomNameLength          = 6;
+static const NSUInteger ABDefaultStringLength       = 30;
+
+NSString *const ABInvalidCharactersString  = @"/\\?%*|\"<>";
 
 @implementation NSString (ABExtensions)
 
@@ -60,7 +62,7 @@ static const NSUInteger ABNSStringDefaultRandomStringLength = 30;
 }
 
 + (instancetype)randomString {
-    return [self randomStringWithLength:arc4random_uniform(ABNSStringDefaultRandomStringLength)];
+    return [self randomStringWithLength:arc4random_uniform(ABDefaultStringLength)];
 }
 
 + (instancetype)randomStringWithLength:(NSUInteger)length {
@@ -70,7 +72,6 @@ static const NSUInteger ABNSStringDefaultRandomStringLength = 30;
 + (instancetype)randomStringWithLength:(NSUInteger)length alphabet:(NSString *)alphabet {
     NSMutableString *result = [NSMutableString stringWithCapacity:length];
     NSUInteger alphabetLength = [alphabet length];
-    
     for (NSUInteger index = 0; index < length; index++) {
         unichar resultChar = [alphabet characterAtIndex:arc4random_uniform((uint32_t)alphabetLength)];
         [result appendFormat:@"%c", resultChar];
@@ -79,10 +80,23 @@ static const NSUInteger ABNSStringDefaultRandomStringLength = 30;
     return [self stringWithString:result];
 }
 
++ (instancetype)stringByReplacingIllegalCharactersFromString:(NSString *)string {
+    NSCharacterSet* illegalCharacters = [NSCharacterSet
+                                         characterSetWithCharactersInString:ABInvalidCharactersString];
+    
+    return [[string componentsSeparatedByCharactersInSet:illegalCharacters] componentsJoinedByString:@""];
+}
+
++ (instancetype)stringWithAlphaNumericCharactersFromString:(NSString *)string {
+    NSCharacterSet *allowedCharacterSet = [NSCharacterSet
+                                           characterSetWithCharactersInString:[self alphanumericAlphabet]];
+    
+    return [string stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacterSet];
+}
+
 - (NSArray *)symbols {
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self length]];
     NSUInteger length = [self length];
-    
     for (NSUInteger index = 0; index < length; index++) {
         unichar resultChar = [self characterAtIndex:index];
         [result addObject:[NSString stringWithFormat:@"%c", resultChar]];

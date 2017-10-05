@@ -12,11 +12,13 @@
 #import "ABInternetImageModel.h"
 
 #import "ABMacro.h"
+#import "NSString+ABExtensions.h"
 
 #import "ABGCDExtension.h"
 
 
 typedef void (^ABCompletionBlock)(UIImage *image, NSError *error);
+
 static NSString *const  ABImagePath = @"imagePath";
 
 @interface ABImageModel ()
@@ -69,9 +71,12 @@ static NSString *const  ABImagePath = @"imagePath";
 - (NSString *)imagePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *imagePath = [[paths firstObject] stringByAppendingPathComponent:ABImagePath];
-    NSString *imageName = [self.url.path stringByReplacingOccurrencesOfString:@"/" withString:@""];
     
-    return [imagePath stringByAppendingPathComponent:imageName];
+    return [imagePath stringByAppendingPathComponent:self.imageName];
+}
+
+- (NSString *)imageName {
+    return [NSString stringByReplacingIllegalCharactersFromString:self.url.path];
 }
 
 #pragma mark -

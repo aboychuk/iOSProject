@@ -62,6 +62,7 @@
 		971FFBDD1F7582A400884C7C /* ABFriendsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBD91F7582A400884C7C /* ABFriendsView.m */; };
 		971FFBDE1F7582A400884C7C /* ABFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBDB1F7582A400884C7C /* ABFriendsViewController.m */; };
 		971FFBDF1F7582A400884C7C /* ABFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971FFBDC1F7582A400884C7C /* ABFriendsViewController.xib */; };
+		976581491F86730B00ACFBE6 /* NSFileManager+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 976581481F86730B00ACFBE6 /* NSFileManager+ABExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,6 +168,8 @@
 		971FFBDA1F7582A400884C7C /* ABFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFriendsViewController.h; sourceTree = "<group>"; };
 		971FFBDB1F7582A400884C7C /* ABFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFriendsViewController.m; sourceTree = "<group>"; };
 		971FFBDC1F7582A400884C7C /* ABFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABFriendsViewController.xib; sourceTree = "<group>"; };
+		976581471F86730B00ACFBE6 /* NSFileManager+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ABExtension.h"; sourceTree = "<group>"; };
+		976581481F86730B00ACFBE6 /* NSFileManager+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ABExtension.m"; sourceTree = "<group>"; };
 		CBE27B6C8B9F1CA6ED2CFFAA /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E470E32AE2A3C09EA831FECF /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -249,6 +252,7 @@
 		971FFB001F75243F00884C7C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				976581461F86730B00ACFBE6 /* NSFileManager+ABExtensions */,
 				971FFB011F75243F00884C7C /* NSArray+ABExtension */,
 				971FFB041F75243F00884C7C /* NSBundle+ABExtension */,
 				971FFB071F75243F00884C7C /* NSMutableArray+ABExtension */,
@@ -716,6 +720,15 @@
 			path = ABUserCell;
 			sourceTree = "<group>";
 		};
+		976581461F86730B00ACFBE6 /* NSFileManager+ABExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				976581471F86730B00ACFBE6 /* NSFileManager+ABExtension.h */,
+				976581481F86730B00ACFBE6 /* NSFileManager+ABExtension.m */,
+			);
+			path = "NSFileManager+ABExtensions";
+			sourceTree = "<group>";
+		};
 		A54C3AD9DFBA3070B4BF1C7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -884,6 +897,7 @@
 				971FFB6D1F75243F00884C7C /* ABAlphabet.m in Sources */,
 				971FFB6A1F75243F00884C7C /* UINib+ABExtension.m in Sources */,
 				971FFB701F75243F00884C7C /* ABStringsAlphabet.m in Sources */,
+				976581491F86730B00ACFBE6 /* NSFileManager+ABExtension.m in Sources */,
 				971FFB681F75243F00884C7C /* NSTimer+ABWeakReferenceTimer.m in Sources */,
 				971FFBA61F7524BA00884C7C /* ABContext.m in Sources */,
 				971FFB7E1F75243F00884C7C /* ABInternetImageModel.m in Sources */,
