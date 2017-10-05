@@ -76,7 +76,7 @@ static NSString *const  ABImagePath = @"imagePath";
 }
 
 - (NSString *)imageName {
-    return [NSString stringByDeletingIllegalCharactersFromString:self.url.path];
+    return [NSString stringByReplacingIllegalCharactersFromString:self.url.path];
 }
 
 #pragma mark -
