@@ -38,13 +38,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTU-Yq-9Px">
-                    <rect key="frame" x="93" y="425" width="188" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzS-Gy-u2T">
                     <rect key="frame" x="133" y="454" width="108" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -66,7 +59,6 @@
             <connections>
                 <outlet property="friendsButton" destination="qzS-Gy-u2T" id="kq8-OC-txt"/>
                 <outlet property="userCity" destination="rqy-Sb-dkf" id="MsI-S4-qb5"/>
-                <outlet property="userCountry" destination="zTU-Yq-9Px" id="lUx-IU-ZHO"/>
                 <outlet property="userFullName" destination="mI5-ml-H6I" id="adp-od-AwV"/>
                 <outlet property="userImage" destination="9jD-Pm-NWy" id="h78-EJ-ifn"/>
             </connections>

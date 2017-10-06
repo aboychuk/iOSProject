@@ -11,11 +11,19 @@
 
 #import "ABUserDetailViewController.h"
 
+#import "ABUserDetailView.h"
+#import "ABUser.h"
+
+#import "ABGCDExtension.h"
+#import "ABMacro.h"
+
 @interface ABUserDetailViewController ()
 
 - (void)logout;
 
 @end
+
+ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDetailView);
 
 @implementation ABUserDetailViewController
 
@@ -27,7 +35,7 @@
 }
 
 - (IBAction)onLogout:(UIButton *)sender {
-    [self logout];
+    
 }
 
 #pragma mark -
@@ -47,6 +55,28 @@
 - (void)logout {
     FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
     [loginManager logOut];
+}
+
+#pragma mark -
+#pragma mark ABModelObserver
+
+- (void)modelWillLoad:(id)model {
+    ABDispatchAsyncOnMainThread(^{
+        self.rootView.loadingView.visible = YES;
+    });
+}
+
+- (void)modelDidLoad:(id)model {
+    ABDispatchAsyncOnMainThread(^{
+        self.rootView.loadingView.visible = NO;
+        [self.rootView fillWithModel:model];
+    });
+}
+
+- (void)modelDidFailLoading:(id)model {
+    ABDispatchAsyncOnMainThread(^{
+        self.rootView.loadingView.visible = NO;
+    });
 }
 
 @end

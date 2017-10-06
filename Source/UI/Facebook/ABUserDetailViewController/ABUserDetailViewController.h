@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class ABModel;
+@class ABUser;
 @class ABContext;
 
 @interface ABUserDetailViewController : UIViewController
-@property (nonatomic, strong)   ABModel     *model;
+@property (nonatomic, strong)   ABUser      *user;
 @property (nonatomic, strong)   ABContext   *context;
 
 - (IBAction)onFriends:(UIButton *)sender;
