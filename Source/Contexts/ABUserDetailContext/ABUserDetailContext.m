@@ -14,6 +14,7 @@ static NSString *const ABUserID = @"userID";
 static NSString *const ABUserName = @"first_name";
 static NSString *const ABUserSurname = @"last_name";
 static NSString *const ABUserCity = @"hometown";
+static NSString *const ABPictureURL = @"picture.data.url";
 
 @interface ABUserDetailContext ()
 @property (nonatomic, readonly) ABUser  *user;
@@ -44,13 +45,11 @@ static NSString *const ABUserCity = @"hometown";
 }
 
 - (void)parseResult:(id)result {
-    NSURL *url = [NSURL URLWithString:[[[result valueForKey:@"picture"] valueForKey:@"data"] valueForKey:@"url"]];
-    
-    self.user.userID = [result valueForKey:ABUserID];
-    self.user.name = [result valueForKey:ABUserName];
-    self.user.surname = [result valueForKey:ABUserSurname];
-    self.user.hometown  = [result valueForKey:ABUserCity];
-    self.user.imageUrl = url;
+    self.user.userID = [result valueForKeyPath:ABUserID];
+    self.user.name = [result valueForKeyPath:ABUserName];
+    self.user.surname = [result valueForKeyPath:ABUserSurname];
+    self.user.hometown  = [result valueForKeyPath:ABUserCity];
+    self.user.imageUrl = [result valueForKeyPath:ABPictureURL];
     self.user.state = ABModelDidLoad;
 }
 

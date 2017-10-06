@@ -6,6 +6,9 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 #import "ABUser.h"
 
 #import "ABImageModel.h"
@@ -13,12 +16,11 @@
 #import "ABRandomNumber.h"
 #import "NSString+ABExtensions.h"
 
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-
 static NSString * const ABName = @"name";
 static NSString * const ABSurname = @"surname";
+
 @implementation ABUser
+
 @dynamic fullname;
 @dynamic imageModel;
 @dynamic authorized;

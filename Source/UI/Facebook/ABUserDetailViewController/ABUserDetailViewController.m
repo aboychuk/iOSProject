@@ -14,15 +14,10 @@
 #import "ABUserDetailView.h"
 #import "ABUser.h"
 #import "ABLogoutContext.h"
+#import "ABLoginViewController.h"
 
 #import "ABGCDExtension.h"
 #import "ABMacro.h"
-
-@interface ABUserDetailViewController ()
-
-- (void)logout;
-
-@end
 
 ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDetailView);
 
@@ -37,19 +32,9 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 
 - (IBAction)onLogout:(UIButton *)sender {
     self.context = [ABLogoutContext new];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController pushViewController:[ABLoginViewController new] animated:YES];
 
-}
 
-#pragma mark -
-#pragma mark View Lifecycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark -
