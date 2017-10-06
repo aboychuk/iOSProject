@@ -16,6 +16,7 @@
 #import "ABUser.h"
 
 #import "ABMacro.h"
+#import "ABGCDExtension.h"
 
 ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 
@@ -81,6 +82,27 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 
 - (void)showUserDetailViewController {
     [self.navigationController pushViewController:[ABUserDetailViewController new] animated:YES];
+}
+
+#pragma mark -
+#pragma mark ABModelObserver
+
+- (void)modelWillLoad:(id)model {
+    ABDispatchAsyncOnMainThread(^{
+        self.rootView.loadingView.visible = YES;
+    });
+}
+
+- (void)modelDidLoad:(id)model {
+    ABDispatchAsyncOnMainThread(^{
+        self.rootView.loadingView.visible = NO;
+    });
+}
+
+- (void)modelDidFailLoading:(id)model {
+    ABDispatchAsyncOnMainThread(^{
+        self.rootView.loadingView.visible = NO;
+    });
 }
 
 @end
