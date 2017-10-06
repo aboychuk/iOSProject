@@ -44,7 +44,7 @@
         }
     }
     self.downloadTask = [urlSession downloadTaskWithURL:self.url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-        BOOL created = [filemanager createDirectoryAtPath:imagePath];
+        BOOL created = [filemanager createFolderAtPath:imagePath];
         if (created) {
             [filemanager moveItemAtPath:location.path toPath:imagePath error:&error];
             if (!error) {
