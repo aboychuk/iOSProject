@@ -80,7 +80,10 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 #pragma mark Private
 
 - (void)showUserDetailViewController {
-    [self.navigationController pushViewController:[ABUserDetailViewController new] animated:YES];
+    ABUserDetailViewController *userDetailController = [ABUserDetailViewController new];
+    userDetailController.user = self.user;
+    
+    [self.navigationController pushViewController:userDetailController animated:YES];
 }
 
 #pragma mark -
