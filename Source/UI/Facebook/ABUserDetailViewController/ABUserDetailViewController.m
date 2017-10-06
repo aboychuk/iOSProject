@@ -15,6 +15,8 @@
 #import "ABUser.h"
 #import "ABLogoutContext.h"
 #import "ABLoginViewController.h"
+#import "ABFriendsViewController.h"
+#import "ABFriendsContext.h"
 
 #import "ABGCDExtension.h"
 #import "ABMacro.h"
@@ -24,17 +26,38 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 @implementation ABUserDetailViewController
 
 #pragma mark -
+#pragma mark Accessors
+
+- (void)setContext:(ABContext *)context {
+    if (_context != context) {
+        [_context cancel];
+        
+        _context = context;
+        [_context execute];
+    }
+}
+
+#pragma mark -
 #pragma mark Actions
 
 - (IBAction)onFriends:(UIButton *)sender {
-    
+    self.context = [[ABFriendsContext alloc] initWithModel:self.user];
+    [self showFriendsViewController];
 }
 
 - (IBAction)onLogout:(UIButton *)sender {
     self.context = [ABLogoutContext new];
-    [self.navigationController pushViewController:[ABLoginViewController new] animated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
+#pragma mark -
+#pragma mark Private
 
+- (void)showFriendsViewController {
+    ABFriendsViewController *friendsController = [ABFriendsViewController new];
+    friendsController.user = self.user;
+    
+    [self.navigationController pushViewController:friendsController animated:YES];
 }
 
 #pragma mark -
