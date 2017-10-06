@@ -10,8 +10,10 @@
 
 @class ABArrayModel;
 @class ABUsersModel;
+@class ABUser;
 
 @interface ABFriendsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong)   ABUsersModel    *usersModel;
+@property (nonatomic, strong)   ABUsersModel    *friends;
+@property (nonatomic, strong)   ABUser          *user;
 
 @end
