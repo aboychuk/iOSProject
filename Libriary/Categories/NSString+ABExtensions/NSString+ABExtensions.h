@@ -38,7 +38,7 @@
 + (instancetype)stringByReplacingIllegalCharactersFromString:(NSString *)string;
 
 //returns valid string for Unix filesystem by replacing all non alphanumeric characters with "%" character.
-+ (instancetype)stringWithAlphanumericCharactersFromString:(NSString *)string;
++ (instancetype)stringWithAlphaNumericCharactersFromString:(NSString *)string;
 
 - (NSArray *)symbols;
 
