@@ -6,8 +6,14 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
+
+
 #import "ABLogoutContext.h"
 
 @implementation ABLogoutContext
+
+- (void)execute {
+    [[FBSDKLoginManager new] logOut];
+}
 
 @end

@@ -13,6 +13,7 @@
 
 #import "ABUserDetailView.h"
 #import "ABUser.h"
+#import "ABLogoutContext.h"
 
 #import "ABGCDExtension.h"
 #import "ABMacro.h"
@@ -35,7 +36,9 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 }
 
 - (IBAction)onLogout:(UIButton *)sender {
-    
+    self.context = [ABLogoutContext new];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 #pragma mark -
@@ -47,14 +50,6 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-
-#pragma mark -
-#pragma mark Private
-
-- (void)logout {
-    FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
-    [loginManager logOut];
 }
 
 #pragma mark -
