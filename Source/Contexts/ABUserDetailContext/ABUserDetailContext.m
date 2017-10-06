@@ -10,11 +10,11 @@
 
 #import "ABUser.h"
 
-static NSString *const ABUserID = @"userID";
-static NSString *const ABUserName = @"first_name";
-static NSString *const ABUserSurname = @"last_name";
-static NSString *const ABUserCity = @"hometown";
-static NSString *const ABPictureURL = @"picture.data.url";
+static NSString *const ABUserID         = @"id";
+static NSString *const ABUserName       = @"first_name";
+static NSString *const ABUserSurname    = @"last_name";
+static NSString *const ABUserCity       = @"hometown";
+static NSString *const ABPictureURL     = @"picture.data.url";
 
 @interface ABUserDetailContext ()
 @property (nonatomic, readonly) ABUser  *user;
@@ -40,6 +40,7 @@ static NSString *const ABPictureURL = @"picture.data.url";
     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
         if (!error) {
             [self parseResult:result];
+            self.user.state = ABModelDidLoad;
         }
     }];
 }
@@ -50,7 +51,6 @@ static NSString *const ABPictureURL = @"picture.data.url";
     self.user.surname = [result valueForKeyPath:ABUserSurname];
     self.user.hometown  = [result valueForKeyPath:ABUserCity];
     self.user.imageUrl = [result valueForKeyPath:ABPictureURL];
-    self.user.state = ABModelDidLoad;
 }
 
 @end
