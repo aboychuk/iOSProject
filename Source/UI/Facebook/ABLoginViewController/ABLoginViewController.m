@@ -10,7 +10,6 @@
 
 #import "ABLoginView.h"
 #import "ABUserDetailViewController.h"
-#import "ABModel.h"
 #import "ABContext.h"
 #import "ABLoginContext.h"
 #import "ABUser.h"
@@ -26,14 +25,14 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    self.model = nil;
+    self.user = nil;
     self.context = nil;
 }
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.model = [ABUser new];
+        self.user = [ABUser new];
     }
     
     return self;
@@ -42,12 +41,12 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 #pragma mark -
 #pragma mark Accessors
 
-- (void)setModel:(ABModel *)model {
-    if (_model != model) {
-        [_model removeObserver:self];
+- (void)setUser:(ABUser *)user {
+    if (_user != user) {
+        [_user removeObserver:self];
         
-        _model = model;
-        [_model addObserver:self];
+        _user = user;
+        [_user addObserver:self];
     }
 }
 
@@ -64,7 +63,7 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 #pragma mark Actions
 
 - (IBAction)onLogin:(UIButton *)sender {
-    self.context = [ABLoginContext contextWithModel:self.model];
+    self.context = [ABLoginContext contextWithModel:self.user];
 }
 
 #pragma mark -
@@ -72,7 +71,7 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([FBSDKAccessToken currentAccessToken]) {
+    if (self.user.isAuthorized) {
         [self showUserDetailViewController];
     }
 }
@@ -96,6 +95,7 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 - (void)modelDidLoad:(id)model {
     ABDispatchAsyncOnMainThread(^{
         self.rootView.loadingView.visible = NO;
+        [self showUserDetailViewController];
     });
 }
 
