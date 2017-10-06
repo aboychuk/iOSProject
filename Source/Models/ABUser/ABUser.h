@@ -12,12 +12,17 @@
 #import "ABModel.h"
 
 @class ABImageModel;
+@class ABUsersModel;
 
 @interface ABUser : ABModel
+@property (nonatomic, readonly, getter=isAuthorized)    BOOL   authorized;
+
 @property (nonatomic, copy)     NSString        *name;
 @property (nonatomic, copy)     NSString        *surname;
 @property (nonatomic, readonly) NSString        *fullname;
 @property (nonatomic, readonly) ABImageModel    *imageModel;
 @property (nonatomic, readonly) NSString        *userID;
+@property (nonatomic, readonly) NSURL           *imageUrl;
+@property (nonatomic, readonly) ABUsersModel    *friends;
 
 @end

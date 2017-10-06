@@ -13,6 +13,9 @@
 #import "ABRandomNumber.h"
 #import "NSString+ABExtensions.h"
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 static NSString * const ABName = @"name";
 static NSString * const ABSurname = @"surname";
 static NSString * const ABImageName = @"image";
@@ -22,6 +25,7 @@ static NSString * const ABImageType = @"png";
 @implementation ABUser
 @dynamic fullname;
 @dynamic imageModel;
+@dynamic authorized;
 
 #pragma mark
 #pragma mark Initializations and Deallocations
@@ -44,14 +48,11 @@ static NSString * const ABImageType = @"png";
 }
 
 - (ABImageModel *)imageModel {
-    return [ABImageModel imageWithUrl:self.imageURL];
+    return [ABImageModel imageWithUrl:self.imageUrl];
 }
 
-- (NSURL *)imageURL {
-    NSURL *url = [NSURL URLWithString:
-     @"http://upload.wikimedia.org/wikipedia/commons/7/7f/Williams_River-27527.jpg"];
-    
-    return url;
+- (BOOL)isAuthorized {
+    return [self.userID isEqualToString:[FBSDKAccessToken currentAccessToken].userID];
 }
 
 #pragma mark -
