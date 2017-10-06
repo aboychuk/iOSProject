@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class ABModel;
+@class ABContext;
+
 @interface ABLoginViewController : UIViewController
+@property (nonatomic, strong)   ABModel     *model;
+@property (nonatomic, strong)   ABContext   *context;
 
 - (IBAction)onLogin:(UIButton *)sender;
 

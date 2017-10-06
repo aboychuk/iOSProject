@@ -17,12 +17,6 @@
 
 #import "ABMacro.h"
 
-@interface ABLoginViewController ()
-@property (nonatomic, strong)   ABModel     *model;
-@property (nonatomic, strong)   ABContext   *context;
-
-@end
-
 ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 
 @implementation ABLoginViewController

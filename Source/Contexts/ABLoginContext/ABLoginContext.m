@@ -8,8 +8,11 @@
 
 #import "ABLoginContext.h"
 
+#import "ABUserDetailContext.h"
+
 @interface ABLoginContext ()
 @property (nonatomic, strong)   FBSDKLoginManager   *loginManager;
+@property (nonatomic, strong)   ABUserDetailContext *detailContext;
 
 @end
 
