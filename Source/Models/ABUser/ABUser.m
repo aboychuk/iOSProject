@@ -18,10 +18,6 @@
 
 static NSString * const ABName = @"name";
 static NSString * const ABSurname = @"surname";
-static NSString * const ABImageName = @"image";
-static NSString * const ABImageType = @"png";
-
-
 @implementation ABUser
 @dynamic fullname;
 @dynamic imageModel;

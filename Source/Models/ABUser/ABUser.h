@@ -21,8 +21,9 @@
 @property (nonatomic, copy)     NSString        *surname;
 @property (nonatomic, readonly) NSString        *fullname;
 @property (nonatomic, readonly) ABImageModel    *imageModel;
-@property (nonatomic, readonly) NSString        *userID;
-@property (nonatomic, readonly) NSURL           *imageUrl;
-@property (nonatomic, readonly) ABUsersModel    *friends;
+@property (nonatomic, copy)     NSString        *userID;
+@property (nonatomic, strong)   NSURL           *imageUrl;
+@property (nonatomic, strong)   ABUsersModel    *friends;
+@property (nonatomic, copy)     NSString        *hometown;
 
 @end
