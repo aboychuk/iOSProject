@@ -63,6 +63,10 @@
 		971FFBDE1F7582A400884C7C /* ABFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBDB1F7582A400884C7C /* ABFriendsViewController.m */; };
 		971FFBDF1F7582A400884C7C /* ABFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971FFBDC1F7582A400884C7C /* ABFriendsViewController.xib */; };
 		976581491F86730B00ACFBE6 /* NSFileManager+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 976581481F86730B00ACFBE6 /* NSFileManager+ABExtension.m */; };
+		9765814C1F877B9D00ACFBE6 /* ABFriendsContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9765814B1F877B9D00ACFBE6 /* ABFriendsContext.m */; };
+		976581521F877F3E00ACFBE6 /* ABUserDetailContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 976581511F877F3E00ACFBE6 /* ABUserDetailContext.m */; };
+		976581551F877F5600ACFBE6 /* ABLogoutContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 976581541F877F5600ACFBE6 /* ABLogoutContext.m */; };
+		976581581F877F6D00ACFBE6 /* ABGetContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 976581571F877F6D00ACFBE6 /* ABGetContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,6 +174,14 @@
 		971FFBDC1F7582A400884C7C /* ABFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABFriendsViewController.xib; sourceTree = "<group>"; };
 		976581471F86730B00ACFBE6 /* NSFileManager+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ABExtension.h"; sourceTree = "<group>"; };
 		976581481F86730B00ACFBE6 /* NSFileManager+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ABExtension.m"; sourceTree = "<group>"; };
+		9765814A1F877B9D00ACFBE6 /* ABFriendsContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFriendsContext.h; sourceTree = "<group>"; };
+		9765814B1F877B9D00ACFBE6 /* ABFriendsContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFriendsContext.m; sourceTree = "<group>"; };
+		976581501F877F3E00ACFBE6 /* ABUserDetailContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserDetailContext.h; sourceTree = "<group>"; };
+		976581511F877F3E00ACFBE6 /* ABUserDetailContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserDetailContext.m; sourceTree = "<group>"; };
+		976581531F877F5600ACFBE6 /* ABLogoutContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLogoutContext.h; sourceTree = "<group>"; };
+		976581541F877F5600ACFBE6 /* ABLogoutContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLogoutContext.m; sourceTree = "<group>"; };
+		976581561F877F6D00ACFBE6 /* ABGetContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABGetContext.h; sourceTree = "<group>"; };
+		976581571F877F6D00ACFBE6 /* ABGetContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABGetContext.m; sourceTree = "<group>"; };
 		CBE27B6C8B9F1CA6ED2CFFAA /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E470E32AE2A3C09EA831FECF /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -596,6 +608,9 @@
 		971FFB871F7524BA00884C7C /* Contexts */ = {
 			isa = PBXGroup;
 			children = (
+				9765814F1F877CBA00ACFBE6 /* ABUserDetailContext */,
+				9765814E1F877C8600ACFBE6 /* ABLogoutContext */,
+				9765814D1F877C7F00ACFBE6 /* ABGetContext */,
 				971FFB881F7524BA00884C7C /* ABContext */,
 				971FFB8B1F7524BA00884C7C /* ABFriendsContext */,
 				971FFB8C1F7524BA00884C7C /* ABLoginContext */,
@@ -615,6 +630,8 @@
 		971FFB8B1F7524BA00884C7C /* ABFriendsContext */ = {
 			isa = PBXGroup;
 			children = (
+				9765814A1F877B9D00ACFBE6 /* ABFriendsContext.h */,
+				9765814B1F877B9D00ACFBE6 /* ABFriendsContext.m */,
 			);
 			path = ABFriendsContext;
 			sourceTree = "<group>";
@@ -727,6 +744,33 @@
 				976581481F86730B00ACFBE6 /* NSFileManager+ABExtension.m */,
 			);
 			path = "NSFileManager+ABExtensions";
+			sourceTree = "<group>";
+		};
+		9765814D1F877C7F00ACFBE6 /* ABGetContext */ = {
+			isa = PBXGroup;
+			children = (
+				976581561F877F6D00ACFBE6 /* ABGetContext.h */,
+				976581571F877F6D00ACFBE6 /* ABGetContext.m */,
+			);
+			path = ABGetContext;
+			sourceTree = "<group>";
+		};
+		9765814E1F877C8600ACFBE6 /* ABLogoutContext */ = {
+			isa = PBXGroup;
+			children = (
+				976581531F877F5600ACFBE6 /* ABLogoutContext.h */,
+				976581541F877F5600ACFBE6 /* ABLogoutContext.m */,
+			);
+			path = ABLogoutContext;
+			sourceTree = "<group>";
+		};
+		9765814F1F877CBA00ACFBE6 /* ABUserDetailContext */ = {
+			isa = PBXGroup;
+			children = (
+				976581501F877F3E00ACFBE6 /* ABUserDetailContext.h */,
+				976581511F877F3E00ACFBE6 /* ABUserDetailContext.m */,
+			);
+			path = ABUserDetailContext;
 			sourceTree = "<group>";
 		};
 		A54C3AD9DFBA3070B4BF1C7D /* Frameworks */ = {
@@ -883,6 +927,7 @@
 				971FFB7D1F75243F00884C7C /* ABImageModel.m in Sources */,
 				971FFB6E1F75243F00884C7C /* ABClasterAlphabet.m in Sources */,
 				971FFBA81F7524BA00884C7C /* ABUser.m in Sources */,
+				976581581F877F6D00ACFBE6 /* ABGetContext.m in Sources */,
 				971FFB691F75243F00884C7C /* ABTimerWeakReference.m in Sources */,
 				971FFB731F75243F00884C7C /* ABObservableObject.m in Sources */,
 				970C49DC1F6A847700AAB728 /* main.m in Sources */,
@@ -900,6 +945,8 @@
 				976581491F86730B00ACFBE6 /* NSFileManager+ABExtension.m in Sources */,
 				971FFB681F75243F00884C7C /* NSTimer+ABWeakReferenceTimer.m in Sources */,
 				971FFBA61F7524BA00884C7C /* ABContext.m in Sources */,
+				976581551F877F5600ACFBE6 /* ABLogoutContext.m in Sources */,
+				9765814C1F877B9D00ACFBE6 /* ABFriendsContext.m in Sources */,
 				971FFB7E1F75243F00884C7C /* ABInternetImageModel.m in Sources */,
 				971FFB791F75243F00884C7C /* ABArrayModelChangeAdd.m in Sources */,
 				971FFB6B1F75243F00884C7C /* UITableView+ABExtension.m in Sources */,
@@ -921,6 +968,7 @@
 				971FFBA71F7524BA00884C7C /* ABLoginContext.m in Sources */,
 				971FFBDE1F7582A400884C7C /* ABFriendsViewController.m in Sources */,
 				971FFB7F1F75243F00884C7C /* ABModel.m in Sources */,
+				976581521F877F3E00ACFBE6 /* ABUserDetailContext.m in Sources */,
 				971FFB641F75243F00884C7C /* NSBundle+ABExtension.m in Sources */,
 				971FFB631F75243F00884C7C /* NSArray+ABExtension.m in Sources */,
 				971FFBC81F75567A00884C7C /* ABUserDetailViewController.m in Sources */,

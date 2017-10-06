@@ -50,7 +50,6 @@ static NSString * const ABImageType = @"png";
 - (NSURL *)imageURL {
     NSURL *url = [NSURL URLWithString:
      @"http://upload.wikimedia.org/wikipedia/commons/7/7f/Williams_River-27527.jpg"];
-//    NSURL *url = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:ABImageName ofType:ABImageType]];
     
     return url;
 }
