@@ -17,11 +17,9 @@
         return YES;
     } else {
         [fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];
-        if (!error) {
-            return YES;
-        }
     }
-    return NO;
+    
+    return nil != error;
 }
 
 - (BOOL)deleteFolderAtPath:(NSString *)path {
@@ -29,21 +27,16 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:path]) {
         [fileManager removeItemAtPath:path error:&error];
-        if (!error) {
-            return YES;
-        }
     }
-    return NO;
+    
+    return nil != error;
 }
 
 - (BOOL)createFolderAtDocumentsPath:(NSString *)folderName {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *directoryPath = [[paths firstObject] stringByAppendingPathComponent:folderName];
-    BOOL created = [self createFolderAtPath:directoryPath];
-    if (created) {
-        return YES;
-    }
-    return NO;
+
+    return [self createFolderAtPath:directoryPath];
 }
 
 @end
