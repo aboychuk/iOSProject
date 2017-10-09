@@ -36,7 +36,7 @@ static NSString *const ABUserPictureURL = @"picture.data.url";
 
 - (void)execute {
     NSDictionary *parameters = @{@"fields" : @"friends{first_name,last_name,picture}"};
-    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:self.model
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:self.fbUser.userID
                                                                    parameters:parameters];
     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
         if (!error) {

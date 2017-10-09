@@ -10,8 +10,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 #import "ABContext.h"
-
-@class ABUser;
+#import "ABUser.h"
 
 @interface ABFBUserContext : ABContext
 @property (nonatomic, strong)   ABUser  *fbUser;

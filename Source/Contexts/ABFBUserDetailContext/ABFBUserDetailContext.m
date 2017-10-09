@@ -18,41 +18,31 @@ static NSString *const ABPictureURL     = @"picture.data.url";
 static NSString *const ABFields         = @"fields";
 static NSString *const ABFieldsKeys     = @"first_name,last_name,hometown,picture.type(large)";
 
-@interface ABFBUserDetailContext ()
-@property (nonatomic, readonly) ABUser  *user;
-
-@end
-
 @implementation ABFBUserDetailContext
-
-#pragma mark -
-#pragma mark Accessors
-
-- (ABUser *)user {
-    return self.model;
-}
 
 #pragma mark - 
 #pragma mark Public Methods
 
 - (void)execute {
     NSDictionary *parameters = @{ABFields : ABFieldsKeys};
-    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:self.user.userID
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:self.fbUser.userID
                                                                    parameters:parameters];
     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
         if (!error) {
             [self parseResult:result];
-            self.user.state = ABModelDidLoad;
+            self.fbUser.state = ABModelDidLoad;
         }
     }];
 }
 
 - (void)parseResult:(id)result {
-    self.user.userID = [result valueForKeyPath:ABUserID];
-    self.user.name = [result valueForKeyPath:ABUserName];
-    self.user.surname = [result valueForKeyPath:ABUserSurname];
-    self.user.hometown  = [result valueForKeyPath:ABUserCity];
-    self.user.imageUrl = [result valueForKeyPath:ABPictureURL];
+    ABUser *user = self.fbUser;
+    
+    user.userID = [result valueForKeyPath:ABUserID];
+    user.name = [result valueForKeyPath:ABUserName];
+    user.surname = [result valueForKeyPath:ABUserSurname];
+    user.hometown  = [result valueForKeyPath:ABUserCity];
+    user.imageUrl = [result valueForKeyPath:ABPictureURL];
 }
 
 @end

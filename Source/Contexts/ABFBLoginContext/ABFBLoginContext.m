@@ -14,7 +14,6 @@ static NSString *const ABPublicProfile = @"public_profile";
 static NSString *const ABUserFriends = @"user_friends";
 
 @interface ABFBLoginContext ()
-@property (nonatomic, strong)   FBSDKLoginManager   *loginManager;
 @property (nonatomic, strong)   ABFBUserDetailContext *context;
 
 @end
@@ -37,16 +36,22 @@ static NSString *const ABUserFriends = @"user_friends";
 #pragma mark Public Methods
 
 - (void)execute {
+    if (self.fbUser.isAuthorized) {
+        [self loadContext];
+    }
     FBSDKLoginManager *login = [FBSDKLoginManager new];
     [login logInWithReadPermissions:@[ABPublicProfile, ABUserFriends]
                  fromViewController:nil
                             handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
                                 if (!(error && result.isCancelled)) {
-                                    
-                                    self.context = [[ABFBUserDetailContext alloc] initWithModel:self.model];
+                                    self.fbUser.userID = [FBSDKAccessToken currentAccessToken].userID;
+                                    [self loadContext];
                                 }
                             }];
-    self.loginManager = login;
+}
+
+- (void)loadContext {
+    self.context = [[ABFBUserDetailContext alloc] initWithModel:self.model];
 }
 
 @end
