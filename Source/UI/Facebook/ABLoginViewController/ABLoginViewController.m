@@ -11,7 +11,7 @@
 #import "ABLoginView.h"
 #import "ABUserDetailViewController.h"
 #import "ABContext.h"
-#import "ABLoginContext.h"
+#import "ABFBLoginContext.h"
 #import "ABUser.h"
 
 #import "ABMacro.h"
@@ -63,7 +63,7 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 #pragma mark Actions
 
 - (IBAction)onLogin:(UIButton *)sender {
-    self.context = [ABLoginContext contextWithModel:self.user];
+    self.context = [ABFBLoginContext contextWithModel:self.user];
 }
 
 #pragma mark -

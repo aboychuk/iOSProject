@@ -13,10 +13,10 @@
 
 #import "ABUserDetailView.h"
 #import "ABUser.h"
-#import "ABLogoutContext.h"
+#import "ABFBLogoutContext.h"
 #import "ABLoginViewController.h"
 #import "ABFriendsViewController.h"
-#import "ABFriendsContext.h"
+#import "ABFBFriendsContext.h"
 
 #import "ABGCDExtension.h"
 #import "ABMacro.h"
@@ -41,12 +41,12 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 #pragma mark Actions
 
 - (IBAction)onFriends:(UIButton *)sender {
-    self.context = [[ABFriendsContext alloc] initWithModel:self.user];
+    self.context = [[ABFBFriendsContext alloc] initWithModel:self.user];
     [self showFriendsViewController];
 }
 
 - (IBAction)onLogout:(UIButton *)sender {
-    self.context = [ABLogoutContext new];
+    self.context = [ABFBLogoutContext new];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

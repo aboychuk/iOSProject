@@ -8,13 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-
 @class ABModel;
 
 @interface ABContext : NSObject
-@property (nonatomic, strong)   id          model;
+@property (nonatomic, strong)   id      model;
 
 + (instancetype)contextWithModel:(id)model;
 
