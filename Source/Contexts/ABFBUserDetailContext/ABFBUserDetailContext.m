@@ -25,18 +25,18 @@ static NSString *const ABFieldsKeys     = @"first_name,last_name,hometown,pictur
 
 - (void)execute {
     NSDictionary *parameters = @{ABFields : ABFieldsKeys};
-    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:self.fbUser.userID
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:self.user.userID
                                                                    parameters:parameters];
     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
         if (!error) {
             [self parseResult:result];
-            self.fbUser.state = ABModelDidLoad;
+            self.user.state = ABModelDidLoad;
         }
     }];
 }
 
 - (void)parseResult:(id)result {
-    ABUser *user = self.fbUser;
+    ABUser *user = self.user;
     
     user.userID = [result valueForKeyPath:ABUserID];
     user.name = [result valueForKeyPath:ABUserName];

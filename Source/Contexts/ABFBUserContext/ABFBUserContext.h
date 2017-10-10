@@ -13,6 +13,6 @@
 #import "ABUser.h"
 
 @interface ABFBUserContext : ABContext
-@property (nonatomic, strong)   ABUser  *fbUser;
+@property (nonatomic, strong)   ABUser  *user;
 
 @end

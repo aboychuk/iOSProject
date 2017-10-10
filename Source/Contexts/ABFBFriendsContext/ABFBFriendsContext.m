@@ -17,26 +17,14 @@ static NSString *const ABUserSurname    = @"last_name";
 static NSString *const ABUserFriends    = @"friends.data";
 static NSString *const ABUserPictureURL = @"picture.data.url";
 
-@interface ABFBFriendsContext ()
-@property (nonatomic, strong)   ABUser  *user;
-
-@end
-
 @implementation ABFBFriendsContext
-
-#pragma mark -
-#pragma mark Accessors
-
-- (ABUser *)user {
-    return self.model;
-}
 
 #pragma mark -
 #pragma mark Public Methods
 
 - (void)execute {
     NSDictionary *parameters = @{@"fields" : @"friends{first_name,last_name,picture}"};
-    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:self.fbUser.userID
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:self.user.userID
                                                                    parameters:parameters];
     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
         if (!error) {

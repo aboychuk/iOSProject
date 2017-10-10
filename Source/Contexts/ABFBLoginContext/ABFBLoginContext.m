@@ -36,7 +36,7 @@ static NSString *const ABUserFriends = @"user_friends";
 #pragma mark Public Methods
 
 - (void)execute {
-    if (self.fbUser.isAuthorized) {
+    if (self.user.isAuthorized) {
         [self loadContext];
     }
     FBSDKLoginManager *login = [FBSDKLoginManager new];
@@ -44,7 +44,7 @@ static NSString *const ABUserFriends = @"user_friends";
                  fromViewController:nil
                             handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
                                 if (!(error && result.isCancelled)) {
-                                    self.fbUser.userID = [FBSDKAccessToken currentAccessToken].userID;
+                                    self.user.userID = [FBSDKAccessToken currentAccessToken].userID;
                                     [self loadContext];
                                 }
                             }];

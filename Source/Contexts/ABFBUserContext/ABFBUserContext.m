@@ -15,7 +15,7 @@
 #pragma mark -
 #pragma mark Accessors
 
-- (ABUser *)fbUser {
+- (ABUser *)user {
     return self.model;
 }
 
