@@ -6,14 +6,9 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ABFBViewController.h"
 
-@class ABUser;
-@class ABContext;
-
-@interface ABLoginViewController : UIViewController
-@property (nonatomic, strong)   ABUser      *user;
-@property (nonatomic, strong)   ABContext   *context;
+@interface ABLoginViewController : ABFBViewController
 
 - (IBAction)onLogin:(UIButton *)sender;
 

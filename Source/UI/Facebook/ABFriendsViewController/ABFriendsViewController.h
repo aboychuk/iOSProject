@@ -6,14 +6,11 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ABFBViewController.h"
 
-@class ABArrayModel;
 @class ABUsersModel;
-@class ABUser;
 
-@interface ABFriendsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ABFriendsViewController : ABFBViewController <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong)   ABUsersModel    *friends;
-@property (nonatomic, strong)   ABUser          *user;
 
 @end

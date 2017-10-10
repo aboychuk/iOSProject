@@ -26,18 +26,6 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 @implementation ABUserDetailViewController
 
 #pragma mark -
-#pragma mark Accessors
-
-- (void)setContext:(ABContext *)context {
-    if (_context != context) {
-        [_context cancel];
-        
-        _context = context;
-        [_context execute];
-    }
-}
-
-#pragma mark -
 #pragma mark Actions
 
 - (IBAction)onFriends:(UIButton *)sender {
@@ -63,22 +51,10 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 #pragma mark -
 #pragma mark ABModelObserver
 
-- (void)modelWillLoad:(id)model {
-    ABDispatchAsyncOnMainThread(^{
-        self.rootView.loadingView.visible = YES;
-    });
-}
-
 - (void)modelDidLoad:(id)model {
     ABDispatchAsyncOnMainThread(^{
         self.rootView.loadingView.visible = NO;
         [self.rootView fillWithModel:model];
-    });
-}
-
-- (void)modelDidFailLoading:(id)model {
-    ABDispatchAsyncOnMainThread(^{
-        self.rootView.loadingView.visible = NO;
     });
 }
 

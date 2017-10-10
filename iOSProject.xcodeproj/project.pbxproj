@@ -68,6 +68,7 @@
 		971FFBDE1F7582A400884C7C /* ABFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971FFBDB1F7582A400884C7C /* ABFriendsViewController.m */; };
 		971FFBDF1F7582A400884C7C /* ABFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971FFBDC1F7582A400884C7C /* ABFriendsViewController.xib */; };
 		976581491F86730B00ACFBE6 /* NSFileManager+ABExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 976581481F86730B00ACFBE6 /* NSFileManager+ABExtension.m */; };
+		97D7CAE01F8CBBD9007E8770 /* ABFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D7CADF1F8CBBD9007E8770 /* ABFBViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -185,6 +186,8 @@
 		971FFBDC1F7582A400884C7C /* ABFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABFriendsViewController.xib; sourceTree = "<group>"; };
 		976581471F86730B00ACFBE6 /* NSFileManager+ABExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ABExtension.h"; sourceTree = "<group>"; };
 		976581481F86730B00ACFBE6 /* NSFileManager+ABExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ABExtension.m"; sourceTree = "<group>"; };
+		97D7CADE1F8CBBD9007E8770 /* ABFBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFBViewController.h; sourceTree = "<group>"; };
+		97D7CADF1F8CBBD9007E8770 /* ABFBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFBViewController.m; sourceTree = "<group>"; };
 		CBE27B6C8B9F1CA6ED2CFFAA /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E470E32AE2A3C09EA831FECF /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -723,6 +726,7 @@
 		971FFBA21F7524BA00884C7C /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
+				97D7CADD1F8CBBAC007E8770 /* ABFBViewController */,
 				971FFBC11F75562D00884C7C /* ABUserDetailViewController */,
 				971FFBA41F7524BA00884C7C /* ABFriendsViewController */,
 				971FFBA51F7524BA00884C7C /* ABLoginViewController */,
@@ -784,6 +788,15 @@
 				976581481F86730B00ACFBE6 /* NSFileManager+ABExtension.m */,
 			);
 			path = "NSFileManager+ABExtensions";
+			sourceTree = "<group>";
+		};
+		97D7CADD1F8CBBAC007E8770 /* ABFBViewController */ = {
+			isa = PBXGroup;
+			children = (
+				97D7CADE1F8CBBD9007E8770 /* ABFBViewController.h */,
+				97D7CADF1F8CBBD9007E8770 /* ABFBViewController.m */,
+			);
+			path = ABFBViewController;
 			sourceTree = "<group>";
 		};
 		A54C3AD9DFBA3070B4BF1C7D /* Frameworks */ = {
@@ -946,6 +959,7 @@
 				971FFB781F75243F00884C7C /* ABArrayModelChange.m in Sources */,
 				971FFB671F75243F00884C7C /* NSString+ABExtensions.m in Sources */,
 				971FFB811F75243F00884C7C /* ABLoadingView.m in Sources */,
+				97D7CAE01F8CBBD9007E8770 /* ABFBViewController.m in Sources */,
 				971FFB801F75243F00884C7C /* ABImageView.m in Sources */,
 				971FFB741F75243F00884C7C /* ABRandomNumber.m in Sources */,
 				971FFB651F75243F00884C7C /* NSMutableArray+ABExtension.m in Sources */,

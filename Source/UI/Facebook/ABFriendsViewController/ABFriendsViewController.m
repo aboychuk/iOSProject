@@ -22,7 +22,7 @@
 
 static NSString * const ABNavigationBarTitle = @"Friends";
 
-ABViewControllerRootViewProperty(ABFriendsViewController, friendsView, ABFriendsView)
+ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsView)
 
 @interface ABFriendsViewController () <ABArrayModelObserver, ABModelObserver>
 
@@ -34,17 +34,6 @@ ABViewControllerRootViewProperty(ABFriendsViewController, friendsView, ABFriends
 
 #pragma mark -
 #pragma mark Accessors
-
-- (void)setUser:(ABUser *)user {
-    if (_user != user) {
-        [_user removeObserver:self];
-        
-        _user = user;
-        [_user addObserver:self];
-        
-        self.friends = user.friends;
-    }
-}
 
 - (void)setFriends:(ABUsersModel *)friends {
     if (_friends != friends) {
@@ -101,22 +90,10 @@ ABViewControllerRootViewProperty(ABFriendsViewController, friendsView, ABFriends
 #pragma mark -
 #pragma mark ABModelObserver
 
-- (void)modelWillLoad:(id)model {
-    ABDispatchAsyncOnMainThread(^{
-        self.friendsView.loadingView.visible = YES;
-    });
-}
-
 - (void)modelDidLoad:(id)model {
     ABDispatchAsyncOnMainThread(^{
-        self.friendsView.loadingView.visible = NO;
-        [self.friendsView.tableView reloadData];
-    });
-}
-
-- (void)modelDidFailLoading:(id)model {
-    ABDispatchAsyncOnMainThread(^{
-        self.friendsView.loadingView.visible = NO;
+        self.rootView.loadingView.visible = NO;
+        [self.rootView.tableView reloadData];
     });
 }
 

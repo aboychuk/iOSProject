@@ -6,14 +6,12 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ABFBViewController.h"
 
 @class ABUser;
 @class ABContext;
 
-@interface ABUserDetailViewController : UIViewController
-@property (nonatomic, strong)   ABUser      *user;
-@property (nonatomic, strong)   ABContext   *context;
+@interface ABUserDetailViewController : ABFBViewController
 
 - (IBAction)onFriends:(UIButton *)sender;
 - (IBAction)onLogout:(UIButton *)sender;
