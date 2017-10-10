@@ -25,6 +25,7 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 
 @implementation ABUserDetailViewController
 
+
 #pragma mark -
 #pragma mark Actions
 
@@ -36,6 +37,16 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 - (IBAction)onLogout:(UIButton *)sender {
     self.context = [ABFBLogoutContext new];
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+#pragma mark -
+#pragma mark View Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    if (self.user.isAuthorized) {
+        [self.rootView fillWithModel:self.user];
+    }
 }
 
 #pragma mark -

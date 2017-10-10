@@ -18,6 +18,14 @@ ABViewControllerRootViewProperty(ABFBViewController, rootView, ABView)
 @implementation ABFBViewController
 
 #pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (void)dealloc {
+    self.user = nil;
+    self.context = nil;
+}
+
+#pragma mark -
 #pragma mark Accessors
 
 - (void)setUser:(ABUser *)user {

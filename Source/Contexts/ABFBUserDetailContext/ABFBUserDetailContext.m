@@ -42,7 +42,7 @@ static NSString *const ABFieldsKeys     = @"first_name,last_name,hometown,pictur
     user.name = [result valueForKeyPath:ABUserName];
     user.surname = [result valueForKeyPath:ABUserSurname];
     user.hometown  = [result valueForKeyPath:ABUserCity];
-    user.imageUrl = [result valueForKeyPath:ABPictureURL];
+    user.imageUrl = [NSURL URLWithString:[result valueForKeyPath:ABPictureURL]];
 }
 
 @end
