@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^ABContextCompletionHandler)(NSUInteger modelState);
+
 @class ABModel;
 
 @interface ABContext : NSObject

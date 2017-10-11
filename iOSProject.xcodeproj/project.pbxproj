@@ -727,9 +727,9 @@
 			isa = PBXGroup;
 			children = (
 				97D7CADD1F8CBBAC007E8770 /* ABFBViewController */,
+				971FFBA51F7524BA00884C7C /* ABLoginViewController */,
 				971FFBC11F75562D00884C7C /* ABUserDetailViewController */,
 				971FFBA41F7524BA00884C7C /* ABFriendsViewController */,
-				971FFBA51F7524BA00884C7C /* ABLoginViewController */,
 			);
 			path = Facebook;
 			sourceTree = "<group>";

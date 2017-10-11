@@ -52,6 +52,7 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavigationBar];
+    [self.rootView.tableView reloadData];
 }
 
 #pragma mark -

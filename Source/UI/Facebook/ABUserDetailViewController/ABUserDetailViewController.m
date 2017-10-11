@@ -25,7 +25,6 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 
 @implementation ABUserDetailViewController
 
-
 #pragma mark -
 #pragma mark Actions
 
@@ -44,9 +43,7 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (self.user.isAuthorized) {
-        [self.rootView fillWithModel:self.user];
-    }
+    [self.rootView fillWithModel:self.user];
 }
 
 #pragma mark -
