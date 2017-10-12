@@ -24,6 +24,7 @@ static NSString *const ABFieldsKeys     = @"first_name,last_name,hometown,pictur
 #pragma mark Public Methods
 
 - (void)execute {
+    [self.user loadModel];
     NSDictionary *parameters = @{ABFields : ABFieldsKeys};
     FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:self.user.userID
                                                                    parameters:parameters];

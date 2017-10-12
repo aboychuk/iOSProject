@@ -23,6 +23,7 @@ static NSString *const ABUserPictureURL = @"picture.data.url";
 #pragma mark Public Methods
 
 - (void)execute {
+    self.user.state = ABModelWillLoad;
     NSDictionary *parameters = @{@"fields" : @"friends{first_name,last_name,picture}"};
     FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:self.user.userID
                                                                    parameters:parameters];

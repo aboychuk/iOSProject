@@ -39,6 +39,7 @@
 #pragma mark Public Methods
 
 - (void)execute {
+    [self.model loadModel];
     
 }
 

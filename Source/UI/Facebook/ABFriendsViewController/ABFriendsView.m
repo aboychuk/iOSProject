@@ -10,4 +10,7 @@
 
 @implementation ABFriendsView
 
+- (void)fillWithModel {
+    [self.tableView reloadData];
+}
 @end

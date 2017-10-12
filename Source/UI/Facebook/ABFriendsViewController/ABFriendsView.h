@@ -13,4 +13,6 @@
 @interface ABFriendsView : ABView
 @property (nonatomic, strong)   IBOutlet UITableView    *tableView;
 
+- (void)fillWithModel;
+
 @end
