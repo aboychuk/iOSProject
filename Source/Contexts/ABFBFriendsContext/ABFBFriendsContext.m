@@ -11,6 +11,8 @@
 #import "ABUser.h"
 #import "ABUsersModel.h"
 
+#import "ABMacro.h"
+
 static NSString *const ABUserID         = @"userID";
 static NSString *const ABUserName       = @"first_name";
 static NSString *const ABUserSurname    = @"last_name";
@@ -26,11 +28,13 @@ static NSString *const ABFieldsKeys     = @"friends{first_name,last_name,picture
 
 - (void)execute {
     [self.user.friends loadModel];
+    ABWeakify(self);
     NSDictionary *parameters = @{ABFields : ABFieldsKeys };
     FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:self.user.userID
                                                                    parameters:parameters];
     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
         if (!error) {
+            ABStrongifyAndReturnIfNil(self);
             self.user.friends = [[ABUsersModel alloc] initWithObjects:[self parseResult:result]];
             self.user.friends.state = ABModelDidLoad;
         }

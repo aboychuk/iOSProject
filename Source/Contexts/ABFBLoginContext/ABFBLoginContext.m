@@ -10,6 +10,8 @@
 
 #import "ABFBUserDetailContext.h"
 
+#import "ABMacro.h"
+
 static NSString *const ABPublicProfile = @"public_profile";
 static NSString *const ABUserFriends = @"user_friends";
 
@@ -39,10 +41,12 @@ static NSString *const ABUserFriends = @"user_friends";
     if (self.user.isAuthorized) {
         [self loadContext];
     }
+    ABWeakify(self);
     FBSDKLoginManager *login = [FBSDKLoginManager new];
     [login logInWithReadPermissions:@[ABPublicProfile, ABUserFriends]
                  fromViewController:nil
                             handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+                                ABStrongifyAndReturnIfNil(self);
                                 if (!(error && result.isCancelled)) {
                                     self.user.userID = [FBSDKAccessToken currentAccessToken].userID;
                                     [self loadContext];
