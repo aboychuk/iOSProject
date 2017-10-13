@@ -13,6 +13,7 @@
 
 #import "ABUserDetailView.h"
 #import "ABUser.h"
+#import "ABUsersModel.h"
 #import "ABFBLogoutContext.h"
 #import "ABLoginViewController.h"
 #import "ABFriendsViewController.h"
@@ -29,7 +30,6 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 #pragma mark Actions
 
 - (IBAction)onFriends:(UIButton *)sender {
-    self.context = [[ABFBFriendsContext alloc] initWithModel:self.user];
     [self showFriendsViewController];
 }
 
@@ -50,8 +50,12 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 #pragma mark Private
 
 - (void)showFriendsViewController {
+    ABUser *user = self.user;
+    
     ABFriendsViewController *friendsController = [ABFriendsViewController new];
-    friendsController.user = self.user;
+    friendsController.user = user;
+    friendsController.friends = user.friends;
+    friendsController.context = [[ABFBFriendsContext alloc] initWithModel:user];
     
     [self.navigationController pushViewController:friendsController animated:YES];
 }

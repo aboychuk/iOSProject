@@ -41,8 +41,6 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
         
         _friends = friends;
         [_friends addObserver:self];
-        
-        [_friends loadModel];
     }
 }
 
@@ -52,7 +50,6 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavigationBar];
-    [self.rootView.tableView reloadData];
 }
 
 #pragma mark -
@@ -94,7 +91,7 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 - (void)modelDidLoad:(id)model {
     ABDispatchAsyncOnMainThread(^{
         self.rootView.loadingView.visible = NO;
-        [self.rootView.tableView reloadData];
+        [self.rootView fillWithModel];
     });
 }
 
