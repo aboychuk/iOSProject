@@ -43,6 +43,7 @@ static NSString *const ABFieldsKeys     = @"first_name,last_name,hometown,pictur
 - (void)parseResult:(id)result {
     ABUser *user = self.user;
     
+    
     user.userID = [result valueForKeyPath:ABUserID];
     user.name = [result valueForKeyPath:ABUserName];
     user.surname = [result valueForKeyPath:ABUserSurname];
