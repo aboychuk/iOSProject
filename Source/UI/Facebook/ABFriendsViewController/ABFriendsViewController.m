@@ -16,6 +16,8 @@
 #import "ABGCDExtension.h"
 #import "ABUserDetailView.h"
 #import "ABUserDetailViewController.h"
+#import "ABArrayModelChange.h"
+#import "ABFBUserDetailContext.h"
 
 #import "ABMacro.h"
 #import "UITableView+ABExtension.h"
@@ -72,7 +74,10 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ABUser *user = self.friends[indexPath.row];
     ABUserDetailViewController *userDetailViewController = [ABUserDetailViewController new];
+    ABFBUserDetailContext *context = [[ABFBUserDetailContext alloc] initWithModel:user];
+    
     userDetailViewController.user = user;
+    userDetailViewController.context = context;
     
     [self.navigationController pushViewController:userDetailViewController animated:YES];
 }
@@ -83,16 +88,6 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 - (void)setupNavigationBar {
     UINavigationItem *navigationItem = self.navigationItem;
     navigationItem.title = ABNavigationBarTitle;
-}
-
-#pragma mark -
-#pragma mark ABModelObserver
-
-- (void)modelDidLoad:(id)model {
-    ABDispatchAsyncOnMainThread(^{
-        self.rootView.loadingView.visible = NO;
-        [self.rootView fillWithModel];
-    });
 }
 
 @end

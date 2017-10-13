@@ -16,7 +16,6 @@
 - (void)fillWithModel:(ABUser *)model {
     self.userImage.imageModel = model.imageModel;
     self.userFullName.text = model.fullname;
-    self.userCity.text = model.hometown;
 }
 
 @end

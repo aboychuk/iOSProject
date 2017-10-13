@@ -15,7 +15,6 @@
 @property (nonatomic, strong)   IBOutlet    UIButton    *friendsButton;
 @property (nonatomic, strong)   IBOutlet    ABImageView *userImage;
 @property (nonatomic, strong)   IBOutlet    UILabel     *userFullName;
-@property (nonatomic, strong)   IBOutlet    UILabel     *userCity;
 
 - (void)fillWithModel:(ABUser *)model;
 

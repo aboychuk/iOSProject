@@ -8,6 +8,8 @@
 
 #import "ABFBViewController.h"
 
+#import "ABArrayModel.h"
+
 @class ABUsersModel;
 
 @interface ABFriendsViewController : ABFBViewController <UITableViewDelegate, UITableViewDataSource>

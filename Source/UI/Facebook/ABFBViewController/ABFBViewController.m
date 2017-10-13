@@ -50,19 +50,26 @@ ABViewControllerRootViewProperty(ABFBViewController, rootView, ABView)
 #pragma mark ABModelObserver
 
 - (void)modelWillLoad:(id)model {
+    ABWeakify(self);
     ABDispatchAsyncOnMainThread(^{
+        ABStrongifyAndReturnIfNil(self);
         self.rootView.loadingView.visible = YES;
     });
 }
 
 - (void)modelDidLoad:(id)model {
+    ABWeakify(self);
     ABDispatchAsyncOnMainThread(^{
+        ABStrongifyAndReturnIfNil(self);
         self.rootView.loadingView.visible = NO;
+        [self.rootView fillWithModel:model];
     });
 }
 
 - (void)modelDidFailLoading:(id)model {
+    ABWeakify(self);
     ABDispatchAsyncOnMainThread(^{
+        ABStrongifyAndReturnIfNil(self);
         self.rootView.loadingView.visible = NO;
     });
 }

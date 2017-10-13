@@ -18,6 +18,7 @@
 #import "ABLoginViewController.h"
 #import "ABFriendsViewController.h"
 #import "ABFBFriendsContext.h"
+#import "ABFBUserDetailContext.h"
 
 #import "ABGCDExtension.h"
 #import "ABMacro.h"
@@ -38,12 +39,14 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-#pragma mark -
-#pragma mark View Lifecycle
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.rootView fillWithModel:self.user];
+    
+    if (self.user.isAuthorized) {
+        [self.rootView fillWithModel:self.user];
+    } else {
+        self.context = [[ABFBUserDetailContext alloc] initWithModel:self.user];
+    }
 }
 
 #pragma mark -
@@ -54,20 +57,9 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
     
     ABFriendsViewController *friendsController = [ABFriendsViewController new];
     friendsController.user = user;
-    friendsController.friends = user.friends;
     friendsController.context = [[ABFBFriendsContext alloc] initWithModel:user];
     
     [self.navigationController pushViewController:friendsController animated:YES];
-}
-
-#pragma mark -
-#pragma mark ABModelObserver
-
-- (void)modelDidLoad:(id)model {
-    ABDispatchAsyncOnMainThread(^{
-        self.rootView.loadingView.visible = NO;
-        [self.rootView fillWithModel:model];
-    });
 }
 
 @end
