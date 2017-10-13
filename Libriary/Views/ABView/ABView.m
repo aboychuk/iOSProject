@@ -38,7 +38,14 @@
 }
 
 #pragma mark -
-#pragma mark Private
+#pragma mark Public Methods
+
+- (void)fillWithModel:(id)model {
+    
+}
+
+#pragma mark -
+#pragma mark Private Methods
 
 - (void)prepareLoadingViewFromNib {
     ABLoadingView *loadingView = self.loadingView;

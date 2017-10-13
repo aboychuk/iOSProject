@@ -12,5 +12,7 @@
 
 @interface ABView : UIView
 @property (nonatomic, strong)   ABLoadingView   *loadingView;
+//Method created for subclassing do not call it directly;
+- (void)fillWithModel:(id)model;
 
 @end
