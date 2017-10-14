@@ -8,6 +8,10 @@
 
 #import "ABFBUserContext.h"
 
-@interface ABGetContext : ABFBUserContext
+@interface ABFBGetContext : ABFBUserContext
+@property (nonatomic, strong)   NSString        *graphPath;
+@property (nonatomic, strong)   NSDictionary    *parameters;
+//Method created for overriding, do not call it directly
+- (void)parseResult:(id)result;
 
 @end

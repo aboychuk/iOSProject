@@ -6,8 +6,12 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import "ABFBUserContext.h"
+#import "ABFBGetContext.h"
 
-@interface ABFBUserDetailContext : ABFBUserContext
+@interface ABFBUserDetailContext : ABFBGetContext
+@property (nonatomic, strong)   NSString        *graphPath;
+@property (nonatomic, strong)   NSDictionary    *parameters;
+
+- (void)parseResult:(id)result;
 
 @end

@@ -41,7 +41,6 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     if (self.user.isAuthorized) {
         [self.rootView fillWithModel:self.user];
     } else {
