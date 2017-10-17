@@ -13,14 +13,15 @@ typedef void(^ABContextCompletionHandler)(NSUInteger modelState);
 @class ABModel;
 
 @interface ABContext : NSObject
-@property (nonatomic, strong)   id      model;
+@property (nonatomic, strong)   ABModel      *model;
 
-+ (instancetype)contextWithModel:(id)model;
++ (instancetype)contextWithModel:(ABModel *)model;
 
 - (instancetype)initWithModel:(ABModel *)model;
 
 //Methods Created for overriding, do not call directly
 - (void)execute;
+- (void)executeWithCompletionHandler:(ABContextCompletionHandler)handler;
 - (void)cancel;
 
 @end

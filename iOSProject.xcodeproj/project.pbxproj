@@ -683,11 +683,11 @@
 			children = (
 				9718BBBA1F8BA4DD00DCA91E /* ABContext */,
 				9718BBC91F8BA4DD00DCA91E /* ABFBUserContext */,
-				9718BBBD1F8BA4DD00DCA91E /* ABFBFriendsContext */,
 				9718BBC01F8BA4DD00DCA91E /* ABFBGetContext */,
+				9718BBCC1F8BA4DD00DCA91E /* ABFBUserDetailContext */,
+				9718BBBD1F8BA4DD00DCA91E /* ABFBFriendsContext */,
 				9718BBC31F8BA4DD00DCA91E /* ABFBLoginContext */,
 				9718BBC61F8BA4DD00DCA91E /* ABFBLogoutContext */,
-				9718BBCC1F8BA4DD00DCA91E /* ABFBUserDetailContext */,
 			);
 			path = Contexts;
 			sourceTree = "<group>";

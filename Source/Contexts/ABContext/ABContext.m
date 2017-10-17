@@ -10,12 +10,14 @@
 
 #import "ABModel.h"
 
+#import "ABMacro.h"
+
 @implementation ABContext
 
 #pragma mark -
 #pragma mark Class Methods
 
-+ (instancetype)contextWithModel:(id)model {
++ (instancetype)contextWithModel:(ABModel *)model {
     return [[self alloc] initWithModel:model];
 }
 
@@ -39,7 +41,11 @@
 #pragma mark Public Methods
 
 - (void)execute {
-    [self.model loadModel];
+    ABWeakify(self);
+    [self executeWithCompletionHandler:^(NSUInteger modelState) {
+        ABStrongifyAndReturnIfNil(self);
+        self.model.state = modelState;
+    }];
     
 }
 
