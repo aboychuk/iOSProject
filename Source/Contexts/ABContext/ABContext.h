@@ -13,7 +13,7 @@ typedef void(^ABContextCompletionHandler)(NSUInteger modelState);
 @class ABModel;
 
 @interface ABContext : NSObject
-@property (nonatomic, strong)   ABModel      *model;
+@property (nonatomic, readonly)   id  model;
 
 + (instancetype)contextWithModel:(ABModel *)model;
 

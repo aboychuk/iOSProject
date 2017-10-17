@@ -12,6 +12,11 @@
 
 #import "ABMacro.h"
 
+@interface ABContext ()
+@property (nonatomic, strong)   ABModel *model;
+
+@end
+
 @implementation ABContext
 
 #pragma mark -
@@ -46,6 +51,9 @@
         ABStrongifyAndReturnIfNil(self);
         self.model.state = modelState;
     }];
+}
+
+- (void)executeWithCompletionHandler:(ABContextCompletionHandler)handler {
     
 }
 
