@@ -36,29 +36,54 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 
 - (IBAction)onLogout:(UIButton *)sender {
     self.context = [ABFBLogoutContext new];
-    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    if (self.user.isAuthorized) {
-        [self.rootView fillWithModel:self.user];
-    } else {
-        self.context = [[ABFBUserDetailContext alloc] initWithModel:self.user];
-    }
-}
 
 #pragma mark -
 #pragma mark Private
 
 - (void)showFriendsViewController {
-    ABUser *user = self.user;
-    
     ABFriendsViewController *friendsController = [ABFriendsViewController new];
-    friendsController.user = user;
-    friendsController.context = [[ABFBFriendsContext alloc] initWithModel:user];
+    friendsController.user = self.user;
     
     [self.navigationController pushViewController:friendsController animated:YES];
+}
+
+#pragma mark -
+#pragma mark ABModelObserver
+
+- (void)modelWillLoad:(id)model {
+    ABWeakify(self);
+    ABDispatchAsyncOnMainThread(^{
+        ABStrongifyAndReturnIfNil(self);
+        self.rootView.loadingView.visible = YES;
+    });
+}
+
+- (void)modelDidLoad:(id)model {
+    ABWeakify(self);
+    ABDispatchAsyncOnMainThread(^{
+        ABStrongifyAndReturnIfNil(self);
+        self.rootView.loadingView.visible = NO;
+        [self.rootView fillWithModel:model];
+    });
+}
+
+- (void)modelDidUnloaded:(id)model {
+    ABWeakify(self);
+    ABDispatchAsyncOnMainThread(^{
+        ABStrongifyAndReturnIfNil(self);
+        self.rootView.loadingView.visible = NO;
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    });
+}
+
+- (void)modelDidFailLoading:(id)model {
+    ABWeakify(self);
+    ABDispatchAsyncOnMainThread(^{
+        ABStrongifyAndReturnIfNil(self);
+        self.rootView.loadingView.visible = NO;
+    });
 }
 
 @end

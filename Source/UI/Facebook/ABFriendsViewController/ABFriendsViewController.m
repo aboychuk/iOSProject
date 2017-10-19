@@ -18,6 +18,7 @@
 #import "ABUserDetailViewController.h"
 #import "ABArrayModelChange.h"
 #import "ABFBUserDetailContext.h"
+#import "ABFBFriendsContext.h"
 
 #import "ABMacro.h"
 #import "UITableView+ABExtension.h"
@@ -52,6 +53,7 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavigationBar];
+    self.context = [[ABFBFriendsContext alloc] initWithModel:self.user];
 }
 
 #pragma mark -
@@ -88,6 +90,44 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 - (void)setupNavigationBar {
     UINavigationItem *navigationItem = self.navigationItem;
     navigationItem.title = ABNavigationBarTitle;
+}
+
+#pragma mark -
+#pragma mark ABModelObserver
+
+- (void)modelWillLoad:(id)model {
+    ABWeakify(self);
+    ABDispatchAsyncOnMainThread(^{
+        ABStrongifyAndReturnIfNil(self);
+        self.rootView.loadingView.visible = YES;
+    });
+}
+
+- (void)modelDidLoad:(id)model {
+    ABWeakify(self);
+    ABDispatchAsyncOnMainThread(^{
+        ABStrongifyAndReturnIfNil(self);
+        self.rootView.loadingView.visible = NO;
+        [self setupNavigationBar];
+        [self.rootView fillWithModel:model];
+    });
+}
+
+- (void)modelDidUnloaded:(id)model {
+    ABWeakify(self);
+    ABDispatchAsyncOnMainThread(^{
+        ABStrongifyAndReturnIfNil(self);
+        self.rootView.loadingView.visible = NO;
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    });
+}
+
+- (void)modelDidFailLoading:(id)model {
+    ABWeakify(self);
+    ABDispatchAsyncOnMainThread(^{
+        ABStrongifyAndReturnIfNil(self);
+        self.rootView.loadingView.visible = NO;
+    });
 }
 
 @end

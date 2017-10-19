@@ -46,16 +46,6 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 }
 
 #pragma mark -
-#pragma mark View Lifecycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    if (self.user.isAuthorized) {
-        [self showUserDetailViewController];
-    }
-}
-
-#pragma mark -
 #pragma mark Private
 
 - (void)showUserDetailViewController {
@@ -68,9 +58,11 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 #pragma mark -
 #pragma mark ABModelObserver
 
-- (void)modelDidLoad:(id)model {
+- (void)modelWillLoad:(id)model {
+    ABWeakify(self);
     ABDispatchAsyncOnMainThread(^{
-        self.rootView.loadingView.visible = NO;
+        ABStrongifyAndReturnIfNil(self);
+        self.rootView.loadingView.visible = YES;
         [self showUserDetailViewController];
     });
 }

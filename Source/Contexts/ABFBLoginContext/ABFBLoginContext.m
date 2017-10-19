@@ -50,6 +50,7 @@ static NSString *const ABUserFriends = @"user_friends";
                                 if (!(error && result.isCancelled)) {
                                     self.user.userID = [FBSDKAccessToken currentAccessToken].userID;
                                     [self loadContext];
+                                    handler(ABModelWillLoad);
                                 }
                             }];
 }
