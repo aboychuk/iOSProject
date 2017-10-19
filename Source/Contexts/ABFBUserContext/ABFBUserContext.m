@@ -19,12 +19,4 @@
     return self.model;
 }
 
-#pragma mark -
-#pragma mark Public Methods
-
-- (void)cancel {
-    FBSDKLoginManager *loginManager = [FBSDKLoginManager new];
-    [loginManager logOut];
-}
-
 @end

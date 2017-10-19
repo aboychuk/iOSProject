@@ -37,12 +37,12 @@ static NSString *const ABUserFriends = @"user_friends";
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)execute {
+- (void)executeWithCompletionHandler:(ABContextCompletionHandler)handler {
     if (self.user.isAuthorized) {
         [self loadContext];
     }
-    ABWeakify(self);
     FBSDKLoginManager *login = [FBSDKLoginManager new];
+    ABWeakify(self);
     [login logInWithReadPermissions:@[ABPublicProfile, ABUserFriends]
                  fromViewController:nil
                             handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {

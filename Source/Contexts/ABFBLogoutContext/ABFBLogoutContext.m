@@ -10,8 +10,11 @@
 
 @implementation ABFBLogoutContext
 
-- (void)execute {
+- (void)executeWithCompletionHandler:(ABContextCompletionHandler)handler {
     [[FBSDKLoginManager new] logOut];
+    if (handler) {
+        handler(ABModelDidUnloaded);
+    }
 }
 
 @end

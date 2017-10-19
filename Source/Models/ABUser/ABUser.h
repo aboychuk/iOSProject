@@ -24,6 +24,5 @@
 @property (nonatomic, copy)     NSString        *userID;
 @property (nonatomic, strong)   NSURL           *imageUrl;
 @property (nonatomic, strong)   ABUsersModel    *friends;
-@property (nonatomic, copy)     NSString        *hometown;
 
 @end

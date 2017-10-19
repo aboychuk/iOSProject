@@ -19,15 +19,36 @@
 #pragma mark Public Methods
 
 - (void)execute {
-    [self.user loadModel];
-    ABWeakify(self);
+    ABUser *user = self.user;
+    NSUInteger modelState = self.user.state;
+    
+    @synchronized (user) {
+        if (modelState == ABModelDidLoad || modelState == ABModelWillLoad) {
+            user.state = modelState;
+            return;
+        }
+        user.state = ABModelWillLoad;
+    }
+    [super execute];
+}
+
+- (void)executeWithCompletionHandler:(ABContextCompletionHandler)handler {
     FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:self.graphPath
                                                                    parameters:self.parameters];
+    ABWeakify(self);
     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-        if (!error) {
-            ABStrongifyAndReturnIfNil(self);
+        ABStrongifyAndReturnIfNil(self);
+        NSUInteger modelState = self.user.state;
+        
+        if (result) {
             [self parseResult:result];
-            self.user.state = ABModelDidLoad;
+            modelState = ABModelDidLoad;
+        }
+        if (error) {
+            modelState = ABModelDidFailLoading;
+        }
+        if (handler) {
+            handler(modelState);
         }
     }];
 }
@@ -35,6 +56,5 @@
 - (void)parseResult:(id)result {
 
 }
-
 
 @end
