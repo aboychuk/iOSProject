@@ -6,11 +6,12 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import "ABFBUserContext.h"
+#import "ABFBContext.h"
 
-@interface ABFBGetContext : ABFBUserContext
+@interface ABFBGetContext : ABFBContext
 @property (nonatomic, strong)   NSString        *graphPath;
 @property (nonatomic, strong)   NSDictionary    *parameters;
+@property (nonatomic, readonly) NSString        *plistName;
 //Method created for overriding, do not call it directly
 - (void)parseResult:(id)result;
 

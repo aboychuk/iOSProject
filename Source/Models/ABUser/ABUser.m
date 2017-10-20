@@ -12,6 +12,7 @@
 #import "ABUser.h"
 
 #import "ABImageModel.h"
+#import "ABUsersModel.h"
 
 #import "ABRandomNumber.h"
 #import "NSString+ABExtensions.h"
@@ -28,11 +29,14 @@ static NSString * const ABSurname = @"surname";
 #pragma mark
 #pragma mark Initializations and Deallocations
 
+- (void)dealloc {
+    self.friends = nil;
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.name = [NSString randomName];
-        self.surname = [NSString randomName];
+        self.friends = [ABUsersModel new];
     }
     
     return self;

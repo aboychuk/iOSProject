@@ -12,8 +12,29 @@
 #import "ABFBParser.h"
 
 #import "ABMacro.h"
+#import "NSFileManager+ABExtension.h"
+
+@interface ABFBGetContext ()
+@property (nonatomic, readonly) NSString    *pathToCachedResult;
+
+- (BOOL)saveResult:(id)result;
+- (id)loadResult;
+
+@end
 
 @implementation ABFBGetContext
+
+@dynamic pathToCachedResult;
+
+#pragma mark -
+#pragma mark Accessors
+
+- (NSString *)pathToCachedResult {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *directoryPath = [[paths firstObject] stringByAppendingPathComponent:self.plistName];
+    
+    return directoryPath;
+}
 
 #pragma mark -
 #pragma mark Public Methods
@@ -24,7 +45,7 @@
     
     @synchronized (user) {
         if (modelState == ABModelDidLoad || modelState == ABModelWillLoad) {
-            user.state = modelState;
+            [user notifyOfState:modelState];
             return;
         }
         user.state = ABModelWillLoad;
@@ -39,13 +60,18 @@
     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
         ABStrongifyAndReturnIfNil(self);
         NSUInteger modelState = self.user.state;
-        
         if (result) {
-            [self parseResult:result];
-            modelState = ABModelDidLoad;
+            if ([self saveResult:result]) {
+                [self parseResult:result];
+                modelState = ABModelDidLoad;
+            }
         }
         if (error) {
-            modelState = ABModelDidFailLoading;
+            if (![self loadResult]) {
+                modelState = ABModelDidFailLoading;
+
+            }
+            modelState = ABModelDidLoad;
         }
         if (handler) {
             handler(modelState);
@@ -55,6 +81,14 @@
 
 - (void)parseResult:(id)result {
 
+}
+
+- (BOOL)saveResult:(id)result {
+    return [NSKeyedArchiver archiveRootObject:result toFile:self.pathToCachedResult];
+}
+
+- (id)loadResult {
+    return [NSKeyedUnarchiver unarchiveObjectWithFile:self.pathToCachedResult];
 }
 
 @end

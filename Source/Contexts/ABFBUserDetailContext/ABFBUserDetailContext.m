@@ -15,11 +15,13 @@
 
 static NSString *const ABFields         = @"fields";
 static NSString *const ABFieldsKeys     = @"first_name,last_name,picture.type(large)";
+static NSString *const ABPlistName       = @"UserDetail.plist";
 
 @implementation ABFBUserDetailContext
 
 @dynamic graphPath;
 @dynamic parameters;
+@dynamic plistName;
 
 #pragma mark -
 #pragma mark Accessors
@@ -30,6 +32,10 @@ static NSString *const ABFieldsKeys     = @"first_name,last_name,picture.type(la
 
 - (NSDictionary *)parameters {
     return @{ABFields : ABFieldsKeys };
+}
+
+- (NSString *)plistName {
+    return ABPlistName;
 }
 
 #pragma mark - 
