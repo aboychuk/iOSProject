@@ -11,7 +11,10 @@
 #import "ABUser.h"
 #import "ABContext.h"
 
-@interface ABFBViewController : UIViewController
+#import "ABMacro.h"
+#import "ABGCDExtension.h"
+
+@interface ABFBViewController : UIViewController <ABModelObserver>
 @property (nonatomic, strong)   ABUser      *user;
 @property (nonatomic, strong)   ABContext   *context;
 

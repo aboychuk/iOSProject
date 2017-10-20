@@ -6,22 +6,12 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-
 #import "ABUserDetailViewController.h"
 
 #import "ABUserDetailView.h"
-#import "ABUser.h"
-#import "ABUsersModel.h"
 #import "ABFBLogoutContext.h"
-#import "ABLoginViewController.h"
 #import "ABFriendsViewController.h"
 #import "ABFBGetFriendsContext.h"
-#import "ABFBGetUserContext.h"
-
-#import "ABGCDExtension.h"
-#import "ABMacro.h"
 
 ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDetailView);
 
@@ -31,20 +21,23 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 #pragma mark Actions
 
 - (IBAction)onFriends:(UIButton *)sender {
-    [self showFriendsViewController];
+    self.context = [[ABFBGetFriendsContext alloc] initWithModel:self.user];
 }
 
 - (IBAction)onLogout:(UIButton *)sender {
-    self.context = [ABFBLogoutContext new];
+    self.context = [[ABFBLogoutContext alloc] initWithModel:self.user];
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.rootView fillWithModel:self.user];
+}
 
 #pragma mark -
 #pragma mark Private
 
 - (void)showFriendsViewController {
     ABFriendsViewController *friendsController = [ABFriendsViewController new];
-    friendsController.user = self.user;
     friendsController.friends = self.user.friends;
     
     [self.navigationController pushViewController:friendsController animated:YES];
@@ -62,11 +55,12 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
     });
 }
 
-- (void)modelDidFailLoading:(id)model {
+- (void)modelDidLoad:(id)model {
     ABWeakify(self);
     ABDispatchAsyncOnMainThread(^{
         ABStrongifyAndReturnIfNil(self);
         self.rootView.loadingView.visible = NO;
+        [self showFriendsViewController];
     });
 }
 

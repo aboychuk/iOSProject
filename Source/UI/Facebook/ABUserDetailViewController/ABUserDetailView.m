@@ -13,9 +13,9 @@
 
 @implementation ABUserDetailView
 
-- (void)fillWithModel:(ABUser *)model {
-    self.userImage.imageModel = model.imageModel;
-    self.userFullName.text = model.fullname;
+- (void)fillWithModel:(ABUser *)user {
+    self.userImage.imageModel = user.imageModel;
+    self.userFullName.text = user.fullname;
 }
 
 @end

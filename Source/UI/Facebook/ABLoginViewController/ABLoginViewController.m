@@ -10,12 +10,7 @@
 
 #import "ABLoginView.h"
 #import "ABUserDetailViewController.h"
-#import "ABContext.h"
 #import "ABFBLoginContext.h"
-#import "ABUser.h"
-
-#import "ABMacro.h"
-#import "ABGCDExtension.h"
 
 ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 
@@ -58,11 +53,11 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 #pragma mark -
 #pragma mark ABModelObserver
 
-- (void)modelWillLoad:(id)model {
+- (void)modelDidLoad:(id)model {
     ABWeakify(self);
     ABDispatchAsyncOnMainThread(^{
         ABStrongifyAndReturnIfNil(self);
-        self.rootView.loadingView.visible = YES;
+        self.rootView.loadingView.visible = NO;
         [self showUserDetailViewController];
     });
 }

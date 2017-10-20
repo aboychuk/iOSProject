@@ -57,15 +57,6 @@ ABViewControllerRootViewProperty(ABFBViewController, rootView, ABView)
     });
 }
 
-- (void)modelDidLoad:(id)model {
-    ABWeakify(self);
-    ABDispatchAsyncOnMainThread(^{
-        ABStrongifyAndReturnIfNil(self);
-        self.rootView.loadingView.visible = NO;
-        [self.rootView fillWithModel:model];
-    });
-}
-
 - (void)modelDidFailLoading:(id)model {
     ABWeakify(self);
     ABDispatchAsyncOnMainThread(^{

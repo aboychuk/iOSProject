@@ -8,19 +8,14 @@
 
 #import "ABFriendsViewController.h"
 
-#import "ABUser.h"
 #import "ABFriendsView.h"
 #import "ABUserCell.h"
-#import "ABLoadingView.h"
 #import "ABUsersModel.h"
-#import "ABGCDExtension.h"
-#import "ABUserDetailView.h"
 #import "ABUserDetailViewController.h"
 #import "ABArrayModelChange.h"
 #import "ABFBGetUserContext.h"
 #import "ABFBGetFriendsContext.h"
 
-#import "ABMacro.h"
 #import "UITableView+ABExtension.h"
 
 static NSString * const ABNavigationBarTitle = @"Friends";
@@ -36,24 +31,11 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 @implementation ABFriendsViewController
 
 #pragma mark -
-#pragma mark Accessors
-
-- (void)setFriends:(ABUsersModel *)friends {
-    if (_friends != friends) {
-        [_friends removeObserver:self];
-        
-        _friends = friends;
-        [_friends addObserver:self];
-    }
-}
-
-#pragma mark -
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupNavigationBar];
-    self.context = [[ABFBGetFriendsContext alloc] initWithModel:self.user];
+    [self.rootView fillWithModel];
 }
 
 #pragma mark -
@@ -76,6 +58,7 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ABUser *user = self.friends[indexPath.row];
     ABUserDetailViewController *userDetailViewController = [ABUserDetailViewController new];
+    
     ABFBGetUserContext *context = [[ABFBGetUserContext alloc] initWithModel:user];
     
     userDetailViewController.user = user;
@@ -88,46 +71,7 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 #pragma mark Private
 
 - (void)setupNavigationBar {
-    UINavigationItem *navigationItem = self.navigationItem;
-    navigationItem.title = ABNavigationBarTitle;
-}
-
-#pragma mark -
-#pragma mark ABModelObserver
-
-- (void)modelWillLoad:(id)model {
-    ABWeakify(self);
-    ABDispatchAsyncOnMainThread(^{
-        ABStrongifyAndReturnIfNil(self);
-        self.rootView.loadingView.visible = YES;
-    });
-}
-
-- (void)modelDidLoad:(id)model {
-    ABWeakify(self);
-    ABDispatchAsyncOnMainThread(^{
-        ABStrongifyAndReturnIfNil(self);
-        self.rootView.loadingView.visible = NO;
-        [self setupNavigationBar];
-        [self.rootView fillWithModel:model];
-    });
-}
-
-- (void)modelDidUnloaded:(id)model {
-    ABWeakify(self);
-    ABDispatchAsyncOnMainThread(^{
-        ABStrongifyAndReturnIfNil(self);
-        self.rootView.loadingView.visible = NO;
-        [self.navigationController popToRootViewControllerAnimated:YES];
-    });
-}
-
-- (void)modelDidFailLoading:(id)model {
-    ABWeakify(self);
-    ABDispatchAsyncOnMainThread(^{
-        ABStrongifyAndReturnIfNil(self);
-        self.rootView.loadingView.visible = NO;
-    });
+    self.navigationItem.title = ABNavigationBarTitle;
 }
 
 @end
