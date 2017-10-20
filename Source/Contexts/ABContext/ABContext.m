@@ -49,7 +49,7 @@
     ABWeakify(self);
     [self executeWithCompletionHandler:^(NSUInteger modelState) {
         ABStrongifyAndReturnIfNil(self);
-        self.model.state = modelState;
+        [self.model notifyOfState:modelState];
     }];
 }
 

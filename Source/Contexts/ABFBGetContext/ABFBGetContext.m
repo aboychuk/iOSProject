@@ -46,7 +46,9 @@
     @synchronized (user) {
         if (modelState == ABModelDidLoad || modelState == ABModelWillLoad) {
             [user notifyOfState:modelState];
-            return;
+            if (modelState == ABModelDidLoad) {
+                return;
+            }
         }
         user.state = ABModelWillLoad;
     }
@@ -61,16 +63,16 @@
         ABStrongifyAndReturnIfNil(self);
         NSUInteger modelState = self.user.state;
         if (result) {
-            if ([self saveResult:result]) {
-                [self parseResult:result];
-                modelState = ABModelDidLoad;
-            }
+            [self saveResult:result];
+            [self parseResult:result];
+            
+            modelState = ABModelDidLoad;
         }
         if (error) {
             if (![self loadResult]) {
                 modelState = ABModelDidFailLoading;
-
             }
+            [self parseResult:[self loadResult]];
             modelState = ABModelDidLoad;
         }
         if (handler) {
