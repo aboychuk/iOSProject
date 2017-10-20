@@ -6,8 +6,8 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import "ABFBUserContext.h"
+#import "ABFBContext.h"
 
-@interface ABFBLogoutContext : ABFBUserContext
+@interface ABFBLogoutContext : ABFBContext
 
 @end

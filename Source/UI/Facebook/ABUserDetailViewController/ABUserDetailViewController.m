@@ -45,29 +45,13 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 - (void)showFriendsViewController {
     ABFriendsViewController *friendsController = [ABFriendsViewController new];
     friendsController.user = self.user;
+    friendsController.friends = self.user.friends;
     
     [self.navigationController pushViewController:friendsController animated:YES];
 }
 
 #pragma mark -
 #pragma mark ABModelObserver
-
-- (void)modelWillLoad:(id)model {
-    ABWeakify(self);
-    ABDispatchAsyncOnMainThread(^{
-        ABStrongifyAndReturnIfNil(self);
-        self.rootView.loadingView.visible = YES;
-    });
-}
-
-- (void)modelDidLoad:(id)model {
-    ABWeakify(self);
-    ABDispatchAsyncOnMainThread(^{
-        ABStrongifyAndReturnIfNil(self);
-        self.rootView.loadingView.visible = NO;
-        [self.rootView fillWithModel:model];
-    });
-}
 
 - (void)modelDidUnloaded:(id)model {
     ABWeakify(self);
