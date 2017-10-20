@@ -8,7 +8,7 @@
 
 #import "ABFBLoginContext.h"
 
-#import "ABFBUserDetailContext.h"
+#import "ABFBGetUserContext.h"
 
 #import "ABMacro.h"
 
@@ -16,7 +16,7 @@ static NSString *const ABPublicProfile = @"public_profile";
 static NSString *const ABUserFriends = @"user_friends";
 
 @interface ABFBLoginContext ()
-@property (nonatomic, strong)   ABFBUserDetailContext *context;
+@property (nonatomic, strong)   ABFBGetUserContext *context;
 
 @end
 
@@ -25,7 +25,7 @@ static NSString *const ABUserFriends = @"user_friends";
 #pragma mark -
 #pragma mark Accessors
 
-- (void)setContext:(ABFBUserDetailContext *)context {
+- (void)setContext:(ABFBGetUserContext *)context {
     if (_context != context) {
         [_context cancel];
         
@@ -56,7 +56,7 @@ static NSString *const ABUserFriends = @"user_friends";
 }
 
 - (void)loadContext {
-    self.context = [[ABFBUserDetailContext alloc] initWithModel:self.model];
+    self.context = [[ABFBGetUserContext alloc] initWithModel:self.model];
 }
 
 @end

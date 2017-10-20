@@ -17,8 +17,8 @@
 #import "ABUserDetailView.h"
 #import "ABUserDetailViewController.h"
 #import "ABArrayModelChange.h"
-#import "ABFBUserDetailContext.h"
-#import "ABFBFriendsContext.h"
+#import "ABFBGetUserContext.h"
+#import "ABFBGetFriendsContext.h"
 
 #import "ABMacro.h"
 #import "UITableView+ABExtension.h"
@@ -53,7 +53,7 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavigationBar];
-    self.context = [[ABFBFriendsContext alloc] initWithModel:self.user];
+    self.context = [[ABFBGetFriendsContext alloc] initWithModel:self.user];
 }
 
 #pragma mark -
@@ -76,7 +76,7 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ABUser *user = self.friends[indexPath.row];
     ABUserDetailViewController *userDetailViewController = [ABUserDetailViewController new];
-    ABFBUserDetailContext *context = [[ABFBUserDetailContext alloc] initWithModel:user];
+    ABFBGetUserContext *context = [[ABFBGetUserContext alloc] initWithModel:user];
     
     userDetailViewController.user = user;
     userDetailViewController.context = context;

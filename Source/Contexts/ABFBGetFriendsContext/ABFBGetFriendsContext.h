@@ -1,5 +1,5 @@
 //
-//  ABFBUserDetailContext.h
+//  ABFBGetFriendsContext.h
 //  iOSProject
 //
 //  Created by Andrew Boychuk on 10/6/17.
@@ -8,10 +8,8 @@
 
 #import "ABFBGetContext.h"
 
-@interface ABFBUserDetailContext : ABFBGetContext
+@interface ABFBGetFriendsContext : ABFBGetContext
 @property (nonatomic, strong)   NSString        *graphPath;
 @property (nonatomic, strong)   NSDictionary    *parameters;
-
-- (void)parseResult:(id)result;
 
 @end

@@ -17,8 +17,8 @@
 #import "ABFBLogoutContext.h"
 #import "ABLoginViewController.h"
 #import "ABFriendsViewController.h"
-#import "ABFBFriendsContext.h"
-#import "ABFBUserDetailContext.h"
+#import "ABFBGetFriendsContext.h"
+#import "ABFBGetUserContext.h"
 
 #import "ABGCDExtension.h"
 #import "ABMacro.h"
