@@ -8,7 +8,7 @@
 
 #import "ABRandomNumber.h"
 
-BOOL ABRandomBool() {
+BOOL ABRandomBool(void) {
     return arc4random_uniform(2);
 }
 

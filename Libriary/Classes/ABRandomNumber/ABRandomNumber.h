@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-BOOL ABRandomBool();
+BOOL ABRandomBool(void);
 NSRange ABMakeRange(NSUInteger firstNumber, NSUInteger lastNumber);
 NSUInteger ABRandomValueInRange(NSRange range);
 NSUInteger ABRandomWithMaxValue(NSUInteger value);

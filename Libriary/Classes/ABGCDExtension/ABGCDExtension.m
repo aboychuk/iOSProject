@@ -15,11 +15,11 @@ static NSString *ABConcurrent   = @"GCDConcurrentQueue";
 
 @implementation ABGCDExtension
 
-dispatch_queue_t ABQueueSerial() {
+dispatch_queue_t ABQueueSerial(void) {
     return dispatch_queue_create([ABSerial cStringUsingEncoding:NSUTF8StringEncoding], DISPATCH_QUEUE_SERIAL);
 }
 
-dispatch_queue_t ABQueueConcurrent() {
+dispatch_queue_t ABQueueConcurrent(void) {
     return dispatch_queue_create([ABConcurrent cStringUsingEncoding:NSUTF8StringEncoding], DISPATCH_QUEUE_CONCURRENT);
 }
 
@@ -27,11 +27,11 @@ dispatch_queue_t ABQueueWithQOSClass (long cls) {
     return dispatch_get_global_queue(cls, 0);
 }
 
-dispatch_queue_t ABBackgroundQueue() {
+dispatch_queue_t ABBackgroundQueue(void) {
     return ABQueueWithQOSClass(QOS_CLASS_BACKGROUND);
 }
 
-dispatch_queue_t ABMainQueue() {
+dispatch_queue_t ABMainQueue(void) {
     return dispatch_get_main_queue();
 }
 
