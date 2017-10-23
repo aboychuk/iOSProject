@@ -15,47 +15,31 @@
 static NSString *const ABPublicProfile = @"public_profile";
 static NSString *const ABUserFriends = @"user_friends";
 
-@interface ABFBLoginContext ()
-@property (nonatomic, strong)   ABFBGetUserContext *context;
-
-@end
-
 @implementation ABFBLoginContext
-
-#pragma mark -
-#pragma mark Accessors
-
-- (void)setContext:(ABFBGetUserContext *)context {
-    if (_context != context) {
-        [_context cancel];
-        
-        _context = context;
-        [context execute];
-    }
-}
 
 #pragma mark -
 #pragma mark Public Methods
 
 - (void)executeWithCompletionHandler:(ABContextCompletionHandler)handler {
+    __block NSUInteger state = self.user.state;
     if (self.user.isAuthorized) {
-        [self loadContext];
-    }
-    FBSDKLoginManager *login = [FBSDKLoginManager new];
-    ABWeakify(self);
-    [login logInWithReadPermissions:@[ABPublicProfile, ABUserFriends]
-                 fromViewController:nil
-                            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-                                ABStrongifyAndReturnIfNil(self);
-                                if (!(error && result.isCancelled)) {
-                                    self.user.userID = [FBSDKAccessToken currentAccessToken].userID;
-                                    [self loadContext];
-                                }
-                            }];
-}
+        state= ABModelDidLoad;
+        return;
+    } else {
+        FBSDKLoginManager *login = [FBSDKLoginManager new];
+        ABWeakify(self);
+        [login logInWithReadPermissions:@[ABPublicProfile, ABUserFriends]
+                     fromViewController:nil
+                                handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+                                    ABStrongifyAndReturnIfNil(self);
+                                    if (!(error && result.isCancelled)) {
+                                        self.user.userID = [FBSDKAccessToken currentAccessToken].userID;
+                                        state = ABModelDidLoad;
+                                    }
+                                }];
 
-- (void)loadContext {
-    self.context = [[ABFBGetUserContext alloc] initWithModel:self.model];
+    }
+    handler(state);
 }
 
 @end
