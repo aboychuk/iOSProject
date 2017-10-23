@@ -15,7 +15,9 @@
 #import "ABGCDExtension.h"
 
 @interface ABFBViewController : UIViewController <ABModelObserver>
-@property (nonatomic, strong)   ABUser      *user;
+@property (nonatomic, strong)   ABModel     *model;
 @property (nonatomic, strong)   ABContext   *context;
+
+- (void)fillWithModel:(ABModel *)model;
 
 @end

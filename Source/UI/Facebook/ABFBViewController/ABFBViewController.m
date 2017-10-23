@@ -21,19 +21,19 @@ ABViewControllerRootViewProperty(ABFBViewController, rootView, ABView)
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    self.user = nil;
+    self.model = nil;
     self.context = nil;
 }
 
 #pragma mark -
 #pragma mark Accessors
 
-- (void)setUser:(ABUser *)user {
-    if (_user != user) {
-        [_user removeObserver:self];
+- (void)setModel:(ABModel *)model {
+    if (_model != model) {
+        [_model removeObserver:self];
         
-        _user = user;
-        [_user addObserver:self];
+        _model = model;
+        [_model addObserver:self];
     }
 }
 
@@ -47,6 +47,13 @@ ABViewControllerRootViewProperty(ABFBViewController, rootView, ABView)
 }
 
 #pragma mark -
+#pragma mark Overriden Methods
+
+- (void)fillWithModel:(ABModel *)model {
+    
+}
+
+#pragma mark -
 #pragma mark ABModelObserver
 
 - (void)modelWillLoad:(id)model {
@@ -54,6 +61,15 @@ ABViewControllerRootViewProperty(ABFBViewController, rootView, ABView)
     ABDispatchAsyncOnMainThread(^{
         ABStrongifyAndReturnIfNil(self);
         self.rootView.loadingView.visible = YES;
+    });
+}
+
+- (void)modelDidLoad:(id)model {
+    ABWeakify(self);
+    ABDispatchAsyncOnMainThread(^{
+        ABStrongifyAndReturnIfNil(self);
+        self.rootView.loadingView.visible = NO;
+        [self.rootView fillWithModel:model];
     });
 }
 
