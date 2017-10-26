@@ -20,7 +20,7 @@ static NSString *const ABUserFriends = @"user_friends";
 #pragma mark -
 #pragma mark Accessors
 
-- (ABUser *)user {
+- (ABFBCurrentUser *)user {
     return self.model;
 }
 
