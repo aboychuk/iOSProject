@@ -63,6 +63,15 @@
 		971BEF6B1FA1D47700702E86 /* ABFBGetUserContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF601FA1D47700702E86 /* ABFBGetUserContext.m */; };
 		971BEF6C1FA1D47700702E86 /* ABFBLoginContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF631FA1D47700702E86 /* ABFBLoginContext.m */; };
 		971BEF6D1FA1D47700702E86 /* ABFBLogoutContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF661FA1D47700702E86 /* ABFBLogoutContext.m */; };
+		971BEFAB1FA1D59800702E86 /* ABArrayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF941FA1D59800702E86 /* ABArrayModel.m */; };
+		971BEFAC1FA1D59800702E86 /* ABArrayModelChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF971FA1D59800702E86 /* ABArrayModelChange.m */; };
+		971BEFAD1FA1D59800702E86 /* ABArrayModelChangeAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF9A1FA1D59800702E86 /* ABArrayModelChangeAdd.m */; };
+		971BEFAE1FA1D59800702E86 /* ABArrayModelChangeMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF9C1FA1D59800702E86 /* ABArrayModelChangeMove.m */; };
+		971BEFAF1FA1D59800702E86 /* ABArrayModelChangeRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF9E1FA1D59800702E86 /* ABArrayModelChangeRemove.m */; };
+		971BEFB01FA1D59800702E86 /* ABFileSystemImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFA21FA1D59800702E86 /* ABFileSystemImageModel.m */; };
+		971BEFB11FA1D59800702E86 /* ABImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFA41FA1D59800702E86 /* ABImageModel.m */; };
+		971BEFB21FA1D59800702E86 /* ABInternetImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFA71FA1D59800702E86 /* ABInternetImageModel.m */; };
+		971BEFB31FA1D59800702E86 /* ABModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFAA1FA1D59800702E86 /* ABModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,6 +179,24 @@
 		971BEF631FA1D47700702E86 /* ABFBLoginContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFBLoginContext.m; sourceTree = "<group>"; };
 		971BEF651FA1D47700702E86 /* ABFBLogoutContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFBLogoutContext.h; sourceTree = "<group>"; };
 		971BEF661FA1D47700702E86 /* ABFBLogoutContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFBLogoutContext.m; sourceTree = "<group>"; };
+		971BEF931FA1D59800702E86 /* ABArrayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModel.h; sourceTree = "<group>"; };
+		971BEF941FA1D59800702E86 /* ABArrayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModel.m; sourceTree = "<group>"; };
+		971BEF961FA1D59800702E86 /* ABArrayModelChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChange.h; sourceTree = "<group>"; };
+		971BEF971FA1D59800702E86 /* ABArrayModelChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModelChange.m; sourceTree = "<group>"; };
+		971BEF991FA1D59800702E86 /* ABArrayModelChangeAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChangeAdd.h; sourceTree = "<group>"; };
+		971BEF9A1FA1D59800702E86 /* ABArrayModelChangeAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModelChangeAdd.m; sourceTree = "<group>"; };
+		971BEF9B1FA1D59800702E86 /* ABArrayModelChangeMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChangeMove.h; sourceTree = "<group>"; };
+		971BEF9C1FA1D59800702E86 /* ABArrayModelChangeMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModelChangeMove.m; sourceTree = "<group>"; };
+		971BEF9D1FA1D59800702E86 /* ABArrayModelChangeRemove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABArrayModelChangeRemove.h; sourceTree = "<group>"; };
+		971BEF9E1FA1D59800702E86 /* ABArrayModelChangeRemove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABArrayModelChangeRemove.m; sourceTree = "<group>"; };
+		971BEFA11FA1D59800702E86 /* ABFileSystemImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFileSystemImageModel.h; sourceTree = "<group>"; };
+		971BEFA21FA1D59800702E86 /* ABFileSystemImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFileSystemImageModel.m; sourceTree = "<group>"; };
+		971BEFA31FA1D59800702E86 /* ABImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABImageModel.h; sourceTree = "<group>"; };
+		971BEFA41FA1D59800702E86 /* ABImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABImageModel.m; sourceTree = "<group>"; };
+		971BEFA61FA1D59800702E86 /* ABInternetImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABInternetImageModel.h; sourceTree = "<group>"; };
+		971BEFA71FA1D59800702E86 /* ABInternetImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABInternetImageModel.m; sourceTree = "<group>"; };
+		971BEFA91FA1D59800702E86 /* ABModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABModel.h; sourceTree = "<group>"; };
+		971BEFAA1FA1D59800702E86 /* ABModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABModel.m; sourceTree = "<group>"; };
 		CBE27B6C8B9F1CA6ED2CFFAA /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E470E32AE2A3C09EA831FECF /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -239,6 +266,7 @@
 		971BEE721FA1D42300702E86 /* Libriary */ = {
 			isa = PBXGroup;
 			children = (
+				971BEF911FA1D59800702E86 /* Models */,
 				971BEE731FA1D42300702E86 /* Categories */,
 				971BEE951FA1D42300702E86 /* Classes */,
 				971BEEB21FA1D42300702E86 /* Macro */,
@@ -729,6 +757,87 @@
 			path = ABFBLogoutContext;
 			sourceTree = "<group>";
 		};
+		971BEF911FA1D59800702E86 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				971BEF921FA1D59800702E86 /* ABArrayModel */,
+				971BEF9F1FA1D59800702E86 /* ABImageModel */,
+				971BEFA81FA1D59800702E86 /* ABModel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		971BEF921FA1D59800702E86 /* ABArrayModel */ = {
+			isa = PBXGroup;
+			children = (
+				971BEF931FA1D59800702E86 /* ABArrayModel.h */,
+				971BEF941FA1D59800702E86 /* ABArrayModel.m */,
+				971BEF951FA1D59800702E86 /* ABArrayModelChange */,
+			);
+			path = ABArrayModel;
+			sourceTree = "<group>";
+		};
+		971BEF951FA1D59800702E86 /* ABArrayModelChange */ = {
+			isa = PBXGroup;
+			children = (
+				971BEF961FA1D59800702E86 /* ABArrayModelChange.h */,
+				971BEF971FA1D59800702E86 /* ABArrayModelChange.m */,
+				971BEF981FA1D59800702E86 /* Private */,
+			);
+			path = ABArrayModelChange;
+			sourceTree = "<group>";
+		};
+		971BEF981FA1D59800702E86 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				971BEF991FA1D59800702E86 /* ABArrayModelChangeAdd.h */,
+				971BEF9A1FA1D59800702E86 /* ABArrayModelChangeAdd.m */,
+				971BEF9B1FA1D59800702E86 /* ABArrayModelChangeMove.h */,
+				971BEF9C1FA1D59800702E86 /* ABArrayModelChangeMove.m */,
+				971BEF9D1FA1D59800702E86 /* ABArrayModelChangeRemove.h */,
+				971BEF9E1FA1D59800702E86 /* ABArrayModelChangeRemove.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		971BEF9F1FA1D59800702E86 /* ABImageModel */ = {
+			isa = PBXGroup;
+			children = (
+				971BEFA01FA1D59800702E86 /* ABFileSystemImageModel */,
+				971BEFA31FA1D59800702E86 /* ABImageModel.h */,
+				971BEFA41FA1D59800702E86 /* ABImageModel.m */,
+				971BEFA51FA1D59800702E86 /* ABInternetImageModel */,
+			);
+			path = ABImageModel;
+			sourceTree = "<group>";
+		};
+		971BEFA01FA1D59800702E86 /* ABFileSystemImageModel */ = {
+			isa = PBXGroup;
+			children = (
+				971BEFA11FA1D59800702E86 /* ABFileSystemImageModel.h */,
+				971BEFA21FA1D59800702E86 /* ABFileSystemImageModel.m */,
+			);
+			path = ABFileSystemImageModel;
+			sourceTree = "<group>";
+		};
+		971BEFA51FA1D59800702E86 /* ABInternetImageModel */ = {
+			isa = PBXGroup;
+			children = (
+				971BEFA61FA1D59800702E86 /* ABInternetImageModel.h */,
+				971BEFA71FA1D59800702E86 /* ABInternetImageModel.m */,
+			);
+			path = ABInternetImageModel;
+			sourceTree = "<group>";
+		};
+		971BEFA81FA1D59800702E86 /* ABModel */ = {
+			isa = PBXGroup;
+			children = (
+				971BEFA91FA1D59800702E86 /* ABModel.h */,
+				971BEFAA1FA1D59800702E86 /* ABModel.m */,
+			);
+			path = ABModel;
+			sourceTree = "<group>";
+		};
 		A54C3AD9DFBA3070B4BF1C7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -884,6 +993,7 @@
 				971BEF2B1FA1D42300702E86 /* ABImageModelCache.m in Sources */,
 				971BEF201FA1D42300702E86 /* NSTimer+ABWeakReferenceTimer.m in Sources */,
 				971BEF2D1FA1D42300702E86 /* ABRandomNumber.m in Sources */,
+				971BEFAB1FA1D59800702E86 /* ABArrayModel.m in Sources */,
 				971BEF2A1FA1D42300702E86 /* ABGCDExtension.m in Sources */,
 				971BEF231FA1D42300702E86 /* UITableView+ABExtension.m in Sources */,
 				971BEF671FA1D47700702E86 /* ABContext.m in Sources */,
@@ -898,14 +1008,19 @@
 				971BEF2F1FA1D42300702E86 /* ABMacro.m in Sources */,
 				971BEF221FA1D42300702E86 /* UINib+ABExtension.m in Sources */,
 				971BEF681FA1D47700702E86 /* ABFBContext.m in Sources */,
+				971BEFB21FA1D59800702E86 /* ABInternetImageModel.m in Sources */,
 				971BEF4F1FA1D42300702E86 /* ABUserDetailViewController.m in Sources */,
+				971BEFAD1FA1D59800702E86 /* ABArrayModelChangeAdd.m in Sources */,
 				971BEF281FA1D42300702E86 /* ABStringsAlphabet.m in Sources */,
+				971BEFB11FA1D59800702E86 /* ABImageModel.m in Sources */,
 				971BEF6D1FA1D47700702E86 /* ABFBLogoutContext.m in Sources */,
 				971BEF2E1FA1D42300702E86 /* ABTableViewCell.m in Sources */,
 				971BEF241FA1D42300702E86 /* UIWindow+ABExtension.m in Sources */,
+				971BEFAC1FA1D59800702E86 /* ABArrayModelChange.m in Sources */,
 				971BEF251FA1D42300702E86 /* ABAlphabet.m in Sources */,
 				971BEF291FA1D42300702E86 /* ABFBParser.m in Sources */,
 				971BEF491FA1D42300702E86 /* ABUserCell.m in Sources */,
+				971BEFB31FA1D59800702E86 /* ABModel.m in Sources */,
 				971BEF4E1FA1D42300702E86 /* ABUserDetailView.m in Sources */,
 				971BEF6B1FA1D47700702E86 /* ABFBGetUserContext.m in Sources */,
 				971BEF1C1FA1D42300702E86 /* NSFileManager+ABExtension.m in Sources */,
@@ -913,12 +1028,14 @@
 				971BEF691FA1D47700702E86 /* ABFBGetContext.m in Sources */,
 				970C49DA1F6A847700AAB728 /* ABAppDelegate.m in Sources */,
 				971BEF1B1FA1D42300702E86 /* NSBundle+ABExtension.m in Sources */,
+				971BEFAF1FA1D59800702E86 /* ABArrayModelChangeRemove.m in Sources */,
 				971BEF3F1FA1D42300702E86 /* ABUser.m in Sources */,
 				971BEF3D1FA1D42300702E86 /* ABFBCurrentUser.m in Sources */,
 				971BEF401FA1D42300702E86 /* ABUsersModel.m in Sources */,
 				971BEF461FA1D42300702E86 /* ABFriendsView.m in Sources */,
 				971BEF3E1FA1D42300702E86 /* ABFBUser.m in Sources */,
 				971BEF211FA1D42300702E86 /* ABTimerWeakReference.m in Sources */,
+				971BEFB01FA1D59800702E86 /* ABFileSystemImageModel.m in Sources */,
 				971BEF6C1FA1D47700702E86 /* ABFBLoginContext.m in Sources */,
 				971BEF451FA1D42300702E86 /* ABFBViewController.m in Sources */,
 				971BEF4C1FA1D42300702E86 /* ABLoginViewController.m in Sources */,
@@ -926,6 +1043,7 @@
 				971BEF2C1FA1D42300702E86 /* ABObservableObject.m in Sources */,
 				971BEF471FA1D42300702E86 /* ABFriendsViewController.m in Sources */,
 				971BEF4B1FA1D42300702E86 /* ABLoginView.m in Sources */,
+				971BEFAE1FA1D59800702E86 /* ABArrayModelChangeMove.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
