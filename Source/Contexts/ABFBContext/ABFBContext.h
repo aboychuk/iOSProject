@@ -10,9 +10,9 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 #import "ABContext.h"
-#import "ABUser.h"
+#import "ABFBUser.h"
 
 @interface ABFBContext : ABContext
-@property (nonatomic, strong)   ABUser  *user;
+@property (nonatomic, strong)   ABFBUser  *user;
 
 @end
