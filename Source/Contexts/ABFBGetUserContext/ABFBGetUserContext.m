@@ -42,7 +42,7 @@ static NSString *const ABPlistName       = @"UserDetail.plist";
 #pragma mark Public Methods
 
 - (void)parseResult:(id)result {
-    ABUser *user = self.user;
+    ABFBUser *user = self.user;
     ABFBParser *parser = [[ABFBParser alloc] initWithResult:result];
     
     user.userID = parser.userID;
