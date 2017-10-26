@@ -20,24 +20,31 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    self.user = nil;
+    self.model = nil;
     self.context = nil;
 }
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.user = [ABUser new];
+        self.model = [ABFBCurrentUser new];
     }
     
     return self;
 }
 
 #pragma mark -
+#pragma mark Overriden Methods.
+
+- (void)fillWithModel:(ABModel *)model {
+    [self showUserDetailViewController];
+}
+
+#pragma mark -
 #pragma mark Actions
 
 - (IBAction)onLogin:(UIButton *)sender {
-    self.context = [ABFBLoginContext contextWithModel:self.user];
+    self.context = [ABFBLoginContext contextWithModel:self.model];
 }
 
 #pragma mark -
@@ -45,20 +52,20 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 
 - (void)showUserDetailViewController {
     ABUserDetailViewController *userDetailController = [ABUserDetailViewController new];
-    userDetailController.user = self.user;
+    userDetailController.model = self.model;
     
-    [self.navigationController pushViewController:userDetailController animated:YES];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:userDetailController];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 #pragma mark -
 #pragma mark ABModelObserver
 
-- (void)modelDidLoad:(id)model {
+- (void)modelWillLoad:(id)model {
     ABWeakify(self);
     ABDispatchAsyncOnMainThread(^{
         ABStrongifyAndReturnIfNil(self);
-        self.rootView.loadingView.visible = NO;
-        [self showUserDetailViewController];
+        [self fillWithModel:model];
     });
 }
 

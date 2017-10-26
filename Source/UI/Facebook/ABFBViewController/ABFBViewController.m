@@ -49,7 +49,7 @@ ABViewControllerRootViewProperty(ABFBViewController, rootView, ABView)
 #pragma mark -
 #pragma mark Overriden Methods
 
-- (void)fillWithModel:(ABModel *)model {
+- (void)fillWithModel:(id)model {
     
 }
 
@@ -69,7 +69,7 @@ ABViewControllerRootViewProperty(ABFBViewController, rootView, ABView)
     ABDispatchAsyncOnMainThread(^{
         ABStrongifyAndReturnIfNil(self);
         self.rootView.loadingView.visible = NO;
-        [self.rootView fillWithModel:model];
+        [self fillWithModel:model];
     });
 }
 

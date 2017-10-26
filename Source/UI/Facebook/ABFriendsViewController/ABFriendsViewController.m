@@ -35,7 +35,15 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.context = [[ABFBGetFriendsContext alloc] initWithModel:self.model];
+}
+
+#pragma mark -
+#pragma mark Overriden Methods.
+
+- (void)fillWithModel:(ABModel *)model {
     [self.rootView fillWithModel];
+    [self setupNavigationBar];
 }
 
 #pragma mark -
@@ -61,7 +69,7 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
     
     ABFBGetUserContext *context = [[ABFBGetUserContext alloc] initWithModel:user];
     
-    userDetailViewController.user = user;
+    userDetailViewController.model = user;
     userDetailViewController.context = context;
     
     [self.navigationController pushViewController:userDetailViewController animated:YES];

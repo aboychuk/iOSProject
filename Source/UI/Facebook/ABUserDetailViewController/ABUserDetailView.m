@@ -8,12 +8,12 @@
 
 #import "ABUserDetailView.h"
 
-#import "ABUser.h"
+#import "ABFBUser.h"
 #import "ABImageView.h"
 
 @implementation ABUserDetailView
 
-- (void)fillWithModel:(ABUser *)user {
+- (void)fillWithModel:(ABFBUser *)user {
     self.userImage.imageModel = user.imageModel;
     self.userFullName.text = user.fullname;
 }

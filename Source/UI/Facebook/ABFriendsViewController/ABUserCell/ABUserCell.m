@@ -8,7 +8,7 @@
 
 #import "ABUserCell.h"
 
-#import "ABUser.h"
+#import "ABFBUser.h"
 #import "ABImageView.h"
 #import "ABImageModel.h"
 
@@ -23,7 +23,7 @@
 #pragma mark - 
 #pragma mark Accessors
 
-- (void)setUser:(ABUser *)user {
+- (void)setUser:(ABFBUser *)user {
     if (_user != user) {
         _user = user;
         
@@ -34,7 +34,7 @@
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)fillWithModel:(ABUser *)user {
+- (void)fillWithModel:(ABFBUser *)user {
     self.fullNameLabel.text = user.fullname;
     self.userImageView.imageModel = user.imageModel;
 }

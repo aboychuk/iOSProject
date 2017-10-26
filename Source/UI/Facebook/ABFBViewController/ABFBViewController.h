@@ -18,6 +18,6 @@
 @property (nonatomic, strong)   ABModel     *model;
 @property (nonatomic, strong)   ABContext   *context;
 
-- (void)fillWithModel:(ABModel *)model;
+- (void)fillWithModel:(id)model;
 
 @end
