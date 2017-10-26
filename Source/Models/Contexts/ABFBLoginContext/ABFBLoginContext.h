@@ -6,11 +6,11 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import "ABFBGetContext.h"
+#import "ABContext.h"
 
 #import "ABFBCurrentUser.h"
 
-@interface ABFBLoginContext : ABFBGetContext
+@interface ABFBLoginContext : ABContext
 @property (nonatomic, strong)   ABFBCurrentUser *user;
 
 @end

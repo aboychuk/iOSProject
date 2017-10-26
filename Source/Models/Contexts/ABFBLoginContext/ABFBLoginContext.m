@@ -8,8 +8,6 @@
 
 #import "ABFBLoginContext.h"
 
-#import "ABFBGetUserContext.h"
-
 #import "ABMacro.h"
 
 static NSString *const ABPublicProfile = @"public_profile";
@@ -43,6 +41,7 @@ static NSString *const ABUserFriends = @"user_friends";
                                 ABStrongifyAndReturnIfNil(self);
                                 if (!(error && result.isCancelled)) {
                                     self.user.token = [FBSDKAccessToken currentAccessToken].tokenString;
+                                    self.user.userID = [FBSDKAccessToken currentAccessToken].userID;
                                     state = ABModelWillLoad;
                                     handler(state);
                                 }
