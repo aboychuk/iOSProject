@@ -18,28 +18,34 @@ static NSString *const ABUserFriends = @"user_friends";
 @implementation ABFBLoginContext
 
 #pragma mark -
+#pragma mark Accessors
+
+- (ABUser *)user {
+    return self.model;
+}
+
+#pragma mark -
 #pragma mark Public Methods
 
 - (void)executeWithCompletionHandler:(ABContextCompletionHandler)handler {
     __block NSUInteger state = self.user.state;
     if (self.user.isAuthorized) {
-        state= ABModelDidLoad;
+        state = ABModelDidLoad;
         return;
     } else {
-        FBSDKLoginManager *login = [FBSDKLoginManager new];
-        ABWeakify(self);
-        [login logInWithReadPermissions:@[ABPublicProfile, ABUserFriends]
-                     fromViewController:nil
-                                handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-                                    ABStrongifyAndReturnIfNil(self);
-                                    if (!(error && result.isCancelled)) {
-                                        self.user.userID = [FBSDKAccessToken currentAccessToken].userID;
-                                        state = ABModelDidLoad;
-                                    }
-                                }];
-
+    FBSDKLoginManager *login = [FBSDKLoginManager new];
+    ABWeakify(self);
+    [login logInWithReadPermissions:@[ABPublicProfile, ABUserFriends]
+                 fromViewController:nil
+                            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+                                ABStrongifyAndReturnIfNil(self);
+                                if (!(error && result.isCancelled)) {
+                                    self.user.token = [FBSDKAccessToken currentAccessToken].tokenString;
+                                    state = ABModelWillLoad;
+                                    handler(state);
+                                }
+                            }];
     }
-    handler(state);
 }
 
 @end
