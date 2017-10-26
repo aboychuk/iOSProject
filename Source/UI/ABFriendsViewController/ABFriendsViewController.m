@@ -23,6 +23,7 @@ static NSString * const ABNavigationBarTitle = @"Friends";
 ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsView)
 
 @interface ABFriendsViewController () <ABArrayModelObserver, ABModelObserver>
+@property (nonatomic ,strong)   ABUsersModel    *friends;
 
 - (void)setupNavigationBar;
 
@@ -31,19 +32,26 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 @implementation ABFriendsViewController
 
 #pragma mark -
+#pragma mark Accessors
+
+- (ABUsersModel *)friends {
+    return self.model;
+}
+
+#pragma mark -
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupNavigationBar];
     self.context = [[ABFBGetFriendsContext alloc] initWithModel:self.model];
 }
 
 #pragma mark -
-#pragma mark Overriden Methods.
+#pragma mark Overriden Methods
 
-- (void)fillWithModel:(ABModel *)model {
+- (void)updateViewWithModel:(ABModel *)model {
     [self.rootView fillWithModel];
-    [self setupNavigationBar];
 }
 
 #pragma mark -
@@ -64,13 +72,10 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ABUser *user = self.friends[indexPath.row];
+    ABFBUser *user = self.friends[indexPath.row];
     ABUserDetailViewController *userDetailViewController = [ABUserDetailViewController new];
     
-    ABFBGetUserContext *context = [[ABFBGetUserContext alloc] initWithModel:user];
-    
     userDetailViewController.model = user;
-    userDetailViewController.context = context;
     
     [self.navigationController pushViewController:userDetailViewController animated:YES];
 }

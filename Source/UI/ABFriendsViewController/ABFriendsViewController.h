@@ -13,6 +13,5 @@
 @class ABUsersModel;
 
 @interface ABFriendsViewController : ABFBViewController <UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong)   ABUsersModel    *friends;
 
 @end

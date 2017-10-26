@@ -19,6 +19,9 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 @interface ABUserDetailViewController ()
 @property (nonatomic, readonly) ABFBUser  *user;
 
+- (void)prepareNavigationItem;
+- (void)showFriendsViewController;
+
 @end
 
 @implementation ABUserDetailViewController
@@ -26,7 +29,7 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 #pragma mark -
 #pragma mark Accessors
 
-- (ABUser *)user {
+- (ABFBUser *)user {
     return (ABFBUser *)self.model;
 }
 
@@ -46,23 +49,31 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self fillWithModel:self.model];
+    [self prepareNavigationItem];
+    self.context = [[ABFBGetUserContext alloc] initWithModel:self.model];
 }
 
 #pragma mark -
-#pragma mark Overriden Methods.
+#pragma mark Overriden Methods
 
-- (void)fillWithModel:(ABFBUser *)model {
+- (void)updateViewWithModel:(ABFBUser *)model {
     [self.rootView fillWithModel:model];
 }
 
 #pragma mark -
 #pragma mark Private
 
+- (void)prepareNavigationItem {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
+                                                                             style:UIBarButtonItemStyleDone
+                                                                            target:self
+                                                                            action:@selector(onLogout:)];
+}
+
 - (void)showFriendsViewController {
     ABUsersModel *friends = self.user.friends;
     ABFriendsViewController *friendController = [ABFriendsViewController new];
-    friendController.friends = friends;
+    friendController.model = friends;
     
     [self.navigationController pushViewController:friendController animated:YES];
 }
@@ -75,7 +86,7 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
     ABDispatchAsyncOnMainThread(^{
         ABStrongifyAndReturnIfNil(self);
         self.rootView.loadingView.visible = NO;
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     });
 }
 

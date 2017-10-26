@@ -28,7 +28,7 @@ ABViewControllerRootViewProperty(ABFBViewController, rootView, ABView)
 #pragma mark -
 #pragma mark Accessors
 
-- (void)setModel:(ABModel *)model {
+- (void)setModel:(id)model {
     if (_model != model) {
         [_model removeObserver:self];
         
@@ -49,7 +49,7 @@ ABViewControllerRootViewProperty(ABFBViewController, rootView, ABView)
 #pragma mark -
 #pragma mark Overriden Methods
 
-- (void)fillWithModel:(id)model {
+- (void)updateViewWithModel:(id)model {
     
 }
 
@@ -69,7 +69,7 @@ ABViewControllerRootViewProperty(ABFBViewController, rootView, ABView)
     ABDispatchAsyncOnMainThread(^{
         ABStrongifyAndReturnIfNil(self);
         self.rootView.loadingView.visible = NO;
-        [self fillWithModel:model];
+        [self updateViewWithModel:model];
     });
 }
 

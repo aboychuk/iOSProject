@@ -18,17 +18,23 @@ static NSString *const ABFields         = @"fields";
 static NSString *const ABFieldsKeys     = @"friends{first_name,last_name,picture}";
 static NSString *const ABPlistName       = @"UserFriends.plist";
 
+@interface ABFBGetFriendsContext ()
+@property (nonatomic, strong)   ABUsersModel    *users;
+
+@end
+
 @implementation ABFBGetFriendsContext
 
 @dynamic graphPath;
 @dynamic parameters;
 @dynamic plistName;
+@dynamic users;
 
 #pragma mark -
 #pragma mark Accessors
 
 - (NSString *)graphPath {
-    return self.user.userID;
+    return [FBSDKAccessToken currentAccessToken].userID;
 }
 
 - (NSDictionary *)parameters {
@@ -39,12 +45,17 @@ static NSString *const ABPlistName       = @"UserFriends.plist";
     return ABPlistName;
 }
 
+- (ABUsersModel *)users {
+    return self.model;
+}
+
 #pragma mark -
 #pragma mark Public Methods
 
 - (void)parseResult:(id)result {
     ABFBParser *parser = [[ABFBParser alloc] initWithResult:result];
-    self.user.friends = [[ABUsersModel alloc] initWithObjects:parser.friends];
+    ABUsersModel *friends = self.users;
+    [friends addObjects:parser.friends];
 }
 
 @end

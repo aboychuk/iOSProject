@@ -14,6 +14,12 @@
 
 ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 
+@interface ABLoginViewController ()
+
+- (void)showUserDetailViewController;
+
+@end
+
 @implementation ABLoginViewController
 
 #pragma mark -
@@ -34,9 +40,9 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 }
 
 #pragma mark -
-#pragma mark Overriden Methods.
+#pragma mark Overriden Methods
 
-- (void)fillWithModel:(ABModel *)model {
+- (void)updateViewWithModel:(ABModel *)model {
     [self showUserDetailViewController];
 }
 
@@ -65,7 +71,7 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
     ABWeakify(self);
     ABDispatchAsyncOnMainThread(^{
         ABStrongifyAndReturnIfNil(self);
-        [self fillWithModel:model];
+        [self updateViewWithModel:model];
     });
 }
 

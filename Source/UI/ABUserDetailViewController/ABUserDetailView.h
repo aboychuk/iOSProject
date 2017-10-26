@@ -9,13 +9,13 @@
 #import "ABView.h"
 
 @class ABImageView;
-@class ABUser;
+@class ABFBUser;
 
 @interface ABUserDetailView : ABView
 @property (nonatomic, strong)   IBOutlet    UIButton    *friendsButton;
 @property (nonatomic, strong)   IBOutlet    ABImageView *userImage;
 @property (nonatomic, strong)   IBOutlet    UILabel     *userFullName;
 
-- (void)fillWithModel:(ABUser *)model;
+- (void)fillWithModel:(ABFBUser *)model;
 
 @end
