@@ -16,4 +16,6 @@
 
 @property   (nonatomic, strong) NSString    *token;
 
++ (instancetype)sharedCurrentUser;
+
 @end

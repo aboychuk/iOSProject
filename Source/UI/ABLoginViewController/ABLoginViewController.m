@@ -33,7 +33,7 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.model = [ABFBCurrentUser new];
+        self.model = [ABFBCurrentUser sharedCurrentUser];
     }
     
     return self;

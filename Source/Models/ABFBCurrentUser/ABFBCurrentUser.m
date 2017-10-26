@@ -13,6 +13,19 @@
 @dynamic authorized;
 
 #pragma mark -
+#pragma mark Class Methods
+
++ (instancetype)sharedCurrentUser {
+    static ABFBCurrentUser *user = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        user = [[self alloc] init];
+    });
+    
+    return user;
+}
+
+#pragma mark -
 #pragma mark Accessors
 
 - (BOOL)isAuthorized {
