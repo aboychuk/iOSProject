@@ -17,6 +17,8 @@ static NSString *const ABUserFriends = @"user_friends";
 
 @implementation ABFBLoginContext
 
+@dynamic user;
+
 #pragma mark -
 #pragma mark Accessors
 

@@ -44,18 +44,6 @@
 		971BEF421FA1D42300702E86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 971BEEF21FA1D42300702E86 /* LaunchScreen.storyboard */; };
 		971BEF431FA1D42300702E86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 971BEEF41FA1D42300702E86 /* Main.storyboard */; };
 		971BEF441FA1D42300702E86 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 971BEEF71FA1D42300702E86 /* image.png */; };
-		971BEF451FA1D42300702E86 /* ABFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEEFC1FA1D42300702E86 /* ABFBViewController.m */; };
-		971BEF461FA1D42300702E86 /* ABFriendsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEEFF1FA1D42300702E86 /* ABFriendsView.m */; };
-		971BEF471FA1D42300702E86 /* ABFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF011FA1D42300702E86 /* ABFriendsViewController.m */; };
-		971BEF481FA1D42300702E86 /* ABFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971BEF021FA1D42300702E86 /* ABFriendsViewController.xib */; };
-		971BEF491FA1D42300702E86 /* ABUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF051FA1D42300702E86 /* ABUserCell.m */; };
-		971BEF4A1FA1D42300702E86 /* ABUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971BEF061FA1D42300702E86 /* ABUserCell.xib */; };
-		971BEF4B1FA1D42300702E86 /* ABLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF091FA1D42300702E86 /* ABLoginView.m */; };
-		971BEF4C1FA1D42300702E86 /* ABLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF0B1FA1D42300702E86 /* ABLoginViewController.m */; };
-		971BEF4D1FA1D42300702E86 /* ABLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971BEF0C1FA1D42300702E86 /* ABLoginViewController.xib */; };
-		971BEF4E1FA1D42300702E86 /* ABUserDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF0F1FA1D42300702E86 /* ABUserDetailView.m */; };
-		971BEF4F1FA1D42300702E86 /* ABUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF111FA1D42300702E86 /* ABUserDetailViewController.m */; };
-		971BEF501FA1D42300702E86 /* ABUserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971BEF121FA1D42300702E86 /* ABUserDetailViewController.xib */; };
 		971BEF671FA1D47700702E86 /* ABContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF541FA1D47700702E86 /* ABContext.m */; };
 		971BEF681FA1D47700702E86 /* ABFBContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF571FA1D47700702E86 /* ABFBContext.m */; };
 		971BEF691FA1D47700702E86 /* ABFBGetContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEF5A1FA1D47700702E86 /* ABFBGetContext.m */; };
@@ -72,6 +60,18 @@
 		971BEFB11FA1D59800702E86 /* ABImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFA41FA1D59800702E86 /* ABImageModel.m */; };
 		971BEFB21FA1D59800702E86 /* ABInternetImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFA71FA1D59800702E86 /* ABInternetImageModel.m */; };
 		971BEFB31FA1D59800702E86 /* ABModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFAA1FA1D59800702E86 /* ABModel.m */; };
+		971BEFCD1FA1D6DD00702E86 /* ABUserDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFB61FA1D6DD00702E86 /* ABUserDetailView.m */; };
+		971BEFCE1FA1D6DD00702E86 /* ABUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFB81FA1D6DD00702E86 /* ABUserDetailViewController.m */; };
+		971BEFCF1FA1D6DD00702E86 /* ABUserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971BEFB91FA1D6DD00702E86 /* ABUserDetailViewController.xib */; };
+		971BEFD01FA1D6DD00702E86 /* ABFriendsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFBC1FA1D6DD00702E86 /* ABFriendsView.m */; };
+		971BEFD11FA1D6DD00702E86 /* ABFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFBE1FA1D6DD00702E86 /* ABFriendsViewController.m */; };
+		971BEFD21FA1D6DD00702E86 /* ABFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971BEFBF1FA1D6DD00702E86 /* ABFriendsViewController.xib */; };
+		971BEFD31FA1D6DD00702E86 /* ABUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFC21FA1D6DD00702E86 /* ABUserCell.m */; };
+		971BEFD41FA1D6DD00702E86 /* ABUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971BEFC31FA1D6DD00702E86 /* ABUserCell.xib */; };
+		971BEFD51FA1D6DD00702E86 /* ABFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFC61FA1D6DD00702E86 /* ABFBViewController.m */; };
+		971BEFD61FA1D6DD00702E86 /* ABLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFC91FA1D6DD00702E86 /* ABLoginView.m */; };
+		971BEFD71FA1D6DD00702E86 /* ABLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971BEFCB1FA1D6DD00702E86 /* ABLoginViewController.m */; };
+		971BEFD81FA1D6DD00702E86 /* ABLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971BEFCC1FA1D6DD00702E86 /* ABLoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,26 +145,6 @@
 		971BEEF31FA1D42300702E86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		971BEEF51FA1D42300702E86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		971BEEF71FA1D42300702E86 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
-		971BEEFB1FA1D42300702E86 /* ABFBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFBViewController.h; sourceTree = "<group>"; };
-		971BEEFC1FA1D42300702E86 /* ABFBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFBViewController.m; sourceTree = "<group>"; };
-		971BEEFE1FA1D42300702E86 /* ABFriendsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFriendsView.h; sourceTree = "<group>"; };
-		971BEEFF1FA1D42300702E86 /* ABFriendsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFriendsView.m; sourceTree = "<group>"; };
-		971BEF001FA1D42300702E86 /* ABFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFriendsViewController.h; sourceTree = "<group>"; };
-		971BEF011FA1D42300702E86 /* ABFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFriendsViewController.m; sourceTree = "<group>"; };
-		971BEF021FA1D42300702E86 /* ABFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABFriendsViewController.xib; sourceTree = "<group>"; };
-		971BEF041FA1D42300702E86 /* ABUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserCell.h; sourceTree = "<group>"; };
-		971BEF051FA1D42300702E86 /* ABUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserCell.m; sourceTree = "<group>"; };
-		971BEF061FA1D42300702E86 /* ABUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserCell.xib; sourceTree = "<group>"; };
-		971BEF081FA1D42300702E86 /* ABLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLoginView.h; sourceTree = "<group>"; };
-		971BEF091FA1D42300702E86 /* ABLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLoginView.m; sourceTree = "<group>"; };
-		971BEF0A1FA1D42300702E86 /* ABLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLoginViewController.h; sourceTree = "<group>"; };
-		971BEF0B1FA1D42300702E86 /* ABLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLoginViewController.m; sourceTree = "<group>"; };
-		971BEF0C1FA1D42300702E86 /* ABLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABLoginViewController.xib; sourceTree = "<group>"; };
-		971BEF0E1FA1D42300702E86 /* ABUserDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserDetailView.h; sourceTree = "<group>"; };
-		971BEF0F1FA1D42300702E86 /* ABUserDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserDetailView.m; sourceTree = "<group>"; };
-		971BEF101FA1D42300702E86 /* ABUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserDetailViewController.h; sourceTree = "<group>"; };
-		971BEF111FA1D42300702E86 /* ABUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserDetailViewController.m; sourceTree = "<group>"; };
-		971BEF121FA1D42300702E86 /* ABUserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserDetailViewController.xib; sourceTree = "<group>"; };
 		971BEF531FA1D47700702E86 /* ABContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABContext.h; sourceTree = "<group>"; };
 		971BEF541FA1D47700702E86 /* ABContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABContext.m; sourceTree = "<group>"; };
 		971BEF561FA1D47700702E86 /* ABFBContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFBContext.h; sourceTree = "<group>"; };
@@ -197,6 +177,26 @@
 		971BEFA71FA1D59800702E86 /* ABInternetImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABInternetImageModel.m; sourceTree = "<group>"; };
 		971BEFA91FA1D59800702E86 /* ABModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABModel.h; sourceTree = "<group>"; };
 		971BEFAA1FA1D59800702E86 /* ABModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABModel.m; sourceTree = "<group>"; };
+		971BEFB51FA1D6DD00702E86 /* ABUserDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserDetailView.h; sourceTree = "<group>"; };
+		971BEFB61FA1D6DD00702E86 /* ABUserDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserDetailView.m; sourceTree = "<group>"; };
+		971BEFB71FA1D6DD00702E86 /* ABUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserDetailViewController.h; sourceTree = "<group>"; };
+		971BEFB81FA1D6DD00702E86 /* ABUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserDetailViewController.m; sourceTree = "<group>"; };
+		971BEFB91FA1D6DD00702E86 /* ABUserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserDetailViewController.xib; sourceTree = "<group>"; };
+		971BEFBB1FA1D6DD00702E86 /* ABFriendsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFriendsView.h; sourceTree = "<group>"; };
+		971BEFBC1FA1D6DD00702E86 /* ABFriendsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFriendsView.m; sourceTree = "<group>"; };
+		971BEFBD1FA1D6DD00702E86 /* ABFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFriendsViewController.h; sourceTree = "<group>"; };
+		971BEFBE1FA1D6DD00702E86 /* ABFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFriendsViewController.m; sourceTree = "<group>"; };
+		971BEFBF1FA1D6DD00702E86 /* ABFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABFriendsViewController.xib; sourceTree = "<group>"; };
+		971BEFC11FA1D6DD00702E86 /* ABUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABUserCell.h; sourceTree = "<group>"; };
+		971BEFC21FA1D6DD00702E86 /* ABUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABUserCell.m; sourceTree = "<group>"; };
+		971BEFC31FA1D6DD00702E86 /* ABUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABUserCell.xib; sourceTree = "<group>"; };
+		971BEFC51FA1D6DD00702E86 /* ABFBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFBViewController.h; sourceTree = "<group>"; };
+		971BEFC61FA1D6DD00702E86 /* ABFBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFBViewController.m; sourceTree = "<group>"; };
+		971BEFC81FA1D6DD00702E86 /* ABLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLoginView.h; sourceTree = "<group>"; };
+		971BEFC91FA1D6DD00702E86 /* ABLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLoginView.m; sourceTree = "<group>"; };
+		971BEFCA1FA1D6DD00702E86 /* ABLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLoginViewController.h; sourceTree = "<group>"; };
+		971BEFCB1FA1D6DD00702E86 /* ABLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLoginViewController.m; sourceTree = "<group>"; };
+		971BEFCC1FA1D6DD00702E86 /* ABLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABLoginViewController.xib; sourceTree = "<group>"; };
 		CBE27B6C8B9F1CA6ED2CFFAA /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E470E32AE2A3C09EA831FECF /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -608,76 +608,12 @@
 		971BEEF81FA1D42300702E86 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				971BEEF91FA1D42300702E86 /* Facebook */,
+				971BEFC41FA1D6DD00702E86 /* ABFBViewController */,
+				971BEFC71FA1D6DD00702E86 /* ABLoginViewController */,
+				971BEFB41FA1D6DD00702E86 /* ABUserDetailViewController */,
+				971BEFBA1FA1D6DD00702E86 /* ABFriendsViewController */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		971BEEF91FA1D42300702E86 /* Facebook */ = {
-			isa = PBXGroup;
-			children = (
-				971BEEFA1FA1D42300702E86 /* ABFBViewController */,
-				971BEEFD1FA1D42300702E86 /* ABFriendsViewController */,
-				971BEF071FA1D42300702E86 /* ABLoginViewController */,
-				971BEF0D1FA1D42300702E86 /* ABUserDetailViewController */,
-			);
-			path = Facebook;
-			sourceTree = "<group>";
-		};
-		971BEEFA1FA1D42300702E86 /* ABFBViewController */ = {
-			isa = PBXGroup;
-			children = (
-				971BEEFB1FA1D42300702E86 /* ABFBViewController.h */,
-				971BEEFC1FA1D42300702E86 /* ABFBViewController.m */,
-			);
-			path = ABFBViewController;
-			sourceTree = "<group>";
-		};
-		971BEEFD1FA1D42300702E86 /* ABFriendsViewController */ = {
-			isa = PBXGroup;
-			children = (
-				971BEEFE1FA1D42300702E86 /* ABFriendsView.h */,
-				971BEEFF1FA1D42300702E86 /* ABFriendsView.m */,
-				971BEF001FA1D42300702E86 /* ABFriendsViewController.h */,
-				971BEF011FA1D42300702E86 /* ABFriendsViewController.m */,
-				971BEF021FA1D42300702E86 /* ABFriendsViewController.xib */,
-				971BEF031FA1D42300702E86 /* ABUserCell */,
-			);
-			path = ABFriendsViewController;
-			sourceTree = "<group>";
-		};
-		971BEF031FA1D42300702E86 /* ABUserCell */ = {
-			isa = PBXGroup;
-			children = (
-				971BEF041FA1D42300702E86 /* ABUserCell.h */,
-				971BEF051FA1D42300702E86 /* ABUserCell.m */,
-				971BEF061FA1D42300702E86 /* ABUserCell.xib */,
-			);
-			path = ABUserCell;
-			sourceTree = "<group>";
-		};
-		971BEF071FA1D42300702E86 /* ABLoginViewController */ = {
-			isa = PBXGroup;
-			children = (
-				971BEF081FA1D42300702E86 /* ABLoginView.h */,
-				971BEF091FA1D42300702E86 /* ABLoginView.m */,
-				971BEF0A1FA1D42300702E86 /* ABLoginViewController.h */,
-				971BEF0B1FA1D42300702E86 /* ABLoginViewController.m */,
-				971BEF0C1FA1D42300702E86 /* ABLoginViewController.xib */,
-			);
-			path = ABLoginViewController;
-			sourceTree = "<group>";
-		};
-		971BEF0D1FA1D42300702E86 /* ABUserDetailViewController */ = {
-			isa = PBXGroup;
-			children = (
-				971BEF0E1FA1D42300702E86 /* ABUserDetailView.h */,
-				971BEF0F1FA1D42300702E86 /* ABUserDetailView.m */,
-				971BEF101FA1D42300702E86 /* ABUserDetailViewController.h */,
-				971BEF111FA1D42300702E86 /* ABUserDetailViewController.m */,
-				971BEF121FA1D42300702E86 /* ABUserDetailViewController.xib */,
-			);
-			path = ABUserDetailViewController;
 			sourceTree = "<group>";
 		};
 		971BEF511FA1D47700702E86 /* Contexts */ = {
@@ -838,6 +774,62 @@
 			path = ABModel;
 			sourceTree = "<group>";
 		};
+		971BEFB41FA1D6DD00702E86 /* ABUserDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				971BEFB51FA1D6DD00702E86 /* ABUserDetailView.h */,
+				971BEFB61FA1D6DD00702E86 /* ABUserDetailView.m */,
+				971BEFB71FA1D6DD00702E86 /* ABUserDetailViewController.h */,
+				971BEFB81FA1D6DD00702E86 /* ABUserDetailViewController.m */,
+				971BEFB91FA1D6DD00702E86 /* ABUserDetailViewController.xib */,
+			);
+			path = ABUserDetailViewController;
+			sourceTree = "<group>";
+		};
+		971BEFBA1FA1D6DD00702E86 /* ABFriendsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				971BEFBB1FA1D6DD00702E86 /* ABFriendsView.h */,
+				971BEFBC1FA1D6DD00702E86 /* ABFriendsView.m */,
+				971BEFBD1FA1D6DD00702E86 /* ABFriendsViewController.h */,
+				971BEFBE1FA1D6DD00702E86 /* ABFriendsViewController.m */,
+				971BEFBF1FA1D6DD00702E86 /* ABFriendsViewController.xib */,
+				971BEFC01FA1D6DD00702E86 /* ABUserCell */,
+			);
+			path = ABFriendsViewController;
+			sourceTree = "<group>";
+		};
+		971BEFC01FA1D6DD00702E86 /* ABUserCell */ = {
+			isa = PBXGroup;
+			children = (
+				971BEFC11FA1D6DD00702E86 /* ABUserCell.h */,
+				971BEFC21FA1D6DD00702E86 /* ABUserCell.m */,
+				971BEFC31FA1D6DD00702E86 /* ABUserCell.xib */,
+			);
+			path = ABUserCell;
+			sourceTree = "<group>";
+		};
+		971BEFC41FA1D6DD00702E86 /* ABFBViewController */ = {
+			isa = PBXGroup;
+			children = (
+				971BEFC51FA1D6DD00702E86 /* ABFBViewController.h */,
+				971BEFC61FA1D6DD00702E86 /* ABFBViewController.m */,
+			);
+			path = ABFBViewController;
+			sourceTree = "<group>";
+		};
+		971BEFC71FA1D6DD00702E86 /* ABLoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				971BEFC81FA1D6DD00702E86 /* ABLoginView.h */,
+				971BEFC91FA1D6DD00702E86 /* ABLoginView.m */,
+				971BEFCA1FA1D6DD00702E86 /* ABLoginViewController.h */,
+				971BEFCB1FA1D6DD00702E86 /* ABLoginViewController.m */,
+				971BEFCC1FA1D6DD00702E86 /* ABLoginViewController.xib */,
+			);
+			path = ABLoginViewController;
+			sourceTree = "<group>";
+		};
 		A54C3AD9DFBA3070B4BF1C7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -917,13 +909,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				971BEF421FA1D42300702E86 /* LaunchScreen.storyboard in Resources */,
-				971BEF4A1FA1D42300702E86 /* ABUserCell.xib in Resources */,
+				971BEFD81FA1D6DD00702E86 /* ABLoginViewController.xib in Resources */,
+				971BEFD41FA1D6DD00702E86 /* ABUserCell.xib in Resources */,
+				971BEFD21FA1D6DD00702E86 /* ABFriendsViewController.xib in Resources */,
+				971BEFCF1FA1D6DD00702E86 /* ABUserDetailViewController.xib in Resources */,
 				971BEF411FA1D42300702E86 /* Assets.xcassets in Resources */,
 				971BEF3B1FA1D42300702E86 /* ABLoadingView.xib in Resources */,
-				971BEF481FA1D42300702E86 /* ABFriendsViewController.xib in Resources */,
-				971BEF4D1FA1D42300702E86 /* ABLoginViewController.xib in Resources */,
 				971BEF431FA1D42300702E86 /* Main.storyboard in Resources */,
-				971BEF501FA1D42300702E86 /* ABUserDetailViewController.xib in Resources */,
 				971BEF441FA1D42300702E86 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -995,8 +987,10 @@
 				971BEF2D1FA1D42300702E86 /* ABRandomNumber.m in Sources */,
 				971BEFAB1FA1D59800702E86 /* ABArrayModel.m in Sources */,
 				971BEF2A1FA1D42300702E86 /* ABGCDExtension.m in Sources */,
+				971BEFD11FA1D6DD00702E86 /* ABFriendsViewController.m in Sources */,
 				971BEF231FA1D42300702E86 /* UITableView+ABExtension.m in Sources */,
 				971BEF671FA1D47700702E86 /* ABContext.m in Sources */,
+				971BEFD31FA1D6DD00702E86 /* ABUserCell.m in Sources */,
 				971BEF1A1FA1D42300702E86 /* NSArray+ABExtension.m in Sources */,
 				971BEF271FA1D42300702E86 /* ABRangeAlphabet.m in Sources */,
 				971BEF3C1FA1D42300702E86 /* ABView.m in Sources */,
@@ -1009,7 +1003,6 @@
 				971BEF221FA1D42300702E86 /* UINib+ABExtension.m in Sources */,
 				971BEF681FA1D47700702E86 /* ABFBContext.m in Sources */,
 				971BEFB21FA1D59800702E86 /* ABInternetImageModel.m in Sources */,
-				971BEF4F1FA1D42300702E86 /* ABUserDetailViewController.m in Sources */,
 				971BEFAD1FA1D59800702E86 /* ABArrayModelChangeAdd.m in Sources */,
 				971BEF281FA1D42300702E86 /* ABStringsAlphabet.m in Sources */,
 				971BEFB11FA1D59800702E86 /* ABImageModel.m in Sources */,
@@ -1017,11 +1010,13 @@
 				971BEF2E1FA1D42300702E86 /* ABTableViewCell.m in Sources */,
 				971BEF241FA1D42300702E86 /* UIWindow+ABExtension.m in Sources */,
 				971BEFAC1FA1D59800702E86 /* ABArrayModelChange.m in Sources */,
+				971BEFD61FA1D6DD00702E86 /* ABLoginView.m in Sources */,
 				971BEF251FA1D42300702E86 /* ABAlphabet.m in Sources */,
 				971BEF291FA1D42300702E86 /* ABFBParser.m in Sources */,
-				971BEF491FA1D42300702E86 /* ABUserCell.m in Sources */,
+				971BEFCD1FA1D6DD00702E86 /* ABUserDetailView.m in Sources */,
+				971BEFD51FA1D6DD00702E86 /* ABFBViewController.m in Sources */,
+				971BEFCE1FA1D6DD00702E86 /* ABUserDetailViewController.m in Sources */,
 				971BEFB31FA1D59800702E86 /* ABModel.m in Sources */,
-				971BEF4E1FA1D42300702E86 /* ABUserDetailView.m in Sources */,
 				971BEF6B1FA1D47700702E86 /* ABFBGetUserContext.m in Sources */,
 				971BEF1C1FA1D42300702E86 /* NSFileManager+ABExtension.m in Sources */,
 				970C49DC1F6A847700AAB728 /* main.m in Sources */,
@@ -1029,20 +1024,17 @@
 				970C49DA1F6A847700AAB728 /* ABAppDelegate.m in Sources */,
 				971BEF1B1FA1D42300702E86 /* NSBundle+ABExtension.m in Sources */,
 				971BEFAF1FA1D59800702E86 /* ABArrayModelChangeRemove.m in Sources */,
+				971BEFD01FA1D6DD00702E86 /* ABFriendsView.m in Sources */,
+				971BEFD71FA1D6DD00702E86 /* ABLoginViewController.m in Sources */,
 				971BEF3F1FA1D42300702E86 /* ABUser.m in Sources */,
 				971BEF3D1FA1D42300702E86 /* ABFBCurrentUser.m in Sources */,
 				971BEF401FA1D42300702E86 /* ABUsersModel.m in Sources */,
-				971BEF461FA1D42300702E86 /* ABFriendsView.m in Sources */,
 				971BEF3E1FA1D42300702E86 /* ABFBUser.m in Sources */,
 				971BEF211FA1D42300702E86 /* ABTimerWeakReference.m in Sources */,
 				971BEFB01FA1D59800702E86 /* ABFileSystemImageModel.m in Sources */,
 				971BEF6C1FA1D47700702E86 /* ABFBLoginContext.m in Sources */,
-				971BEF451FA1D42300702E86 /* ABFBViewController.m in Sources */,
-				971BEF4C1FA1D42300702E86 /* ABLoginViewController.m in Sources */,
 				971BEF1F1FA1D42300702E86 /* NSString+ABExtensions.m in Sources */,
 				971BEF2C1FA1D42300702E86 /* ABObservableObject.m in Sources */,
-				971BEF471FA1D42300702E86 /* ABFriendsViewController.m in Sources */,
-				971BEF4B1FA1D42300702E86 /* ABLoginView.m in Sources */,
 				971BEFAE1FA1D59800702E86 /* ABArrayModelChangeMove.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
