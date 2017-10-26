@@ -13,6 +13,7 @@
 #import "ABLoginViewController.h"
 #import "ABUsersModel.h"
 
+#import "UIWindow+ABExtension.h"
 #import "NSObject+ABObjectExtension.h"
 
 #import "ABConstants.h"
@@ -20,19 +21,13 @@
 @implementation ABAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIWindow *window = [UIWindow windowWithRootViewController:[ABLoginViewController new]];
+    
     self.window = window;
-
-    ABLoginViewController *controller = [ABLoginViewController new];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-    
-    window.rootViewController = navigationController;
-    
     [window makeKeyAndVisible];
     
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
-    
     return YES;
 }
 
