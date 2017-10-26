@@ -8,7 +8,7 @@
 
 #import "ABFBParser.h"
 
-#import "ABUser.h"
+#import "ABFBUser.h"
 
 static NSString *const ABUserID         = @"id";
 static NSString *const ABUserName       = @"first_name";
@@ -75,7 +75,7 @@ static NSString *const ABUserFriends    = @"friends.data";
     NSArray *friends = [self.result valueForKeyPath:ABUserFriends];
     NSMutableArray *mutableFriends = [NSMutableArray arrayWithCapacity:[friends count]];
     for (id friend in friends) {
-        ABUser *user = [ABUser new];
+        ABFBUser *user = [ABFBUser new];
         
         user.name = [friend valueForKeyPath:ABUserName];
         user.surname = [friend valueForKeyPath:ABUserSurname];
