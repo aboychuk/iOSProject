@@ -45,11 +45,11 @@
     }
     self.downloadTask = [urlSession downloadTaskWithURL:self.url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         BOOL created = [filemanager createFolderAtPath:imagePath];
-        if (created) {
+        if (created && !error) {
             [filemanager moveItemAtPath:location.path toPath:imagePath error:&error];
-            if (!error) {
-                [super loadImageWithCompletionHandler:handler];
-            }
+            [super loadImageWithCompletionHandler:handler];
+        } else {
+            NSLog(@"%c, %@", created, error);
         }
     }];
 }
