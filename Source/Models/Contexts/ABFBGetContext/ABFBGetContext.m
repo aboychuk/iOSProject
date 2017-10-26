@@ -40,17 +40,17 @@
 #pragma mark Public Methods
 
 - (void)execute {
-    ABUser *user = self.user;
-    NSUInteger modelState = self.user.state;
+    ABModel *model = self.model;
+    NSUInteger modelState = model.state;
     
-    @synchronized (user) {
+    @synchronized (model) {
         if (modelState == ABModelDidLoad || modelState == ABModelWillLoad) {
-            [user notifyOfState:modelState];
+            [model notifyOfState:modelState];
             if (modelState == ABModelDidLoad) {
                 return;
             }
         }
-        user.state = ABModelWillLoad;
+        model.state = ABModelWillLoad;
     }
     [super execute];
 }
