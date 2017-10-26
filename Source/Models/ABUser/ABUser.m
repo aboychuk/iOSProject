@@ -6,16 +6,7 @@
 //  Copyright © 2017 Andrew Boychuk. All rights reserved.
 //
 
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-
 #import "ABUser.h"
-
-#import "ABImageModel.h"
-#import "ABUsersModel.h"
-
-#import "ABRandomNumber.h"
-#import "NSString+ABExtensions.h"
 
 static NSString * const ABName = @"name";
 static NSString * const ABSurname = @"surname";
@@ -23,38 +14,12 @@ static NSString * const ABSurname = @"surname";
 @implementation ABUser
 
 @dynamic fullname;
-@dynamic imageModel;
-@dynamic authorized;
-
-#pragma mark
-#pragma mark Initializations and Deallocations
-
-- (void)dealloc {
-    self.friends = nil;
-}
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.friends = [ABUsersModel new];
-    }
-    
-    return self;
-}
 
 #pragma mark
 #pragma mark Accessors
 
 - (NSString *)fullname {
     return [NSString stringWithFormat:@"%@ %@", self.name, self.surname];
-}
-
-- (ABImageModel *)imageModel {
-    return [ABImageModel imageWithUrl:self.imageUrl];
-}
-
-- (BOOL)isAuthorized {
-    return [self.userID isEqualToString:[FBSDKAccessToken currentAccessToken].userID];
 }
 
 #pragma mark -
