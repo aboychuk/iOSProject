@@ -12,6 +12,7 @@
 
 - (void)executeWithCompletionHandler:(ABContextCompletionHandler)handler {
     [[FBSDKLoginManager new] logOut];
+    self.user.token = nil;
     if (handler) {
         handler(ABModelDidUnloaded);
     }
