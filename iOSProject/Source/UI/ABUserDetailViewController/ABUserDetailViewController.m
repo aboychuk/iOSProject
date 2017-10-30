@@ -17,7 +17,8 @@
 ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDetailView);
 
 @interface ABUserDetailViewController ()
-@property (nonatomic, readonly) ABFBUser  *user;
+@property (nonatomic, readonly) ABFBUser    *user;
+@property (nonatomic, strong)   ABContext   *logoutContext;
 
 - (void)prepareNavigationItem;
 - (void)showFriendsViewController;
@@ -33,6 +34,15 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
     return (ABFBUser *)self.model;
 }
 
+- (void)setLogoutContext:(ABContext *)logoutContext {
+    if (_logoutContext != logoutContext) {
+        [_logoutContext cancel];
+        
+        _logoutContext = logoutContext;
+        [_logoutContext execute];
+    }
+}
+
 #pragma mark -
 #pragma mark Actions
 
@@ -41,7 +51,7 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 }
 
 - (IBAction)onLogout:(UIButton *)sender {
-    self.context = [[ABFBLogoutContext alloc] initWithModel:[ABFBCurrentUser sharedCurrentUser]];
+    self.logoutContext = [[ABFBLogoutContext alloc] initWithModel:[ABFBCurrentUser sharedCurrentUser]];
 }
 
 #pragma mark -
