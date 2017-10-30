@@ -9,14 +9,16 @@
 #import <UIKit/UIKit.h>
 
 #import "ABUser.h"
+#import "ABFBCurrentUser.h"
 #import "ABContext.h"
 
 #import "ABMacro.h"
 #import "ABGCDExtension.h"
 
 @interface ABFBViewController : UIViewController <ABModelObserver>
-@property (nonatomic, strong)   id          model;
-@property (nonatomic, strong)   ABContext   *context;
+@property (nonatomic, strong)   id              model;
+@property (nonatomic, strong)   ABContext       *context;
+@property (nonatomic, strong)   ABFBCurrentUser *currentUser;
 
 - (void)updateViewWithModel:(id)model;
 

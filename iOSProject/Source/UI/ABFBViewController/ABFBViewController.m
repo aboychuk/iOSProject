@@ -23,6 +23,7 @@ ABViewControllerRootViewProperty(ABFBViewController, rootView, ABView)
 - (void)dealloc {
     self.model = nil;
     self.context = nil;
+    self.currentUser = nil;
 }
 
 #pragma mark -
@@ -34,6 +35,15 @@ ABViewControllerRootViewProperty(ABFBViewController, rootView, ABView)
         
         _model = model;
         [_model addObserver:self];
+    }
+}
+
+- (void)setCurrentUser:(ABFBCurrentUser *)currentUser {
+    if (_currentUser != currentUser) {
+        [_currentUser removeObserver:self];
+        
+        _currentUser = currentUser;
+        [_currentUser addObserver:self];
     }
 }
 

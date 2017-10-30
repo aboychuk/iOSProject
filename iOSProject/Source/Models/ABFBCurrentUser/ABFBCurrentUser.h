@@ -14,8 +14,5 @@
 @interface ABFBCurrentUser : ABFBUser
 @property (nonatomic, readonly, getter=isAuthorized)    BOOL   authorized;
 
-@property   (nonatomic, strong) NSString    *token;
-
-+ (instancetype)sharedCurrentUser;
-
+@property (nonatomic, strong)   NSString    *token;
 @end

@@ -76,6 +76,7 @@ ABViewControllerRootViewProperty(ABFriendsViewController, rootView, ABFriendsVie
     ABUserDetailViewController *userDetailViewController = [ABUserDetailViewController new];
     
     userDetailViewController.model = user;
+    userDetailViewController.currentUser = self.currentUser;
     
     [self.navigationController pushViewController:userDetailViewController animated:YES];
 }

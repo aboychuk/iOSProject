@@ -84,6 +84,7 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
     ABUsersModel *friends = self.user.friends;
     ABFriendsViewController *friendController = [ABFriendsViewController new];
     friendController.model = friends;
+    friendController.currentUser = self.currentUser;
     
     [self.navigationController pushViewController:friendController animated:YES];
 }

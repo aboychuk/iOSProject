@@ -33,7 +33,7 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.model = [ABFBCurrentUser sharedCurrentUser];
+        self.currentUser = [ABFBCurrentUser new];
     }
     
     return self;
@@ -58,7 +58,8 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 
 - (void)showUserDetailViewController {
     ABUserDetailViewController *userDetailController = [ABUserDetailViewController new];
-    userDetailController.model = self.model;
+    userDetailController.model = self.currentUser;
+    userDetailController.currentUser = self.currentUser;
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:userDetailController];
     [self presentViewController:navigationController animated:YES completion:nil];
