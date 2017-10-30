@@ -51,7 +51,7 @@ ABViewControllerRootViewProperty(ABUserDetailViewController, rootView, ABUserDet
 }
 
 - (IBAction)onLogout:(UIButton *)sender {
-    self.logoutContext = [[ABFBLogoutContext alloc] initWithModel:[ABFBCurrentUser sharedCurrentUser]];
+    self.logoutContext = [[ABFBLogoutContext alloc] initWithModel:self.currentUser];
 }
 
 #pragma mark -

@@ -50,7 +50,7 @@ ABViewControllerRootViewProperty(ABLoginViewController, rootView, ABLoginView)
 #pragma mark Actions
 
 - (IBAction)onLogin:(UIButton *)sender {
-    self.context = [ABFBLoginContext contextWithModel:self.model];
+    self.context = [ABFBLoginContext contextWithModel:self.currentUser];
 }
 
 #pragma mark -
